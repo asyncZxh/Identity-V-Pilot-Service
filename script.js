@@ -7,6 +7,7 @@ setTimeout(function typing() {
   if (count < introductionText.length) {
     introduction.textContent += introductionText[count];
     count++;
-    setTimeout(typing, 80);
+    if (introductionText[count] === ",") setTimeout(typing, 700);
+    else setTimeout(typing, 80);
   }
 }, 80);
