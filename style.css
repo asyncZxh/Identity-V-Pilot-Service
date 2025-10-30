@@ -80,8 +80,8 @@ body {
 }
 
 .star {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.6rem;
+  height: 1.6rem;
   display: inline-block;
   fill: #ffd700;
   stroke: #191919;
@@ -106,7 +106,7 @@ th {
 }
 
 td {
-  font-size: 1.4rem;
+  font-size: 1.45rem;
 }
 
 .survivor {
@@ -121,6 +121,7 @@ td {
 
 .survivor-header-select,
 .hunter-header-select {
+  font-size: 1.2rem;
   text-align: center;
   margin-bottom: 0.5rem;
 }
@@ -141,4 +142,10 @@ td {
 
 .select-survivor {
   margin-bottom: 6rem;
+}
+
+.tier,
+.sub-tier,
+.stars {
+  display: block;
 }
