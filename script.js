@@ -8,7 +8,7 @@ setTimeout(function typing() {
     if (count >= 7 && count <= 13) {
       const span = window.document.createElement("span");
       span.textContent = introductionText[count];
-      span.style.color = "red";
+      span.style.color = "#ff4500";
       introduction.append(span);
       // phoenix++;
       count++;
