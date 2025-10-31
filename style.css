@@ -200,21 +200,45 @@ td {
   margin: auto;
 }
 
+option {
+  font-family: "Amatic SC";
+  font-weight: bolder;
+}
+
 .total-button {
-  font-size: 1rem;
+  font-family: "Amatic SC";
+  display: block;
+  margin: auto;
+  font-size: 1.8rem;
   width: fit-content;
   cursor: pointer;
-  margin-bottom: 0.3rem;
-  padding: 0.5rem 0.7rem;
+  margin-bottom: 1rem;
+  padding: 0.3rem 0.5rem;
   border: 1px solid #616161;
   border-radius: 3px;
 }
 
 .total-text {
-  font-size: 1.2rem;
+  font-size: 2rem;
+  width: fit-content;
+  margin: auto;
+  margin-bottom: 7px;
 }
 
-option {
-  font-family: "Amatic SC";
-  font-weight: bolder;
+.total-price-arrow {
+  width: 1.7rem;
+  height: 1.7rem;
+  display: block;
+  margin: auto;
+  margin-bottom: 9.7px;
+}
+
+.total-price-survivor,
+.total-price-hunter {
+  display: flex;
+  justify-content: center;
+  font-size: 2.4rem;
+  height: 3.2rem;
+  border-bottom: 2px solid #fff;
+  margin-bottom: 2rem;
 }
