@@ -103,11 +103,11 @@ body {
 }
 
 tr {
-  width: 50%;
   height: 3.5rem;
 }
 
 th {
+  width: 50%;
   height: 6rem;
 }
 
@@ -130,6 +130,7 @@ td {
   display: flex;
   justify-content: center;
   gap: 6rem;
+  margin-bottom: 3rem;
 }
 
 .survivor-header-select,
@@ -176,10 +177,6 @@ td {
   margin-bottom: 7px;
 }
 
-.select-survivor {
-  margin-bottom: 6rem;
-}
-
 .tier,
 .sub-tier,
 .stars {
@@ -210,6 +207,7 @@ option {
   display: block;
   margin: auto;
   font-size: 1.8rem;
+  font-weight: bolder;
   width: fit-content;
   cursor: pointer;
   margin-bottom: 1rem;
@@ -241,4 +239,21 @@ option {
   height: 3.2rem;
   border-bottom: 2px solid #fff;
   margin-bottom: 2rem;
+}
+
+.payment-method-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.payment-method-text {
+  font-size: 1.4rem;
+  display: inline-block;
+}
+
+.gcash-logo {
+  width: 4.2rem;
+  height: 4.2rem;
 }
