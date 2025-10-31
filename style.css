@@ -115,19 +115,25 @@ td {
 
 .calculate-price-header {
   font-size: 1.8rem;
-  margin-bottom: 1.8rem;
+  margin-bottom: 3rem;
   text-align: center;
+}
+
+.select-faction {
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
 }
 
 .survivor-header-select,
 .hunter-header-select {
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   text-align: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.8rem;
 }
 
 .select-faction select {
-  width: 10rem;
+  width: 13rem;
 }
 
 .select-from-container,
@@ -140,6 +146,15 @@ td {
   margin-bottom: 2rem;
 }
 
+.select-to-container {
+  margin-bottom: 3rem;
+}
+
+.select-from-container p,
+.select-to-container p {
+  font-size: 1.5rem;
+}
+
 .select-survivor {
   margin-bottom: 6rem;
 }
@@ -148,4 +163,30 @@ td {
 .sub-tier,
 .stars {
   display: block;
+}
+
+.tier-container,
+.sub-tier-container {
+  margin-bottom: 0.7rem;
+}
+
+.arrow {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: block;
+  margin: auto;
+}
+
+.total-button {
+  font-size: 1rem;
+  width: fit-content;
+  cursor: pointer;
+  margin-bottom: 0.3rem;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid #616161;
+  border-radius: 3px;
+}
+
+.total-text {
+  font-size: 1.2rem;
 }

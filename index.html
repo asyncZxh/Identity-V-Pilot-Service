@@ -433,27 +433,50 @@
                 <div class="tier-container">
                   <span class="tier">Tier</span>
                   <select class="select-from">
-                    <option>Tier 1 - Bee</option>
-                    <option>Tier 2 - Hound</option>
-                    <option>Tier 3 - Elk</option>
-                    <option>Tier 4 - Mammoth</option>
-                    <option>Tier 5 - Griffin</option>
-                    <option>Tier 6 - Alicorn</option>
-                    <option>Tier 7 - Champion</option>
-                    <option>Peak Tier - Titan(Hercules)</option>
+                    <option value="tier-1">Tier 1 - Bee</option>
+                    <option value="tier2">Tier 2 - Hound</option>
+                    <option value="tier-3">Tier 3 - Elk</option>
+                    <option value="tier-4">Tier 4 - Mammoth</option>
+                    <option value="tier-5">Tier 5 - Griffin</option>
+                    <option value="tier-6">Tier 6 - Alicorn</option>
+                    <option value="tier-7">Tier 7 - Champion</option>
+                    <option value="tier-8">Peak Tier - Titan(Hercules)</option>
                   </select>
                 </div>
 
                 <div class="sub-tier-container">
                   <span class="sub-tier">Sub-tier</span>
-                  <select></select>
+                  <select class="select-from">
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="1">1</option>
+                  </select>
                 </div>
 
                 <div class="star-container">
                   <span class="stars">Star</span>
-                  <select></select>
+                  <select>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
                 </div>
               </div>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="arrow"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"
+                />
+              </svg>
 
               <div class="select-to-container">
                 <p>To:</p>
@@ -474,13 +497,28 @@
 
                 <div class="sub-tier-container">
                   <span class="sub-tier">Sub-tier</span>
-                  <select></select>
+                  <select class="select-to">
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="1">1</option>
+                  </select>
                 </div>
 
                 <div class="star-container">
                   <span class="stars">Star</span>
-                  <select></select>
+                  <select>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
                 </div>
+              </div>
+
+              <div class="total-price-container">
+                <button class="total-button">Calculate</button>
+                <p class="total-text">
+                  Total Price: <span class="total"></span>
+                </p>
               </div>
             </div>
 
@@ -492,14 +530,14 @@
                 <div class="tier-container">
                   <span class="tier">Tier</span>
                   <select class="select-from">
-                    <option>Tier 1 - Bee</option>
-                    <option>Tier 2 - Hound</option>
-                    <option>Tier 3 - Elk</option>
-                    <option>Tier 4 - Mammoth</option>
-                    <option>Tier 5 - Griffin</option>
-                    <option>Tier 6 - Alicorn</option>
-                    <option>Tier 7 - Champion</option>
-                    <option>Peak Tier - Titan(Hercules)</option>
+                    <option>Tier 1 - Spider</option>
+                    <option>Tier 2 - Cobra</option>
+                    <option>Tier 3 - Crocodile</option>
+                    <option>Tier 4 - Sabertooth</option>
+                    <option>Tier 5 - Manticore</option>
+                    <option>Tier 6 - Cyclops</option>
+                    <option>Tier 7 - Evil Dragon</option>
+                    <option>Peak Tier - Hydra</option>
                   </select>
                 </div>
 
@@ -513,6 +551,21 @@
                   <select></select>
                 </div>
               </div>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="arrow"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"
+                />
+              </svg>
 
               <div class="select-to-container">
                 <p>To:</p>
@@ -540,6 +593,13 @@
                   <span class="stars">Star</span>
                   <select></select>
                 </div>
+              </div>
+
+              <div class="total-price-container">
+                <button class="total-button">Calculate</button>
+                <p class="total-text">
+                  Total Price: <span class="total"></span>
+                </p>
               </div>
             </div>
           </div>
