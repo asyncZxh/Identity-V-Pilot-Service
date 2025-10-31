@@ -9,7 +9,8 @@
 }
 
 body {
-  font-family: "Kanit";
+  font-family: "Amatic SC", sans-serif;
+  /* background: linear-gradient(to bottom, #ff0000, #ff8c00, #ffff00); */
 }
 
 .container {
@@ -19,7 +20,7 @@ body {
 }
 
 .header-text {
-  font-size: 3rem;
+  font-size: 4rem;
   text-align: center;
   padding-top: 1.3rem;
   margin-bottom: 1.7rem;
@@ -32,15 +33,17 @@ body {
 
 .introduction-invi {
   width: 65%;
-  font-size: 1.2rem;
+  font-size: 1.7rem;
   line-height: 1.5;
   text-align: center;
   margin: auto;
   visibility: hidden;
+  letter-spacing: 1.2px;
 }
 
 .introduction {
-  font-size: 1.2rem;
+  font-size: 1.7rem;
+  font-weight: 600;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -48,11 +51,7 @@ body {
   margin: auto;
   text-align: center;
   position: absolute;
-}
-
-.survivor h2,
-.hunter h2 {
-  text-align: center;
+  letter-spacing: 1.2px;
 }
 
 .main-content {
@@ -61,14 +60,23 @@ body {
 
 .survivor-header,
 .hunter-header {
+  text-align: center;
+  font-size: 2.7rem;
   margin-bottom: 1.4rem;
+}
+
+.survivor-header {
+  color: #2caeff;
+}
+
+.hunter-header {
+  color: #ff0000;
 }
 
 .survivor-table,
 .hunter-table {
   border: 1px solid black;
   border-collapse: collapse;
-  font-size: 1.5rem;
   width: 100%;
   margin: auto;
   text-align: center;
@@ -90,7 +98,7 @@ body {
 
 .survivor-head th,
 .hunter-head th {
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: 600;
 }
 
@@ -106,7 +114,9 @@ th {
 }
 
 td {
-  font-size: 1.45rem;
+  font-size: 1.8rem;
+  color: #000;
+  font-weight: 550;
 }
 
 .survivor {
