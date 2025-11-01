@@ -26,18 +26,19 @@ body {
   font-weight: bolder;
   text-align: center;
   padding-top: 3.2rem;
-  margin-bottom: 1.7rem;
+  margin-bottom: 2.3rem;
   line-height: 1;
 }
 
 .introduction-container {
   position: relative;
+  padding-bottom: 6.2rem;
 }
 
 .introduction-invi {
   width: 65%;
   font-size: 1.6rem;
-  line-height: 1.5;
+  line-height: 1.6;
   text-align: center;
   margin: auto;
   visibility: hidden;
@@ -54,10 +55,11 @@ body {
   text-align: center;
   position: absolute;
   letter-spacing: 1.2px;
+  line-height: 1.6;
 }
 
 .main-content {
-  padding-top: 7rem;
+  padding-top: 10rem;
 }
 
 .survivor-header,
@@ -83,8 +85,8 @@ body {
   margin-bottom: 3rem;
 }
 
-.hunter-table {
-  margin-bottom: 12rem;
+.hunter {
+  padding-bottom: 15rem;
 }
 
 .star {
@@ -118,7 +120,7 @@ td {
 }
 
 .survivor {
-  padding-bottom: 7rem;
+  padding-bottom: 11rem;
 }
 
 .calculate-price-header {
@@ -219,13 +221,25 @@ option {
   width: fit-content;
   cursor: pointer;
   padding: 0.3rem 1rem;
-  border: none;
+  border: 1px solid #808080;
   border-radius: 8px;
 }
 
 .currency.convert {
   width: 1.2rem;
   height: 1.2rem;
+  border: 1px solid #808080;
+}
+
+.currency {
+  font-size: 1.4rem;
+}
+
+.currency-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
 }
 
 .total-text {
@@ -263,7 +277,7 @@ option {
   justify-content: center;
   align-items: flex-end;
   gap: 1.4rem;
-  height: 4rem;
+  height: 3.7rem;
 }
 
 .gcash-icon,
@@ -292,8 +306,8 @@ option {
   content: "";
   display: inline-block;
   vertical-align: middle;
-  width: 3.7rem;
-  height: 3.7rem;
+  width: 2.7rem;
+  height: 2.7rem;
   margin-left: 0.3rem;
   background-image: url("/images/早く-identity-v.gif");
   background-size: contain;
