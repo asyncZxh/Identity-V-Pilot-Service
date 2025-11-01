@@ -261,12 +261,17 @@ option {
 .payment-icon-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   gap: 1.4rem;
+  height: 4rem;
 }
 
 .gcash-icon,
-.paypal-icon,
+.paypal-icon {
+  width: 4.8rem;
+  height: 3rem;
+}
+
 .landbank-icon {
   width: 4.8rem;
   height: 3.8rem;
