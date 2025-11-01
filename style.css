@@ -12,6 +12,7 @@ body {
   font-family: "Amatic SC", sans-serif;
   background: #0f0b1a;
   color: #fff;
+  color: #e6eef6;
   font-weight: 600;
 }
 
@@ -123,8 +124,12 @@ td {
   padding-bottom: 11rem;
 }
 
+.calculate-price {
+  padding-bottom: 16rem;
+}
+
 .calculate-price-header {
-  font-size: 3rem;
+  font-size: 3.4rem;
   margin-bottom: 3rem;
   text-align: center;
 }
@@ -133,7 +138,6 @@ td {
   display: flex;
   justify-content: center;
   gap: 6rem;
-  margin-bottom: 5rem;
 }
 
 .survivor-header-select,
@@ -265,6 +269,19 @@ option {
   height: 3.2rem;
   border-bottom: 2px solid #fff;
   margin-bottom: 2rem;
+}
+
+.other-services {
+  padding-bottom: 5rem;
+}
+
+.other-services-header {
+  text-align: center;
+  font-size: 2.6rem;
+}
+
+.services {
+  display: flex;
 }
 
 .payment-method-text {

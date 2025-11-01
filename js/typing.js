@@ -10,14 +10,12 @@ setTimeout(function typing() {
       span.textContent = introductionText[count];
       span.style.color = "#ff6b00";
       introduction.append(span);
-      // phoenix++;
       count++;
       if (introductionText[count] === ",") setTimeout(typing, 700);
       else setTimeout(typing, 80);
     } else {
       const span = `<span>${introductionText[count]}</span>`;
       introduction.innerHTML += span;
-      // phoenix++;
       count++;
       if (introductionText[count] === ",") setTimeout(typing, 700);
       else setTimeout(typing, 80);
