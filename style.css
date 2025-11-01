@@ -11,8 +11,7 @@
 body {
   font-family: "Amatic SC", sans-serif;
   background: #0f0b1a;
-  color: #fff;
-  color: #e6eef6;
+  color: #f2f8ff;
   font-weight: 600;
 }
 
@@ -282,6 +281,61 @@ option {
 
 .services {
   display: flex;
+}
+
+.three-games-rank,
+.one-hundred-dice {
+  width: 50%;
+}
+
+.essence-container {
+  position: relative;
+  height: 7.7rem;
+}
+
+.rank-essence {
+  position: absolute;
+  width: 4.7rem;
+  top: 50%;
+}
+
+.rank-essence.low-essence {
+  left: 50%;
+  transform: translate(-100%, -50%);
+}
+.rank-essence.mid-essence {
+  right: 50%;
+  transform: translate(100%, -50%);
+}
+
+.rank-essence.peak-essence {
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6rem;
+  z-index: 1;
+}
+
+.rank-essence-text {
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.dice-container {
+  position: relative;
+  height: 7.7rem;
+}
+
+.four-sided-dice {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 7rem;
+}
+
+.dice-text {
+  font-size: 1.6rem;
+  text-align: center;
 }
 
 .payment-method-text {
