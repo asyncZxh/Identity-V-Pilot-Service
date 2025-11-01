@@ -271,12 +271,13 @@ option {
 }
 
 .other-services {
-  padding-bottom: 5rem;
+  padding-bottom: 12rem;
 }
 
 .other-services-header {
   text-align: center;
-  font-size: 2.6rem;
+  font-size: 2.8rem;
+  margin-bottom: 3.7rem;
 }
 
 .services {
@@ -339,7 +340,7 @@ option {
 }
 
 .payment-method-text {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   text-align: center;
 }
 
@@ -363,8 +364,8 @@ option {
 }
 
 .footer {
-  padding-top: 4rem;
-  padding-bottom: 3rem;
+  padding-top: 5rem;
+  padding-bottom: 4rem;
 }
 
 .contact-text {
