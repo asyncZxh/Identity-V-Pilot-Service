@@ -170,10 +170,11 @@ td {
 }
 
 .select-from-container {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .select-to-container {
+  margin-top: 3rem;
   margin-bottom: 3rem;
 }
 
@@ -229,9 +230,10 @@ option {
 }
 
 .currency.convert {
-  width: 1.2rem;
+  width: 2rem;
   height: 1.2rem;
   border: 1px solid #808080;
+  opacity: 0;
 }
 
 .currency {
@@ -241,8 +243,28 @@ option {
 .currency-container {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 3px;
   align-items: center;
+  justify-content: flex-end;
+  margin-top: 0.8rem;
+}
+
+.convert-container {
+  position: relative;
+}
+
+.chevron-down {
+  position: absolute;
+  width: 1.4rem;
+  height: 0.9rem;
+  color: #000;
+  background-color: white;
+  border: 1px solid #808080;
+  border-radius: 5px;
+  padding: 0.1rem 0.3em;
+  left: 50%;
+  transform: translate(-50%, -3%);
+  z-index: -1;
 }
 
 .total-text {
@@ -271,7 +293,7 @@ option {
 }
 
 .other-services {
-  padding-bottom: 12rem;
+  padding-bottom: 17rem;
 }
 
 .other-services-header {
