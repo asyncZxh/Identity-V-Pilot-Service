@@ -283,6 +283,19 @@ option {
   margin-bottom: 1.4rem;
 }
 
+.contact-text::after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 3.7rem;
+  height: 3.7rem;
+  margin-left: 0.3rem;
+  background-image: url("早く-identity-v.gif");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .social-icon-container {
   display: flex;
   justify-content: center;
