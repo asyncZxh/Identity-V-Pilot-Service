@@ -131,7 +131,7 @@ td {
   display: flex;
   justify-content: center;
   gap: 6rem;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
 }
 
 .survivor-header-select,
@@ -262,13 +262,14 @@ option {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 1.4rem;
 }
 
 .gcash-icon,
-.paypal-icon {
+.paypal-icon,
+.landbank-icon {
   width: 4.8rem;
-  height: 4.8rem;
+  height: 3.8rem;
 }
 
 .footer {
