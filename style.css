@@ -203,18 +203,29 @@ option {
   font-weight: bolder;
 }
 
+.calculate-currency-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+}
+
 .total-button {
   font-family: "Amatic SC";
+  background-color: #fff;
   display: block;
-  margin: auto;
   font-size: 1.8rem;
   font-weight: bolder;
   width: fit-content;
   cursor: pointer;
-  margin-bottom: 1rem;
   padding: 0.3rem 1rem;
   border: none;
   border-radius: 8px;
+}
+
+.currency.convert {
+  width: 1.2rem;
+  height: 1.2rem;
 }
 
 .total-text {
