@@ -253,19 +253,20 @@ option {
   margin-bottom: 2rem;
 }
 
-.payment-method-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-}
-
 .payment-method-text {
   font-size: 1.4rem;
-  display: inline-block;
+  text-align: center;
 }
 
-.gcash-logo {
+.payment-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.gcash-icon,
+.paypal-icon {
   width: 4.8rem;
   height: 4.8rem;
 }
