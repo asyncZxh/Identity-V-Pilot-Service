@@ -31,27 +31,11 @@ const prices = [
   { tier: "tier 8", price: 100 },
 ];
 
-getTierFromSurvivor.addEventListener("change", () => {
+getTierFromSurvivor.addEventListener("change", () => {});
+
+function checkTier() {
   switch (getTierFromSurvivor.value) {
     case "tier-1":
-      if (getSubTierFromSurvivor.value === "3") {
-        const createElement = `<option value="2">2</option><option value="3">3</option>`;
-        getSubTierToSurvivor.innerHTML = createElement;
-      }
-      break;
-    case "tier-2":
-      break;
-    case "tier-3":
-      break;
-    case "tier-4":
-      break;
-    case "tier-5":
-      break;
-    case "tier-6":
-      break;
-    case "tier-7":
-      break;
-    case "peak-tier":
       break;
   }
-});
+}

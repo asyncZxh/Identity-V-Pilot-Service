@@ -104,16 +104,13 @@ body {
   font-size: 3rem;
   font-weight: bolder;
   text-transform: uppercase;
+  width: 50%;
+  height: 6rem;
   letter-spacing: 1.5px;
 }
 
 tr {
   height: 3.5rem;
-}
-
-th {
-  width: 50%;
-  height: 6rem;
 }
 
 td {
@@ -199,7 +196,7 @@ td {
 
 .tier-container,
 .sub-tier-container {
-  margin-bottom: 0.7rem;
+  margin-bottom: 1.7rem;
 }
 
 .arrow {
@@ -242,6 +239,7 @@ option {
 }
 
 .currency {
+  text-transform: uppercase;
   font-size: 1.4rem;
 }
 
@@ -376,7 +374,7 @@ option {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 1.4rem;
+  gap: 1.9rem;
   height: 3.7rem;
 }
 
