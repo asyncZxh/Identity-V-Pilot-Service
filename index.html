@@ -25,9 +25,9 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
-    <script src="/js/typing.js" defer></script>
-    <script src="/js/survivor.js" defer></script>
-    <script src="/js/hunter.js" defer></script>
+    <script src="/js/typing.js" type="module" defer></script>
+    <script src="/js/survivor.js" type="module" defer></script>
+    <script src="/js/hunter.js" type="module" defer></script>
     <title>Phoenix IDV</title>
   </head>
   <body>
@@ -448,6 +448,7 @@
                 <div class="tier-container">
                   <span class="tier">Tier</span>
                   <select class="select-from">
+                    <option hidden disabled selected value></option>
                     <option value="tier-1">Tier 1 - Bee</option>
                     <option value="tier-2">Tier 2 - Hound</option>
                     <option value="tier-3">Tier 3 - Elk</option>
@@ -455,13 +456,16 @@
                     <option value="tier-5">Tier 5 - Griffin</option>
                     <option value="tier-6">Tier 6 - Alicorn</option>
                     <option value="tier-7">Tier 7 - Champion</option>
-                    <option value="tier-8">Peak Tier - Titan(Hercules)</option>
+                    <option value="peak-tier">
+                      Peak Tier - Titan(Hercules)
+                    </option>
                   </select>
                 </div>
 
                 <div class="sub-tier-container">
                   <span class="sub-tier">Sub-tier</span>
                   <select class="select-from">
+                    <option hidden disabled selected value></option>
                     <option value="3">3</option>
                     <option value="2">2</option>
                     <option value="1">1</option>
@@ -471,6 +475,8 @@
                 <div class="star-container">
                   <span class="stars">Star</span>
                   <select class="select-from">
+                    <option hidden disabled selected value></option>
+                    <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -499,20 +505,24 @@
                 <div class="tier-container">
                   <span class="tier">Tier</span>
                   <select class="select-to">
-                    <option>Tier 1 - Bee</option>
-                    <option>Tier 2 - Hound</option>
-                    <option>Tier 3 - Elk</option>
-                    <option>Tier 4 - Mammoth</option>
-                    <option>Tier 5 - Griffin</option>
-                    <option>Tier 6 - Alicorn</option>
-                    <option>Tier 7 - Champion</option>
-                    <option>Peak Tier - Titan(Hercules)</option>
+                    <option hidden disabled selected value></option>
+                    <option value="tier-1">Tier 1 - Bee</option>
+                    <option value="tier-2">Tier 2 - Hound</option>
+                    <option value="tier-3">Tier 3 - Elk</option>
+                    <option value="tier-4">Tier 4 - Mammoth</option>
+                    <option value="tier-5">Tier 5 - Griffin</option>
+                    <option value="tier-6">Tier 6 - Alicorn</option>
+                    <option value="tier-7">Tier 7 - Champion</option>
+                    <option value="peak-tier">
+                      Peak Tier - Titan(Hercules)
+                    </option>
                   </select>
                 </div>
 
                 <div class="sub-tier-container">
                   <span class="sub-tier">Sub-tier</span>
                   <select class="select-to">
+                    <option hidden disabled selected value></option>
                     <option value="3">3</option>
                     <option value="2">2</option>
                     <option value="1">1</option>
@@ -522,6 +532,8 @@
                 <div class="star-container">
                   <span class="stars">Star</span>
                   <select class="select-to">
+                    <option hidden disabled selected value></option>
+                    <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -573,20 +585,22 @@
                 <div class="tier-container">
                   <span class="tier">Tier</span>
                   <select class="select-from">
-                    <option>Tier 1 - Spider</option>
-                    <option>Tier 2 - Cobra</option>
-                    <option>Tier 3 - Crocodile</option>
-                    <option>Tier 4 - Sabertooth</option>
-                    <option>Tier 5 - Manticore</option>
-                    <option>Tier 6 - Cyclops</option>
-                    <option>Tier 7 - Evil Dragon</option>
-                    <option>Peak Tier - Hydra</option>
+                    <option hidden disabled selected value></option>
+                    <option value="tier-1">Tier 1 - Spider</option>
+                    <option value="tier-2">Tier 2 - Cobra</option>
+                    <option value="tier-3">Tier 3 - Crocodile</option>
+                    <option value="tier-4">Tier 4 - Sabertooth</option>
+                    <option value="tier-5">Tier 5 - Manticore</option>
+                    <option value="tier-6">Tier 6 - Cyclops</option>
+                    <option value="tier-7">Tier 7 - Evil Dragon</option>
+                    <option value="peak-tier">Peak Tier - Hydra</option>
                   </select>
                 </div>
 
                 <div class="sub-tier-container">
                   <span class="sub-tier">Sub-tier</span>
                   <select class="select-from">
+                    <option hidden disabled selected value></option>
                     <option value="3">3</option>
                     <option value="2">2</option>
                     <option value="1">1</option>
@@ -596,6 +610,8 @@
                 <div class="star-container">
                   <span class="stars">Star</span>
                   <select class="select-from">
+                    <option hidden disabled selected value></option>
+                    <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -624,20 +640,22 @@
                 <div class="tier-container">
                   <span class="tier">Tier</span>
                   <select class="select-to">
-                    <option>Tier 1 - Spider</option>
-                    <option>Tier 2 - Cobra</option>
-                    <option>Tier 3 - Crocodile</option>
-                    <option>Tier 4 - Sabertooth</option>
-                    <option>Tier 5 - Manticore</option>
-                    <option>Tier 6 - Cyclops</option>
-                    <option>Tier 7 - Evil Dragon</option>
-                    <option>Peak Tier - Hydra</option>
+                    <option hidden disabled selected value></option>
+                    <option value="tier-1">Tier 1 - Spider</option>
+                    <option value="tier-2">Tier 2 - Cobra</option>
+                    <option value="tier-3">Tier 3 - Crocodile</option>
+                    <option value="tier-4">Tier 4 - Sabertooth</option>
+                    <option value="tier-5">Tier 5 - Manticore</option>
+                    <option value="tier-6">Tier 6 - Cyclops</option>
+                    <option value="tier-7">Tier 7 - Evil Dragon</option>
+                    <option value="peak-tier">Peak Tier - Hydra</option>
                   </select>
                 </div>
 
                 <div class="sub-tier-container">
                   <span class="sub-tier">Sub-tier</span>
                   <select class="select-to">
+                    <option hidden disabled selected value></option>
                     <option value="3">3</option>
                     <option value="2">2</option>
                     <option value="1">1</option>
@@ -647,6 +665,8 @@
                 <div class="star-container">
                   <span class="stars">Star</span>
                   <select class="select-to">
+                    <option hidden disabled selected value></option>
+                    <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
