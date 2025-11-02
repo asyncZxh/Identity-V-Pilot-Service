@@ -17,3 +17,17 @@ const getSubTierToHunter = window.document.querySelector(
 const getStarsToHunter = window.document.querySelector(
   ".select-hunter .star-container .select-to"
 );
+const buttonCalculate = window.document.querySelector(
+  ".select-hunter .calculate-currency-container .total-button"
+);
+
+const prices = [
+  { tier: "tier 1", price: 10 },
+  { tier: "tier 2", price: 20 },
+  { tier: "tier 3", price: 30 },
+  { tier: "tier 4", price: 40 },
+  { tier: "tier 5", price: 60 },
+  { tier: "tier 6", price: 75 },
+  { tier: "tier 7", price: 85 },
+  { tier: "tier 8", price: 100 },
+];
