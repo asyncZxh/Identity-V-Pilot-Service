@@ -46,23 +46,90 @@ getTierFromSurvivor.addEventListener("change", () => {
 
 function checkTier() {
   switch (getTierFromSurvivor.value) {
-    case "tier-2":
-      getTierToSurvivor.innerHTML = "";
-      let elements = "<option hidden disabled selected value>&mdash;</option>";
-      for (let i = 2; i <= 8; i++) {
-        if (i == 8) {
-          const createElement = `<option value="peak-tier">Peak Tier - ${
-            ranks[ranks.length - 1]
-          }}</option>`;
-          elements += createElement;
-        } else {
-          const createElement = `<option value="tier-${i}">Tier ${i} - ${
-            ranks[i - 1]
-          }</option>`;
-          elements += createElement;
-        }
-      }
-      getTierToSurvivor.innerHTML = elements;
+    case "tier-1":
+      reCreateFromElementsForTier(1);
+      reCreateFromElementsForSubTier(1, 3);
       break;
+    case "tier-2":
+      reCreateFromElementsForTier(2);
+      reCreateFromElementsForSubTier(2, 4);
+      break;
+    case "tier-3":
+      reCreateFromElementsForTier(3);
+      reCreateFromElementsForSubTier(3, 5);
+      break;
+    case "tier-4":
+      reCreateFromElementsForTier(4);
+      reCreateFromElementsForSubTier(4, 5);
+      break;
+    case "tier-5":
+      reCreateFromElementsForTier(5);
+      reCreateFromElementsForSubTier(5, 5);
+      break;
+    case "tier-6":
+      reCreateFromElementsForTier(6);
+      reCreateFromElementsForSubTier(6, 5);
+      break;
+    case "tier-7":
+      reCreateFromElementsForTier(7);
+      break;
+    case "peak-tier":
+      reCreateFromElementsForTier(8);
+      break;
+  }
+}
+
+function reCreateFromElementsForTier(tier) {
+  getTierToSurvivor.innerHTML = "";
+  let elements;
+  let hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
+  elements += hiddenValue;
+  for (tier; tier <= 8; tier++) {
+    if (tier === 8) {
+      const createElement = `<option value="peak-tier">Peak Tier - ${
+        ranks[ranks.length - 1]
+      }</option>`;
+      elements += createElement;
+    } else {
+      const createElement = `<option value="tier-${tier}">Tier ${tier} - ${
+        ranks[tier - 1]
+      }</option>`;
+      elements += createElement;
+    }
+  }
+  getTierToSurvivor.innerHTML = elements;
+}
+
+function reCreateFromElementsForSubTier(tier, subTier) {
+  if (tier === 1) {
+    getSubTierFromSurvivor.innerHTML = "";
+    let elements;
+    let hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
+    elements += hiddenValue;
+    for (subTier; subTier >= 1; subTier--) {
+      const createElement = `<option value="${subTier}">${subTier}</option>`;
+      elements += createElement;
+    }
+    getSubTierFromSurvivor.innerHTML = elements;
+  } else if (tier === 2) {
+    getSubTierFromSurvivor.innerHTML = "";
+    let elements;
+    let hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
+    elements += hiddenValue;
+    for (subTier; subTier >= 1; subTier--) {
+      const createElement = `<option value="${subTier}">${subTier}</option>`;
+      elements += createElement;
+    }
+    getSubTierFromSurvivor.innerHTML = elements;
+  } else {
+    getSubTierFromSurvivor.innerHTML = "";
+    let elements;
+    let hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
+    elements += hiddenValue;
+    for (subTier; subTier >= 1; subTier--) {
+      const createElement = `<option value="${subTier}">${subTier}</option>`;
+      elements += createElement;
+    }
+    getSubTierFromSurvivor.innerHTML = elements;
   }
 }
