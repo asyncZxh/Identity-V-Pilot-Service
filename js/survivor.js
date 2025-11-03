@@ -77,6 +77,7 @@ function checkTier() {
       reCreateFromElementsForStar(4);
       break;
     case "tier-7":
+      reCreateFromElementsForTier(7);
       reCreateFromElementsForSubTier("champion");
       reCreateFromElementsForStar(24);
       break;
@@ -163,6 +164,7 @@ function reCreateFromElementsForStar(star) {
   createInputElement.setAttribute("min", "25");
   createInputElement.value = "25";
   createInputElement.placeholder = "enter star";
+  createInputElement.style.height = "2.86rem";
   createInputElement.classList.add("select-from");
   window.document
     .querySelector(".star-container .select-from")
