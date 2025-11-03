@@ -162,6 +162,7 @@ td {
   font-weight: bolder;
   padding: 3px 10px;
   background-color: #efefef;
+  border: 1px solid #9a9a9a;
   border-radius: 4px;
 }
 

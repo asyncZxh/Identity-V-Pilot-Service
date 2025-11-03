@@ -48,36 +48,37 @@ function checkTier() {
   switch (getTierFromSurvivor.value) {
     case "tier-1":
       reCreateFromElementsForTier(1);
-      reCreateFromElementsForSubTier(1, 3);
-      reCreateFromElementsForStar(1, 3);
+      reCreateFromElementsForSubTier(3);
+      reCreateFromElementsForStar(2);
       break;
     case "tier-2":
       reCreateFromElementsForTier(2);
-      reCreateFromElementsForSubTier(2, 4);
-      reCreateFromElementsForStar(2, 4);
+      reCreateFromElementsForSubTier(4);
+      reCreateFromElementsForStar(4);
       break;
     case "tier-3":
       reCreateFromElementsForTier(3);
       reCreateFromElementsForSubTier(5);
-      reCreateFromElementsForStar(3, 5);
+      reCreateFromElementsForStar(4);
       break;
     case "tier-4":
       reCreateFromElementsForTier(4);
       reCreateFromElementsForSubTier(5);
-      reCreateFromElementsForStar(4, 5);
+      reCreateFromElementsForStar(4);
       break;
     case "tier-5":
       reCreateFromElementsForTier(5);
       reCreateFromElementsForSubTier(5);
-      reCreateFromElementsForStar(5, 5);
+      reCreateFromElementsForStar(4);
       break;
     case "tier-6":
       reCreateFromElementsForTier(6);
       reCreateFromElementsForSubTier(5);
-      reCreateFromElementsForStar(6, 5);
+      reCreateFromElementsForStar(4);
       break;
     case "tier-7":
       reCreateFromElementsForSubTier("champion");
+      reCreateFromElementsForStar(24);
       break;
     case "peak-tier":
       reCreateFromElementsForTier(8);
@@ -131,8 +132,8 @@ function reCreateFromElementsForSubTier(subTier) {
   }
 }
 
-function reCreateFromElementsForStar(tier, star) {
-  if (tier !== "peak") {
+function reCreateFromElementsForStar(star) {
+  if (star !== "peak") {
     const getStar = () => {
       getStarsFromSurvivor.innerHTML = "";
       let elements;
@@ -140,7 +141,7 @@ function reCreateFromElementsForStar(tier, star) {
         "<option hidden disabled selected value>&mdash;</option>";
       elements += hiddenValue;
 
-      for (let i = 0; i < star; i++) {
+      for (let i = 0; i <= star; i++) {
         const createElement = `<option value="${i}">${i}</option>`;
         elements += createElement;
       }
@@ -158,6 +159,10 @@ function reCreateFromElementsForStar(tier, star) {
   }
   const createInputElement = window.document.createElement("input");
   createInputElement.setAttribute("id", "survivor-from-sub-tier");
+  createInputElement.setAttribute("type", "number");
+  createInputElement.setAttribute("min", "25");
+  createInputElement.value = "25";
+  createInputElement.placeholder = "enter star";
   createInputElement.classList.add("select-from");
   window.document
     .querySelector(".star-container .select-from")
