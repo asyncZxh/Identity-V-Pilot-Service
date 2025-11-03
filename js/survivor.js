@@ -47,62 +47,62 @@ getTierFromSurvivor.addEventListener("change", () => {
 function checkTier() {
   switch (getTierFromSurvivor.value) {
     case "tier-1":
-      reCreateFromElementsForTier(1);
-      reCreateFromElementsForSubTier(3);
-      reCreateFromElementsForStar(2);
+      updateTierOptions(1);
+      updateSubTierOptions(3);
+      updateStarOptions(2);
       break;
     case "tier-2":
-      reCreateFromElementsForTier(2);
-      reCreateFromElementsForSubTier(4);
-      reCreateFromElementsForStar(4);
+      updateTierOptions(2);
+      updateSubTierOptions(4);
+      updateStarOptions(3);
       break;
     case "tier-3":
-      reCreateFromElementsForTier(3);
-      reCreateFromElementsForSubTier(5);
-      reCreateFromElementsForStar(4);
+      updateTierOptions(3);
+      updateSubTierOptions(5);
+      updateStarOptions(4);
       break;
     case "tier-4":
-      reCreateFromElementsForTier(4);
-      reCreateFromElementsForSubTier(5);
-      reCreateFromElementsForStar(4);
+      updateTierOptions(4);
+      updateSubTierOptions(5);
+      updateStarOptions(4);
       break;
     case "tier-5":
-      reCreateFromElementsForTier(5);
-      reCreateFromElementsForSubTier(5);
-      reCreateFromElementsForStar(4);
+      updateTierOptions(5);
+      updateSubTierOptions(5);
+      updateStarOptions(4);
       break;
     case "tier-6":
-      reCreateFromElementsForTier(6);
-      reCreateFromElementsForSubTier(5);
-      reCreateFromElementsForStar(4);
+      updateTierOptions(6);
+      updateSubTierOptions(5);
+      updateStarOptions(4);
       break;
     case "tier-7":
-      reCreateFromElementsForTier(7);
-      reCreateFromElementsForSubTier("champion");
-      reCreateFromElementsForStar(24);
+      updateTierOptions(7);
+      updateSubTierOptions("champion");
+      updateStarOptions(24);
       break;
     case "peak-tier":
-      reCreateFromElementsForTier(8);
-      reCreateFromElementsForSubTier("peak");
-      reCreateFromElementsForStar("peak");
+      updateTierOptions(8);
+      updateSubTierOptions("peak");
+      updateStarOptions("peak");
       break;
   }
 }
 
-function reCreateFromElementsForTier(tier) {
+function updateTierOptions(tier) {
   getTierToSurvivor.innerHTML = "";
-  let elements;
+  let elements = "";
   let hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
   elements += hiddenValue;
-  for (tier; tier <= 8; tier++) {
-    if (tier === 8) {
+  for (let i = tier; i <= 8; i++) {
+    if (i === 8) {
       const createElement = `<option value="peak-tier">Peak Tier - ${
         ranks[ranks.length - 1]
       }</option>`;
       elements += createElement;
     } else {
-      const createElement = `<option value="tier-${tier}">Tier ${tier} - ${
-        ranks[tier - 1]
+      const createElement = `<option value="tier-${i}">Tier ${i} - ${
+        ranks[i - 1]
       }</option>`;
       elements += createElement;
     }
@@ -110,19 +110,20 @@ function reCreateFromElementsForTier(tier) {
   getTierToSurvivor.innerHTML = elements;
 }
 
-function reCreateFromElementsForSubTier(subTier) {
+function updateSubTierOptions(subTier) {
   if (subTier === "champion" || subTier === "peak") {
     getSubTierFromSurvivor.setAttribute("disabled", "true");
     getSubTierFromSurvivor.style.cursor = "not-allowed";
+    getSubTierFromSurvivor.value = "";
   } else {
     const getSubTier = () => {
       getSubTierFromSurvivor.innerHTML = "";
-      let elements;
+      let elements = "";
       let hiddenValue =
         "<option hidden disabled selected value>&mdash;</option>";
       elements += hiddenValue;
-      for (subTier; subTier >= 1; subTier--) {
-        const createElement = `<option value="${subTier}">${subTier}</option>`;
+      for (let i = subTier; i >= 1; i--) {
+        const createElement = `<option value="${i}">${i}</option>`;
         elements += createElement;
       }
       getSubTierFromSurvivor.innerHTML = elements;
@@ -133,11 +134,11 @@ function reCreateFromElementsForSubTier(subTier) {
   }
 }
 
-function reCreateFromElementsForStar(star) {
+function updateStarOptions(star) {
   if (star !== "peak") {
     const getStar = () => {
       getStarsFromSurvivor.innerHTML = "";
-      let elements;
+      let elements = "";
       let hiddenValue =
         "<option hidden disabled selected value>&mdash;</option>";
       elements += hiddenValue;
