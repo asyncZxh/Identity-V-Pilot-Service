@@ -154,7 +154,8 @@ td {
   color: #ff0000;
 }
 
-.select-faction select {
+.select-faction select,
+.select-faction input {
   font-family: "Amatic SC";
   width: 10.5rem;
   font-size: 1.6rem;
