@@ -21,4 +21,4 @@ setTimeout(function typing() {
       else setTimeout(typing, 80);
     }
   }
-}, 80);
+}, 300);
