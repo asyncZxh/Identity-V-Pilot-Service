@@ -49,8 +49,11 @@ getSubTierFromSurvivor.addEventListener("change", () => {
 getStarsFromSurvivor.addEventListener("change", () => {
   checkStars();
 });
-
-// getTierToSurvivor.addEventListener("change", () => {});
+getTierToSurvivor.addEventListener("change", () => {
+  checkSubTierTo();
+});
+getSubTierToSurvivor.addEventListener("change", () => {});
+getStarsToSurvivor.addEventListener("change", () => {});
 
 function checkTier() {
   switch (getTierFromSurvivor.value) {
@@ -289,5 +292,10 @@ function checkStars() {
   } else if (getTierFromSurvivor.value === "7") {
     switch (getStarsFromSurvivor.value) {
     }
+  }
+}
+
+function checkSubTierTo() {
+  if (getSubTierToSurvivor.value) {
   }
 }
