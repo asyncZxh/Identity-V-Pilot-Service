@@ -16,7 +16,7 @@ const getSubTierToSurvivor = window.document.querySelector(
 const getStarsToSurvivor = window.document.querySelector(
   ".select-survivor .star-container .select-to"
 );
-const buttonCalculate = window.document.querySelector(
+const buttonCalculateSurvivor = window.document.querySelector(
   ".select-survivor .calculate-currency-container .total-button"
 );
 const ranks = [
@@ -116,20 +116,40 @@ function updateSubTierOptions(subTier) {
     getSubTierFromSurvivor.setAttribute("disabled", "true");
     getSubTierFromSurvivor.style.cursor = "not-allowed";
     getSubTierFromSurvivor.value = "";
+
+    getSubTierToSurvivor.setAttribute("disabled", "true");
+    getSubTierToSurvivor.style.cursor = "not-allowed";
+    getSubTierToSurvivor.value = "";
   } else {
     const getSubTier = () => {
-      getSubTierFromSurvivor.innerHTML = "";
-      let elements = "";
-      let hiddenValue =
-        "<option hidden disabled selected value>&mdash;</option>";
-      elements += hiddenValue;
-      for (let i = subTier; i >= 1; i--) {
-        const createElement = `<option value="${i}">${i}</option>`;
-        elements += createElement;
+      {
+        getSubTierFromSurvivor.innerHTML = "";
+        let elements = "";
+        let hiddenValue =
+          "<option hidden disabled selected value>&mdash;</option>";
+        elements += hiddenValue;
+        for (let i = subTier; i >= 1; i--) {
+          const createElement = `<option value="${i}">${i}</option>`;
+          elements += createElement;
+        }
+        getSubTierFromSurvivor.innerHTML = elements;
+        getSubTierFromSurvivor.removeAttribute("disabled");
+        getSubTierFromSurvivor.style.cursor = "auto";
       }
-      getSubTierFromSurvivor.innerHTML = elements;
-      getSubTierFromSurvivor.removeAttribute("disabled");
-      getSubTierFromSurvivor.style.cursor = "auto";
+      {
+        getSubTierToSurvivor.innerHTML = "";
+        let elements = "";
+        let hiddenValue =
+          "<option hidden disabled selected value>&mdash;</option>";
+        elements += hiddenValue;
+        for (let i = subTier; i >= 1; i--) {
+          const createElement = `<option value="${i}">${i}</option>`;
+          elements += createElement;
+        }
+        getSubTierToSurvivor.innerHTML = elements;
+        getSubTierToSurvivor.removeAttribute("disabled");
+        getSubTierToSurvivor.style.cursor = "auto";
+      }
     };
     getSubTier();
   }
@@ -138,39 +158,72 @@ function updateSubTierOptions(subTier) {
 function updateStarOptions(star) {
   if (star !== "peak") {
     const getStar = () => {
-      getStarsFromSurvivor.innerHTML = "";
-      let elements = "";
-      let hiddenValue =
-        "<option hidden disabled selected value>&mdash;</option>";
-      elements += hiddenValue;
+      {
+        getStarsFromSurvivor.innerHTML = "";
+        let elements = "";
+        let hiddenValue =
+          "<option hidden disabled selected value>&mdash;</option>";
+        elements += hiddenValue;
 
-      for (let i = 0; i <= star; i++) {
-        const createElement = `<option value="${i}">${i}</option>`;
-        elements += createElement;
+        for (let i = 0; i <= star; i++) {
+          const createElement = `<option value="${i}">${i}</option>`;
+          elements += createElement;
+        }
+
+        const createSelectElement = window.document.createElement("select");
+        createSelectElement.setAttribute("id", "survivor-from-star");
+        createSelectElement.classList.add("select-from");
+        createSelectElement.innerHTML = elements;
+        window.document
+          .querySelector(".star-container .select-from")
+          .replaceWith(createSelectElement);
       }
+      {
+        getStarsToSurvivor.innerHTML = "";
+        let elements = "";
+        let hiddenValue =
+          "<option hidden disabled selected value>&mdash;</option>";
+        elements += hiddenValue;
 
-      const createSelectElement = window.document.createElement("select");
-      createSelectElement.setAttribute("id", "survivor-from-star");
-      createSelectElement.classList.add("select-from");
-      createSelectElement.innerHTML = elements;
-      window.document
-        .querySelector(".star-container .select-from")
-        .replaceWith(createSelectElement);
+        for (let i = 0; i <= star; i++) {
+          const createElement = `<option value="${i}">${i}</option>`;
+          elements += createElement;
+        }
+
+        const createSelectElement = window.document.createElement("select");
+        createSelectElement.setAttribute("id", "survivor-to-star");
+        createSelectElement.classList.add("select-to");
+        createSelectElement.innerHTML = elements;
+        window.document
+          .querySelector(".star-container .select-to")
+          .replaceWith(createSelectElement);
+      }
     };
     getStar();
     return;
   }
-  const createInputElement = window.document.createElement("input");
-  createInputElement.setAttribute("id", "survivor-from-sub-tier");
-  createInputElement.setAttribute("type", "number");
-  createInputElement.setAttribute("min", "25");
-  createInputElement.value = "25";
-  createInputElement.placeholder = "enter star";
-  createInputElement.classList.add("select-from");
-  createInputElement.classList.add("input-helper");
-  window.document
-    .querySelector(".star-container .select-from")
-    .replaceWith(createInputElement);
+  {
+    const createInputElement = window.document.createElement("input");
+    createInputElement.setAttribute("id", "survivor-from-sub-tier");
+    createInputElement.setAttribute("type", "number");
+    createInputElement.setAttribute("min", "25");
+    createInputElement.value = "25";
+    createInputElement.placeholder = "enter star";
+    createInputElement.classList.add("select-from");
+    window.document
+      .querySelector(".star-container .select-from")
+      .replaceWith(createInputElement);
+  }
+  {
+    const createInputElement = window.document.createElement("input");
+    createInputElement.setAttribute("id", "survivor-to-sub-tier");
+    createInputElement.setAttribute("type", "number");
+    createInputElement.setAttribute("min", "26");
+    createInputElement.value = "26";
+    createInputElement.placeholder = "enter star";
+    createInputElement.classList.add("select-to");
+    window.document
+      .querySelector(".star-container .select-to")
+      .replaceWith(createInputElement);
+  }
 }
-
-buttonCalculate.addEventListener("click", () => {});
