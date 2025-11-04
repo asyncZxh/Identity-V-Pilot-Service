@@ -48,49 +48,49 @@ getSubTierFromSurvivor.addEventListener("change", () => {});
 function checkTier() {
   switch (getTierFromSurvivor.value) {
     case "tier-1":
-      updateTierOptionsFrom(1);
-      updateSubTierOptionsFrom(3);
-      updateStarOptionsFrom(2);
+      updateTierOptions(1);
+      updateSubTierOptions(3);
+      updateStarOptions(2);
       break;
     case "tier-2":
-      updateTierOptionsFrom(2);
-      updateSubTierOptionsFrom(4);
-      updateStarOptionsFrom(3);
+      updateTierOptions(2);
+      updateSubTierOptions(4);
+      updateStarOptions(3);
       break;
     case "tier-3":
-      updateTierOptionsFrom(3);
-      updateSubTierOptionsFrom(5);
-      updateStarOptionsFrom(4);
+      updateTierOptions(3);
+      updateSubTierOptions(5);
+      updateStarOptions(4);
       break;
     case "tier-4":
-      updateTierOptionsFrom(4);
-      updateSubTierOptionsFrom(5);
-      updateStarOptionsFrom(4);
+      updateTierOptions(4);
+      updateSubTierOptions(5);
+      updateStarOptions(4);
       break;
     case "tier-5":
-      updateTierOptionsFrom(5);
-      updateSubTierOptionsFrom(5);
-      updateStarOptionsFrom(4);
+      updateTierOptions(5);
+      updateSubTierOptions(5);
+      updateStarOptions(4);
       break;
     case "tier-6":
-      updateTierOptionsFrom(6);
-      updateSubTierOptionsFrom(5);
-      updateStarOptionsFrom(4);
+      updateTierOptions(6);
+      updateSubTierOptions(5);
+      updateStarOptions(4);
       break;
     case "tier-7":
-      updateTierOptionsFrom(7);
-      updateSubTierOptionsFrom("champion");
-      updateStarOptionsFrom(24);
+      updateTierOptions(7);
+      updateSubTierOptions("champion");
+      updateStarOptions(24);
       break;
     case "peak-tier":
-      updateTierOptionsFrom(8);
-      updateSubTierOptionsFrom("peak");
-      updateStarOptionsFrom("peak");
+      updateTierOptions(8);
+      updateSubTierOptions("peak");
+      updateStarOptions("peak");
       break;
   }
 }
 
-function updateTierOptionsFrom(tier) {
+function updateTierOptions(tier) {
   getTierToSurvivor.innerHTML = "";
   let elements = "";
   let hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
@@ -111,7 +111,7 @@ function updateTierOptionsFrom(tier) {
   getTierToSurvivor.innerHTML = elements;
 }
 
-function updateSubTierOptionsFrom(subTier) {
+function updateSubTierOptions(subTier) {
   if (subTier === "champion" || subTier === "peak") {
     getSubTierFromSurvivor.setAttribute("disabled", "true");
     getSubTierFromSurvivor.style.cursor = "not-allowed";
@@ -135,7 +135,7 @@ function updateSubTierOptionsFrom(subTier) {
   }
 }
 
-function updateStarOptionsFrom(star) {
+function updateStarOptions(star) {
   if (star !== "peak") {
     const getStar = () => {
       getStarsFromSurvivor.innerHTML = "";
