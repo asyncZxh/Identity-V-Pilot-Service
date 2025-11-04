@@ -43,53 +43,54 @@ const prices = [
 getTierFromSurvivor.addEventListener("change", () => {
   checkTier();
 });
+getSubTierFromSurvivor.addEventListener("change", () => {});
 
 function checkTier() {
   switch (getTierFromSurvivor.value) {
     case "tier-1":
-      updateTierOptions(1);
-      updateSubTierOptions(3);
-      updateStarOptions(2);
+      updateTierOptionsFrom(1);
+      updateSubTierOptionsFrom(3);
+      updateStarOptionsFrom(2);
       break;
     case "tier-2":
-      updateTierOptions(2);
-      updateSubTierOptions(4);
-      updateStarOptions(3);
+      updateTierOptionsFrom(2);
+      updateSubTierOptionsFrom(4);
+      updateStarOptionsFrom(3);
       break;
     case "tier-3":
-      updateTierOptions(3);
-      updateSubTierOptions(5);
-      updateStarOptions(4);
+      updateTierOptionsFrom(3);
+      updateSubTierOptionsFrom(5);
+      updateStarOptionsFrom(4);
       break;
     case "tier-4":
-      updateTierOptions(4);
-      updateSubTierOptions(5);
-      updateStarOptions(4);
+      updateTierOptionsFrom(4);
+      updateSubTierOptionsFrom(5);
+      updateStarOptionsFrom(4);
       break;
     case "tier-5":
-      updateTierOptions(5);
-      updateSubTierOptions(5);
-      updateStarOptions(4);
+      updateTierOptionsFrom(5);
+      updateSubTierOptionsFrom(5);
+      updateStarOptionsFrom(4);
       break;
     case "tier-6":
-      updateTierOptions(6);
-      updateSubTierOptions(5);
-      updateStarOptions(4);
+      updateTierOptionsFrom(6);
+      updateSubTierOptionsFrom(5);
+      updateStarOptionsFrom(4);
       break;
     case "tier-7":
-      updateTierOptions(7);
-      updateSubTierOptions("champion");
-      updateStarOptions(24);
+      updateTierOptionsFrom(7);
+      updateSubTierOptionsFrom("champion");
+      updateStarOptionsFrom(24);
       break;
     case "peak-tier":
-      updateTierOptions(8);
-      updateSubTierOptions("peak");
-      updateStarOptions("peak");
+      updateTierOptionsFrom(8);
+      updateSubTierOptionsFrom("peak");
+      updateStarOptionsFrom("peak");
       break;
   }
 }
 
-function updateTierOptions(tier) {
+function updateTierOptionsFrom(tier) {
   getTierToSurvivor.innerHTML = "";
   let elements = "";
   let hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
@@ -110,7 +111,7 @@ function updateTierOptions(tier) {
   getTierToSurvivor.innerHTML = elements;
 }
 
-function updateSubTierOptions(subTier) {
+function updateSubTierOptionsFrom(subTier) {
   if (subTier === "champion" || subTier === "peak") {
     getSubTierFromSurvivor.setAttribute("disabled", "true");
     getSubTierFromSurvivor.style.cursor = "not-allowed";
@@ -134,7 +135,7 @@ function updateSubTierOptions(subTier) {
   }
 }
 
-function updateStarOptions(star) {
+function updateStarOptionsFrom(star) {
   if (star !== "peak") {
     const getStar = () => {
       getStarsFromSurvivor.innerHTML = "";
@@ -165,9 +166,11 @@ function updateStarOptions(star) {
   createInputElement.setAttribute("min", "25");
   createInputElement.value = "25";
   createInputElement.placeholder = "enter star";
-  createInputElement.style.height = "2.86rem";
   createInputElement.classList.add("select-from");
+  createInputElement.classList.add("input-helper");
   window.document
     .querySelector(".star-container .select-from")
     .replaceWith(createInputElement);
 }
+
+buttonCalculate.addEventListener("click", () => {});
