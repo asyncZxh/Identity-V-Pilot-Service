@@ -296,6 +296,26 @@ function checkStars() {
 }
 
 function checkSubTierTo() {
-  if (getSubTierToSurvivor.value) {
+  // switch (getTierToSurvivor.value) {
+  //   case "tier-1":
+  //     updateSubTierOptionsTo(1);
+  //     break;
+  //   case "tier-2":
+  //     break;
+  //   case "tier-3":
+  //     break;
+  //   case "tier-4":
+  //     break;
+  //   case "tier-5":
+  //     break;
+  //   case "tier-6":
+  //     break;
+  //   case "tier-7":
+  //     break;
+  //   case "peak-tier":
+  //     break;
+  // }
+  if (getTierFromSurvivor.value === getTierToSurvivor.value) {
+  } else {
   }
 }
