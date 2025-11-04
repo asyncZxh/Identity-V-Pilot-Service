@@ -43,7 +43,14 @@ const prices = [
 getTierFromSurvivor.addEventListener("change", () => {
   checkTier();
 });
-getSubTierFromSurvivor.addEventListener("change", () => {});
+getSubTierFromSurvivor.addEventListener("change", () => {
+  checkSubTier();
+});
+getStarsFromSurvivor.addEventListener("change", () => {
+  checkStars();
+});
+
+// getTierToSurvivor.addEventListener("change", () => {});
 
 function checkTier() {
   switch (getTierFromSurvivor.value) {
@@ -97,15 +104,15 @@ function updateTierOptions(tier) {
   elements += hiddenValue;
   for (let i = tier; i <= 8; i++) {
     if (i === 8) {
-      const createElement = `<option value="peak-tier">Peak Tier - ${
+      const createOptionElement = `<option value="peak-tier">Peak Tier - ${
         ranks[ranks.length - 1]
       }</option>`;
-      elements += createElement;
+      elements += createOptionElement;
     } else {
-      const createElement = `<option value="tier-${i}">Tier ${i} - ${
+      const createOptionElement = `<option value="tier-${i}">Tier ${i} - ${
         ranks[i - 1]
       }</option>`;
-      elements += createElement;
+      elements += createOptionElement;
     }
   }
   getTierToSurvivor.innerHTML = elements;
@@ -129,8 +136,8 @@ function updateSubTierOptions(subTier) {
           "<option hidden disabled selected value>&mdash;</option>";
         elements += hiddenValue;
         for (let i = subTier; i >= 1; i--) {
-          const createElement = `<option value="${i}">${i}</option>`;
-          elements += createElement;
+          const createOptionElement = `<option value="${i}">${i}</option>`;
+          elements += createOptionElement;
         }
         getSubTierFromSurvivor.innerHTML = elements;
         getSubTierFromSurvivor.removeAttribute("disabled");
@@ -143,8 +150,8 @@ function updateSubTierOptions(subTier) {
           "<option hidden disabled selected value>&mdash;</option>";
         elements += hiddenValue;
         for (let i = subTier; i >= 1; i--) {
-          const createElement = `<option value="${i}">${i}</option>`;
-          elements += createElement;
+          const createOptionElement = `<option value="${i}">${i}</option>`;
+          elements += createOptionElement;
         }
         getSubTierToSurvivor.innerHTML = elements;
         getSubTierToSurvivor.removeAttribute("disabled");
@@ -166,8 +173,8 @@ function updateStarOptions(star) {
         elements += hiddenValue;
 
         for (let i = 0; i <= star; i++) {
-          const createElement = `<option value="${i}">${i}</option>`;
-          elements += createElement;
+          const createOptionElement = `<option value="${i}">${i}</option>`;
+          elements += createOptionElement;
         }
 
         const createSelectElement = window.document.createElement("select");
@@ -186,8 +193,8 @@ function updateStarOptions(star) {
         elements += hiddenValue;
 
         for (let i = 0; i <= star; i++) {
-          const createElement = `<option value="${i}">${i}</option>`;
-          elements += createElement;
+          const createOptionElement = `<option value="${i}">${i}</option>`;
+          elements += createOptionElement;
         }
 
         const createSelectElement = window.document.createElement("select");
@@ -200,30 +207,87 @@ function updateStarOptions(star) {
       }
     };
     getStar();
-    return;
+  } else {
+    {
+      const createInputElement = window.document.createElement("input");
+      createInputElement.setAttribute("id", "survivor-from-sub-tier");
+      createInputElement.setAttribute("type", "number");
+      createInputElement.setAttribute("min", "25");
+      createInputElement.value = "25";
+      createInputElement.placeholder = "enter star";
+      createInputElement.classList.add("select-from");
+      window.document
+        .querySelector(".star-container .select-from")
+        .replaceWith(createInputElement);
+    }
+    {
+      const createInputElement = window.document.createElement("input");
+      createInputElement.setAttribute("id", "survivor-to-sub-tier");
+      createInputElement.setAttribute("type", "number");
+      createInputElement.setAttribute("min", "26");
+      createInputElement.value = "26";
+      createInputElement.placeholder = "enter star";
+      createInputElement.classList.add("select-to");
+      window.document
+        .querySelector(".star-container .select-to")
+        .replaceWith(createInputElement);
+    }
   }
-  {
-    const createInputElement = window.document.createElement("input");
-    createInputElement.setAttribute("id", "survivor-from-sub-tier");
-    createInputElement.setAttribute("type", "number");
-    createInputElement.setAttribute("min", "25");
-    createInputElement.value = "25";
-    createInputElement.placeholder = "enter star";
-    createInputElement.classList.add("select-from");
-    window.document
-      .querySelector(".star-container .select-from")
-      .replaceWith(createInputElement);
+}
+
+function checkSubTier() {
+  switch (getSubTierFromSurvivor.value) {
+    case "5":
+      updateSubTierOptionsTo(5);
+      break;
+    case "4":
+      updateSubTierOptionsTo(4);
+      break;
+    case "3":
+      updateSubTierOptionsTo(3);
+      break;
+    case "2":
+      updateSubTierOptionsTo(2);
+      break;
+    case "1":
+      updateSubTierOptionsTo(1);
+      break;
   }
-  {
-    const createInputElement = window.document.createElement("input");
-    createInputElement.setAttribute("id", "survivor-to-sub-tier");
-    createInputElement.setAttribute("type", "number");
-    createInputElement.setAttribute("min", "26");
-    createInputElement.value = "26";
-    createInputElement.placeholder = "enter star";
-    createInputElement.classList.add("select-to");
-    window.document
-      .querySelector(".star-container .select-to")
-      .replaceWith(createInputElement);
+}
+
+function updateSubTierOptionsTo(subTier) {
+  getSubTierToSurvivor.innerHTML = "";
+  let elements = "";
+  const hiddenValue = `<option disabled hidden selected value>&mdash;</option>`;
+  elements += hiddenValue;
+  for (let i = subTier; i >= 1; i--) {
+    const createOptionElement = `<option value="${i}">${i}</option>`;
+    elements += createOptionElement;
+  }
+  getSubTierToSurvivor.innerHTML = elements;
+}
+
+function checkStars() {
+  if (getTierFromSurvivor.value === "1") {
+    switch (getStarsFromSurvivor.value) {
+    }
+  } else if (getTierFromSurvivor.value === "2") {
+    switch (getStarsFromSurvivor.value) {
+    }
+  } else if (getTierFromSurvivor.value === "3") {
+    switch (getStarsFromSurvivor.value) {
+    }
+  } else if (getTierFromSurvivor.value === "4") {
+    switch (getStarsFromSurvivor.value) {
+    }
+  } else if (getTierFromSurvivor.value === "5") {
+    switch (getStarsFromSurvivor.value) {
+    }
+  } else if (getTierFromSurvivor.value === "6") {
+    switch (getStarsFromSurvivor.value) {
+    }
+  } else if (getTierFromSurvivor.value === "7") {
+    switch (getStarsFromSurvivor.value) {
+    }
   }
 }
