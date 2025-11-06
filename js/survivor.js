@@ -31,11 +31,11 @@ const ranks = [
 ];
 
 getTierFromSurvivor.addEventListener("change", () => {
-  checkTier();
+  updateTier();
   window.console.log("configure tier(from)");
 });
 
-function checkTier() {
+function updateTier() {
   switch (getTierFromSurvivor.value) {
     case "tier-1":
       updateTierOptionsFrom(1);
@@ -431,7 +431,47 @@ function updateSubTierOptionsTo(subTier) {
 //   }
 // }
 
-getTierToSurvivor.addEventListener("change", () => {});
+getTierToSurvivor.addEventListener("change", () => {
+  updateTierTo();
+  window.console.log("configure tier(to)");
+});
+
+function updateTierTo() {
+  switch (getTierToSurvivor.value) {
+    case "tier-1":
+      updateSubTierOptionsTo(3);
+      updateStarOptionsTo(2);
+      break;
+    case "tier-2":
+      updateSubTierOptionsTo(4);
+      updateStarOptionsTo(3);
+      break;
+    case "tier-3":
+      updateSubTierOptionsTo(5);
+      updateStarOptionsTo(4);
+      break;
+    case "tier-4":
+      updateSubTierOptionsTo(5);
+      updateStarOptionsTo(4);
+      break;
+    case "tier-5":
+      updateSubTierOptionsTo(5);
+      updateStarOptionsTo(4);
+      break;
+    case "tier-6":
+      updateSubTierOptionsTo(5);
+      updateStarOptionsTo(4);
+      break;
+    case "tier-7":
+      updateSubTierOptionsTo("champion");
+      updateStarOptionsTo(24);
+      break;
+    case "peak-tier":
+      updateSubTierOptionsTo("peak");
+      updateStarOptionsTo("peak");
+      break;
+  }
+}
 
 function updateSubTierOptionsTo(subTier) {
   if (subTier === "champion" || subTier === "peak") {
@@ -474,7 +514,7 @@ function updateStarOptionsTo(star) {
       createSelectElement.classList.add("select-to");
       createSelectElement.innerHTML = elements;
       createSelectElement.value = "";
-      getStarsFromSurvivor = window.document.querySelector(
+      getStarsToSurvivor = window.document.querySelector(
         ".select-survivor .star-container .select-to"
       );
       getStarsToSurvivor.replaceWith(createSelectElement);
@@ -489,13 +529,10 @@ function updateStarOptionsTo(star) {
       createInputElement.value = "26";
       createInputElement.placeholder = "enter star";
       createInputElement.classList.add("select-to");
-      getStarsFromSurvivor = window.document.querySelector(
-        ".select-survivor .star-container .select-from"
+      getStarsToSurvivor = window.document.querySelector(
+        ".select-survivor .star-container .select-to"
       );
-      getStarsFromSurvivor.replaceWith(createInputElement);
-      getTierToSurvivor.value = "";
-      getSubTierToSurvivor.value = "";
-      getStarsToSurvivor.value = "";
+      getStarsToSurvivor.replaceWith(createInputElement);
     }
   }
 }
