@@ -31,11 +31,11 @@ const ranks = [
 ];
 
 getTierFromSurvivor.addEventListener("change", () => {
-  updateTier();
+  updateTierFrom(); //Tier on To included
   window.console.log("configure tier(from)");
 });
 
-function updateTier() {
+function updateTierFrom() {
   switch (getTierFromSurvivor.value) {
     case "tier-1":
       updateTierOptionsFrom(1);
@@ -99,8 +99,7 @@ function updateTierOptionsFrom(tier) {
     }
   }
   getTierToSurvivor.innerHTML = elements;
-  getSubTierToSurvivor.value = "";
-  getStarsToSurvivor.value = "";
+  clearTo();
 }
 
 function updateSubTierOptionsFrom(subTier) {
@@ -122,9 +121,7 @@ function updateSubTierOptionsFrom(subTier) {
       getSubTierFromSurvivor.innerHTML = elements;
       getSubTierFromSurvivor.removeAttribute("disabled");
       getSubTierFromSurvivor.style.cursor = "auto";
-      getSubTierToSurvivor.value = "";
-      getTierToSurvivor.value = "";
-      getStarsToSurvivor.value = "";
+      clearTo();
     };
     getSubTier();
   }
@@ -151,9 +148,7 @@ function updateStarOptionsFrom(star) {
         ".select-survivor .star-container .select-from"
       );
       getStarsFromSurvivor.replaceWith(createSelectElement);
-      getSubTierToSurvivor.value = "";
-      getTierToSurvivor.value = "";
-      getStarsToSurvivor.value = "";
+      clearTo();
     };
     getStar();
   } else {
@@ -169,47 +164,12 @@ function updateStarOptionsFrom(star) {
         ".select-survivor .star-container .select-from"
       );
       getStarsFromSurvivor.replaceWith(createInputElement);
-      getTierToSurvivor.value = "";
-      getSubTierToSurvivor.value = "";
-      getStarsToSurvivor.value = "";
+      clearTo();
     }
   }
 }
 
-/*function checkSubTier() {
-  switch (getSubTierFromSurvivor.value) {
-    case "5":
-      updateSubTierOptionsTo(5);
-      break;
-    case "4":
-      updateSubTierOptionsTo(4);
-      break;
-    case "3":
-      updateSubTierOptionsTo(3);
-      break;
-    case "2":
-      updateSubTierOptionsTo(2);
-      break;
-    case "1":
-      updateSubTierOptionsTo(1);
-      break;
-  }
-  getSubTierToSurvivor.value = "";
-  getTierToSurvivor.value = "";
-  getStarsToSurvivor.value = "";
-}
-
-function updateSubTierOptionsTo(subTier) {
-  getSubTierToSurvivor.innerHTML = "";
-  let elements = "";
-  const hiddenValue = `<option disabled hidden selected value>&mdash;</option>`;
-  elements += hiddenValue;
-  for (let i = subTier; i >= 1; i--) {
-    const createOptionElement = `<option value="${i}">${i}</option>`;
-    elements += createOptionElement;
-  }
-  getSubTierToSurvivor.innerHTML = elements;
-}*/
+getSubTierFromSurvivor.addEventListener("change", () => clearTo());
 
 // function checkStarsTo() {
 //   console.log("1");
@@ -433,6 +393,7 @@ function updateSubTierOptionsTo(subTier) {
 
 getTierToSurvivor.addEventListener("change", () => {
   updateTierTo();
+  checkSubTierTo();
   window.console.log("configure tier(to)");
 });
 
@@ -469,6 +430,36 @@ function updateTierTo() {
     case "peak-tier":
       updateSubTierOptionsTo("peak");
       updateStarOptionsTo("peak");
+      break;
+  }
+}
+
+function checkSubTierTo() {
+  switch (getSubTierFromSurvivor.value) {
+    case "5":
+      if (getTierFromSurvivor.value === getTierToSurvivor.value)
+        updateSubTierOptionsTo(parseInt(getSubTierFromSurvivor.value));
+      else updateSubTierOptionsTo(5);
+      break;
+    case "4":
+      if (getTierFromSurvivor.value === getTierToSurvivor.value)
+        updateSubTierOptionsTo(parseInt(getSubTierFromSurvivor.value));
+      else updateSubTierOptionsTo(4);
+      break;
+    case "3":
+      if (getTierFromSurvivor.value === getTierToSurvivor.value)
+        updateSubTierOptionsTo(parseInt(getSubTierFromSurvivor.value));
+      else updateSubTierOptionsTo(3);
+      break;
+    case "2":
+      if (getTierFromSurvivor.value === getTierToSurvivor.value)
+        updateSubTierOptionsTo(parseInt(getSubTierFromSurvivor.value));
+      else updateSubTierOptionsTo(2);
+      break;
+    case "1":
+      if (getTierFromSurvivor.value === getTierToSurvivor.value)
+        updateSubTierOptionsTo(parseInt(getSubTierFromSurvivor.value));
+      else updateSubTierOptionsTo(1);
       break;
   }
 }
@@ -535,4 +526,10 @@ function updateStarOptionsTo(star) {
       getStarsToSurvivor.replaceWith(createInputElement);
     }
   }
+}
+
+function clearTo() {
+  getTierToSurvivor.value = "";
+  getSubTierToSurvivor.value = "";
+  getStarsToSurvivor.value = "";
 }
