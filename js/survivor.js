@@ -597,11 +597,17 @@ function clearTo() {
   getSubTierToSurvivor.style.cursor = "auto";
   getSubTierToSurvivor.value = "";
 
+  let elements = "";
   let hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
+  elements += hiddenValue;
+  for (let i = 0; i <= 4; i++) {
+    const createOptionElement = `<option value="${i}">${i}</option>`;
+    elements += createOptionElement;
+  }
   const createSelectElement = window.document.createElement("select");
   createSelectElement.setAttribute("id", "survivor-to-star");
   createSelectElement.classList.add("select-to");
-  createSelectElement.innerHTML = hiddenValue;
+  createSelectElement.innerHTML = elements;
   createSelectElement.value = "";
   getStarsToSurvivor = window.document.querySelector(
     ".select-survivor .star-container .select-to"
