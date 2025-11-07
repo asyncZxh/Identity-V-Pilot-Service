@@ -129,6 +129,8 @@ function updateSubTierOptionsFrom(subTier) {
   }
 }
 
+let e = false;
+
 function updateStarOptionsFrom(star) {
   if (star !== "peak") {
     const getStar = () => {
@@ -146,10 +148,16 @@ function updateStarOptionsFrom(star) {
       createSelectElement.classList.add("select-from");
       createSelectElement.innerHTML = elements;
       createSelectElement.value = "";
+      getStarsFromSurvivor.removeEventListener("change", function clear() {
+        clearTo();
+      });
+      getStarsFromSurvivor.replaceWith(createSelectElement);
       getStarsFromSurvivor = window.document.querySelector(
         ".select-survivor .star-container .select-from"
       );
-      getStarsFromSurvivor.replaceWith(createSelectElement);
+      getStarsFromSurvivor.addEventListener("change", function clear() {
+        clearTo();
+      });
       clearTo();
     };
     getStar();
@@ -162,21 +170,26 @@ function updateStarOptionsFrom(star) {
       createInputElement.value = "25";
       createInputElement.placeholder = "enter star";
       createInputElement.classList.add("select-from");
+      getStarsFromSurvivor.removeEventListener("change", function clear() {
+        clearTo();
+      });
+      getStarsFromSurvivor.replaceWith(createInputElement);
       getStarsFromSurvivor = window.document.querySelector(
         ".select-survivor .star-container .select-from"
       );
-      getStarsFromSurvivor.replaceWith(createInputElement);
+      getStarsFromSurvivor.addEventListener("change", function clear() {
+        clearTo();
+      });
       clearTo();
     }
   }
 }
 
-getSubTierFromSurvivor.addEventListener("change", () => {
-  getSubTierToSurvivor.removeAttribute("disabled");
-  getSubTierToSurvivor.style.cursor = "auto";
+getSubTierFromSurvivor.addEventListener("change", () => clearTo());
+
+getStarsFromSurvivor.addEventListener("change", function clear() {
   clearTo();
 });
-
 // function checkStarsTo() {
 //   console.log("1");
 //   if (getTierFromSurvivor.value === "tier-1") {
