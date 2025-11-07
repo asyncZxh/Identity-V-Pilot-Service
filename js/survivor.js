@@ -199,31 +199,31 @@ function updateTierTo() {
   switch (getTierToSurvivor.value) {
     case "tier-1":
       updateSubTierOptionsTo(3);
-      updateStarOptionsTo(2);
+      updateStarOptionsTo(parseInt(getStarsFromSurvivor.value), 2);
       break;
     case "tier-2":
       updateSubTierOptionsTo(4);
-      updateStarOptionsTo(3);
+      updateStarOptionsTo(parseInt(getStarsFromSurvivor.value), 3);
       break;
     case "tier-3":
       updateSubTierOptionsTo(5);
-      updateStarOptionsTo(4);
+      updateStarOptionsTo(parseInt(getStarsFromSurvivor.value), 4);
       break;
     case "tier-4":
       updateSubTierOptionsTo(5);
-      updateStarOptionsTo(4);
+      updateStarOptionsTo(parseInt(getStarsFromSurvivor.value), 4);
       break;
     case "tier-5":
       updateSubTierOptionsTo(5);
-      updateStarOptionsTo(4);
+      updateStarOptionsTo(parseInt(getStarsFromSurvivor.value), 4);
       break;
     case "tier-6":
       updateSubTierOptionsTo(5);
-      updateStarOptionsTo(4);
+      updateStarOptionsTo(parseInt(getStarsFromSurvivor.value), 4);
       break;
     case "tier-7":
       updateSubTierOptionsTo("champion");
-      updateStarOptionsTo(24);
+      updateStarOptionsTo(parseInt(getStarsFromSurvivor.value), 24);
       break;
     case "peak-tier":
       updateSubTierOptionsTo("peak");
@@ -366,14 +366,14 @@ function updateSubTierOptionsTo(subTier) {
   }
 }
 
-function updateStarOptionsTo(star) {
-  if (star !== "peak") {
+function updateStarOptionsTo(start, end) {
+  if (start !== "peak") {
     const getStar = () => {
       let elements = "";
       let hiddenValue =
         "<option hidden disabled selected value>&mdash;</option>";
       elements += hiddenValue;
-      for (let i = 0; i <= star; i++) {
+      for (let i = start + 1; i <= end; i++) {
         const createOptionElement = `<option value="${i}">${i}</option>`;
         elements += createOptionElement;
       }
@@ -406,7 +406,90 @@ function updateStarOptionsTo(star) {
   }
 }
 
-function checkStarTo() {}
+function checkStarTo() {
+  if (getTierFromSurvivor.value === "tier-1") {
+    switch (getStarsFromSurvivor.value) {
+      case "0":
+        break;
+      case "1":
+        break;
+      case "2":
+        break;
+    }
+  } else if (getTierFromSurvivor.value === "tier-2") {
+    switch (getStarsFromSurvivor.value) {
+      case "0":
+        break;
+      case "1":
+        break;
+      case "2":
+        break;
+      case "4":
+        break;
+    }
+  } else if (getTierFromSurvivor.value === "champion") {
+    switch (getStarsFromSurvivor.value) {
+      case "0":
+        break;
+      case "1":
+        break;
+      case "2":
+        break;
+      case "4":
+        break;
+      case "5":
+        break;
+      case "6":
+        break;
+      case "7":
+        break;
+      case "8":
+        break;
+      case "9":
+        break;
+      case "10":
+        break;
+      case "11":
+        break;
+      case "12":
+        break;
+      case "13":
+        break;
+      case "14":
+        break;
+      case "15":
+        break;
+      case "16":
+        break;
+      case "17":
+        break;
+      case "18":
+        break;
+      case "19":
+        break;
+      case "20":
+        break;
+      case "21":
+        break;
+      case "22":
+        break;
+      case "24":
+        break;
+    }
+  } else if (getTierFromSurvivor.value !== "peak") {
+    switch (getStarsFromSurvivor.value) {
+      case "0":
+        break;
+      case "1":
+        break;
+      case "2":
+        break;
+      case "4":
+        break;
+    }
+  } else {
+  }
+}
 
 function clearTo() {
   getSubTierToSurvivor.removeAttribute("disabled");
