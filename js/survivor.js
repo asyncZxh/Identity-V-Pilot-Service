@@ -247,9 +247,8 @@ getStarsFromSurvivor.addEventListener("change", function clear() {
 
 getTierToSurvivor.addEventListener("change", () => {
   updateTierTo();
-  // checkSubTierFrom(parseInt(getTierToSurvivor.value));
-  // checkSubTierFrom(getTierToSurvivor.value);
-  // checkStarFrom(parseInt(getTierToSurvivor.value));
+  checkSubTierFrom();
+  checkStarFrom();
   window.console.log("configure tier(to)");
 });
 
@@ -258,49 +257,50 @@ function updateTierTo() {
     case "1":
       updateSubTierOptionsTo(3);
       updateStarOptionsTo(2);
-      checkSubTierFrom();
-      checkStarFrom();
+      // checkSubTierFrom();
+      // checkStarFrom();
       break;
     case "2":
       updateSubTierOptionsTo(4);
       updateStarOptionsTo(3);
-      checkSubTierFrom();
-      checkStarFrom();
+      // checkSubTierFrom();
+      // checkStarFrom();
       break;
     case "3":
       updateSubTierOptionsTo(5);
       updateStarOptionsTo(4);
-      checkSubTierFrom();
-      checkStarFrom();
+      // checkSubTierFrom();
+      // checkStarFrom();
       break;
     case "4":
       updateSubTierOptionsTo(5);
       updateStarOptionsTo(4);
-      checkSubTierFrom();
-      checkStarFrom();
+      // checkSubTierFrom();
+      // checkStarFrom();
       break;
     case "5":
       updateSubTierOptionsTo(5);
       updateStarOptionsTo(4);
-      checkSubTierFrom();
-      checkStarFrom();
+      // checkSubTierFrom();
+      // checkStarFrom();
       break;
     case "6":
       updateSubTierOptionsTo(5);
       updateStarOptionsTo(4);
-      checkSubTierFrom();
-      checkStarFrom();
+      // checkSubTierFrom();
+      // checkStarFrom();
       break;
     case "7":
-      updateStarOptionsTo("champion");
+      updateSubTierOptionsTo("champion");
       updateStarOptionsTo(24);
-      checkSubTierFrom();
-      checkStarFrom();
+      // checkSubTierFrom();
+      // checkStarFrom();
       break;
     case "8":
+      updateSubTierOptionsTo("peak");
       updateStarOptionsTo("peak");
-      checkSubTierFrom();
-      checkStarFrom();
+      // checkSubTierFrom();
+      // checkStarFrom();
       break;
   }
 }
@@ -470,92 +470,94 @@ function updateSubTierOptionsTo(subTier) {
   }
 }
 
-// function checkStarFrom() {
-//   if (getTierFromSurvivor.value === "1") {
-//     switch (getStarsFromSurvivor.value) {
-//       case "0":
-//         break;
-//       case "1":
-//         break;
-//       case "2":
-//         break;
-//     }
-//   } else if (getTierFromSurvivor.value === "2") {
-//     switch (getStarsFromSurvivor.value) {
-//       case "0":
-//         break;
-//       case "1":
-//         break;
-//       case "2":
-//         break;
-//       case "4":
-//         break;
-//     }
-//   } else if (getTierFromSurvivor.value === "7") {
-//     switch (getStarsFromSurvivor.value) {
-//       case "0":
-//         break;
-//       case "1":
-//         break;
-//       case "2":
-//         break;
-//       case "4":
-//         break;
-//       case "5":
-//         break;
-//       case "6":
-//         break;
-//       case "7":
-//         break;
-//       case "8":
-//         break;
-//       case "9":
-//         break;
-//       case "10":
-//         break;
-//       case "11":
-//         break;
-//       case "12":
-//         break;
-//       case "13":
-//         break;
-//       case "14":
-//         break;
-//       case "15":
-//         break;
-//       case "16":
-//         break;
-//       case "17":
-//         break;
-//       case "18":
-//         break;
-//       case "19":
-//         break;
-//       case "20":
-//         break;
-//       case "21":
-//         break;
-//       case "22":
-//         break;
-//       case "24":
-//         break;
-//     }
-//   } else if (getTierFromSurvivor.value !== "8") {
-//     switch (getStarsFromSurvivor.value) {
-//       case "0":
-//         break;
-//       case "1":
-//         break;
-//       case "2":
-//         break;
-//       case "4":
-//         break;
-//     }
-//   } else {
-//   }
-// }
+function checkStarFrom() {
+  if (getTierFromSurvivor.value === "1") {
+    switch (getStarsFromSurvivor.value) {
+      case "0":
+        break;
+      case "1":
+        break;
+      case "2":
+        break;
+    }
+  } else if (getTierFromSurvivor.value === "2") {
+    switch (getStarsFromSurvivor.value) {
+      case "0":
+        break;
+      case "1":
+        break;
+      case "2":
+        break;
+      case "3":
+        break;
+    }
+  } else if (getTierFromSurvivor.value === "7") {
+    switch (getStarsFromSurvivor.value) {
+      case "0":
+        break;
+      case "1":
+        break;
+      case "2":
+        break;
+      case "4":
+        break;
+      case "5":
+        break;
+      case "6":
+        break;
+      case "7":
+        break;
+      case "8":
+        break;
+      case "9":
+        break;
+      case "10":
+        break;
+      case "11":
+        break;
+      case "12":
+        break;
+      case "13":
+        break;
+      case "14":
+        break;
+      case "15":
+        break;
+      case "16":
+        break;
+      case "17":
+        break;
+      case "18":
+        break;
+      case "19":
+        break;
+      case "20":
+        break;
+      case "21":
+        break;
+      case "22":
+        break;
+      case "24":
+        break;
+    }
+  } else if (getTierFromSurvivor.value === "8") {
+  } else {
+    switch (getStarsFromSurvivor.value) {
+      case "0":
+        break;
+      case "1":
+        break;
+      case "2":
+        break;
+      case "3":
+        break;
+      case "4":
+        break;
+    }
+  }
+}
 
-// function renderStarTo() {}
+function updateStarFromCheck() {}
 
 function updateStarOptionsTo(star) {
   if (star !== "peak") {
