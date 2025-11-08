@@ -21,7 +21,7 @@ const buttonCalculateSurvivor = window.document.querySelector(
 );
 
 const ranks = [
-  "Worker Bee",
+  "Bee",
   "Hound",
   "Elk",
   "Mammoth",
@@ -48,12 +48,12 @@ function updateTierOptionsTo(tier) {
   elements += hiddenValue;
   for (let i = tier; i <= 8; i++) {
     if (i === 8) {
-      const createOptionElement = `<option value="peak-tier">Peak Tier - ${
+      const createOptionElement = `<option value="${i}">Peak Tier - ${
         ranks[ranks.length - 1]
       }</option>`;
       elements += createOptionElement;
     } else {
-      const createOptionElement = `<option value="tier-${i}">Tier ${i} - ${
+      const createOptionElement = `<option value="${i}">Tier ${i} - ${
         ranks[i - 1]
       }</option>`;
       elements += createOptionElement;
@@ -246,49 +246,68 @@ getStarsFromSurvivor.addEventListener("change", function clear() {
 });
 
 getTierToSurvivor.addEventListener("change", () => {
-  console.log("to clicked");
   updateTierTo();
-  checkSubTierFrom(parseInt(getTierToSurvivor.value));
+  // checkSubTierFrom(parseInt(getTierToSurvivor.value));
+  // checkSubTierFrom(getTierToSurvivor.value);
+  // checkStarFrom(parseInt(getTierToSurvivor.value));
   window.console.log("configure tier(to)");
 });
 
-// function updateTierTo() {
-//   switch (getTierToSurvivor.value) {
-//     case "1":
-//       updateStarOptionsTo(2);
-//       break;
-//     case "2":
-//       updateStarOptionsTo(3);
-//       break;
-//     case "3":
-//       updateStarOptionsTo(4);
-//       break;
-//     case "4":
-//       updateStarOptionsTo(4);
-//       break;
-//     case "5":
-//       updateStarOptionsTo(4);
-//       break;
-//     case "6":
-//       updateStarOptionsTo(4);
-//       break;
-//     case "7":
-//       updateStarOptionsTo(24);
-//       break;
-//     case "8":
-//       updateStarOptionsTo("peak");
-//       break;
-//   }
-// }
+function updateTierTo() {
+  switch (getTierToSurvivor.value) {
+    case "1":
+      updateSubTierOptionsTo(3);
+      updateStarOptionsTo(2);
+      checkSubTierFrom();
+      checkStarFrom();
+      break;
+    case "2":
+      updateSubTierOptionsTo(4);
+      updateStarOptionsTo(3);
+      checkSubTierFrom();
+      checkStarFrom();
+      break;
+    case "3":
+      updateSubTierOptionsTo(5);
+      updateStarOptionsTo(4);
+      checkSubTierFrom();
+      checkStarFrom();
+      break;
+    case "4":
+      updateSubTierOptionsTo(5);
+      updateStarOptionsTo(4);
+      checkSubTierFrom();
+      checkStarFrom();
+      break;
+    case "5":
+      updateSubTierOptionsTo(5);
+      updateStarOptionsTo(4);
+      checkSubTierFrom();
+      checkStarFrom();
+      break;
+    case "6":
+      updateSubTierOptionsTo(5);
+      updateStarOptionsTo(4);
+      checkSubTierFrom();
+      checkStarFrom();
+      break;
+    case "7":
+      updateStarOptionsTo("champion");
+      updateStarOptionsTo(24);
+      checkSubTierFrom();
+      checkStarFrom();
+      break;
+    case "8":
+      updateStarOptionsTo("peak");
+      checkSubTierFrom();
+      checkStarFrom();
+      break;
+  }
+}
 
 function checkSubTierFrom() {
   if (getTierToSurvivor.value !== "7" && getTierToSurvivor.value !== "8") {
-    if (
-      getTierFromSurvivor.value !== getTierToSurvivor.value &&
-      getTierToSurvivor.value === "2"
-    ) {
-      updateSubTierOptionsTo(4);
-    } else if (getTierToSurvivor.value === "1") {
+    if (getTierFromSurvivor.value === "1" && getTierToSurvivor.value === "2") {
       switch (getSubTierFromSurvivor.value) {
         case "3":
           if (getTierFromSurvivor.value === getTierToSurvivor.value) {
@@ -299,9 +318,7 @@ function checkSubTierFrom() {
                 ).textContent
               )
             );
-          } else {
-            updateSubTierOptionsTo(5);
-          }
+          } else updateSubTierOptionsTo(4);
           break;
         case "2":
           if (getTierFromSurvivor.value === getTierToSurvivor.value) {
@@ -312,7 +329,7 @@ function checkSubTierFrom() {
                 ).textContent
               )
             );
-          } else updateSubTierOptionsTo(5);
+          } else updateSubTierOptionsTo(4);
           break;
         case "1":
           if (getTierFromSurvivor.value === getTierToSurvivor.value) {
@@ -323,7 +340,7 @@ function checkSubTierFrom() {
                 ).textContent
               )
             );
-          } else updateSubTierOptionsTo(5);
+          } else updateSubTierOptionsTo(4);
           break;
       }
     } else if (
@@ -344,7 +361,7 @@ function checkSubTierFrom() {
           } else updateSubTierOptionsTo(5);
           break;
         case "4":
-          if (getTierFromSurvivor.value === getTierToSurvivor.value)
+          if (getTierFromSurvivor.value === getTierToSurvivor.value) {
             updateSubTierOptionsTo(
               parseInt(
                 window.document.querySelector(
@@ -352,10 +369,10 @@ function checkSubTierFrom() {
                 ).textContent
               )
             );
-          else updateSubTierOptionsTo(5);
+          } else updateSubTierOptionsTo(5);
           break;
         case "3":
-          if (getTierFromSurvivor.value === getTierToSurvivor.value)
+          if (getTierFromSurvivor.value === getTierToSurvivor.value) {
             updateSubTierOptionsTo(
               parseInt(
                 window.document.querySelector(
@@ -363,10 +380,10 @@ function checkSubTierFrom() {
                 ).textContent
               )
             );
-          else updateSubTierOptionsTo(5);
+          } else updateSubTierOptionsTo(5);
           break;
         case "2":
-          if (getTierFromSurvivor.value === getTierToSurvivor.value)
+          if (getTierFromSurvivor.value === getTierToSurvivor.value) {
             updateSubTierOptionsTo(
               parseInt(
                 window.document.querySelector(
@@ -374,10 +391,10 @@ function checkSubTierFrom() {
                 ).textContent
               )
             );
-          else updateSubTierOptionsTo(5);
+          } else updateSubTierOptionsTo(5);
           break;
         case "1":
-          if (getTierFromSurvivor.value === getTierToSurvivor.value)
+          if (getTierFromSurvivor.value === getTierToSurvivor.value) {
             updateSubTierOptionsTo(
               parseInt(
                 window.document.querySelector(
@@ -385,13 +402,51 @@ function checkSubTierFrom() {
                 ).textContent
               )
             );
-          else updateSubTierOptionsTo(5);
+          } else updateSubTierOptionsTo(5);
+          break;
+      }
+    } else if (getTierFromSurvivor.value === "1") {
+      switch (getSubTierFromSurvivor.value) {
+        case "3":
+          if (getTierFromSurvivor.value === getTierToSurvivor.value) {
+            updateSubTierOptionsTo(
+              parseInt(
+                window.document.querySelector(
+                  ".select-survivor .sub-tier-container .select-from option[value='3']"
+                ).textContent
+              )
+            );
+          } else updateSubTierOptionsTo(5);
+          break;
+        case "2":
+          if (getTierFromSurvivor.value === getTierToSurvivor.value) {
+            updateSubTierOptionsTo(
+              parseInt(
+                window.document.querySelector(
+                  ".select-survivor .sub-tier-container .select-from option[value='2']"
+                ).textContent
+              )
+            );
+          } else updateSubTierOptionsTo(5);
+          break;
+        case "1":
+          if (getTierFromSurvivor.value === getTierToSurvivor.value) {
+            updateSubTierOptionsTo(
+              parseInt(
+                window.document.querySelector(
+                  ".select-survivor .sub-tier-container .select-from option[value='1']"
+                ).textContent
+              )
+            );
+          } else updateSubTierOptionsTo(5);
           break;
       }
     }
-  } else if (getTierToSurvivor.value === "7")
+  } else if (getTierToSurvivor.value === "7") {
     updateSubTierOptionsTo("champion");
-  else if (getTierToSurvivor.value === "8") updateSubTierOptionsTo("peak");
+  } else if (getTierToSurvivor.value === "8") {
+    updateSubTierOptionsTo("peak");
+  }
 }
 
 function updateSubTierOptionsTo(subTier) {
@@ -415,90 +470,90 @@ function updateSubTierOptionsTo(subTier) {
   }
 }
 
-function checkStarFrom() {
-  if (getTierFromSurvivor.value === "1") {
-    switch (getStarsFromSurvivor.value) {
-      case "0":
-        break;
-      case "1":
-        break;
-      case "2":
-        break;
-    }
-  } else if (getTierFromSurvivor.value === "2") {
-    switch (getStarsFromSurvivor.value) {
-      case "0":
-        break;
-      case "1":
-        break;
-      case "2":
-        break;
-      case "4":
-        break;
-    }
-  } else if (getTierFromSurvivor.value === "7") {
-    switch (getStarsFromSurvivor.value) {
-      case "0":
-        break;
-      case "1":
-        break;
-      case "2":
-        break;
-      case "4":
-        break;
-      case "5":
-        break;
-      case "6":
-        break;
-      case "7":
-        break;
-      case "8":
-        break;
-      case "9":
-        break;
-      case "10":
-        break;
-      case "11":
-        break;
-      case "12":
-        break;
-      case "13":
-        break;
-      case "14":
-        break;
-      case "15":
-        break;
-      case "16":
-        break;
-      case "17":
-        break;
-      case "18":
-        break;
-      case "19":
-        break;
-      case "20":
-        break;
-      case "21":
-        break;
-      case "22":
-        break;
-      case "24":
-        break;
-    }
-  } else if (getTierFromSurvivor.value !== "8") {
-    switch (getStarsFromSurvivor.value) {
-      case "0":
-        break;
-      case "1":
-        break;
-      case "2":
-        break;
-      case "4":
-        break;
-    }
-  } else {
-  }
-}
+// function checkStarFrom() {
+//   if (getTierFromSurvivor.value === "1") {
+//     switch (getStarsFromSurvivor.value) {
+//       case "0":
+//         break;
+//       case "1":
+//         break;
+//       case "2":
+//         break;
+//     }
+//   } else if (getTierFromSurvivor.value === "2") {
+//     switch (getStarsFromSurvivor.value) {
+//       case "0":
+//         break;
+//       case "1":
+//         break;
+//       case "2":
+//         break;
+//       case "4":
+//         break;
+//     }
+//   } else if (getTierFromSurvivor.value === "7") {
+//     switch (getStarsFromSurvivor.value) {
+//       case "0":
+//         break;
+//       case "1":
+//         break;
+//       case "2":
+//         break;
+//       case "4":
+//         break;
+//       case "5":
+//         break;
+//       case "6":
+//         break;
+//       case "7":
+//         break;
+//       case "8":
+//         break;
+//       case "9":
+//         break;
+//       case "10":
+//         break;
+//       case "11":
+//         break;
+//       case "12":
+//         break;
+//       case "13":
+//         break;
+//       case "14":
+//         break;
+//       case "15":
+//         break;
+//       case "16":
+//         break;
+//       case "17":
+//         break;
+//       case "18":
+//         break;
+//       case "19":
+//         break;
+//       case "20":
+//         break;
+//       case "21":
+//         break;
+//       case "22":
+//         break;
+//       case "24":
+//         break;
+//     }
+//   } else if (getTierFromSurvivor.value !== "8") {
+//     switch (getStarsFromSurvivor.value) {
+//       case "0":
+//         break;
+//       case "1":
+//         break;
+//       case "2":
+//         break;
+//       case "4":
+//         break;
+//     }
+//   } else {
+//   }
+// }
 
 // function renderStarTo() {}
 
