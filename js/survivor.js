@@ -19,6 +19,7 @@ let getStarsToSurvivor = window.document.querySelector(
 const buttonCalculateSurvivor = window.document.querySelector(
   ".select-survivor .calculate-currency-container .total-button"
 );
+
 const ranks = [
   "Bee",
   "Hound",
@@ -29,6 +30,11 @@ const ranks = [
   "Champion",
   "Titan(Hercules)",
 ];
+
+const prices = [];
+
+const php = "PHP";
+const usd = "USD";
 
 getTierFromSurvivor.addEventListener("change", () => {
   updateTierFrom(); //Tier on To included
@@ -367,27 +373,23 @@ function updateSubTierOptionsTo(subTier) {
 
 function updateStarOptionsTo(star) {
   if (star !== "peak") {
-    const getStar = () => {
-      let elements = "";
-      let hiddenValue =
-        "<option hidden disabled selected value>&mdash;</option>";
-      elements += hiddenValue;
-      for (let i = 0; i <= star; i++) {
-        const createOptionElement = `<option value="${i}">${i}</option>`;
-        elements += createOptionElement;
-      }
+    let elements = "";
+    let hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
+    elements += hiddenValue;
+    for (let i = 0; i <= star; i++) {
+      const createOptionElement = `<option value="${i}">${i}</option>`;
+      elements += createOptionElement;
+    }
 
-      const createSelectElement = window.document.createElement("select");
-      createSelectElement.setAttribute("id", "survivor-to-star");
-      createSelectElement.classList.add("select-to");
-      createSelectElement.innerHTML = elements;
-      createSelectElement.value = "";
-      getStarsToSurvivor = window.document.querySelector(
-        ".select-survivor .star-container .select-to"
-      );
-      getStarsToSurvivor.replaceWith(createSelectElement);
-    };
-    getStar();
+    const createSelectElement = window.document.createElement("select");
+    createSelectElement.setAttribute("id", "survivor-to-star");
+    createSelectElement.classList.add("select-to");
+    createSelectElement.innerHTML = elements;
+    createSelectElement.value = "";
+    getStarsToSurvivor = window.document.querySelector(
+      ".select-survivor .star-container .select-to"
+    );
+    getStarsToSurvivor.replaceWith(createSelectElement);
   } else {
     {
       const createInputElement = window.document.createElement("input");
