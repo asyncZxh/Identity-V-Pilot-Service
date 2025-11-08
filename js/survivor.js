@@ -198,35 +198,35 @@ getTierToSurvivor.addEventListener("change", () => {
 function updateTierTo() {
   switch (getTierToSurvivor.value) {
     case "tier-1":
-      updateSubTierOptionsTo(3);
-      updateStarOptionsTo(parseInt(getStarsFromSurvivor.value), 2);
+      // updateSubTierOptionsTo(3);
+      updateStarOptionsTo(2);
       break;
     case "tier-2":
-      updateSubTierOptionsTo(4);
-      updateStarOptionsTo(parseInt(getStarsFromSurvivor.value), 3);
+      // updateSubTierOptionsTo(4);
+      updateStarOptionsTo(3);
       break;
     case "tier-3":
-      updateSubTierOptionsTo(5);
-      updateStarOptionsTo(parseInt(getStarsFromSurvivor.value), 4);
+      // updateSubTierOptionsTo(5);
+      updateStarOptionsTo(4);
       break;
     case "tier-4":
-      updateSubTierOptionsTo(5);
-      updateStarOptionsTo(parseInt(getStarsFromSurvivor.value), 4);
+      // updateSubTierOptionsTo(5);
+      updateStarOptionsTo(4);
       break;
     case "tier-5":
-      updateSubTierOptionsTo(5);
-      updateStarOptionsTo(parseInt(getStarsFromSurvivor.value), 4);
+      // updateSubTierOptionsTo(5);
+      updateStarOptionsTo(4);
       break;
     case "tier-6":
-      updateSubTierOptionsTo(5);
-      updateStarOptionsTo(parseInt(getStarsFromSurvivor.value), 4);
+      // updateSubTierOptionsTo(5);
+      updateStarOptionsTo(4);
       break;
     case "tier-7":
-      updateSubTierOptionsTo("champion");
-      updateStarOptionsTo(parseInt(getStarsFromSurvivor.value), 24);
+      // updateSubTierOptionsTo("champion");
+      updateStarOptionsTo(24);
       break;
     case "peak-tier":
-      updateSubTierOptionsTo("peak");
+      // updateSubTierOptionsTo("peak");
       updateStarOptionsTo("peak");
       break;
   }
@@ -237,103 +237,109 @@ function checkSubTierFrom() {
     getTierToSurvivor.value !== "tier-7" &&
     getTierToSurvivor.value !== "peak-tier"
   ) {
-    if (getTierFromSurvivor.value !== "tier-1") {
-      switch (getSubTierFromSurvivor.value) {
-        case "5":
-          if (getTierFromSurvivor.value === getTierToSurvivor.value) {
-            updateSubTierOptionsTo(
-              parseInt(
-                window.document.querySelector(
-                  ".select-survivor .sub-tier-container .select-from option[value='5']"
-                ).textContent
-              )
-            );
-          } else {
-            updateSubTierOptionsTo(5);
-          }
-          break;
-        case "4":
-          if (getTierFromSurvivor.value === getTierToSurvivor.value)
-            updateSubTierOptionsTo(
-              parseInt(
-                window.document.querySelector(
-                  ".select-survivor .sub-tier-container .select-from option[value='4']"
-                ).textContent
-              )
-            );
-          else updateSubTierOptionsTo(5);
-          break;
-        case "3":
-          if (getTierFromSurvivor.value === getTierToSurvivor.value)
-            updateSubTierOptionsTo(
-              parseInt(
-                window.document.querySelector(
-                  ".select-survivor .sub-tier-container .select-from option[value='3']"
-                ).textContent
-              )
-            );
-          else updateSubTierOptionsTo(5);
-          break;
-        case "2":
-          if (getTierFromSurvivor.value === getTierToSurvivor.value)
-            updateSubTierOptionsTo(
-              parseInt(
-                window.document.querySelector(
-                  ".select-survivor .sub-tier-container .select-from option[value='2']"
-                ).textContent
-              )
-            );
-          else updateSubTierOptionsTo(5);
-          break;
-        case "1":
-          if (getTierFromSurvivor.value === getTierToSurvivor.value)
-            updateSubTierOptionsTo(
-              parseInt(
-                window.document.querySelector(
-                  ".select-survivor .sub-tier-container .select-from option[value='1']"
-                ).textContent
-              )
-            );
-          else updateSubTierOptionsTo(5);
-          break;
-      }
-    } else if (getTierFromSurvivor.value === "tier-1") {
-      if (getTierFromSurvivor.value === getTierToSurvivor.value) {
-        switch (getSubTierFromSurvivor.value) {
-          case "3":
-            updateSubTierOptionsTo(
-              parseInt(
-                window.document.querySelector(
-                  ".select-survivor .sub-tier-container .select-from option[value='3']"
-                ).textContent
-              )
-            );
-            break;
-          case "2":
-            updateSubTierOptionsTo(
-              parseInt(
-                window.document.querySelector(
-                  ".select-survivor .sub-tier-container .select-from option[value='2']"
-                ).textContent
-              )
-            );
-            break;
-          case "1":
-            updateSubTierOptionsTo(
-              parseInt(
-                window.document.querySelector(
-                  ".select-survivor .sub-tier-container .select-from option[value='1']"
-                ).textContent
-              )
-            );
-            break;
-        }
-      } else if (
-        getTierFromSurvivor.value !== getTierToSurvivor.value &&
-        getTierToSurvivor.value === "tier-2"
-      ) {
-        updateSubTierOptionsTo(4);
-      }
+    if (
+      getTierFromSurvivor.value !== getTierToSurvivor.value &&
+      getTierToSurvivor.value === "tier-2"
+    ) {
+      updateSubTierOptionsTo(4);
+    }
+  } else if (getTierToSurvivor.value === "tier-1") {
+    switch (getSubTierFromSurvivor.value) {
+      case "3":
+        if (getTierFromSurvivor.value === getTierToSurvivor.value) {
+          updateSubTierOptionsTo(
+            parseInt(
+              window.document.querySelector(
+                ".select-survivor .sub-tier-container .select-from option[value='3']"
+              ).textContent
+            )
+          );
+        } else updateSubTierOptionsTo(5);
+        break;
+      case "2":
+        if (getTierFromSurvivor.value === getTierToSurvivor.value) {
+          updateSubTierOptionsTo(
+            parseInt(
+              window.document.querySelector(
+                ".select-survivor .sub-tier-container .select-from option[value='2']"
+              ).textContent
+            )
+          );
+        } else updateSubTierOptionsTo(5);
+        break;
+      case "1":
+        if (getTierFromSurvivor.value === getTierToSurvivor.value) {
+          updateSubTierOptionsTo(
+            parseInt(
+              window.document.querySelector(
+                ".select-survivor .sub-tier-container .select-from option[value='1']"
+              ).textContent
+            )
+          );
+        } else updateSubTierOptionsTo(5);
+        break;
+    }
+  } else if (
+    getTierToSurvivor.value !== "tier-1" &&
+    getTierToSurvivor.value !== "tier-7" &&
+    getTierToSurvivor.value !== "peak-tier"
+  ) {
+    switch (getSubTierFromSurvivor.value) {
+      case "5":
+        if (getTierFromSurvivor.value === getTierToSurvivor.value) {
+          updateSubTierOptionsTo(
+            parseInt(
+              window.document.querySelector(
+                ".select-survivor .sub-tier-container .select-from option[value='5']"
+              ).textContent
+            )
+          );
+        } else updateSubTierOptionsTo(5);
+        break;
+      case "4":
+        if (getTierFromSurvivor.value === getTierToSurvivor.value)
+          updateSubTierOptionsTo(
+            parseInt(
+              window.document.querySelector(
+                ".select-survivor .sub-tier-container .select-from option[value='4']"
+              ).textContent
+            )
+          );
+        else updateSubTierOptionsTo(5);
+        break;
+      case "3":
+        if (getTierFromSurvivor.value === getTierToSurvivor.value)
+          updateSubTierOptionsTo(
+            parseInt(
+              window.document.querySelector(
+                ".select-survivor .sub-tier-container .select-from option[value='3']"
+              ).textContent
+            )
+          );
+        else updateSubTierOptionsTo(5);
+        break;
+      case "2":
+        if (getTierFromSurvivor.value === getTierToSurvivor.value)
+          updateSubTierOptionsTo(
+            parseInt(
+              window.document.querySelector(
+                ".select-survivor .sub-tier-container .select-from option[value='2']"
+              ).textContent
+            )
+          );
+        else updateSubTierOptionsTo(5);
+        break;
+      case "1":
+        if (getTierFromSurvivor.value === getTierToSurvivor.value)
+          updateSubTierOptionsTo(
+            parseInt(
+              window.document.querySelector(
+                ".select-survivor .sub-tier-container .select-from option[value='1']"
+              ).textContent
+            )
+          );
+        else updateSubTierOptionsTo(5);
+        break;
     }
   } else if (getTierToSurvivor.value === "tier-7")
     updateSubTierOptionsTo("champion");
@@ -366,14 +372,14 @@ function updateSubTierOptionsTo(subTier) {
   }
 }
 
-function updateStarOptionsTo(start, end) {
-  if (start !== "peak") {
+function updateStarOptionsTo(star) {
+  if (star !== "peak") {
     const getStar = () => {
       let elements = "";
       let hiddenValue =
         "<option hidden disabled selected value>&mdash;</option>";
       elements += hiddenValue;
-      for (let i = start + 1; i <= end; i++) {
+      for (let i = 0; i <= star; i++) {
         const createOptionElement = `<option value="${i}">${i}</option>`;
         elements += createOptionElement;
       }
@@ -406,7 +412,7 @@ function updateStarOptionsTo(start, end) {
   }
 }
 
-function checkStarTo() {
+function checkStarFrom() {
   if (getTierFromSurvivor.value === "tier-1") {
     switch (getStarsFromSurvivor.value) {
       case "0":
@@ -490,6 +496,8 @@ function checkStarTo() {
   } else {
   }
 }
+
+// function renderStarTo() {}
 
 function clearTo() {
   getSubTierToSurvivor.removeAttribute("disabled");
