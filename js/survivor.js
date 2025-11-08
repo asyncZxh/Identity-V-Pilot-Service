@@ -21,72 +21,27 @@ const buttonCalculateSurvivor = window.document.querySelector(
 );
 
 const ranks = [
-  "Bee",
+  "Worker Bee",
   "Hound",
   "Elk",
   "Mammoth",
   "Griffin",
   "Alicorn",
   "Champion",
-  "Titan(Hercules)",
+  "Titan",
 ];
 
-const prices = [];
-
-const php = "PHP";
-const usd = "USD";
+// const prices = [];
+// let priceRange = [];
 
 getTierFromSurvivor.addEventListener("change", () => {
-  updateTierFrom(); //Tier on To included
+  updateTierOptionsTo(parseInt(getTierFromSurvivor.value));
+  updateSubTierOptionsFrom(parseInt(getTierFromSurvivor.value));
+  updateStarOptionsFrom(parseInt(getTierFromSurvivor.value));
   window.console.log("configure tier(from)");
 });
 
-function updateTierFrom() {
-  switch (getTierFromSurvivor.value) {
-    case "tier-1":
-      updateTierOptionsFrom(1);
-      updateSubTierOptionsFrom(3);
-      updateStarOptionsFrom(2);
-      break;
-    case "tier-2":
-      updateTierOptionsFrom(2);
-      updateSubTierOptionsFrom(4);
-      updateStarOptionsFrom(3);
-      break;
-    case "tier-3":
-      updateTierOptionsFrom(3);
-      updateSubTierOptionsFrom(5);
-      updateStarOptionsFrom(4);
-      break;
-    case "tier-4":
-      updateTierOptionsFrom(4);
-      updateSubTierOptionsFrom(5);
-      updateStarOptionsFrom(4);
-      break;
-    case "tier-5":
-      updateTierOptionsFrom(5);
-      updateSubTierOptionsFrom(5);
-      updateStarOptionsFrom(4);
-      break;
-    case "tier-6":
-      updateTierOptionsFrom(6);
-      updateSubTierOptionsFrom(5);
-      updateStarOptionsFrom(4);
-      break;
-    case "tier-7":
-      updateTierOptionsFrom(7);
-      updateSubTierOptionsFrom("champion");
-      updateStarOptionsFrom(24);
-      break;
-    case "peak-tier":
-      updateTierOptionsFrom(8);
-      updateSubTierOptionsFrom("peak");
-      updateStarOptionsFrom("peak");
-      break;
-  }
-}
-
-function updateTierOptionsFrom(tier) {
+function updateTierOptionsTo(tier) {
   getTierToSurvivor.innerHTML = "";
   let elements = "";
   let hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
@@ -108,69 +63,140 @@ function updateTierOptionsFrom(tier) {
   clearTo();
 }
 
-function updateSubTierOptionsFrom(subTier) {
-  if (subTier === "champion" || subTier === "peak") {
+function updateSubTierOptionsFrom(tier) {
+  if (tier === 7 || tier === 8) {
     getSubTierFromSurvivor.setAttribute("disabled", "true");
     getSubTierFromSurvivor.style.cursor = "not-allowed";
     getSubTierFromSurvivor.value = "";
     // clearTo();
+  } else if (tier === 1) {
+    getSubTierFromSurvivor.innerHTML = "";
+    let elements = "";
+    let hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
+    elements += hiddenValue;
+    for (let i = 3; i >= 1; i--) {
+      const createOptionElement = `<option value="${i}">${i}</option>`;
+      elements += createOptionElement;
+    }
+    getSubTierFromSurvivor.innerHTML = elements;
+    getSubTierFromSurvivor.removeAttribute("disabled");
+    getSubTierFromSurvivor.style.cursor = "auto";
+    getSubTierFromSurvivor.value = "";
+    clearTo();
+  } else if (tier === 2) {
+    getSubTierFromSurvivor.innerHTML = "";
+    let elements = "";
+    let hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
+    elements += hiddenValue;
+    for (let i = 4; i >= 1; i--) {
+      const createOptionElement = `<option value="${i}">${i}</option>`;
+      elements += createOptionElement;
+    }
+    getSubTierFromSurvivor.innerHTML = elements;
+    getSubTierFromSurvivor.removeAttribute("disabled");
+    getSubTierFromSurvivor.style.cursor = "auto";
+    getSubTierFromSurvivor.value = "";
+    clearTo();
   } else {
-    const getSubTier = () => {
-      getSubTierFromSurvivor.innerHTML = "";
-      let elements = "";
-      let hiddenValue =
-        "<option hidden disabled selected value>&mdash;</option>";
-      elements += hiddenValue;
-      for (let i = subTier; i >= 1; i--) {
-        const createOptionElement = `<option value="${i}">${i}</option>`;
-        elements += createOptionElement;
-      }
-      getSubTierFromSurvivor.innerHTML = elements;
-      getSubTierFromSurvivor.removeAttribute("disabled");
-      getSubTierFromSurvivor.style.cursor = "auto";
-      getSubTierFromSurvivor.value = "";
-      clearTo();
-    };
-    getSubTier();
+    getSubTierFromSurvivor.innerHTML = "";
+    let elements = "";
+    let hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
+    elements += hiddenValue;
+    for (let i = 5; i >= 1; i--) {
+      const createOptionElement = `<option value="${i}">${i}</option>`;
+      elements += createOptionElement;
+    }
+    getSubTierFromSurvivor.innerHTML = elements;
+    getSubTierFromSurvivor.removeAttribute("disabled");
+    getSubTierFromSurvivor.style.cursor = "auto";
+    getSubTierFromSurvivor.value = "";
+    clearTo();
   }
 }
 
-function updateStarOptionsFrom(star) {
-  if (star !== "peak") {
-    const getStar = () => {
-      let elements = "";
-      let hiddenValue =
-        "<option hidden disabled selected value>&mdash;</option>";
-      elements += hiddenValue;
-      for (let i = 0; i <= star; i++) {
-        const createOptionElement = `<option value="${i}">${i}</option>`;
-        elements += createOptionElement;
-      }
+function updateStarOptionsFrom(tier) {
+  if (tier === 1) {
+    let elements = "";
+    let hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
+    elements += hiddenValue;
+    for (let i = 0; i <= 2; i++) {
+      const createOptionElement = `<option value="${i}">${i}</option>`;
+      elements += createOptionElement;
+    }
 
-      const createSelectElement = window.document.createElement("select");
-      createSelectElement.setAttribute("id", "survivor-from-star");
-      createSelectElement.classList.add("select-from");
-      createSelectElement.innerHTML = elements;
-      createSelectElement.value = "";
-      getStarsFromSurvivor.removeEventListener("change", function clear() {
-        clearTo();
-      });
-      getStarsFromSurvivor.replaceWith(createSelectElement);
-      getStarsFromSurvivor = window.document.querySelector(
-        ".select-survivor .star-container .select-from"
-      );
-      getStarsFromSurvivor.addEventListener("change", function clear() {
-        clearTo();
-      });
+    const createSelectElement = window.document.createElement("select");
+    createSelectElement.setAttribute("id", "survivor-from-star");
+    createSelectElement.classList.add("select-from");
+    createSelectElement.innerHTML = elements;
+    createSelectElement.value = "";
+    getStarsFromSurvivor.removeEventListener("change", function clear() {
       clearTo();
-    };
-    getStar();
-  } else {
+    });
+    getStarsFromSurvivor.replaceWith(createSelectElement);
+    getStarsFromSurvivor = window.document.querySelector(
+      ".select-survivor .star-container .select-from"
+    );
+    getStarsFromSurvivor.addEventListener("change", function clear() {
+      clearTo();
+    });
+    clearTo();
+  } else if (tier === 2) {
+    let elements = "";
+    let hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
+    elements += hiddenValue;
+    for (let i = 0; i <= 3; i++) {
+      const createOptionElement = `<option value="${i}">${i}</option>`;
+      elements += createOptionElement;
+    }
+
+    const createSelectElement = window.document.createElement("select");
+    createSelectElement.setAttribute("id", "survivor-from-star");
+    createSelectElement.classList.add("select-from");
+    createSelectElement.innerHTML = elements;
+    createSelectElement.value = "";
+    getStarsFromSurvivor.removeEventListener("change", function clear() {
+      clearTo();
+    });
+    getStarsFromSurvivor.replaceWith(createSelectElement);
+    getStarsFromSurvivor = window.document.querySelector(
+      ".select-survivor .star-container .select-from"
+    );
+    getStarsFromSurvivor.addEventListener("change", function clear() {
+      clearTo();
+    });
+    clearTo();
+  } else if (tier === 7) {
+    let elements = "";
+    let hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
+    elements += hiddenValue;
+    for (let i = 0; i <= 24; i++) {
+      const createOptionElement = `<option value="${i}">${i}</option>`;
+      elements += createOptionElement;
+    }
+
+    const createSelectElement = window.document.createElement("select");
+    createSelectElement.setAttribute("id", "survivor-from-star");
+    createSelectElement.classList.add("select-from");
+    createSelectElement.innerHTML = elements;
+    createSelectElement.value = "";
+    getStarsFromSurvivor.removeEventListener("change", function clear() {
+      clearTo();
+    });
+    getStarsFromSurvivor.replaceWith(createSelectElement);
+    getStarsFromSurvivor = window.document.querySelector(
+      ".select-survivor .star-container .select-from"
+    );
+    getStarsFromSurvivor.addEventListener("change", function clear() {
+      clearTo();
+    });
+    clearTo();
+  } else if (tier === 8) {
     {
       const createInputElement = window.document.createElement("input");
       createInputElement.setAttribute("id", "survivor-from-star");
       createInputElement.setAttribute("type", "number");
       createInputElement.setAttribute("min", "25");
+      createInputElement.setAttribute("max", "99");
       createInputElement.value = "25";
       createInputElement.placeholder = "enter star";
       createInputElement.classList.add("select-from");
@@ -186,61 +212,83 @@ function updateStarOptionsFrom(star) {
       });
       clearTo();
     }
+  } else {
+    let elements = "";
+    let hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
+    elements += hiddenValue;
+    for (let i = 0; i <= 4; i++) {
+      const createOptionElement = `<option value="${i}">${i}</option>`;
+      elements += createOptionElement;
+    }
+
+    const createSelectElement = window.document.createElement("select");
+    createSelectElement.setAttribute("id", "survivor-from-star");
+    createSelectElement.classList.add("select-from");
+    createSelectElement.innerHTML = elements;
+    createSelectElement.value = "";
+    getStarsFromSurvivor.removeEventListener("change", function clear() {
+      clearTo();
+    });
+    getStarsFromSurvivor.replaceWith(createSelectElement);
+    getStarsFromSurvivor = window.document.querySelector(
+      ".select-survivor .star-container .select-from"
+    );
+    getStarsFromSurvivor.addEventListener("change", function clear() {
+      clearTo();
+    });
+    clearTo();
   }
 }
 
 getSubTierFromSurvivor.addEventListener("change", () => clearTo());
-
 getStarsFromSurvivor.addEventListener("change", function clear() {
   clearTo();
 });
 
 getTierToSurvivor.addEventListener("change", () => {
+  console.log("to clicked");
   updateTierTo();
-  checkSubTierFrom();
+  checkSubTierFrom(parseInt(getTierToSurvivor.value));
   window.console.log("configure tier(to)");
 });
 
-function updateTierTo() {
-  switch (getTierToSurvivor.value) {
-    case "tier-1":
-      updateStarOptionsTo(2);
-      break;
-    case "tier-2":
-      updateStarOptionsTo(3);
-      break;
-    case "tier-3":
-      updateStarOptionsTo(4);
-      break;
-    case "tier-4":
-      updateStarOptionsTo(4);
-      break;
-    case "tier-5":
-      updateStarOptionsTo(4);
-      break;
-    case "tier-6":
-      updateStarOptionsTo(4);
-      break;
-    case "tier-7":
-      updateStarOptionsTo(24);
-      break;
-    case "peak-tier":
-      updateStarOptionsTo("peak");
-      break;
-  }
-}
+// function updateTierTo() {
+//   switch (getTierToSurvivor.value) {
+//     case "1":
+//       updateStarOptionsTo(2);
+//       break;
+//     case "2":
+//       updateStarOptionsTo(3);
+//       break;
+//     case "3":
+//       updateStarOptionsTo(4);
+//       break;
+//     case "4":
+//       updateStarOptionsTo(4);
+//       break;
+//     case "5":
+//       updateStarOptionsTo(4);
+//       break;
+//     case "6":
+//       updateStarOptionsTo(4);
+//       break;
+//     case "7":
+//       updateStarOptionsTo(24);
+//       break;
+//     case "8":
+//       updateStarOptionsTo("peak");
+//       break;
+//   }
+// }
 
 function checkSubTierFrom() {
-  if (
-    getTierToSurvivor.value !== "tier-7" &&
-    getTierToSurvivor.value !== "peak-tier"
-  ) {
+  if (getTierToSurvivor.value !== "7" && getTierToSurvivor.value !== "8") {
     if (
       getTierFromSurvivor.value !== getTierToSurvivor.value &&
-      getTierToSurvivor.value === "tier-2"
+      getTierToSurvivor.value === "2"
     ) {
       updateSubTierOptionsTo(4);
-    } else if (getTierToSurvivor.value === "tier-1") {
+    } else if (getTierToSurvivor.value === "1") {
       switch (getSubTierFromSurvivor.value) {
         case "3":
           if (getTierFromSurvivor.value === getTierToSurvivor.value) {
@@ -251,7 +299,9 @@ function checkSubTierFrom() {
                 ).textContent
               )
             );
-          } else updateSubTierOptionsTo(5);
+          } else {
+            updateSubTierOptionsTo(5);
+          }
           break;
         case "2":
           if (getTierFromSurvivor.value === getTierToSurvivor.value) {
@@ -277,9 +327,9 @@ function checkSubTierFrom() {
           break;
       }
     } else if (
-      getTierToSurvivor.value !== "tier-1" &&
-      getTierToSurvivor.value !== "tier-7" &&
-      getTierToSurvivor.value !== "peak-tier"
+      getTierToSurvivor.value !== "1" &&
+      getTierToSurvivor.value !== "7" &&
+      getTierToSurvivor.value !== "8"
     ) {
       switch (getSubTierFromSurvivor.value) {
         case "5":
@@ -339,11 +389,9 @@ function checkSubTierFrom() {
           break;
       }
     }
-  } else if (getTierToSurvivor.value === "tier-7")
+  } else if (getTierToSurvivor.value === "7")
     updateSubTierOptionsTo("champion");
-  else if (getTierToSurvivor.value === "peak-tier")
-    updateSubTierOptionsTo("peak");
-  oooo;
+  else if (getTierToSurvivor.value === "8") updateSubTierOptionsTo("peak");
 }
 
 function updateSubTierOptionsTo(subTier) {
@@ -352,63 +400,23 @@ function updateSubTierOptionsTo(subTier) {
     getSubTierToSurvivor.setAttribute("disabled", "true");
     getSubTierToSurvivor.value = "";
   } else {
-    const getSubTier = () => {
-      getSubTierToSurvivor.innerHTML = "";
-      let elements = "";
-      let hiddenValue =
-        "<option hidden disabled selected value>&mdash;</option>";
-      elements += hiddenValue;
-      for (let i = subTier; i >= 1; i--) {
-        const createOptionElement = `<option value="${i}">${i}</option>`;
-        elements += createOptionElement;
-      }
-      getSubTierToSurvivor.innerHTML = elements;
-      getSubTierToSurvivor.removeAttribute("disabled");
-      getSubTierToSurvivor.style.cursor = "auto";
-      getSubTierToSurvivor.value = "";
-    };
-    getSubTier();
-  }
-}
-
-function updateStarOptionsTo(star) {
-  if (star !== "peak") {
+    getSubTierToSurvivor.innerHTML = "";
     let elements = "";
     let hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
     elements += hiddenValue;
-    for (let i = 0; i <= star; i++) {
+    for (let i = subTier; i >= 1; i--) {
       const createOptionElement = `<option value="${i}">${i}</option>`;
       elements += createOptionElement;
     }
-
-    const createSelectElement = window.document.createElement("select");
-    createSelectElement.setAttribute("id", "survivor-to-star");
-    createSelectElement.classList.add("select-to");
-    createSelectElement.innerHTML = elements;
-    createSelectElement.value = "";
-    getStarsToSurvivor = window.document.querySelector(
-      ".select-survivor .star-container .select-to"
-    );
-    getStarsToSurvivor.replaceWith(createSelectElement);
-  } else {
-    {
-      const createInputElement = window.document.createElement("input");
-      createInputElement.setAttribute("id", "survivor-to-star");
-      createInputElement.setAttribute("type", "number");
-      createInputElement.setAttribute("min", "26");
-      createInputElement.value = "26";
-      createInputElement.placeholder = "enter star";
-      createInputElement.classList.add("select-to");
-      getStarsToSurvivor = window.document.querySelector(
-        ".select-survivor .star-container .select-to"
-      );
-      getStarsToSurvivor.replaceWith(createInputElement);
-    }
+    getSubTierToSurvivor.innerHTML = elements;
+    getSubTierToSurvivor.removeAttribute("disabled");
+    getSubTierToSurvivor.style.cursor = "auto";
+    getSubTierToSurvivor.value = "";
   }
 }
 
 function checkStarFrom() {
-  if (getTierFromSurvivor.value === "tier-1") {
+  if (getTierFromSurvivor.value === "1") {
     switch (getStarsFromSurvivor.value) {
       case "0":
         break;
@@ -417,7 +425,7 @@ function checkStarFrom() {
       case "2":
         break;
     }
-  } else if (getTierFromSurvivor.value === "tier-2") {
+  } else if (getTierFromSurvivor.value === "2") {
     switch (getStarsFromSurvivor.value) {
       case "0":
         break;
@@ -428,7 +436,7 @@ function checkStarFrom() {
       case "4":
         break;
     }
-  } else if (getTierFromSurvivor.value === "champion") {
+  } else if (getTierFromSurvivor.value === "7") {
     switch (getStarsFromSurvivor.value) {
       case "0":
         break;
@@ -477,7 +485,7 @@ function checkStarFrom() {
       case "24":
         break;
     }
-  } else if (getTierFromSurvivor.value !== "peak") {
+  } else if (getTierFromSurvivor.value !== "8") {
     switch (getStarsFromSurvivor.value) {
       case "0":
         break;
@@ -493,6 +501,44 @@ function checkStarFrom() {
 }
 
 // function renderStarTo() {}
+
+function updateStarOptionsTo(star) {
+  if (star !== "peak") {
+    let elements = "";
+    let hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
+    elements += hiddenValue;
+
+    for (let i = 0; i <= star; i++) {
+      const createOptionElement = `<option value="${i}">${i}</option>`;
+      elements += createOptionElement;
+    }
+
+    const createSelectElement = window.document.createElement("select");
+    createSelectElement.setAttribute("id", "survivor-to-star");
+    createSelectElement.classList.add("select-to");
+    createSelectElement.innerHTML = elements;
+    createSelectElement.value = "";
+    getStarsToSurvivor = window.document.querySelector(
+      ".select-survivor .star-container .select-to"
+    );
+    getStarsToSurvivor.replaceWith(createSelectElement);
+  } else {
+    {
+      const createInputElement = window.document.createElement("input");
+      createInputElement.setAttribute("id", "survivor-to-star");
+      createInputElement.setAttribute("type", "number");
+      createInputElement.setAttribute("min", "26");
+      createInputElement.setAttribute("max", "100");
+      createInputElement.value = "26";
+      createInputElement.placeholder = "enter star";
+      createInputElement.classList.add("select-to");
+      getStarsToSurvivor = window.document.querySelector(
+        ".select-survivor .star-container .select-to"
+      );
+      getStarsToSurvivor.replaceWith(createInputElement);
+    }
+  }
+}
 
 function clearTo() {
   getSubTierToSurvivor.removeAttribute("disabled");
