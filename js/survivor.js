@@ -38,13 +38,14 @@ getTierFromSurvivor.addEventListener("change", () => {
   updateTierOptionsTo(parseInt(getTierFromSurvivor.value));
   updateSubTierOptionsFrom(parseInt(getTierFromSurvivor.value));
   updateStarOptionsFrom(parseInt(getTierFromSurvivor.value));
+  // checkStarFrom(getTierFromSurvivor.value);
   window.console.log("configure tier(from)");
 });
 
 function updateTierOptionsTo(tier) {
   getTierToSurvivor.innerHTML = "";
   let elements = "";
-  let hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
+  const hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
   elements += hiddenValue;
   for (let i = tier; i <= 8; i++) {
     if (i === 8) {
@@ -72,7 +73,8 @@ function updateSubTierOptionsFrom(tier) {
   } else if (tier === 1) {
     getSubTierFromSurvivor.innerHTML = "";
     let elements = "";
-    let hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
+    const hiddenValue =
+      "<option hidden disabled selected value>&mdash;</option>";
     elements += hiddenValue;
     for (let i = 3; i >= 1; i--) {
       const createOptionElement = `<option value="${i}">${i}</option>`;
@@ -86,7 +88,8 @@ function updateSubTierOptionsFrom(tier) {
   } else if (tier === 2) {
     getSubTierFromSurvivor.innerHTML = "";
     let elements = "";
-    let hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
+    const hiddenValue =
+      "<option hidden disabled selected value>&mdash;</option>";
     elements += hiddenValue;
     for (let i = 4; i >= 1; i--) {
       const createOptionElement = `<option value="${i}">${i}</option>`;
@@ -100,7 +103,8 @@ function updateSubTierOptionsFrom(tier) {
   } else {
     getSubTierFromSurvivor.innerHTML = "";
     let elements = "";
-    let hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
+    const hiddenValue =
+      "<option hidden disabled selected value>&mdash;</option>";
     elements += hiddenValue;
     for (let i = 5; i >= 1; i--) {
       const createOptionElement = `<option value="${i}">${i}</option>`;
@@ -117,7 +121,8 @@ function updateSubTierOptionsFrom(tier) {
 function updateStarOptionsFrom(tier) {
   if (tier === 1) {
     let elements = "";
-    let hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
+    const hiddenValue =
+      "<option hidden disabled selected value>&mdash;</option>";
     elements += hiddenValue;
     for (let i = 0; i <= 2; i++) {
       const createOptionElement = `<option value="${i}">${i}</option>`;
@@ -130,6 +135,50 @@ function updateStarOptionsFrom(tier) {
     createSelectElement.innerHTML = elements;
     createSelectElement.value = "";
     getStarsFromSurvivor.removeEventListener("change", function clear() {
+      if (
+        getTierFromSurvivor.value === "1" &&
+        getSubTierFromSurvivor.value === "1" &&
+        getStarsFromSurvivor.value === "2"
+      ) {
+        window.console.log("Stars at From - Worker Bee");
+        checkStarFrom();
+      } else if (
+        getTierFromSurvivor.value === "2" &&
+        getSubTierFromSurvivor.value === "1" &&
+        getStarsFromSurvivor.value === "3"
+      ) {
+        window.console.log("Stars at From - Hound");
+        checkStarFrom();
+      } else if (
+        (getTierFromSurvivor.value === "3" ||
+          getTierFromSurvivor.value === "4" ||
+          getTierFromSurvivor.value === "5" ||
+          getTierFromSurvivor.value === "6") &&
+        getSubTierFromSurvivor.value === "1" &&
+        getStarsFromSurvivor.value === "4"
+      ) {
+        switch (getTierFromSurvivor.value) {
+          case "3":
+            window.console.log("Stars at From - Elk");
+            break;
+          case "4":
+            window.console.log("Stars at From - Mammoth");
+            break;
+          case "5":
+            window.console.log("Stars at From - Griffin");
+            break;
+          case "6":
+            window.console.log("Stars at From  - Alicorn");
+            break;
+        }
+        checkStarFrom();
+      } else if (
+        getTierFromSurvivor.value === "7" &&
+        getStarsFromSurvivor.value === "24"
+      ) {
+        window.console.log("Stars at From - Champion");
+        checkStarFrom();
+      }
       clearTo();
     });
     getStarsFromSurvivor.replaceWith(createSelectElement);
@@ -137,12 +186,57 @@ function updateStarOptionsFrom(tier) {
       ".select-survivor .star-container .select-from"
     );
     getStarsFromSurvivor.addEventListener("change", function clear() {
+      if (
+        getTierFromSurvivor.value === "1" &&
+        getSubTierFromSurvivor.value === "1" &&
+        getStarsFromSurvivor.value === "2"
+      ) {
+        window.console.log("Stars at From - Worker Bee");
+        checkStarFrom();
+      } else if (
+        getTierFromSurvivor.value === "2" &&
+        getSubTierFromSurvivor.value === "1" &&
+        getStarsFromSurvivor.value === "3"
+      ) {
+        window.console.log("Stars at From - Hound");
+        checkStarFrom();
+      } else if (
+        (getTierFromSurvivor.value === "3" ||
+          getTierFromSurvivor.value === "4" ||
+          getTierFromSurvivor.value === "5" ||
+          getTierFromSurvivor.value === "6") &&
+        getSubTierFromSurvivor.value === "1" &&
+        getStarsFromSurvivor.value === "4"
+      ) {
+        switch (getTierFromSurvivor.value) {
+          case "3":
+            window.console.log("Elk");
+            break;
+          case "4":
+            window.console.log("Mammoth");
+            break;
+          case "5":
+            window.console.log("Griffin");
+            break;
+          case "6":
+            window.console.log("Alicorn");
+            break;
+        }
+        checkStarFrom();
+      } else if (
+        getTierFromSurvivor.value === "7" &&
+        getStarsFromSurvivor.value === "24"
+      ) {
+        console.log("Champion");
+        checkStarFrom();
+      }
       clearTo();
     });
     clearTo();
   } else if (tier === 2) {
     let elements = "";
-    let hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
+    const hiddenValue =
+      "<option hidden disabled selected value>&mdash;</option>";
     elements += hiddenValue;
     for (let i = 0; i <= 3; i++) {
       const createOptionElement = `<option value="${i}">${i}</option>`;
@@ -155,6 +249,50 @@ function updateStarOptionsFrom(tier) {
     createSelectElement.innerHTML = elements;
     createSelectElement.value = "";
     getStarsFromSurvivor.removeEventListener("change", function clear() {
+      if (
+        getTierFromSurvivor.value === "1" &&
+        getSubTierFromSurvivor.value === "1" &&
+        getStarsFromSurvivor.value === "2"
+      ) {
+        window.console.log("Stars at From - Worker Bee");
+        checkStarFrom();
+      } else if (
+        getTierFromSurvivor.value === "2" &&
+        getSubTierFromSurvivor.value === "1" &&
+        getStarsFromSurvivor.value === "3"
+      ) {
+        window.console.log("Stars at From - Hound");
+        checkStarFrom();
+      } else if (
+        (getTierFromSurvivor.value === "3" ||
+          getTierFromSurvivor.value === "4" ||
+          getTierFromSurvivor.value === "5" ||
+          getTierFromSurvivor.value === "6") &&
+        getSubTierFromSurvivor.value === "1" &&
+        getStarsFromSurvivor.value === "4"
+      ) {
+        switch (getTierFromSurvivor.value) {
+          case "3":
+            window.console.log("Stars at From - Elk");
+            break;
+          case "4":
+            window.console.log("Stars at From - Mammoth");
+            break;
+          case "5":
+            window.console.log("Stars at From - Griffin");
+            break;
+          case "6":
+            window.console.log("Stars at From  - Alicorn");
+            break;
+        }
+        checkStarFrom();
+      } else if (
+        getTierFromSurvivor.value === "7" &&
+        getStarsFromSurvivor.value === "24"
+      ) {
+        window.console.log("Stars at From - Champion");
+        checkStarFrom();
+      }
       clearTo();
     });
     getStarsFromSurvivor.replaceWith(createSelectElement);
@@ -162,12 +300,57 @@ function updateStarOptionsFrom(tier) {
       ".select-survivor .star-container .select-from"
     );
     getStarsFromSurvivor.addEventListener("change", function clear() {
+      if (
+        getTierFromSurvivor.value === "1" &&
+        getSubTierFromSurvivor.value === "1" &&
+        getStarsFromSurvivor.value === "2"
+      ) {
+        window.console.log("Stars at From - Worker Bee");
+        checkStarFrom();
+      } else if (
+        getTierFromSurvivor.value === "2" &&
+        getSubTierFromSurvivor.value === "1" &&
+        getStarsFromSurvivor.value === "3"
+      ) {
+        window.console.log("Stars at From - Hound");
+        checkStarFrom();
+      } else if (
+        (getTierFromSurvivor.value === "3" ||
+          getTierFromSurvivor.value === "4" ||
+          getTierFromSurvivor.value === "5" ||
+          getTierFromSurvivor.value === "6") &&
+        getSubTierFromSurvivor.value === "1" &&
+        getStarsFromSurvivor.value === "4"
+      ) {
+        switch (getTierFromSurvivor.value) {
+          case "3":
+            window.console.log("Elk");
+            break;
+          case "4":
+            window.console.log("Mammoth");
+            break;
+          case "5":
+            window.console.log("Griffin");
+            break;
+          case "6":
+            window.console.log("Alicorn");
+            break;
+        }
+        checkStarFrom();
+      } else if (
+        getTierFromSurvivor.value === "7" &&
+        getStarsFromSurvivor.value === "24"
+      ) {
+        console.log("Champion");
+        checkStarFrom();
+      }
       clearTo();
     });
     clearTo();
   } else if (tier === 7) {
     let elements = "";
-    let hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
+    const hiddenValue =
+      "<option hidden disabled selected value>&mdash;</option>";
     elements += hiddenValue;
     for (let i = 0; i <= 24; i++) {
       const createOptionElement = `<option value="${i}">${i}</option>`;
@@ -180,6 +363,50 @@ function updateStarOptionsFrom(tier) {
     createSelectElement.innerHTML = elements;
     createSelectElement.value = "";
     getStarsFromSurvivor.removeEventListener("change", function clear() {
+      if (
+        getTierFromSurvivor.value === "1" &&
+        getSubTierFromSurvivor.value === "1" &&
+        getStarsFromSurvivor.value === "2"
+      ) {
+        window.console.log("Stars at From - Worker Bee");
+        checkStarFrom();
+      } else if (
+        getTierFromSurvivor.value === "2" &&
+        getSubTierFromSurvivor.value === "1" &&
+        getStarsFromSurvivor.value === "3"
+      ) {
+        window.console.log("Stars at From - Hound");
+        checkStarFrom();
+      } else if (
+        (getTierFromSurvivor.value === "3" ||
+          getTierFromSurvivor.value === "4" ||
+          getTierFromSurvivor.value === "5" ||
+          getTierFromSurvivor.value === "6") &&
+        getSubTierFromSurvivor.value === "1" &&
+        getStarsFromSurvivor.value === "4"
+      ) {
+        switch (getTierFromSurvivor.value) {
+          case "3":
+            window.console.log("Stars at From - Elk");
+            break;
+          case "4":
+            window.console.log("Stars at From - Mammoth");
+            break;
+          case "5":
+            window.console.log("Stars at From - Griffin");
+            break;
+          case "6":
+            window.console.log("Stars at From  - Alicorn");
+            break;
+        }
+        checkStarFrom();
+      } else if (
+        getTierFromSurvivor.value === "7" &&
+        getStarsFromSurvivor.value === "24"
+      ) {
+        window.console.log("Stars at From - Champion");
+        checkStarFrom();
+      }
       clearTo();
     });
     getStarsFromSurvivor.replaceWith(createSelectElement);
@@ -187,6 +414,50 @@ function updateStarOptionsFrom(tier) {
       ".select-survivor .star-container .select-from"
     );
     getStarsFromSurvivor.addEventListener("change", function clear() {
+      if (
+        getTierFromSurvivor.value === "1" &&
+        getSubTierFromSurvivor.value === "1" &&
+        getStarsFromSurvivor.value === "2"
+      ) {
+        window.console.log("Stars at From - Worker Bee");
+        checkStarFrom();
+      } else if (
+        getTierFromSurvivor.value === "2" &&
+        getSubTierFromSurvivor.value === "1" &&
+        getStarsFromSurvivor.value === "3"
+      ) {
+        window.console.log("Stars at From - Hound");
+        checkStarFrom();
+      } else if (
+        (getTierFromSurvivor.value === "3" ||
+          getTierFromSurvivor.value === "4" ||
+          getTierFromSurvivor.value === "5" ||
+          getTierFromSurvivor.value === "6") &&
+        getSubTierFromSurvivor.value === "1" &&
+        getStarsFromSurvivor.value === "4"
+      ) {
+        switch (getTierFromSurvivor.value) {
+          case "3":
+            window.console.log("Elk");
+            break;
+          case "4":
+            window.console.log("Mammoth");
+            break;
+          case "5":
+            window.console.log("Griffin");
+            break;
+          case "6":
+            window.console.log("Alicorn");
+            break;
+        }
+        checkStarFrom();
+      } else if (
+        getTierFromSurvivor.value === "7" &&
+        getStarsFromSurvivor.value === "24"
+      ) {
+        console.log("Champion");
+        checkStarFrom();
+      }
       clearTo();
     });
     clearTo();
@@ -201,6 +472,50 @@ function updateStarOptionsFrom(tier) {
       createInputElement.placeholder = "enter star";
       createInputElement.classList.add("select-from");
       getStarsFromSurvivor.removeEventListener("change", function clear() {
+        if (
+          getTierFromSurvivor.value === "1" &&
+          getSubTierFromSurvivor.value === "1" &&
+          getStarsFromSurvivor.value === "2"
+        ) {
+          window.console.log("Stars at From - Worker Bee");
+          checkStarFrom();
+        } else if (
+          getTierFromSurvivor.value === "2" &&
+          getSubTierFromSurvivor.value === "1" &&
+          getStarsFromSurvivor.value === "3"
+        ) {
+          window.console.log("Stars at From - Hound");
+          checkStarFrom();
+        } else if (
+          (getTierFromSurvivor.value === "3" ||
+            getTierFromSurvivor.value === "4" ||
+            getTierFromSurvivor.value === "5" ||
+            getTierFromSurvivor.value === "6") &&
+          getSubTierFromSurvivor.value === "1" &&
+          getStarsFromSurvivor.value === "4"
+        ) {
+          switch (getTierFromSurvivor.value) {
+            case "3":
+              window.console.log("Stars at From - Elk");
+              break;
+            case "4":
+              window.console.log("Stars at From - Mammoth");
+              break;
+            case "5":
+              window.console.log("Stars at From - Griffin");
+              break;
+            case "6":
+              window.console.log("Stars at From  - Alicorn");
+              break;
+          }
+          checkStarFrom();
+        } else if (
+          getTierFromSurvivor.value === "7" &&
+          getStarsFromSurvivor.value === "24"
+        ) {
+          window.console.log("Stars at From - Champion");
+          checkStarFrom();
+        }
         clearTo();
       });
       getStarsFromSurvivor.replaceWith(createInputElement);
@@ -208,13 +523,58 @@ function updateStarOptionsFrom(tier) {
         ".select-survivor .star-container .select-from"
       );
       getStarsFromSurvivor.addEventListener("change", function clear() {
+        if (
+          getTierFromSurvivor.value === "1" &&
+          getSubTierFromSurvivor.value === "1" &&
+          getStarsFromSurvivor.value === "2"
+        ) {
+          window.console.log("Stars at From - Worker Bee");
+          checkStarFrom();
+        } else if (
+          getTierFromSurvivor.value === "2" &&
+          getSubTierFromSurvivor.value === "1" &&
+          getStarsFromSurvivor.value === "3"
+        ) {
+          window.console.log("Stars at From - Hound");
+          checkStarFrom();
+        } else if (
+          (getTierFromSurvivor.value === "3" ||
+            getTierFromSurvivor.value === "4" ||
+            getTierFromSurvivor.value === "5" ||
+            getTierFromSurvivor.value === "6") &&
+          getSubTierFromSurvivor.value === "1" &&
+          getStarsFromSurvivor.value === "4"
+        ) {
+          switch (getTierFromSurvivor.value) {
+            case "3":
+              window.console.log("Stars at From - Elk");
+              break;
+            case "4":
+              window.console.log("Stars at From - Mammoth");
+              break;
+            case "5":
+              window.console.log("Stars at From - Griffin");
+              break;
+            case "6":
+              window.console.log("Stars at From  - Alicorn");
+              break;
+          }
+          checkStarFrom();
+        } else if (
+          getTierFromSurvivor.value === "7" &&
+          getStarsFromSurvivor.value === "24"
+        ) {
+          window.console.log("Stars at From  - Champion");
+          checkStarFrom();
+        }
         clearTo();
       });
       clearTo();
     }
   } else {
     let elements = "";
-    let hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
+    const hiddenValue =
+      "<option hidden disabled selected value>&mdash;</option>";
     elements += hiddenValue;
     for (let i = 0; i <= 4; i++) {
       const createOptionElement = `<option value="${i}">${i}</option>`;
@@ -227,6 +587,50 @@ function updateStarOptionsFrom(tier) {
     createSelectElement.innerHTML = elements;
     createSelectElement.value = "";
     getStarsFromSurvivor.removeEventListener("change", function clear() {
+      if (
+        getTierFromSurvivor.value === "1" &&
+        getSubTierFromSurvivor.value === "1" &&
+        getStarsFromSurvivor.value === "2"
+      ) {
+        window.console.log("Stars at From - Worker Bee");
+        checkStarFrom();
+      } else if (
+        getTierFromSurvivor.value === "2" &&
+        getSubTierFromSurvivor.value === "1" &&
+        getStarsFromSurvivor.value === "3"
+      ) {
+        window.console.log("Stars at From - Hound");
+        checkStarFrom();
+      } else if (
+        (getTierFromSurvivor.value === "3" ||
+          getTierFromSurvivor.value === "4" ||
+          getTierFromSurvivor.value === "5" ||
+          getTierFromSurvivor.value === "6") &&
+        getSubTierFromSurvivor.value === "1" &&
+        getStarsFromSurvivor.value === "4"
+      ) {
+        switch (getTierFromSurvivor.value) {
+          case "3":
+            window.console.log("Stars at From - Elk");
+            break;
+          case "4":
+            window.console.log("Stars at From - Mammoth");
+            break;
+          case "5":
+            window.console.log("Stars at From - Griffin");
+            break;
+          case "6":
+            window.console.log("Stars at From  - Alicorn");
+            break;
+        }
+        checkStarFrom();
+      } else if (
+        getTierFromSurvivor.value === "7" &&
+        getStarsFromSurvivor.value === "24"
+      ) {
+        window.console.log("Stars at From - Champion");
+        checkStarFrom();
+      }
       clearTo();
     });
     getStarsFromSurvivor.replaceWith(createSelectElement);
@@ -234,6 +638,50 @@ function updateStarOptionsFrom(tier) {
       ".select-survivor .star-container .select-from"
     );
     getStarsFromSurvivor.addEventListener("change", function clear() {
+      if (
+        getTierFromSurvivor.value === "1" &&
+        getSubTierFromSurvivor.value === "1" &&
+        getStarsFromSurvivor.value === "2"
+      ) {
+        window.console.log("Stars at From - Worker Bee");
+        checkStarFrom();
+      } else if (
+        getTierFromSurvivor.value === "2" &&
+        getSubTierFromSurvivor.value === "1" &&
+        getStarsFromSurvivor.value === "3"
+      ) {
+        window.console.log("Stars at From - Hound");
+        checkStarFrom();
+      } else if (
+        (getTierFromSurvivor.value === "3" ||
+          getTierFromSurvivor.value === "4" ||
+          getTierFromSurvivor.value === "5" ||
+          getTierFromSurvivor.value === "6") &&
+        getSubTierFromSurvivor.value === "1" &&
+        getStarsFromSurvivor.value === "4"
+      ) {
+        switch (getTierFromSurvivor.value) {
+          case "3":
+            window.console.log("Stars at From - Elk");
+            break;
+          case "4":
+            window.console.log("Stars at From - Mammoth");
+            break;
+          case "5":
+            window.console.log("Stars at From - Griffin");
+            break;
+          case "6":
+            window.console.log("Stars at From  - Alicorn");
+            break;
+        }
+        checkStarFrom();
+      } else if (
+        getTierFromSurvivor.value === "7" &&
+        getStarsFromSurvivor.value === "24"
+      ) {
+        window.console.log("Stars at From - Champion");
+        checkStarFrom();
+      }
       clearTo();
     });
     clearTo();
@@ -242,13 +690,94 @@ function updateStarOptionsFrom(tier) {
 
 getSubTierFromSurvivor.addEventListener("change", () => clearTo());
 getStarsFromSurvivor.addEventListener("change", function clear() {
+  if (
+    getTierFromSurvivor.value === "1" &&
+    getSubTierFromSurvivor.value === "1" &&
+    getStarsFromSurvivor.value === "2"
+  ) {
+    window.console.log("Stars at From - Worker Bee");
+    checkStarFrom();
+  } else if (
+    getTierFromSurvivor.value === "2" &&
+    getSubTierFromSurvivor.value === "1" &&
+    getStarsFromSurvivor.value === "3"
+  ) {
+    window.console.log("Stars at From - Hound");
+    checkStarFrom();
+  } else if (
+    (getTierFromSurvivor.value === "3" ||
+      getTierFromSurvivor.value === "4" ||
+      getTierFromSurvivor.value === "5" ||
+      getTierFromSurvivor.value === "6") &&
+    getSubTierFromSurvivor.value === "1" &&
+    getStarsFromSurvivor.value === "4"
+  ) {
+    switch (getTierFromSurvivor.value) {
+      case "3":
+        window.console.log("Stars at From - Elk");
+        break;
+      case "4":
+        window.console.log("Stars at From - Mammoth");
+        break;
+      case "5":
+        window.console.log("Stars at From - Griffin");
+        break;
+      case "6":
+        window.console.log("Stars at From  - Alicorn");
+        break;
+    }
+    checkStarFrom();
+  } else if (
+    getTierFromSurvivor.value === "7" &&
+    getStarsFromSurvivor.value === "24"
+  ) {
+    window.console.log("Stars at From - Champion");
+    checkStarFrom();
+  }
   clearTo();
 });
 
 getTierToSurvivor.addEventListener("change", () => {
   updateTierTo();
   checkSubTierFrom();
-  checkStarFrom();
+  if (getTierFromSurvivor.value === "1" && getStarsFromSurvivor.value !== "2") {
+    window.console.log("Stars at To - Worker Bee");
+    checkStarFrom();
+  } else if (
+    getTierFromSurvivor.value === "2" &&
+    getStarsFromSurvivor.value !== "3"
+  ) {
+    window.console.log("Stars at To - Hound");
+    checkStarFrom();
+  } else if (
+    (getTierFromSurvivor.value === "3" ||
+      getTierFromSurvivor.value === "4" ||
+      getTierFromSurvivor.value === "5" ||
+      getTierFromSurvivor.value === "6") &&
+    getStarsFromSurvivor.value !== "4"
+  ) {
+    switch (getTierFromSurvivor.value) {
+      case "3":
+        window.console.log("Stars at From - Elk");
+        break;
+      case "4":
+        window.console.log("Stars at From - Mammoth");
+        break;
+      case "5":
+        window.console.log("Stars at From - Griffin");
+        break;
+      case "6":
+        window.console.log("Stars at From  - Alicorn");
+        break;
+    }
+    checkStarFrom();
+  } else if (
+    getTierFromSurvivor.value === "7" &&
+    getStarsFromSurvivor.value !== "24"
+  ) {
+    window.console.log("Stars at To - Champion");
+    checkStarFrom();
+  }
   window.console.log("configure tier(to)");
 });
 
@@ -457,7 +986,8 @@ function updateSubTierOptionsTo(subTier) {
   } else {
     getSubTierToSurvivor.innerHTML = "";
     let elements = "";
-    let hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
+    const hiddenValue =
+      "<option hidden disabled selected value>&mdash;</option>";
     elements += hiddenValue;
     for (let i = subTier; i >= 1; i--) {
       const createOptionElement = `<option value="${i}">${i}</option>`;
@@ -474,10 +1004,36 @@ function checkStarFrom() {
   if (getTierFromSurvivor.value === "1") {
     switch (getStarsFromSurvivor.value) {
       case "0":
+        updateStarFromCheck(1, 2);
         break;
       case "1":
+        updateStarFromCheck(2, 2);
         break;
       case "2":
+        if (getSubTierFromSurvivor.value === "3") {
+          let elements = "";
+          const hiddenValue =
+            "<option disabled hidden selected value=''>&mdash;</option>";
+          elements += hiddenValue;
+          for (let i = 2; i >= 1; i--) {
+            const createOptionElement = `<option value="${i}">${i}</option>`;
+            elements += createOptionElement;
+          }
+          console.log(elements);
+          getSubTierToSurvivor.innerHTML = elements;
+          updateStarFromCheck(0, 2);
+        } else if (getSubTierFromSurvivor.value === "2") {
+          let elements = "";
+          const hiddenValue =
+            "<option disabled hidden selected value=''>&mdash;</option>";
+          elements += hiddenValue;
+          for (let i = 1; i >= 1; i--) {
+            const createOptionElement = `<option value="${i}">${i}</option>`;
+            elements += createOptionElement;
+          }
+          getSubTierToSurvivor.innerHTML = elements;
+          updateStarFromCheck(0, 2);
+        }
         break;
     }
   } else if (getTierFromSurvivor.value === "2") {
@@ -557,12 +1113,32 @@ function checkStarFrom() {
   }
 }
 
-function updateStarFromCheck() {}
+function updateStarFromCheck(start, end) {
+  let elements = "";
+  const hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
+  elements += hiddenValue;
+
+  for (let i = start; i <= end; i++) {
+    const createOptionElement = `<option value="${i}">${i}</option>`;
+    elements += createOptionElement;
+  }
+
+  const createSelectElement = window.document.createElement("select");
+  createSelectElement.setAttribute("id", "survivor-to-star");
+  createSelectElement.classList.add("select-to");
+  createSelectElement.innerHTML = elements;
+  createSelectElement.value = "";
+  getStarsToSurvivor.replaceWith(createSelectElement);
+  getStarsToSurvivor = window.document.querySelector(
+    ".select-survivor .star-container .select-to"
+  );
+}
 
 function updateStarOptionsTo(star) {
   if (star !== "peak") {
     let elements = "";
-    let hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
+    const hiddenValue =
+      "<option hidden disabled selected value>&mdash;</option>";
     elements += hiddenValue;
 
     for (let i = 0; i <= star; i++) {
@@ -603,7 +1179,7 @@ function clearTo() {
   getSubTierToSurvivor.value = "";
 
   let elements = "";
-  let hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
+  const hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
   elements += hiddenValue;
   for (let i = 0; i <= 4; i++) {
     const createOptionElement = `<option value="${i}">${i}</option>`;
