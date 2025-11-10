@@ -38,7 +38,6 @@ getTierFromSurvivor.addEventListener("change", () => {
   updateTierOptionsTo(parseInt(getTierFromSurvivor.value));
   updateSubTierOptionsFrom(parseInt(getTierFromSurvivor.value));
   updateStarOptionsFrom(parseInt(getTierFromSurvivor.value));
-  // checkStarFrom(getTierFromSurvivor.value);
   window.console.log("configure tier(from)");
 });
 
@@ -789,50 +788,34 @@ function updateTierTo() {
     case "1":
       updateSubTierOptionsTo(3);
       updateStarOptionsTo(2);
-      // checkSubTierFrom();
-      // checkStarFrom();
       break;
     case "2":
       updateSubTierOptionsTo(4);
       updateStarOptionsTo(3);
-      // checkSubTierFrom();
-      // checkStarFrom();
       break;
     case "3":
       updateSubTierOptionsTo(5);
       updateStarOptionsTo(4);
-      // checkSubTierFrom();
-      // checkStarFrom();
       break;
     case "4":
       updateSubTierOptionsTo(5);
       updateStarOptionsTo(4);
-      // checkSubTierFrom();
-      // checkStarFrom();
       break;
     case "5":
       updateSubTierOptionsTo(5);
       updateStarOptionsTo(4);
-      // checkSubTierFrom();
-      // checkStarFrom();
       break;
     case "6":
       updateSubTierOptionsTo(5);
       updateStarOptionsTo(4);
-      // checkSubTierFrom();
-      // checkStarFrom();
       break;
     case "7":
       updateSubTierOptionsTo("champion");
       updateStarOptionsTo(24);
-      // checkSubTierFrom();
-      // checkStarFrom();
       break;
     case "8":
       updateSubTierOptionsTo("peak");
       updateStarOptionsTo("peak");
-      // checkSubTierFrom();
-      // checkStarFrom();
       break;
   }
 }
@@ -1004,10 +987,10 @@ function updateSubTierOptionsTo(subTier) {
 }
 
 function checkStarFrom() {
-  if (getTierFromSurvivor.value === "1") {
+  if (getTierToSurvivor.value === "1") {
     switch (getStarsFromSurvivor.value) {
       case "0":
-        updateStarFromCheck(2, 2);
+        updateStarFromCheck(1, 2);
         break;
       case "1":
         updateStarFromCheck(2, 2);
