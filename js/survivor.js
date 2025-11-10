@@ -46,6 +46,7 @@ function updateTierOptionsTo(tier) {
   let elements = "";
   const hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
   elements += hiddenValue;
+
   for (let i = tier; i <= 8; i++) {
     if (i === 8) {
       const createOptionElement = `<option value="${i}">Peak Tier - ${
@@ -59,6 +60,7 @@ function updateTierOptionsTo(tier) {
       elements += createOptionElement;
     }
   }
+
   getTierToSurvivor.innerHTML = elements;
   clearTo();
 }
@@ -68,17 +70,19 @@ function updateSubTierOptionsFrom(tier) {
     getSubTierFromSurvivor.setAttribute("disabled", "true");
     getSubTierFromSurvivor.style.cursor = "not-allowed";
     getSubTierFromSurvivor.value = "";
-    // clearTo();
+    clearTo();
   } else if (tier === 1) {
     getSubTierFromSurvivor.innerHTML = "";
     let elements = "";
     const hiddenValue =
       "<option hidden disabled selected value>&mdash;</option>";
     elements += hiddenValue;
+
     for (let i = 3; i >= 1; i--) {
       const createOptionElement = `<option value="${i}">${i}</option>`;
       elements += createOptionElement;
     }
+
     getSubTierFromSurvivor.innerHTML = elements;
     getSubTierFromSurvivor.removeAttribute("disabled");
     getSubTierFromSurvivor.style.cursor = "auto";
@@ -90,10 +94,12 @@ function updateSubTierOptionsFrom(tier) {
     const hiddenValue =
       "<option hidden disabled selected value>&mdash;</option>";
     elements += hiddenValue;
+
     for (let i = 4; i >= 1; i--) {
       const createOptionElement = `<option value="${i}">${i}</option>`;
       elements += createOptionElement;
     }
+
     getSubTierFromSurvivor.innerHTML = elements;
     getSubTierFromSurvivor.removeAttribute("disabled");
     getSubTierFromSurvivor.style.cursor = "auto";
@@ -105,10 +111,12 @@ function updateSubTierOptionsFrom(tier) {
     const hiddenValue =
       "<option hidden disabled selected value>&mdash;</option>";
     elements += hiddenValue;
+
     for (let i = 5; i >= 1; i--) {
       const createOptionElement = `<option value="${i}">${i}</option>`;
       elements += createOptionElement;
     }
+
     getSubTierFromSurvivor.innerHTML = elements;
     getSubTierFromSurvivor.removeAttribute("disabled");
     getSubTierFromSurvivor.style.cursor = "auto";
@@ -128,6 +136,7 @@ function updateStarOptionsFrom(tier) {
     const hiddenValue =
       "<option hidden disabled selected value>&mdash;</option>";
     elements += hiddenValue;
+
     for (let i = 0; i <= 2; i++) {
       const createOptionElement = `<option value="${i}">${i}</option>`;
       elements += createOptionElement;
@@ -138,6 +147,7 @@ function updateStarOptionsFrom(tier) {
     createSelectElement.classList.add("select-from");
     createSelectElement.innerHTML = elements;
     createSelectElement.value = "";
+
     getStarsFromSurvivor.removeEventListener("change", function clear() {
       if (
         getTierFromSurvivor.value === "1" &&
@@ -165,12 +175,15 @@ function updateStarOptionsFrom(tier) {
           case "3":
             window.console.log("Stars at From - Elk");
             break;
+
           case "4":
             window.console.log("Stars at From - Mammoth");
             break;
+
           case "5":
             window.console.log("Stars at From - Griffin");
             break;
+
           case "6":
             window.console.log("Stars at From  - Alicorn");
             break;
@@ -217,12 +230,15 @@ function updateStarOptionsFrom(tier) {
           case "3":
             window.console.log("Elk");
             break;
+
           case "4":
             window.console.log("Mammoth");
             break;
+
           case "5":
             window.console.log("Griffin");
             break;
+
           case "6":
             window.console.log("Alicorn");
             break;
@@ -243,6 +259,7 @@ function updateStarOptionsFrom(tier) {
     const hiddenValue =
       "<option hidden disabled selected value>&mdash;</option>";
     elements += hiddenValue;
+
     for (let i = 0; i <= 3; i++) {
       const createOptionElement = `<option value="${i}">${i}</option>`;
       elements += createOptionElement;
@@ -253,6 +270,7 @@ function updateStarOptionsFrom(tier) {
     createSelectElement.classList.add("select-from");
     createSelectElement.innerHTML = elements;
     createSelectElement.value = "";
+
     getStarsFromSurvivor.removeEventListener("change", function clear() {
       if (
         getTierFromSurvivor.value === "1" &&
@@ -280,12 +298,15 @@ function updateStarOptionsFrom(tier) {
           case "3":
             window.console.log("Stars at From - Elk");
             break;
+
           case "4":
             window.console.log("Stars at From - Mammoth");
             break;
+
           case "5":
             window.console.log("Stars at From - Griffin");
             break;
+
           case "6":
             window.console.log("Stars at From  - Alicorn");
             break;
@@ -332,12 +353,15 @@ function updateStarOptionsFrom(tier) {
           case "3":
             window.console.log("Elk");
             break;
+
           case "4":
             window.console.log("Mammoth");
             break;
+
           case "5":
             window.console.log("Griffin");
             break;
+
           case "6":
             window.console.log("Alicorn");
             break;
@@ -358,6 +382,7 @@ function updateStarOptionsFrom(tier) {
     const hiddenValue =
       "<option hidden disabled selected value>&mdash;</option>";
     elements += hiddenValue;
+
     for (let i = 0; i <= 24; i++) {
       const createOptionElement = `<option value="${i}">${i}</option>`;
       elements += createOptionElement;
@@ -368,6 +393,7 @@ function updateStarOptionsFrom(tier) {
     createSelectElement.classList.add("select-from");
     createSelectElement.innerHTML = elements;
     createSelectElement.value = "";
+
     getStarsFromSurvivor.removeEventListener("change", function clear() {
       if (
         getTierFromSurvivor.value === "1" &&
@@ -395,12 +421,15 @@ function updateStarOptionsFrom(tier) {
           case "3":
             window.console.log("Stars at From - Elk");
             break;
+
           case "4":
             window.console.log("Stars at From - Mammoth");
             break;
+
           case "5":
             window.console.log("Stars at From - Griffin");
             break;
+
           case "6":
             window.console.log("Stars at From  - Alicorn");
             break;
@@ -419,6 +448,7 @@ function updateStarOptionsFrom(tier) {
     getStarsFromSurvivor = window.document.querySelector(
       ".select-survivor .star-container .select-from"
     );
+
     getStarsFromSurvivor.addEventListener("change", function clear() {
       if (
         getTierFromSurvivor.value === "1" &&
@@ -446,12 +476,15 @@ function updateStarOptionsFrom(tier) {
           case "3":
             window.console.log("Elk");
             break;
+
           case "4":
             window.console.log("Mammoth");
             break;
+
           case "5":
             window.console.log("Griffin");
             break;
+
           case "6":
             window.console.log("Alicorn");
             break;
@@ -477,6 +510,7 @@ function updateStarOptionsFrom(tier) {
       createInputElement.value = "25";
       createInputElement.placeholder = "enter star";
       createInputElement.classList.add("select-from");
+
       getStarsFromSurvivor.removeEventListener("change", function clear() {
         if (
           getTierFromSurvivor.value === "1" &&
@@ -504,12 +538,15 @@ function updateStarOptionsFrom(tier) {
             case "3":
               window.console.log("Stars at From - Elk");
               break;
+
             case "4":
               window.console.log("Stars at From - Mammoth");
               break;
+
             case "5":
               window.console.log("Stars at From - Griffin");
               break;
+
             case "6":
               window.console.log("Stars at From  - Alicorn");
               break;
@@ -528,6 +565,7 @@ function updateStarOptionsFrom(tier) {
       getStarsFromSurvivor = window.document.querySelector(
         ".select-survivor .star-container .select-from"
       );
+
       getStarsFromSurvivor.addEventListener("change", function clear() {
         if (
           getTierFromSurvivor.value === "1" &&
@@ -555,12 +593,15 @@ function updateStarOptionsFrom(tier) {
             case "3":
               window.console.log("Stars at From - Elk");
               break;
+
             case "4":
               window.console.log("Stars at From - Mammoth");
               break;
+
             case "5":
               window.console.log("Stars at From - Griffin");
               break;
+
             case "6":
               window.console.log("Stars at From  - Alicorn");
               break;
@@ -582,6 +623,7 @@ function updateStarOptionsFrom(tier) {
     const hiddenValue =
       "<option hidden disabled selected value>&mdash;</option>";
     elements += hiddenValue;
+
     for (let i = 0; i <= 4; i++) {
       const createOptionElement = `<option value="${i}">${i}</option>`;
       elements += createOptionElement;
@@ -592,6 +634,7 @@ function updateStarOptionsFrom(tier) {
     createSelectElement.classList.add("select-from");
     createSelectElement.innerHTML = elements;
     createSelectElement.value = "";
+
     getStarsFromSurvivor.removeEventListener("change", function clear() {
       if (
         getTierFromSurvivor.value === "1" &&
@@ -619,12 +662,15 @@ function updateStarOptionsFrom(tier) {
           case "3":
             window.console.log("Stars at From - Elk");
             break;
+
           case "4":
             window.console.log("Stars at From - Mammoth");
             break;
+
           case "5":
             window.console.log("Stars at From - Griffin");
             break;
+
           case "6":
             window.console.log("Stars at From  - Alicorn");
             break;
@@ -670,12 +716,15 @@ function updateStarOptionsFrom(tier) {
           case "3":
             window.console.log("Stars at From - Elk");
             break;
+
           case "4":
             window.console.log("Stars at From - Mammoth");
             break;
+
           case "5":
             window.console.log("Stars at From - Griffin");
             break;
+
           case "6":
             window.console.log("Stars at From  - Alicorn");
             break;
@@ -721,12 +770,15 @@ getStarsFromSurvivor.addEventListener("change", function clear() {
       case "3":
         window.console.log("Stars at From - Elk");
         break;
+
       case "4":
         window.console.log("Stars at From - Mammoth");
         break;
+
       case "5":
         window.console.log("Stars at From - Griffin");
         break;
+
       case "6":
         window.console.log("Stars at From  - Alicorn");
         break;
@@ -765,12 +817,15 @@ getTierToSurvivor.addEventListener("change", () => {
       case "3":
         window.console.log("Stars at From - Elk");
         break;
+
       case "4":
         window.console.log("Stars at From - Mammoth");
         break;
+
       case "5":
         window.console.log("Stars at From - Griffin");
         break;
+
       case "6":
         window.console.log("Stars at From  - Alicorn");
         break;
@@ -789,30 +844,37 @@ function updateTierTo() {
       updateSubTierOptionsTo(3);
       updateStarOptionsTo(2);
       break;
+
     case "2":
       updateSubTierOptionsTo(4);
       updateStarOptionsTo(3);
       break;
+
     case "3":
       updateSubTierOptionsTo(5);
       updateStarOptionsTo(4);
       break;
+
     case "4":
       updateSubTierOptionsTo(5);
       updateStarOptionsTo(4);
       break;
+
     case "5":
       updateSubTierOptionsTo(5);
       updateStarOptionsTo(4);
       break;
+
     case "6":
       updateSubTierOptionsTo(5);
       updateStarOptionsTo(4);
       break;
+
     case "7":
       updateSubTierOptionsTo("champion");
       updateStarOptionsTo(24);
       break;
+
     case "8":
       updateSubTierOptionsTo("peak");
       updateStarOptionsTo("peak");
@@ -835,6 +897,7 @@ function checkSubTierFrom() {
             );
           } else updateSubTierOptionsTo(4);
           break;
+
         case "2":
           if (getTierFromSurvivor.value === getTierToSurvivor.value) {
             updateSubTierOptionsTo(
@@ -846,6 +909,7 @@ function checkSubTierFrom() {
             );
           } else updateSubTierOptionsTo(4);
           break;
+
         case "1":
           if (getTierFromSurvivor.value === getTierToSurvivor.value) {
             updateSubTierOptionsTo(
@@ -875,6 +939,7 @@ function checkSubTierFrom() {
             );
           } else updateSubTierOptionsTo(5);
           break;
+
         case "4":
           if (getTierFromSurvivor.value === getTierToSurvivor.value) {
             updateSubTierOptionsTo(
@@ -886,6 +951,7 @@ function checkSubTierFrom() {
             );
           } else updateSubTierOptionsTo(5);
           break;
+
         case "3":
           if (getTierFromSurvivor.value === getTierToSurvivor.value) {
             updateSubTierOptionsTo(
@@ -897,6 +963,7 @@ function checkSubTierFrom() {
             );
           } else updateSubTierOptionsTo(5);
           break;
+
         case "2":
           if (getTierFromSurvivor.value === getTierToSurvivor.value) {
             updateSubTierOptionsTo(
@@ -908,6 +975,7 @@ function checkSubTierFrom() {
             );
           } else updateSubTierOptionsTo(5);
           break;
+
         case "1":
           if (getTierFromSurvivor.value === getTierToSurvivor.value) {
             updateSubTierOptionsTo(
@@ -933,6 +1001,7 @@ function checkSubTierFrom() {
             );
           } else updateSubTierOptionsTo(5);
           break;
+
         case "2":
           if (getTierFromSurvivor.value === getTierToSurvivor.value) {
             updateSubTierOptionsTo(
@@ -944,6 +1013,7 @@ function checkSubTierFrom() {
             );
           } else updateSubTierOptionsTo(5);
           break;
+
         case "1":
           if (getTierFromSurvivor.value === getTierToSurvivor.value) {
             updateSubTierOptionsTo(
@@ -975,10 +1045,12 @@ function updateSubTierOptionsTo(subTier) {
     const hiddenValue =
       "<option hidden disabled selected value>&mdash;</option>";
     elements += hiddenValue;
+
     for (let i = subTier; i >= 1; i--) {
       const createOptionElement = `<option value="${i}">${i}</option>`;
       elements += createOptionElement;
     }
+
     getSubTierToSurvivor.innerHTML = elements;
     getSubTierToSurvivor.removeAttribute("disabled");
     getSubTierToSurvivor.style.cursor = "auto";
@@ -1001,11 +1073,12 @@ function checkStarFrom() {
           const hiddenValue =
             "<option disabled hidden selected value=''>&mdash;</option>";
           elements += hiddenValue;
+
           for (let i = 2; i >= 1; i--) {
             const createOptionElement = `<option value="${i}">${i}</option>`;
             elements += createOptionElement;
           }
-          console.log(elements);
+
           getSubTierToSurvivor.innerHTML = elements;
           updateStarFromCheck(0, 2);
         } else if (getSubTierFromSurvivor.value === "2") {
@@ -1013,10 +1086,12 @@ function checkStarFrom() {
           const hiddenValue =
             "<option disabled hidden selected value=''>&mdash;</option>";
           elements += hiddenValue;
+
           for (let i = 1; i >= 1; i--) {
             const createOptionElement = `<option value="${i}">${i}</option>`;
             elements += createOptionElement;
           }
+
           getSubTierToSurvivor.innerHTML = elements;
           updateStarFromCheck(0, 2);
         }
@@ -1143,20 +1218,18 @@ function updateStarOptionsTo(star) {
     );
     getStarsToSurvivor.replaceWith(createSelectElement);
   } else {
-    {
-      const createInputElement = window.document.createElement("input");
-      createInputElement.setAttribute("id", "survivor-to-star");
-      createInputElement.setAttribute("type", "number");
-      createInputElement.setAttribute("min", "26");
-      createInputElement.setAttribute("max", "100");
-      createInputElement.value = "26";
-      createInputElement.placeholder = "enter star";
-      createInputElement.classList.add("select-to");
-      getStarsToSurvivor = window.document.querySelector(
-        ".select-survivor .star-container .select-to"
-      );
-      getStarsToSurvivor.replaceWith(createInputElement);
-    }
+    const createInputElement = window.document.createElement("input");
+    createInputElement.setAttribute("id", "survivor-to-star");
+    createInputElement.setAttribute("type", "number");
+    createInputElement.setAttribute("min", "26");
+    createInputElement.setAttribute("max", "100");
+    createInputElement.value = "26";
+    createInputElement.placeholder = "enter star";
+    createInputElement.classList.add("select-to");
+    getStarsToSurvivor = window.document.querySelector(
+      ".select-survivor .star-container .select-to"
+    );
+    getStarsToSurvivor.replaceWith(createInputElement);
   }
 }
 
@@ -1168,10 +1241,12 @@ function clearTo() {
   let elements = "";
   const hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
   elements += hiddenValue;
+
   for (let i = 0; i <= 4; i++) {
     const createOptionElement = `<option value="${i}">${i}</option>`;
     elements += createOptionElement;
   }
+
   const createSelectElement = window.document.createElement("select");
   createSelectElement.setAttribute("id", "survivor-to-star");
   createSelectElement.classList.add("select-to");
