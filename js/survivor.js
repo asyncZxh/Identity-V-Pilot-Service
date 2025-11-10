@@ -746,26 +746,23 @@ getStarsFromSurvivor.addEventListener("change", function clear() {
 getTierToSurvivor.addEventListener("change", () => {
   updateTierTo();
   checkSubTierFrom();
-  if (
-    getTierFromSurvivor.value === "1" &&
-    getSubTierFromSurvivor.value !== "1"
-  ) {
+  if (getTierToSurvivor.value === "1" && getSubTierFromSurvivor.value !== "1") {
     window.console.log("Stars at To - Worker Bee");
     checkStarFrom();
   } else if (
-    getTierFromSurvivor.value === "2" &&
+    getTierToSurvivor.value === "2" &&
     getSubTierFromSurvivor.value !== "1"
   ) {
     window.console.log("Stars at To - Hound");
     checkStarFrom();
   } else if (
-    (getTierFromSurvivor.value === "3" ||
-      getTierFromSurvivor.value === "4" ||
-      getTierFromSurvivor.value === "5" ||
-      getTierFromSurvivor.value === "6") &&
+    (getTierToSurvivor.value === "3" ||
+      getTierToSurvivor.value === "4" ||
+      getTierToSurvivor.value === "5" ||
+      getTierToSurvivor.value === "6") &&
     getSubTierFromSurvivor.value !== "1"
   ) {
-    switch (getTierFromSurvivor.value) {
+    switch (getTierToSurvivor.value) {
       case "3":
         window.console.log("Stars at From - Elk");
         break;
@@ -780,7 +777,7 @@ getTierToSurvivor.addEventListener("change", () => {
         break;
     }
     checkStarFrom();
-  } else if (getTierFromSurvivor.value === "7") {
+  } else if (getTierToSurvivor.value === "7") {
     window.console.log("Stars at To - Champion");
     checkStarFrom();
   }
@@ -1010,7 +1007,7 @@ function checkStarFrom() {
   if (getTierFromSurvivor.value === "1") {
     switch (getStarsFromSurvivor.value) {
       case "0":
-        updateStarFromCheck(1, 2);
+        updateStarFromCheck(2, 2);
         break;
       case "1":
         updateStarFromCheck(2, 2);
@@ -1120,6 +1117,7 @@ function checkStarFrom() {
 }
 
 function updateStarFromCheck(start, end) {
+  console.log("worked");
   let elements = "";
   const hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
   elements += hiddenValue;
