@@ -118,6 +118,11 @@ function updateSubTierOptionsFrom(tier) {
   }
 }
 
+getSubTierFromSurvivor.addEventListener("change", () => {
+  getStarsFromSurvivor.value = "";
+  clearTo();
+});
+
 function updateStarOptionsFrom(tier) {
   if (tier === 1) {
     let elements = "";
@@ -185,6 +190,7 @@ function updateStarOptionsFrom(tier) {
     getStarsFromSurvivor = window.document.querySelector(
       ".select-survivor .star-container .select-from"
     );
+
     getStarsFromSurvivor.addEventListener("change", function clear() {
       if (
         getTierFromSurvivor.value === "1" &&
@@ -299,6 +305,7 @@ function updateStarOptionsFrom(tier) {
     getStarsFromSurvivor = window.document.querySelector(
       ".select-survivor .star-container .select-from"
     );
+
     getStarsFromSurvivor.addEventListener("change", function clear() {
       if (
         getTierFromSurvivor.value === "1" &&
@@ -688,7 +695,6 @@ function updateStarOptionsFrom(tier) {
   }
 }
 
-getSubTierFromSurvivor.addEventListener("change", () => clearTo());
 getStarsFromSurvivor.addEventListener("change", function clear() {
   if (
     getTierFromSurvivor.value === "1" &&
@@ -740,12 +746,15 @@ getStarsFromSurvivor.addEventListener("change", function clear() {
 getTierToSurvivor.addEventListener("change", () => {
   updateTierTo();
   checkSubTierFrom();
-  if (getTierFromSurvivor.value === "1" && getStarsFromSurvivor.value !== "2") {
+  if (
+    getTierFromSurvivor.value === "1" &&
+    getSubTierFromSurvivor.value !== "1"
+  ) {
     window.console.log("Stars at To - Worker Bee");
     checkStarFrom();
   } else if (
     getTierFromSurvivor.value === "2" &&
-    getStarsFromSurvivor.value !== "3"
+    getSubTierFromSurvivor.value !== "1"
   ) {
     window.console.log("Stars at To - Hound");
     checkStarFrom();
@@ -754,7 +763,7 @@ getTierToSurvivor.addEventListener("change", () => {
       getTierFromSurvivor.value === "4" ||
       getTierFromSurvivor.value === "5" ||
       getTierFromSurvivor.value === "6") &&
-    getStarsFromSurvivor.value !== "4"
+    getSubTierFromSurvivor.value !== "1"
   ) {
     switch (getTierFromSurvivor.value) {
       case "3":
@@ -771,10 +780,7 @@ getTierToSurvivor.addEventListener("change", () => {
         break;
     }
     checkStarFrom();
-  } else if (
-    getTierFromSurvivor.value === "7" &&
-    getStarsFromSurvivor.value !== "24"
-  ) {
+  } else if (getTierFromSurvivor.value === "7") {
     window.console.log("Stars at To - Champion");
     checkStarFrom();
   }
