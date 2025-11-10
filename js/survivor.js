@@ -1213,10 +1213,10 @@ function updateStarOptionsTo(star) {
     createSelectElement.classList.add("select-to");
     createSelectElement.innerHTML = elements;
     createSelectElement.value = "";
+    getStarsToSurvivor.replaceWith(createSelectElement);
     getStarsToSurvivor = window.document.querySelector(
       ".select-survivor .star-container .select-to"
     );
-    getStarsToSurvivor.replaceWith(createSelectElement);
   } else {
     const createInputElement = window.document.createElement("input");
     createInputElement.setAttribute("id", "survivor-to-star");
@@ -1226,10 +1226,10 @@ function updateStarOptionsTo(star) {
     createInputElement.value = "26";
     createInputElement.placeholder = "enter star";
     createInputElement.classList.add("select-to");
+    getStarsToSurvivor.replaceWith(createInputElement);
     getStarsToSurvivor = window.document.querySelector(
       ".select-survivor .star-container .select-to"
     );
-    getStarsToSurvivor.replaceWith(createInputElement);
   }
 }
 
@@ -1252,10 +1252,10 @@ function clearTo() {
   createSelectElement.classList.add("select-to");
   createSelectElement.innerHTML = elements;
   createSelectElement.value = "";
+  getStarsToSurvivor.replaceWith(createSelectElement);
   getStarsToSurvivor = window.document.querySelector(
     ".select-survivor .star-container .select-to"
   );
-  getStarsToSurvivor.replaceWith(createSelectElement);
   getTierToSurvivor.value = "";
   getSubTierToSurvivor.value = "";
   getStarsToSurvivor.value = "";
