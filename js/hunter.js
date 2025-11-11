@@ -4,7 +4,7 @@ const getTierFromHunter = window.document.querySelector(
 const getSubTierFromHunter = window.document.querySelector(
   ".select-hunter .sub-tier-container .select-from"
 );
-const getStarsFromHunter = window.document.querySelector(
+let getStarsFromHunter = window.document.querySelector(
   ".select-hunter .star-container .select-from"
 );
 
@@ -14,10 +14,10 @@ const getTierToHunter = window.document.querySelector(
 const getSubTierToHunter = window.document.querySelector(
   ".select-hunter .sub-tier-container .select-to"
 );
-const getStarsToHunter = window.document.querySelector(
+let getStarsToHunter = window.document.querySelector(
   ".select-hunter .star-container .select-to"
 );
-const buttonCalculate = window.document.querySelector(
+const buttonCalculateHunter = window.document.querySelector(
   ".select-hunter .calculate-currency-container .total-button"
 );
 
