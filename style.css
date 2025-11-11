@@ -316,14 +316,12 @@ option {
   margin-bottom: 3.7rem;
 }
 
-.grind-services {
-  display: flex;
-  margin-bottom: 7rem;
-}
-
-.three-games-rank,
-.one-hundred-dice {
-  width: 50%;
+.services {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  text-align: center;
+  /* margin-bottom: 7rem; */
 }
 
 .essence-container {
