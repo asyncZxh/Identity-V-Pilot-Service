@@ -321,6 +321,8 @@ option {
   grid-template-columns: 1fr 1fr;
   justify-items: center;
   text-align: center;
+  column-gap: 2rem;
+  row-gap: 4rem;
   /* margin-bottom: 7rem; */
 }
 
@@ -351,7 +353,10 @@ option {
   z-index: 1;
 }
 
-.rank-essence-text {
+.rank-essence-text,
+.dice-text,
+.c-badge-text,
+.dailies-text {
   font-size: 1.6rem;
   text-align: center;
 }
@@ -369,16 +374,13 @@ option {
   width: 7rem;
 }
 
-.dice-text {
-  font-size: 1.6rem;
-  text-align: center;
-}
-
-.hiring-service {
-  text-align: center;
+.c-badge,
+.magnifying-glass {
+  width: 7rem;
 }
 
 .hiring-container {
+  text-align: center;
   width: 50%;
   margin: auto;
 }
