@@ -835,7 +835,7 @@ getTierToSurvivor.addEventListener("change", () => {
     checkStarFrom();
   } else if (
     getTierToSurvivor.value === "2" &&
-    getSubTierFromSurvivor.value !== "1"
+    (getSubTierFromSurvivor.value !== "1" || getStarsFromSurvivor.value !== "2")
   ) {
     window.console.log("Stars at To - Hound");
     checkStarFrom();
@@ -844,7 +844,7 @@ getTierToSurvivor.addEventListener("change", () => {
       getTierToSurvivor.value === "4" ||
       getTierToSurvivor.value === "5" ||
       getTierToSurvivor.value === "6") &&
-    getSubTierFromSurvivor.value !== "1"
+    (getSubTierFromSurvivor.value !== "1" || getStarsFromSurvivor.value !== "2")
   ) {
     switch (getTierToSurvivor.value) {
       case "3":
@@ -1127,28 +1127,6 @@ function checkStarFrom() {
 
           getSubTierToSurvivor.innerHTML = elements;
           updateStarFromCheck(0, 2);
-        } else if (getSubTierFromSurvivor.value === "1") {
-          let elements = "";
-          const hiddenValue =
-            "<option disabled hidden selected value=''>&mdash;</option>";
-          elements += hiddenValue;
-
-          for (let i = 1; i >= 1; i--) {
-            const createOptionElement = `<option value="${i}">${i}</option>`;
-            elements += createOptionElement;
-          }
-
-          getSubTierToSurvivor.innerHTML = elements;
-          switch (getStarsFromSurvivor.value) {
-            case "0":
-              console.log("worked");
-              updateStarFromCheck(1, 2);
-              break;
-            case "1":
-              console.log("worked");
-              updateStarFromCheck(2, 2);
-          }
-          break;
         }
     }
   } else if (getTierFromSurvivor.value === "2") {
