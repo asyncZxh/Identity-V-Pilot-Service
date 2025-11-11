@@ -872,6 +872,11 @@ getTierToSurvivor.addEventListener("change", () => {
   window.console.log("configure tier(to)");
 });
 
+getSubTierToSurvivor.addEventListener("change", () => {
+  checkStarFrom();
+  getStarsToSurvivor.value = "";
+});
+
 function updateTierTo() {
   switch (getTierToSurvivor.value) {
     case "1":
@@ -1096,10 +1101,14 @@ function checkStarFrom() {
   if (getTierToSurvivor.value === "1") {
     switch (getStarsFromSurvivor.value) {
       case "0":
-        updateStarFromCheck(1, 2);
+        if (getSubTierFromSurvivor.value === getSubTierToSurvivor.value)
+          updateStarFromCheck(1, 2);
+        else updateStarFromCheck(0, 2);
         break;
       case "1":
-        updateStarFromCheck(2, 2);
+        if (getSubTierFromSurvivor.value === getSubTierToSurvivor.value)
+          updateStarFromCheck(2, 2);
+        else updateStarFromCheck(0, 2);
         break;
       case "2":
         if (
