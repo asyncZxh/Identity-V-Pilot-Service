@@ -316,8 +316,9 @@ option {
   margin-bottom: 3.7rem;
 }
 
-.services {
+.grind-services {
   display: flex;
+  margin-bottom: 7rem;
 }
 
 .three-games-rank,
@@ -373,6 +374,24 @@ option {
 .dice-text {
   font-size: 1.6rem;
   text-align: center;
+}
+
+.hiring-service {
+  text-align: center;
+}
+
+.hiring-container {
+  width: 50%;
+  margin: auto;
+}
+
+.fist-icon {
+  width: 4.7rem;
+}
+
+.hiring-text {
+  font-size: 1.5rem;
+  line-height: 2.1rem;
 }
 
 .payment-method-text {
