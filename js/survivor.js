@@ -827,7 +827,10 @@ getStarsFromSurvivor.addEventListener("change", function clearAndCheckStar() {
 getTierToSurvivor.addEventListener("change", () => {
   updateTierTo();
   checkSubTierFrom();
-  if (getTierToSurvivor.value === "1" && getSubTierFromSurvivor.value !== "1") {
+  if (
+    getTierToSurvivor.value === "1" &&
+    (getSubTierFromSurvivor.value !== "1" || getStarsFromSurvivor.value !== "2")
+  ) {
     window.console.log("Stars at To - Worker Bee");
     checkStarFrom();
   } else if (
@@ -1124,18 +1127,82 @@ function checkStarFrom() {
 
           getSubTierToSurvivor.innerHTML = elements;
           updateStarFromCheck(0, 2);
+        } else if (getSubTierFromSurvivor.value === "1") {
+          let elements = "";
+          const hiddenValue =
+            "<option disabled hidden selected value=''>&mdash;</option>";
+          elements += hiddenValue;
+
+          for (let i = 1; i >= 1; i--) {
+            const createOptionElement = `<option value="${i}">${i}</option>`;
+            elements += createOptionElement;
+          }
+
+          getSubTierToSurvivor.innerHTML = elements;
+          switch (getStarsFromSurvivor.value) {
+            case "0":
+              console.log("worked");
+              updateStarFromCheck(1, 2);
+              break;
+            case "1":
+              console.log("worked");
+              updateStarFromCheck(2, 2);
+          }
+          break;
         }
-        break;
     }
   } else if (getTierFromSurvivor.value === "2") {
     switch (getStarsFromSurvivor.value) {
       case "0":
+        updateStarFromCheck(1, 3);
         break;
       case "1":
+        updateStarFromCheck(2, 3);
         break;
       case "2":
+        updateStarFromCheck(3, 3);
         break;
       case "3":
+        if (getSubTierFromSurvivor.value === "4") {
+          let elements = "";
+          const hiddenValue =
+            "<option disabled hidden selected value=''>&mdash;</option>";
+          elements += hiddenValue;
+
+          for (let i = 3; i >= 1; i--) {
+            const createOptionElement = `<option value="${i}">${i}</option>`;
+            elements += createOptionElement;
+          }
+
+          getSubTierToSurvivor.innerHTML = elements;
+          updateStarFromCheck(0, 3);
+        } else if (getSubTierFromSurvivor.value === "3") {
+          let elements = "";
+          const hiddenValue =
+            "<option disabled hidden selected value=''>&mdash;</option>";
+          elements += hiddenValue;
+
+          for (let i = 2; i >= 1; i--) {
+            const createOptionElement = `<option value="${i}">${i}</option>`;
+            elements += createOptionElement;
+          }
+
+          getSubTierToSurvivor.innerHTML = elements;
+          updateStarFromCheck(0, 3);
+        } else if (getSubTierFromSurvivor.value === "2") {
+          let elements = "";
+          const hiddenValue =
+            "<option disabled hidden selected value=''>&mdash;</option>";
+          elements += hiddenValue;
+
+          for (let i = 1; i >= 1; i--) {
+            const createOptionElement = `<option value="${i}">${i}</option>`;
+            elements += createOptionElement;
+          }
+
+          getSubTierToSurvivor.innerHTML = elements;
+          updateStarFromCheck(0, 3);
+        }
         break;
     }
   } else if (getTierFromSurvivor.value === "7") {
@@ -1191,21 +1258,77 @@ function checkStarFrom() {
   } else {
     switch (getStarsFromSurvivor.value) {
       case "0":
+        updateStarFromCheck(1, 4);
         break;
       case "1":
+        updateStarFromCheck(2, 4);
         break;
       case "2":
+        updateStarFromCheck(3, 4);
         break;
       case "3":
+        updateStarFromCheck(4, 4);
         break;
       case "4":
+        if (getSubTierFromSurvivor.value === "5") {
+          let elements = "";
+          const hiddenValue =
+            "<option disabled hidden selected value=''>&mdash;</option>";
+          elements += hiddenValue;
+
+          for (let i = 4; i >= 1; i--) {
+            const createOptionElement = `<option value="${i}">${i}</option>`;
+            elements += createOptionElement;
+          }
+
+          getSubTierToSurvivor.innerHTML = elements;
+          updateStarFromCheck(0, 4);
+        } else if (getSubTierFromSurvivor.value === "4") {
+          let elements = "";
+          const hiddenValue =
+            "<option disabled hidden selected value=''>&mdash;</option>";
+          elements += hiddenValue;
+
+          for (let i = 3; i >= 1; i--) {
+            const createOptionElement = `<option value="${i}">${i}</option>`;
+            elements += createOptionElement;
+          }
+
+          getSubTierToSurvivor.innerHTML = elements;
+          updateStarFromCheck(0, 4);
+        } else if (getSubTierFromSurvivor.value === "3") {
+          let elements = "";
+          const hiddenValue =
+            "<option disabled hidden selected value=''>&mdash;</option>";
+          elements += hiddenValue;
+
+          for (let i = 2; i >= 1; i--) {
+            const createOptionElement = `<option value="${i}">${i}</option>`;
+            elements += createOptionElement;
+          }
+
+          getSubTierToSurvivor.innerHTML = elements;
+          updateStarFromCheck(0, 4);
+        } else if (getSubTierFromSurvivor.value === "2") {
+          let elements = "";
+          const hiddenValue =
+            "<option disabled hidden selected value=''>&mdash;</option>";
+          elements += hiddenValue;
+
+          for (let i = 1; i >= 1; i--) {
+            const createOptionElement = `<option value="${i}">${i}</option>`;
+            elements += createOptionElement;
+          }
+
+          getSubTierToSurvivor.innerHTML = elements;
+          updateStarFromCheck(0, 4);
+        }
         break;
     }
   }
 }
 
 function updateStarFromCheck(start, end) {
-  console.log("worked");
   let elements = "";
   const hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
   elements += hiddenValue;
