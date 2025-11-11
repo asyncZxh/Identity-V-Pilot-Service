@@ -868,7 +868,6 @@ getTierToSurvivor.addEventListener("change", () => {
     window.console.log("Stars at To - Champion");
     checkStarFrom();
   }
-  // checkSubTierFrom();
   window.console.log("configure tier(to)");
 });
 
@@ -1101,12 +1100,18 @@ function checkStarFrom() {
   if (getTierToSurvivor.value === "1") {
     switch (getStarsFromSurvivor.value) {
       case "0":
-        if (getSubTierFromSurvivor.value === getSubTierToSurvivor.value)
+        if (
+          getSubTierFromSurvivor.value === getSubTierToSurvivor.value &&
+          getStarsFromSurvivor.value !== "3"
+        )
           updateStarFromCheck(1, 2);
         else updateStarFromCheck(0, 2);
         break;
       case "1":
-        if (getSubTierFromSurvivor.value === getSubTierToSurvivor.value)
+        if (
+          getSubTierFromSurvivor.value === getSubTierToSurvivor.value &&
+          getStarsFromSurvivor.value !== "3"
+        )
           updateStarFromCheck(2, 2);
         else updateStarFromCheck(0, 2);
         break;
@@ -1145,16 +1150,31 @@ function checkStarFrom() {
           updateStarFromCheck(0, 2);
         }
     }
-  } else if (getTierFromSurvivor.value === "2") {
+  } else if (getTierToSurvivor.value === "2") {
     switch (getStarsFromSurvivor.value) {
       case "0":
-        updateStarFromCheck(1, 3);
+        if (
+          getSubTierFromSurvivor.value === getSubTierToSurvivor.value &&
+          getStarsToSurvivor.value !== "4"
+        )
+          updateStarFromCheck(1, 3);
+        else updateStarFromCheck(0, 3);
         break;
       case "1":
-        updateStarFromCheck(2, 3);
+        if (
+          getSubTierFromSurvivor.value === getSubTierToSurvivor.value &&
+          getStarsToSurvivor.value !== "4"
+        )
+          updateStarFromCheck(2, 3);
+        else updateStarFromCheck(0, 3);
         break;
       case "2":
-        updateStarFromCheck(3, 3);
+        if (
+          getSubTierFromSurvivor.value === getSubTierToSurvivor.value &&
+          getStarsToSurvivor.value !== "4"
+        )
+          updateStarFromCheck(3, 3);
+        else updateStarFromCheck(0, 3);
         break;
       case "3":
         if (
@@ -1208,7 +1228,7 @@ function checkStarFrom() {
         }
         break;
     }
-  } else if (getTierFromSurvivor.value === "7") {
+  } else if (getTierToSurvivor.value === "7") {
     switch (getStarsFromSurvivor.value) {
       case "0":
         break;
@@ -1257,20 +1277,40 @@ function checkStarFrom() {
       case "24":
         break;
     }
-  } else if (getTierFromSurvivor.value === "8") {
+  } else if (getTierToSurvivor.value === "8") {
   } else {
     switch (getStarsFromSurvivor.value) {
       case "0":
-        updateStarFromCheck(1, 4);
+        if (
+          getSubTierFromSurvivor.value === getSubTierToSurvivor.value &&
+          getStarsToSurvivor.value !== "4"
+        )
+          updateStarFromCheck(1, 4);
+        else updateStarFromCheck(0, 4);
         break;
       case "1":
-        updateStarFromCheck(2, 4);
+        if (
+          getSubTierFromSurvivor.value === getSubTierToSurvivor.value &&
+          getStarsToSurvivor.value !== "4"
+        )
+          updateStarFromCheck(2, 4);
+        else updateStarFromCheck(0, 4);
         break;
       case "2":
-        updateStarFromCheck(3, 4);
+        if (
+          getSubTierFromSurvivor.value === getSubTierToSurvivor.value &&
+          getStarsToSurvivor.value !== "4"
+        )
+          updateStarFromCheck(3, 4);
+        else updateStarFromCheck(0, 4);
         break;
       case "3":
-        updateStarFromCheck(4, 4);
+        if (
+          getSubTierFromSurvivor.value === getSubTierToSurvivor.value &&
+          getStarsToSurvivor.value !== "4"
+        )
+          updateStarFromCheck(4, 4);
+        else updateStarFromCheck(0, 4);
         break;
       case "4":
         if (
