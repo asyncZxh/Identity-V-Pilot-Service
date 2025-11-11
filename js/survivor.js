@@ -868,6 +868,7 @@ getTierToSurvivor.addEventListener("change", () => {
     window.console.log("Stars at To - Champion");
     checkStarFrom();
   }
+  // checkSubTierFrom();
   window.console.log("configure tier(to)");
 });
 
@@ -1101,7 +1102,10 @@ function checkStarFrom() {
         updateStarFromCheck(2, 2);
         break;
       case "2":
-        if (getSubTierFromSurvivor.value === "3") {
+        if (
+          getTierFromSurvivor.value === getTierToSurvivor.value &&
+          getSubTierFromSurvivor.value === "3"
+        ) {
           let elements = "";
           const hiddenValue =
             "<option disabled hidden selected value=''>&mdash;</option>";
@@ -1114,7 +1118,10 @@ function checkStarFrom() {
 
           getSubTierToSurvivor.innerHTML = elements;
           updateStarFromCheck(0, 2);
-        } else if (getSubTierFromSurvivor.value === "2") {
+        } else if (
+          getTierFromSurvivor.value === getTierToSurvivor.value &&
+          getSubTierFromSurvivor.value === "2"
+        ) {
           let elements = "";
           const hiddenValue =
             "<option disabled hidden selected value=''>&mdash;</option>";
@@ -1141,7 +1148,10 @@ function checkStarFrom() {
         updateStarFromCheck(3, 3);
         break;
       case "3":
-        if (getSubTierFromSurvivor.value === "4") {
+        if (
+          getTierFromSurvivor.value === getTierToSurvivor.value &&
+          getSubTierFromSurvivor.value === "4"
+        ) {
           let elements = "";
           const hiddenValue =
             "<option disabled hidden selected value=''>&mdash;</option>";
@@ -1154,7 +1164,10 @@ function checkStarFrom() {
 
           getSubTierToSurvivor.innerHTML = elements;
           updateStarFromCheck(0, 3);
-        } else if (getSubTierFromSurvivor.value === "3") {
+        } else if (
+          getTierFromSurvivor.value === getTierToSurvivor.value &&
+          getSubTierFromSurvivor.value === "3"
+        ) {
           let elements = "";
           const hiddenValue =
             "<option disabled hidden selected value=''>&mdash;</option>";
@@ -1167,7 +1180,10 @@ function checkStarFrom() {
 
           getSubTierToSurvivor.innerHTML = elements;
           updateStarFromCheck(0, 3);
-        } else if (getSubTierFromSurvivor.value === "2") {
+        } else if (
+          getTierFromSurvivor.value === getTierToSurvivor.value &&
+          getSubTierFromSurvivor.value === "2"
+        ) {
           let elements = "";
           const hiddenValue =
             "<option disabled hidden selected value=''>&mdash;</option>";
@@ -1248,7 +1264,10 @@ function checkStarFrom() {
         updateStarFromCheck(4, 4);
         break;
       case "4":
-        if (getSubTierFromSurvivor.value === "5") {
+        if (
+          getTierFromSurvivor.value === getTierToSurvivor.value &&
+          getSubTierFromSurvivor.value === "5"
+        ) {
           let elements = "";
           const hiddenValue =
             "<option disabled hidden selected value=''>&mdash;</option>";
@@ -1261,7 +1280,10 @@ function checkStarFrom() {
 
           getSubTierToSurvivor.innerHTML = elements;
           updateStarFromCheck(0, 4);
-        } else if (getSubTierFromSurvivor.value === "4") {
+        } else if (
+          getTierFromSurvivor.value === getTierToSurvivor.value &&
+          getSubTierFromSurvivor.value === "4"
+        ) {
           let elements = "";
           const hiddenValue =
             "<option disabled hidden selected value=''>&mdash;</option>";
@@ -1274,7 +1296,10 @@ function checkStarFrom() {
 
           getSubTierToSurvivor.innerHTML = elements;
           updateStarFromCheck(0, 4);
-        } else if (getSubTierFromSurvivor.value === "3") {
+        } else if (
+          getTierFromSurvivor.value === getTierToSurvivor.value &&
+          getSubTierFromSurvivor.value === "3"
+        ) {
           let elements = "";
           const hiddenValue =
             "<option disabled hidden selected value=''>&mdash;</option>";
@@ -1287,7 +1312,10 @@ function checkStarFrom() {
 
           getSubTierToSurvivor.innerHTML = elements;
           updateStarFromCheck(0, 4);
-        } else if (getSubTierFromSurvivor.value === "2") {
+        } else if (
+          getTierFromSurvivor.value === getTierToSurvivor.value &&
+          getSubTierFromSurvivor.value === "2"
+        ) {
           let elements = "";
           const hiddenValue =
             "<option disabled hidden selected value=''>&mdash;</option>";
