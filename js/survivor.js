@@ -632,7 +632,7 @@ getTierToSurvivor.addEventListener("change", () => {
 });
 
 getSubTierToSurvivor.addEventListener("change", () => {
-  // checkStarFrom();
+  checkStarFrom();
   getStarsToSurvivor.value = "";
 });
 
