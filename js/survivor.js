@@ -47,7 +47,31 @@ function updateTierOptionsTo(tier) {
   const hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
   elements += hiddenValue;
 
-  for (let i = tier; i <= 8; i++) {
+  for (let i = tier; i <= ranks.length; i++) {
+    if (i === 8) {
+      const createOptionElement = `<option value="${i}">Peak Tier - ${
+        ranks[ranks.length - 1]
+      }</option>`;
+      elements += createOptionElement;
+    } else {
+      const createOptionElement = `<option value="${i}">Tier ${i} - ${
+        ranks[i - 1]
+      }</option>`;
+      elements += createOptionElement;
+    }
+  }
+
+  getTierToSurvivor.innerHTML = elements;
+  clearTo();
+}
+
+function updateTierOptionsToIfBeforePromote(tier) {
+  getTierToSurvivor.innerHTML = "";
+  let elements = "";
+  const hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
+  elements += hiddenValue;
+
+  for (let i = tier; i <= ranks.length; i++) {
     if (i === 8) {
       const createOptionElement = `<option value="${i}">Peak Tier - ${
         ranks[ranks.length - 1]
@@ -155,29 +179,43 @@ function updateStarOptionsFrom(tier) {
           getTierFromSurvivor.value === "1" &&
           getSubTierFromSurvivor.value === "1" &&
           getStarsFromSurvivor.value === "2"
-        ) {
-          checkStarFrom();
-        } else if (
+        )
+          updateTierOptionsToIfBeforePromote(2);
+        else if (
           getTierFromSurvivor.value === "2" &&
           getSubTierFromSurvivor.value === "1" &&
           getStarsFromSurvivor.value === "3"
-        ) {
-          checkStarFrom();
-        } else if (
-          (getTierFromSurvivor.value === "3" ||
-            getTierFromSurvivor.value === "4" ||
-            getTierFromSurvivor.value === "5" ||
-            getTierFromSurvivor.value === "6") &&
+        )
+          updateTierOptionsToIfBeforePromote(3);
+        else if (
+          getTierFromSurvivor.value === "3" &&
           getSubTierFromSurvivor.value === "1" &&
           getStarsFromSurvivor.value === "4"
-        ) {
-          checkStarFrom();
-        } else if (
+        )
+          updateTierOptionsToIfBeforePromote(4);
+        else if (
+          getTierFromSurvivor.value === "4" &&
+          getSubTierFromSurvivor.value === "1" &&
+          getStarsFromSurvivor.value === "4"
+        )
+          updateTierOptionsToIfBeforePromote(5);
+        else if (
+          getTierFromSurvivor.value === "5" &&
+          getSubTierFromSurvivor.value === "1" &&
+          getStarsFromSurvivor.value === "4"
+        )
+          updateTierOptionsToIfBeforePromote(6);
+        else if (
+          getTierFromSurvivor.value === "6" &&
+          getSubTierFromSurvivor.value === "1" &&
+          getStarsFromSurvivor.value === "4"
+        )
+          updateTierOptionsToIfBeforePromote(7);
+        else if (
           getTierFromSurvivor.value === "7" &&
           getStarsFromSurvivor.value === "24"
-        ) {
-          checkStarFrom();
-        }
+        )
+          updateTierOptionsToIfBeforePromote(8);
         clearTo();
       }
     );
@@ -193,29 +231,43 @@ function updateStarOptionsFrom(tier) {
           getTierFromSurvivor.value === "1" &&
           getSubTierFromSurvivor.value === "1" &&
           getStarsFromSurvivor.value === "2"
-        ) {
-          checkStarFrom();
-        } else if (
+        )
+          updateTierOptionsToIfBeforePromote(2);
+        else if (
           getTierFromSurvivor.value === "2" &&
           getSubTierFromSurvivor.value === "1" &&
           getStarsFromSurvivor.value === "3"
-        ) {
-          checkStarFrom();
-        } else if (
-          (getTierFromSurvivor.value === "3" ||
-            getTierFromSurvivor.value === "4" ||
-            getTierFromSurvivor.value === "5" ||
-            getTierFromSurvivor.value === "6") &&
+        )
+          updateTierOptionsToIfBeforePromote(3);
+        else if (
+          getTierFromSurvivor.value === "3" &&
           getSubTierFromSurvivor.value === "1" &&
           getStarsFromSurvivor.value === "4"
-        ) {
-          checkStarFrom();
-        } else if (
+        )
+          updateTierOptionsToIfBeforePromote(4);
+        else if (
+          getTierFromSurvivor.value === "4" &&
+          getSubTierFromSurvivor.value === "1" &&
+          getStarsFromSurvivor.value === "4"
+        )
+          updateTierOptionsToIfBeforePromote(5);
+        else if (
+          getTierFromSurvivor.value === "5" &&
+          getSubTierFromSurvivor.value === "1" &&
+          getStarsFromSurvivor.value === "4"
+        )
+          updateTierOptionsToIfBeforePromote(6);
+        else if (
+          getTierFromSurvivor.value === "6" &&
+          getSubTierFromSurvivor.value === "1" &&
+          getStarsFromSurvivor.value === "4"
+        )
+          updateTierOptionsToIfBeforePromote(7);
+        else if (
           getTierFromSurvivor.value === "7" &&
           getStarsFromSurvivor.value === "24"
-        ) {
-          checkStarFrom();
-        }
+        )
+          updateTierOptionsToIfBeforePromote(8);
         clearTo();
       }
     );
@@ -244,29 +296,43 @@ function updateStarOptionsFrom(tier) {
           getTierFromSurvivor.value === "1" &&
           getSubTierFromSurvivor.value === "1" &&
           getStarsFromSurvivor.value === "2"
-        ) {
-          checkStarFrom();
-        } else if (
+        )
+          updateTierOptionsToIfBeforePromote(2);
+        else if (
           getTierFromSurvivor.value === "2" &&
           getSubTierFromSurvivor.value === "1" &&
           getStarsFromSurvivor.value === "3"
-        ) {
-          checkStarFrom();
-        } else if (
-          (getTierFromSurvivor.value === "3" ||
-            getTierFromSurvivor.value === "4" ||
-            getTierFromSurvivor.value === "5" ||
-            getTierFromSurvivor.value === "6") &&
+        )
+          updateTierOptionsToIfBeforePromote(3);
+        else if (
+          getTierFromSurvivor.value === "3" &&
           getSubTierFromSurvivor.value === "1" &&
           getStarsFromSurvivor.value === "4"
-        ) {
-          checkStarFrom();
-        } else if (
+        )
+          updateTierOptionsToIfBeforePromote(4);
+        else if (
+          getTierFromSurvivor.value === "4" &&
+          getSubTierFromSurvivor.value === "1" &&
+          getStarsFromSurvivor.value === "4"
+        )
+          updateTierOptionsToIfBeforePromote(5);
+        else if (
+          getTierFromSurvivor.value === "5" &&
+          getSubTierFromSurvivor.value === "1" &&
+          getStarsFromSurvivor.value === "4"
+        )
+          updateTierOptionsToIfBeforePromote(6);
+        else if (
+          getTierFromSurvivor.value === "6" &&
+          getSubTierFromSurvivor.value === "1" &&
+          getStarsFromSurvivor.value === "4"
+        )
+          updateTierOptionsToIfBeforePromote(7);
+        else if (
           getTierFromSurvivor.value === "7" &&
           getStarsFromSurvivor.value === "24"
-        ) {
-          checkStarFrom();
-        }
+        )
+          updateTierOptionsToIfBeforePromote(8);
         clearTo();
       }
     );
@@ -282,29 +348,43 @@ function updateStarOptionsFrom(tier) {
           getTierFromSurvivor.value === "1" &&
           getSubTierFromSurvivor.value === "1" &&
           getStarsFromSurvivor.value === "2"
-        ) {
-          checkStarFrom();
-        } else if (
+        )
+          updateTierOptionsToIfBeforePromote(2);
+        else if (
           getTierFromSurvivor.value === "2" &&
           getSubTierFromSurvivor.value === "1" &&
           getStarsFromSurvivor.value === "3"
-        ) {
-          checkStarFrom();
-        } else if (
-          (getTierFromSurvivor.value === "3" ||
-            getTierFromSurvivor.value === "4" ||
-            getTierFromSurvivor.value === "5" ||
-            getTierFromSurvivor.value === "6") &&
+        )
+          updateTierOptionsToIfBeforePromote(3);
+        else if (
+          getTierFromSurvivor.value === "3" &&
           getSubTierFromSurvivor.value === "1" &&
           getStarsFromSurvivor.value === "4"
-        ) {
-          checkStarFrom();
-        } else if (
+        )
+          updateTierOptionsToIfBeforePromote(4);
+        else if (
+          getTierFromSurvivor.value === "4" &&
+          getSubTierFromSurvivor.value === "1" &&
+          getStarsFromSurvivor.value === "4"
+        )
+          updateTierOptionsToIfBeforePromote(5);
+        else if (
+          getTierFromSurvivor.value === "5" &&
+          getSubTierFromSurvivor.value === "1" &&
+          getStarsFromSurvivor.value === "4"
+        )
+          updateTierOptionsToIfBeforePromote(6);
+        else if (
+          getTierFromSurvivor.value === "6" &&
+          getSubTierFromSurvivor.value === "1" &&
+          getStarsFromSurvivor.value === "4"
+        )
+          updateTierOptionsToIfBeforePromote(7);
+        else if (
           getTierFromSurvivor.value === "7" &&
           getStarsFromSurvivor.value === "24"
-        ) {
-          checkStarFrom();
-        }
+        )
+          updateTierOptionsToIfBeforePromote(8);
         clearTo();
       }
     );
@@ -333,29 +413,43 @@ function updateStarOptionsFrom(tier) {
           getTierFromSurvivor.value === "1" &&
           getSubTierFromSurvivor.value === "1" &&
           getStarsFromSurvivor.value === "2"
-        ) {
-          checkStarFrom();
-        } else if (
+        )
+          updateTierOptionsToIfBeforePromote(2);
+        else if (
           getTierFromSurvivor.value === "2" &&
           getSubTierFromSurvivor.value === "1" &&
           getStarsFromSurvivor.value === "3"
-        ) {
-          checkStarFrom();
-        } else if (
-          (getTierFromSurvivor.value === "3" ||
-            getTierFromSurvivor.value === "4" ||
-            getTierFromSurvivor.value === "5" ||
-            getTierFromSurvivor.value === "6") &&
+        )
+          updateTierOptionsToIfBeforePromote(3);
+        else if (
+          getTierFromSurvivor.value === "3" &&
           getSubTierFromSurvivor.value === "1" &&
           getStarsFromSurvivor.value === "4"
-        ) {
-          checkStarFrom();
-        } else if (
+        )
+          updateTierOptionsToIfBeforePromote(4);
+        else if (
+          getTierFromSurvivor.value === "4" &&
+          getSubTierFromSurvivor.value === "1" &&
+          getStarsFromSurvivor.value === "4"
+        )
+          updateTierOptionsToIfBeforePromote(5);
+        else if (
+          getTierFromSurvivor.value === "5" &&
+          getSubTierFromSurvivor.value === "1" &&
+          getStarsFromSurvivor.value === "4"
+        )
+          updateTierOptionsToIfBeforePromote(6);
+        else if (
+          getTierFromSurvivor.value === "6" &&
+          getSubTierFromSurvivor.value === "1" &&
+          getStarsFromSurvivor.value === "4"
+        )
+          updateTierOptionsToIfBeforePromote(7);
+        else if (
           getTierFromSurvivor.value === "7" &&
           getStarsFromSurvivor.value === "24"
-        ) {
-          checkStarFrom();
-        }
+        )
+          updateTierOptionsToIfBeforePromote(8);
         clearTo();
       }
     );
@@ -371,29 +465,43 @@ function updateStarOptionsFrom(tier) {
           getTierFromSurvivor.value === "1" &&
           getSubTierFromSurvivor.value === "1" &&
           getStarsFromSurvivor.value === "2"
-        ) {
-          checkStarFrom();
-        } else if (
+        )
+          updateTierOptionsToIfBeforePromote(2);
+        else if (
           getTierFromSurvivor.value === "2" &&
           getSubTierFromSurvivor.value === "1" &&
           getStarsFromSurvivor.value === "3"
-        ) {
-          checkStarFrom();
-        } else if (
-          (getTierFromSurvivor.value === "3" ||
-            getTierFromSurvivor.value === "4" ||
-            getTierFromSurvivor.value === "5" ||
-            getTierFromSurvivor.value === "6") &&
+        )
+          updateTierOptionsToIfBeforePromote(3);
+        else if (
+          getTierFromSurvivor.value === "3" &&
           getSubTierFromSurvivor.value === "1" &&
           getStarsFromSurvivor.value === "4"
-        ) {
-          checkStarFrom();
-        } else if (
+        )
+          updateTierOptionsToIfBeforePromote(4);
+        else if (
+          getTierFromSurvivor.value === "4" &&
+          getSubTierFromSurvivor.value === "1" &&
+          getStarsFromSurvivor.value === "4"
+        )
+          updateTierOptionsToIfBeforePromote(5);
+        else if (
+          getTierFromSurvivor.value === "5" &&
+          getSubTierFromSurvivor.value === "1" &&
+          getStarsFromSurvivor.value === "4"
+        )
+          updateTierOptionsToIfBeforePromote(6);
+        else if (
+          getTierFromSurvivor.value === "6" &&
+          getSubTierFromSurvivor.value === "1" &&
+          getStarsFromSurvivor.value === "4"
+        )
+          updateTierOptionsToIfBeforePromote(7);
+        else if (
           getTierFromSurvivor.value === "7" &&
           getStarsFromSurvivor.value === "24"
-        ) {
-          checkStarFrom();
-        }
+        )
+          updateTierOptionsToIfBeforePromote(8);
         clearTo();
       }
     );
@@ -506,29 +614,43 @@ function updateStarOptionsFrom(tier) {
           getTierFromSurvivor.value === "1" &&
           getSubTierFromSurvivor.value === "1" &&
           getStarsFromSurvivor.value === "2"
-        ) {
-          checkStarFrom();
-        } else if (
+        )
+          updateTierOptionsToIfBeforePromote(2);
+        else if (
           getTierFromSurvivor.value === "2" &&
           getSubTierFromSurvivor.value === "1" &&
           getStarsFromSurvivor.value === "3"
-        ) {
-          checkStarFrom();
-        } else if (
-          (getTierFromSurvivor.value === "3" ||
-            getTierFromSurvivor.value === "4" ||
-            getTierFromSurvivor.value === "5" ||
-            getTierFromSurvivor.value === "6") &&
+        )
+          updateTierOptionsToIfBeforePromote(3);
+        else if (
+          getTierFromSurvivor.value === "3" &&
           getSubTierFromSurvivor.value === "1" &&
           getStarsFromSurvivor.value === "4"
-        ) {
-          checkStarFrom();
-        } else if (
+        )
+          updateTierOptionsToIfBeforePromote(4);
+        else if (
+          getTierFromSurvivor.value === "4" &&
+          getSubTierFromSurvivor.value === "1" &&
+          getStarsFromSurvivor.value === "4"
+        )
+          updateTierOptionsToIfBeforePromote(5);
+        else if (
+          getTierFromSurvivor.value === "5" &&
+          getSubTierFromSurvivor.value === "1" &&
+          getStarsFromSurvivor.value === "4"
+        )
+          updateTierOptionsToIfBeforePromote(6);
+        else if (
+          getTierFromSurvivor.value === "6" &&
+          getSubTierFromSurvivor.value === "1" &&
+          getStarsFromSurvivor.value === "4"
+        )
+          updateTierOptionsToIfBeforePromote(7);
+        else if (
           getTierFromSurvivor.value === "7" &&
           getStarsFromSurvivor.value === "24"
-        ) {
-          checkStarFrom();
-        }
+        )
+          updateTierOptionsToIfBeforePromote(8);
         clearTo();
       }
     );
@@ -543,29 +665,43 @@ function updateStarOptionsFrom(tier) {
           getTierFromSurvivor.value === "1" &&
           getSubTierFromSurvivor.value === "1" &&
           getStarsFromSurvivor.value === "2"
-        ) {
-          checkStarFrom();
-        } else if (
+        )
+          updateTierOptionsToIfBeforePromote(2);
+        else if (
           getTierFromSurvivor.value === "2" &&
           getSubTierFromSurvivor.value === "1" &&
           getStarsFromSurvivor.value === "3"
-        ) {
-          checkStarFrom();
-        } else if (
-          (getTierFromSurvivor.value === "3" ||
-            getTierFromSurvivor.value === "4" ||
-            getTierFromSurvivor.value === "5" ||
-            getTierFromSurvivor.value === "6") &&
+        )
+          updateTierOptionsToIfBeforePromote(3);
+        else if (
+          getTierFromSurvivor.value === "3" &&
           getSubTierFromSurvivor.value === "1" &&
           getStarsFromSurvivor.value === "4"
-        ) {
-          checkStarFrom();
-        } else if (
+        )
+          updateTierOptionsToIfBeforePromote(4);
+        else if (
+          getTierFromSurvivor.value === "4" &&
+          getSubTierFromSurvivor.value === "1" &&
+          getStarsFromSurvivor.value === "4"
+        )
+          updateTierOptionsToIfBeforePromote(5);
+        else if (
+          getTierFromSurvivor.value === "5" &&
+          getSubTierFromSurvivor.value === "1" &&
+          getStarsFromSurvivor.value === "4"
+        )
+          updateTierOptionsToIfBeforePromote(6);
+        else if (
+          getTierFromSurvivor.value === "6" &&
+          getSubTierFromSurvivor.value === "1" &&
+          getStarsFromSurvivor.value === "4"
+        )
+          updateTierOptionsToIfBeforePromote(7);
+        else if (
           getTierFromSurvivor.value === "7" &&
           getStarsFromSurvivor.value === "24"
-        ) {
-          checkStarFrom();
-        }
+        )
+          updateTierOptionsToIfBeforePromote(8);
         clearTo();
       }
     );
@@ -578,29 +714,43 @@ getStarsFromSurvivor.addEventListener("change", function clearAndCheckStar() {
     getTierFromSurvivor.value === "1" &&
     getSubTierFromSurvivor.value === "1" &&
     getStarsFromSurvivor.value === "2"
-  ) {
-    checkStarFrom();
-  } else if (
+  )
+    updateTierOptionsToIfBeforePromote(2);
+  else if (
     getTierFromSurvivor.value === "2" &&
     getSubTierFromSurvivor.value === "1" &&
     getStarsFromSurvivor.value === "3"
-  ) {
-    checkStarFrom();
-  } else if (
-    (getTierFromSurvivor.value === "3" ||
-      getTierFromSurvivor.value === "4" ||
-      getTierFromSurvivor.value === "5" ||
-      getTierFromSurvivor.value === "6") &&
+  )
+    updateTierOptionsToIfBeforePromote(3);
+  else if (
+    getTierFromSurvivor.value === "3" &&
     getSubTierFromSurvivor.value === "1" &&
     getStarsFromSurvivor.value === "4"
-  ) {
-    checkStarFrom();
-  } else if (
+  )
+    updateTierOptionsToIfBeforePromote(4);
+  else if (
+    getTierFromSurvivor.value === "4" &&
+    getSubTierFromSurvivor.value === "1" &&
+    getStarsFromSurvivor.value === "4"
+  )
+    updateTierOptionsToIfBeforePromote(5);
+  else if (
+    getTierFromSurvivor.value === "5" &&
+    getSubTierFromSurvivor.value === "1" &&
+    getStarsFromSurvivor.value === "4"
+  )
+    updateTierOptionsToIfBeforePromote(6);
+  else if (
+    getTierFromSurvivor.value === "6" &&
+    getSubTierFromSurvivor.value === "1" &&
+    getStarsFromSurvivor.value === "4"
+  )
+    updateTierOptionsToIfBeforePromote(7);
+  else if (
     getTierFromSurvivor.value === "7" &&
     getStarsFromSurvivor.value === "24"
-  ) {
-    checkStarFrom();
-  }
+  )
+    updateTierOptionsToIfBeforePromote(8);
   clearTo();
 });
 
