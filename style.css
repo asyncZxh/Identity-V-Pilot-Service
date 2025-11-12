@@ -335,7 +335,6 @@ option {
   position: absolute;
   width: 4.7rem;
   top: 50%;
-  filter: drop-shadow(0 0 1.1px #0084ff);
 }
 
 .rank-essence.low-essence {
@@ -400,7 +399,6 @@ option {
 
 .logic-point {
   width: 5.4rem;
-  filter: drop-shadow(0 0 1.5px silver);
 }
 
 .logic-point:first-child {
@@ -422,6 +420,13 @@ option {
   position: absolute;
   top: 50%;
   left: 50%;
+}
+
+.c-badge-container-inner {
+  transform: translate(-50%, -60%);
+}
+
+.logic-point-container-inner {
   transform: translate(-50%, -50%);
 }
 
