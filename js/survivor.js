@@ -1172,8 +1172,13 @@ function updateStarOptionsTo(star) {
     const createInputElement = window.document.createElement("input");
     createInputElement.setAttribute("id", "survivor-to-star");
     createInputElement.setAttribute("type", "number");
-    createInputElement.setAttribute("min", "26");
-    createInputElement.value = "26";
+    if (getTierFromSurvivor.value === getTierToSurvivor.value) {
+      createInputElement.setAttribute("min", "26");
+      createInputElement.value = "26";
+    } else {
+      createInputElement.value = "25";
+      createInputElement.setAttribute("min", "25");
+    }
     createInputElement.placeholder = "enter star";
     createInputElement.classList.add("select-to");
     getStarsToSurvivor.replaceWith(createInputElement);
