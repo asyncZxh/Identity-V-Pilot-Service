@@ -610,25 +610,26 @@ getTierToSurvivor.addEventListener("change", () => {
   if (
     getTierToSurvivor.value === "1" &&
     (getSubTierFromSurvivor.value !== "1" || getStarsFromSurvivor.value !== "2")
-  ) {
+  )
     checkStarFrom();
-  } else if (
+  else if (
     getTierToSurvivor.value === "2" &&
     (getSubTierFromSurvivor.value !== "1" || getStarsFromSurvivor.value !== "2")
-  ) {
+  )
     checkStarFrom();
-  } else if (
+  else if (
     (getTierToSurvivor.value === "3" ||
       getTierToSurvivor.value === "4" ||
       getTierToSurvivor.value === "5" ||
       getTierToSurvivor.value === "6") &&
     (getSubTierFromSurvivor.value !== "1" || getStarsFromSurvivor.value !== "2")
-  ) {
+  )
     checkStarFrom();
-  } else if (getTierToSurvivor.value === "7") {
-    checkStarFrom();
-  }
+  else if (getTierToSurvivor.value === "7") checkStarFrom();
+  else if (getTierToSurvivor.value === "8") checkStarFrom();
+
   window.console.log("configure tier(to)");
+
   if (getTierToSurvivor.value === "1") {
     if (getStarsFromSurvivor.value === "2") {
       if (
@@ -717,9 +718,12 @@ getTierToSurvivor.addEventListener("change", () => {
         updateStarFromCheck(0, 3);
       }
     }
-  } else if (getTierToSurvivor.value === "7") {
-  } else if (getTierToSurvivor.value === "8") {
-  } else {
+  } else if (
+    getTierToSurvivor.value === "3" ||
+    getTierToSurvivor.value === "4" ||
+    getTierToSurvivor.value === "5" ||
+    getTierToSurvivor.value === "6"
+  ) {
     if (getStarsFromSurvivor.value === "4") {
       if (
         getTierFromSurvivor.value === getTierToSurvivor.value &&
@@ -1063,55 +1067,27 @@ function checkStarFrom() {
         break;
     }
   } else if (getTierToSurvivor.value === "7") {
-    switch (getStarsFromSurvivor.value) {
-      case "0":
-        break;
-      case "1":
-        break;
-      case "2":
-        break;
-      case "4":
-        break;
-      case "5":
-        break;
-      case "6":
-        break;
-      case "7":
-        break;
-      case "8":
-        break;
-      case "9":
-        break;
-      case "10":
-        break;
-      case "11":
-        break;
-      case "12":
-        break;
-      case "13":
-        break;
-      case "14":
-        break;
-      case "15":
-        break;
-      case "16":
-        break;
-      case "17":
-        break;
-      case "18":
-        break;
-      case "19":
-        break;
-      case "20":
-        break;
-      case "21":
-        break;
-      case "22":
-        break;
-      case "24":
-        break;
+    if (getTierFromSurvivor.value === getTierToSurvivor.value) {
+      const loop = (star) => {
+        let elements = "";
+        const hiddenValue =
+          "<option hidden disabled selected value>&mdash;</option>";
+        elements += hiddenValue;
+
+        for (let i = star + 1; i <= 24; i++) {
+          const createOptionElement = `<option value="${i}">${i}</option>`;
+          elements += createOptionElement;
+        }
+
+        getStarsToSurvivor.innerHTML = elements;
+      };
+      loop(parseInt(getStarsFromSurvivor.value));
     }
   } else if (getTierToSurvivor.value === "8") {
+    if (getTierFromSurvivor.value === getTierToSurvivor.value) {
+      const starToPeak = parseInt(getStarsFromSurvivor.value) + 1;
+      getStarsToSurvivor.value = starToPeak;
+    }
   } else {
     switch (getStarsFromSurvivor.value) {
       case "0":
@@ -1197,7 +1173,6 @@ function updateStarOptionsTo(star) {
     createInputElement.setAttribute("id", "survivor-to-star");
     createInputElement.setAttribute("type", "number");
     createInputElement.setAttribute("min", "26");
-    createInputElement.setAttribute("max", "100");
     createInputElement.value = "26";
     createInputElement.placeholder = "enter star";
     createInputElement.classList.add("select-to");
