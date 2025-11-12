@@ -374,9 +374,39 @@ option {
   width: 7rem;
 }
 
-.c-badge,
-.magnifying-glass {
+.c-badge-survivor,
+.c-badge-hunter {
   width: 7rem;
+}
+
+.logic-point {
+  width: 5rem;
+}
+
+.logic-point:first-child {
+  position: relative;
+  z-index: -1;
+  left: 2.5rem;
+}
+
+.logic-point:last-child {
+  position: relative;
+  z-index: 1;
+  right: 2.5rem;
+}
+
+.c-badge-container {
+  display: flex;
+  justify-content: center;
+}
+
+.logic-point-container {
+  display: flex;
+  justify-content: center;
+}
+
+.one-month-dailies {
+  align-self: center;
 }
 
 .hiring-container {
