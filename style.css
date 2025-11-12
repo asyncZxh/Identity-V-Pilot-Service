@@ -320,10 +320,10 @@ option {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
+  align-items: center;
   text-align: center;
-  column-gap: 2rem;
-  row-gap: 4rem;
-  /* margin-bottom: 7rem; */
+  column-gap: 3rem;
+  row-gap: 5rem;
 }
 
 .essence-container {
@@ -335,6 +335,7 @@ option {
   position: absolute;
   width: 4.7rem;
   top: 50%;
+  filter: drop-shadow(0 0 1.1px #0084ff);
 }
 
 .rank-essence.low-essence {
@@ -357,7 +358,8 @@ option {
 .dice-text,
 .c-badge-text,
 .dailies-text {
-  font-size: 1.6rem;
+  margin: auto;
+  font-size: 1.5rem;
   text-align: center;
 }
 
@@ -372,6 +374,13 @@ option {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 7rem;
+  filter: drop-shadow(0 0 1.5px gold);
+}
+
+.c-badge-container-outer,
+.logic-point-container-outer {
+  position: relative;
+  height: 7.7rem;
 }
 
 .c-badge-survivor,
@@ -379,8 +388,19 @@ option {
   width: 7rem;
 }
 
+.c-badge-survivor {
+  margin-right: -0.7rem;
+  filter: drop-shadow(0 0 1.5px #0055ff);
+}
+
+.c-badge-hunter {
+  margin-left: -0.7rem;
+  filter: drop-shadow(0 0 1.5px #ff0000);
+}
+
 .logic-point {
-  width: 5rem;
+  width: 5.4rem;
+  filter: drop-shadow(0 0 1.5px silver);
 }
 
 .logic-point:first-child {
@@ -395,18 +415,14 @@ option {
   right: 2.5rem;
 }
 
-.c-badge-container {
+.c-badge-container-inner,
+.logic-point-container-inner {
   display: flex;
   justify-content: center;
-}
-
-.logic-point-container {
-  display: flex;
-  justify-content: center;
-}
-
-.one-month-dailies {
-  align-self: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .hiring-container {
