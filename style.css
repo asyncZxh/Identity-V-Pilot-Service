@@ -10,7 +10,15 @@
 
 body {
   font-family: "Amatic SC", sans-serif;
-  background: #0f0b1a;
+  background: linear-gradient(
+    to bottom,
+    #0f0b1a,
+    #0f0b1a,
+    #0f0b1a,
+    #0f0b1a,
+    #090710,
+    #080808
+  );
   color: #f2f8ff;
   font-weight: 600;
 }
