@@ -437,9 +437,20 @@ option {
   margin-bottom: 20rem;
 }
 
-.fist-icon {
-  fill: orangered;
-  width: 6.7rem;
+.knight-icon {
+  width: 5.3rem;
+}
+
+.dragon-icon {
+  width: 7.7rem;
+}
+
+.hiring-container .icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 2rem;
+  margin-bottom: 1rem;
 }
 
 .hiring-text {
