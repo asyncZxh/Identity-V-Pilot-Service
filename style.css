@@ -434,10 +434,12 @@ option {
   text-align: center;
   width: 50%;
   margin: auto;
+  margin-bottom: 20rem;
 }
 
 .fist-icon {
-  width: 4.7rem;
+  fill: orangered;
+  width: 6.7rem;
 }
 
 .hiring-text {
@@ -514,7 +516,7 @@ option {
   width: 2.7rem;
   height: 2.7rem;
   margin-left: 0.3rem;
-  background-image: url("/images/早く-identity-v.gif");
+  background-image: url("images/luchino_waiting.gif");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
