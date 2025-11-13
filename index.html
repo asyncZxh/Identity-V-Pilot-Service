@@ -16,7 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Bitcount+Grid+Single:wght@100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playwrite+AU+TAS:wght@100..400&family=Rubik+Bubbles&family=Rubik:ital,wght@0,300..900;1,300..900&family=Share+Tech&display=swap"
       rel="stylesheet"
     />
-    <link href="" rel="icon" />
+    <link href="svgs/phoenix.svg" rel="icon" />
     <link href="" rel="" />
     <link href="" rel="apple-touch-icon" />
     <link href="style.css" rel="stylesheet" />
@@ -31,7 +31,8 @@
     <script src="js/typing.js" type="module" defer></script>
     <script src="js/survivor.js" type="module" defer></script>
     <script src="js/hunter.js" type="module" defer></script>
-    <!-- <script src="/js/calculate_price.js" type="module" defer></script> -->
+    <script src="js/extra_interaction.js" type="module" defer></script>
+    <!-- <script src="js/calculate_price.js" type="module" defer></script> -->
     <title>Phoenix IDV</title>
   </head>
   <body>
@@ -107,7 +108,7 @@
             <tr>
               <td>Tier 3</td>
               <td>
-                45 per
+                30 per
                 <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -130,7 +131,7 @@
             <tr>
               <td>Tier 4</td>
               <td>
-                60 per
+                40 per
                 <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -153,7 +154,7 @@
             <tr>
               <td>Tier 5</td>
               <td>
-                70 per
+                50 per
                 <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -176,7 +177,7 @@
             <tr>
               <td>Tier 6</td>
               <td>
-                80 per
+                65 per
                 <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -199,7 +200,7 @@
             <tr>
               <td>Tier 7</td>
               <td>
-                90 per
+                75 per
                 <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -222,7 +223,7 @@
             <tr>
               <td>Peak Tier</td>
               <td>
-                100 per
+                80 per
                 <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -326,7 +327,7 @@
             <tr>
               <td>Tier 4</td>
               <td>
-                40 per
+                30 per
                 <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -349,7 +350,7 @@
             <tr>
               <td>Tier 5</td>
               <td>
-                60 per
+                45 per
                 <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -395,7 +396,7 @@
             <tr>
               <td>Tier 7</td>
               <td>
-                85 per
+                60 per
                 <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -418,7 +419,7 @@
             <tr>
               <td>Peak Tier</td>
               <td>
-                100 per
+                70 per
                 <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -598,11 +599,13 @@
             <img src="" alt="tap me" class="note-icon" />
             <div class="note">
               <div class="note-container">
-                <button class="close-btn"></button>
+                <button class="close-btn">
+                  <ion-icon name="close-outline"></ion-icon>
+                </button>
                 <p class="note-text">
-                  Since Identity V removed the promotion match, note that full
-                  star is equivalent to 0 star of the next sub-tier, reason why
-                  there's no selection for full star.
+                  Since the promotion match has been removed, a full star is now
+                  equivalent to 0 star of the next sub-tier. Therefore, there is
+                  no option for a full star.
                 </p>
                 <ul class="note-list">
                   <li>Bee 3 - 3 stars = Bee 2 - 0 star</li>
@@ -984,7 +987,7 @@
           </div>
           <p class="recruit-text">
             You can also recruit me for scrims and tournaments, playing as
-            Hunter or Survivor just for
+            Hunter or Survivor for
             <span
               style="
                 color: #fff131;
