@@ -156,8 +156,9 @@ td {
 }
 
 .note {
-  background-color: rgba(76, 0, 255, 0.393);
-  backdrop-filter: blur(20px);
+  background-color: #f1f1f1b1;
+  backdrop-filter: blur(2px);
+  color: #000;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -171,19 +172,26 @@ td {
   position: relative;
 }
 
+.close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 .note-text {
   margin-bottom: 1rem;
 }
 
 .note-list {
   height: 20rem;
-  border: 2px solid rgba(0, 0, 0, 0.532);
-  border-radius: 0.5rem;
+  border: 2px solid #000000b7;
   padding: 0.4rem 0.7rem;
   overflow: scroll;
+  scroll-behavior: none;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.4rem;
+  list-style: none;
 }
 
 .survivor-header-select,
