@@ -9,7 +9,7 @@
 }
 
 body {
-  font-family: "Amatic SC", sans-serif;
+  font-family: "Amatic SC", Arial, Helvetica, sans-serif, sans-serif;
   background: linear-gradient(
     to bottom,
     #0f0b1a,
@@ -145,6 +145,30 @@ td {
   display: flex;
   justify-content: center;
   gap: 6rem;
+  position: relative;
+}
+
+.note {
+  background-color: rgba(76, 0, 255, 0.393);
+  backdrop-filter: blur(20px);
+  position: absolute;
+  padding: 1rem;
+  border-radius: 0.8rem;
+}
+
+.note-text {
+  margin-bottom: 1rem;
+}
+
+.note-list {
+  height: 20rem;
+  border: 2px solid gray;
+  border-radius: 0.5rem;
+  padding: 0.4rem 0.7rem;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
 }
 
 .survivor-header-select,
