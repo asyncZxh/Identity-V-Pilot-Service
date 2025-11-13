@@ -1,0 +1,14 @@
+{
+  "icons": [
+    {
+      "src": "favicons/phoenix_android_standard.png",
+      "sizes": "192x151",
+      "type": "image/png"
+    },
+    {
+      "src": "favicons/phoenix_android_highres.png",
+      "sizes": "512x404",
+      "type": "image/png"
+    }
+  ]
+}
