@@ -169,11 +169,31 @@ td {
 
 .note-icon {
   width: 3.6rem;
+  animation: shake 0.8s infinite step-end;
+}
+
+@keyframes shake {
+  50% {
+    transform: rotate(12deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
 }
 
 .tap-me {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   text-align: center;
+  animation: scale 1.8s linear infinite;
+}
+
+@keyframes scale {
+  50% {
+    transform: scale(1.12);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .note {
