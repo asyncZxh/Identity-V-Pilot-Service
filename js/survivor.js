@@ -1,23 +1,33 @@
 export const getTierFromSurvivor = window.document.querySelector(
   ".select-survivor .tier-container .select-from"
 );
+
 export const getSubTierFromSurvivor = window.document.querySelector(
   ".select-survivor .sub-tier-container .select-from"
 );
+
 export let getStarsFromSurvivor = window.document.querySelector(
   ".select-survivor .star-container .select-from"
 );
+
 export const getTierToSurvivor = window.document.querySelector(
   ".select-survivor .tier-container .select-to"
 );
+
 export const getSubTierToSurvivor = window.document.querySelector(
   ".select-survivor .sub-tier-container .select-to"
 );
+
 export let getStarsToSurvivor = window.document.querySelector(
   ".select-survivor .star-container .select-to"
 );
+
 export const buttonCalculateSurvivor = window.document.querySelector(
   ".select-survivor .calculate-currency-container .total-button"
+);
+
+export const currencySelection = window.document.querySelector(
+  ".select-survivor .currency-container .currency.convert"
 );
 
 const ranks = [

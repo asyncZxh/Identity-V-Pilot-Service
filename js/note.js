@@ -18,6 +18,9 @@ import {
   buttonCalculateHunter,
 } from "./hunter.js";
 
+const openNoteBtnContainer = window.document.querySelector(
+  ".note-btn-container"
+);
 const openNoteBtn = window.document.querySelector(".note-btn");
 const closeNoteBtn = window.document.querySelector(".close-btn");
 const note = window.document.querySelector(".note");
@@ -49,12 +52,14 @@ const inputs = [
   buttonCalculateHunter,
 ];
 
+noteList.innerHTML = noteContent;
+
 let isOpen = false;
 openNoteBtn.addEventListener("click", () => {
   if (!isOpen) {
     isOpen = true;
     note.classList.add("open-note");
-    openNoteBtn.style.zIndex = 0;
+    openNoteBtnContainer.style.zIndex = 0;
     note.style.zIndex = 1;
     inputs.forEach((e) => {
       e.tabindex = "-1";
@@ -75,7 +80,7 @@ closeNoteBtn.addEventListener("click", () => {
       e.removeAttribute("disabled");
     });
     setTimeout(() => {
-      openNoteBtn.style.zIndex = 2;
+      openNoteBtnContainer.style.zIndex = 2;
       note.style.zIndex = -1;
       isOpen = false;
     }, 500);

@@ -149,14 +149,17 @@ td {
   position: relative;
 }
 
-.note-btn {
+.note-btn-container {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -220%);
+  transform: translate(-50%, -180%);
+  z-index: 2;
+}
+
+.note-btn {
   border: none;
   background-color: transparent;
-  z-index: 2;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -165,7 +168,12 @@ td {
 }
 
 .note-icon {
-  width: 3.8rem;
+  width: 3.6rem;
+}
+
+.tap-me {
+  font-size: 1.2rem;
+  text-align: center;
 }
 
 .note {
