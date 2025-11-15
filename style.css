@@ -436,19 +436,17 @@ option {
   height: 7.7rem;
 }
 
-.c-badge-survivor,
+.c-badge-survivor {
+  width: 7rem;
+  filter: drop-shadow(0 0 1.5px #0055ff);
+  position: relative;
+  z-index: 1;
+}
+
 .c-badge-hunter {
   width: 7rem;
-}
-
-.c-badge-survivor {
-  margin-right: -0.7rem;
-  filter: drop-shadow(0 0 1.5px #0055ff);
-}
-
-.c-badge-hunter {
-  margin-left: -0.7rem;
   filter: drop-shadow(0 0 1.5px #ff0000);
+  margin-left: -3.6rem;
 }
 
 .logic-point {
