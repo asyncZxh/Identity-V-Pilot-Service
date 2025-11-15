@@ -1,3 +1,13 @@
+import {
+  getTierFromSurvivor,
+  getSubTierFromSurvivor,
+  getStarsFromSurvivor,
+  getTierToSurvivor,
+  getSubTierToSurvivor,
+  getStarsToSurvivor,
+  buttonCalculateSurvivor,
+} from "./survivor.js";
+
 const openNoteBtn = window.document.querySelector(".note-btn");
 const closeNoteBtn = window.document.querySelector(".close-btn");
 const note = window.document.querySelector(".note");
@@ -12,6 +22,15 @@ const noteContent = `<li>Bee 3 - 3 stars = Bee 2 - 0 star</li><li>Bee 2 - 3 star
                     <li>Sabertooth 5 - 5 stars = Sabertooth 4 - 0 star</li><li>Sabertooth 4 - 5 stars = Sabertooth 3 - 0 star</li><li>Sabertooth 3 - 5 stars = Sabertooth 2 - 0 star</li><li>Sabertooth 2 - 5 stars = Sabertooth 1 - 0 star</li><li>Sabertooth 1 - 5 stars = Cyclops 5 - 0 star</li>
                     <li>Cyclops 5 - 5 stars = Cyclops 4 - 0 star</li><li>Cyclops 4 - 5 stars = Cyclops 3 - 0 star</li><li>Cyclops 3 - 5 stars = Cyclops 2 - 0 star</li><li>Cyclops 2 - 5 stars = Cyclops 1 - 0 star</li><li>Cyclops 1 - 5 stars = Evil Dragon - 0 star</li>`;
 const noteList = window.document.querySelector(".note-list");
+const inputs = [
+  getTierFromSurvivor,
+  getSubTierFromSurvivor,
+  getStarsFromSurvivor,
+  getTierToSurvivor,
+  getSubTierToSurvivor,
+  getStarsToSurvivor,
+  buttonCalculateSurvivor,
+];
 
 let isOpen = false;
 openNoteBtn.addEventListener("click", () => {
@@ -19,6 +38,12 @@ openNoteBtn.addEventListener("click", () => {
     isOpen = true;
     note.classList.add("open-note");
     openNoteBtn.style.zIndex = 0;
+    note.style.zIndex = 1;
+    inputs.forEach((e) => {
+      e.tabindex = "-1";
+      e.style.pointerEvents = "none";
+      e.setAttribute("disabled", "true");
+    });
     setTimeout(() => (isOpen = false), 500);
   }
 });
@@ -27,7 +52,15 @@ closeNoteBtn.addEventListener("click", () => {
   if (!isOpen) {
     isOpen = true;
     note.classList.remove("open-note");
-    openNoteBtn.style.zIndex = 2;
-    setTimeout(() => (isOpen = false), 500);
+    inputs.forEach((e) => {
+      e.tabindex = "0";
+      e.style.pointerEvents = "auto";
+      e.removeAttribute("disabled");
+    });
+    setTimeout(() => {
+      openNoteBtn.style.zIndex = 2;
+      note.style.zIndex = -1;
+      isOpen = false;
+    }, 500);
   }
 });

@@ -158,6 +158,10 @@ td {
   background-color: transparent;
   z-index: 2;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .note-icon {
@@ -171,19 +175,19 @@ td {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -85%);
   padding: 1rem;
   border-radius: 0.8rem;
   width: 100%;
-  z-index: 1;
+  z-index: -1;
   opacity: 0;
   transition: all 0.5s;
-  margin-top: -100px;
+  margin-top: -30px;
 }
 
 .open-note {
   opacity: 1;
-  margin-top: 100px;
+  margin-top: 30px;
 }
 
 .note-container {
@@ -200,6 +204,7 @@ td {
   border: none;
   background-color: transparent;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .close-icon {
