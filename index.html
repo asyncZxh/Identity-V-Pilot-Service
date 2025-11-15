@@ -17,7 +17,7 @@
       rel="stylesheet"
     />
     <link href="favicons/phoenix.svg" rel="icon" />
-    <link href="manifest" rel="manifest" />
+    <link href="favicons/android.webmanifest" rel="manifest" />
     <link href="favicons/phoenix_ios.png" rel="apple-touch-icon" />
     <link href="style.css" rel="stylesheet" />
     <script
@@ -31,7 +31,7 @@
     <script src="js/typing.js" type="module" defer></script>
     <script src="js/survivor.js" type="module" defer></script>
     <script src="js/hunter.js" type="module" defer></script>
-    <script src="js/extra_interaction.js" type="module" defer></script>
+    <script src="js/note.js" type="module" defer></script>
     <!-- <script src="js/calculate_price.js" type="module" defer></script> -->
     <title>Phoenix IDV</title>
   </head>
@@ -582,7 +582,7 @@
                   <div class="currency-container">
                     <span class="currency">php</span>
                     <div class="convert-container">
-                      <select class="currency convert">
+                      <select class="currency convert" name="currency">
                         <option value="PHP">PHP</option>
                         <option value="USE">USD</option>
                       </select>
@@ -596,63 +596,24 @@
               </div>
             </div>
 
-            <img src="" alt="tap me" class="note-icon" />
+            <button class="note-btn">
+              <img
+                src="images/Doubtful_BonBon.webp"
+                alt="Doubtful BonBon"
+                class="note-icon"
+              />
+            </button>
             <div class="note">
               <div class="note-container">
                 <button class="close-btn">
-                  <ion-icon name="close-outline"></ion-icon>
+                  <ion-icon name="close-outline" class="close-icon"></ion-icon>
                 </button>
                 <p class="note-text">
                   Since the promotion match has been removed, a full star is now
                   equivalent to 0 star of the next sub-tier. Therefore, there is
                   no option for a full star.
                 </p>
-                <ul class="note-list">
-                  <li>Bee 3 - 3 stars = Bee 2 - 0 star</li>
-                  <li>Bee 2 - 3 stars = Bee 1 - 0 star</li>
-                  <li>Bee 1 - 3 stars = Hound 4 - 0 star</li>
-                  <li>Hound 4 - 4 stars = Hound 3 - 0 star</li>
-                  <li>Hound 3 - 4 stars = Hound 2 - 0 star</li>
-                  <li>Hound 2 - 4 stars = Hound 1 - 0 star</li>
-                  <li>Hound 1 - 4 stars = Elk 5 - 0 star</li>
-                  <li>Elk 5 - 5 stars = Elk 4 - 0 star</li>
-                  <li>Elk 4 - 5 stars = Elk 3 - 0 star</li>
-                  <li>Elk 3 - 5 stars = Elk 2 - 0 star</li>
-                  <li>Elk 2 - 5 stars = Elk 1 - 0 star</li>
-                  <li>Elk 1 - 5 stars = Mammoth 5 - 0 star</li>
-                  <li>Mammoth 5 - 5 stars = Mammoth 4 - 0 star</li>
-                  <li>Mammoth 4 - 5 stars = Mammoth 3 - 0 star</li>
-                  <li>Mammoth 3 - 5 stars = Mammoth 2 - 0 star</li>
-                  <li>Mammoth 2 - 5 stars = Mammoth 1 - 0 star</li>
-                  <li>Mammoth 1 - 5 stars = Alicorn 5 - 0 star</li>
-                  <li>Alicorn 5 - 5 stars = Alicorn 4 - 0 star</li>
-                  <li>Alicorn 4 - 5 stars = Alicorn 3 - 0 star</li>
-                  <li>Alicorn 3 - 5 stars = Alicorn 2 - 0 star</li>
-                  <li>Alicorn 2 - 5 stars = Alicorn 1 - 0 star</li>
-                  <li>Alicorn 1 - 5 stars = Champion - 0 star</li>
-                  <li>Spider 3 - 3 stars = Spider 2 - 0 star</li>
-                  <li>Spider 2 - 3 stars = Spider 1 - 0 star</li>
-                  <li>Spider 1 - 3 stars = Cobra 4 - 0 star</li>
-                  <li>Cobra 4 - 4 stars = Cobra 3 - 0 star</li>
-                  <li>Cobra 3 - 4 stars = Cobra 2 - 0 star</li>
-                  <li>Cobra 2 - 4 stars = Cobra 1 - 0 star</li>
-                  <li>Cobra 1 - 4 stars = Crocodile 5 - 0 star</li>
-                  <li>Crocodile 5 - 5 stars = Crocodile 4 - 0 star</li>
-                  <li>Crocodile 4 - 5 stars = Crocodile 3 - 0 star</li>
-                  <li>Crocodile 3 - 5 stars = Crocodile 2 - 0 star</li>
-                  <li>Crocodile 2 - 5 stars = Crocodile 1 - 0 star</li>
-                  <li>Crocodile 1 - 5 stars = Sabertooth 5 - 0 star</li>
-                  <li>Sabertooth 5 - 5 stars = Sabertooth 4 - 0 star</li>
-                  <li>Sabertooth 4 - 5 stars = Sabertooth 3 - 0 star</li>
-                  <li>Sabertooth 3 - 5 stars = Sabertooth 2 - 0 star</li>
-                  <li>Sabertooth 2 - 5 stars = Sabertooth 1 - 0 star</li>
-                  <li>Sabertooth 1 - 5 stars = Cyclops 5 - 0 star</li>
-                  <li>Cyclops 5 - 5 stars = Cyclops 4 - 0 star</li>
-                  <li>Cyclops 4 - 5 stars = Cyclops 3 - 0 star</li>
-                  <li>Cyclops 3 - 5 stars = Cyclops 2 - 0 star</li>
-                  <li>Cyclops 2 - 5 stars = Cyclops 1 - 0 star</li>
-                  <li>Cyclops 1 - 5 stars = Evil Dragon - 0 star</li>
-                </ul>
+                <ul class="note-list"></ul>
               </div>
             </div>
 
@@ -793,7 +754,7 @@
                   <div class="currency-container">
                     <span class="currency">php</span>
                     <div class="convert-container">
-                      <select class="currency convert">
+                      <select class="currency convert" name="currency">
                         <option value="PHP">PHP</option>
                         <option value="USE">USD</option>
                       </select>
@@ -913,7 +874,7 @@
       <section class="recruit-service">
         <div class="recruit-container">
           <div class="icon-container">
-            <!-- <div>
+            <div>
               <svg
                 fill="#0040ff"
                 viewBox="0 0 1000 1000"
@@ -983,8 +944,7 @@
                   ></path>
                 </g>
               </svg>
-            </div> -->
-            <img src="favicons/phoenix.svg" class="phoenix" />
+            </div>
           </div>
           <p class="recruit-text">
             You can also recruit me for scrims and tournaments, playing as

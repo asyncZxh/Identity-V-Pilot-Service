@@ -21,6 +21,7 @@ body {
   );
   color: #f2f8ff;
   font-weight: 600;
+  position: relative;
 }
 
 .container {
@@ -148,15 +149,23 @@ td {
   position: relative;
 }
 
-.note-icon {
+.note-btn {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -220%);
+  border: none;
+  background-color: transparent;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.note-icon {
+  width: 3.8rem;
 }
 
 .note {
-  background-color: #f1f1f1b1;
+  background-color: #e0e0e0;
   backdrop-filter: blur(2px);
   color: #000;
   position: absolute;
@@ -166,6 +175,15 @@ td {
   padding: 1rem;
   border-radius: 0.8rem;
   width: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.5s;
+  margin-top: -100px;
+}
+
+.open-note {
+  opacity: 1;
+  margin-top: 100px;
 }
 
 .note-container {
@@ -174,17 +192,31 @@ td {
 
 .close-btn {
   position: absolute;
-  top: 0;
-  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -1.3rem;
+  right: -1.3rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.close-icon {
+  width: 3rem;
+  height: 3rem;
+  color: #ff0000;
 }
 
 .note-text {
+  font-size: 1.8rem;
   margin-bottom: 1rem;
+  padding-top: 1.5rem;
 }
 
 .note-list {
   height: 20rem;
-  border: 2px solid #000000b7;
+  border: 1px solid #000000b7;
   padding: 0.4rem 0.7rem;
   overflow: scroll;
   display: flex;
@@ -200,6 +232,7 @@ td {
   text-align: center;
   margin-bottom: 2rem;
 }
+
 .survivor-header-select {
   color: #2caeff;
 }
@@ -497,17 +530,6 @@ option {
 .dragon-icon {
   width: 7.7rem;
   filter: drop-shadow(0 0 5px #ff000050);
-}
-
-.phoenix {
-  width: 9.7rem;
-  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.35))
-    drop-shadow(0 6px 12px rgba(255, 100, 0, 0.25));
-  /* filter: drop-shadow(0 0 8px rgba(255, 140, 0, 0.6))
-    drop-shadow(0 0 16px rgba(255, 60, 0, 0.4)); */
-  /* filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4))
-    drop-shadow(0 0 8px rgba(255, 90, 0, 0.6))
-    drop-shadow(0 0 20px rgba(255, 20, 0, 0.4)); */
 }
 
 .recruit-container .icon-container {
