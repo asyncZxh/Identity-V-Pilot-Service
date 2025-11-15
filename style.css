@@ -250,12 +250,15 @@ td {
 .note-list {
   height: 20rem;
   border: 1px solid #000000b7;
+  border-radius: 2px;
   padding: 0.4rem 0.7rem;
   overflow: scroll;
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
   list-style: none;
+  font-size: 1.6rem;
+  overscroll-behavior: contain;
 }
 
 .survivor-header-select,
