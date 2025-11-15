@@ -8,6 +8,16 @@ import {
   buttonCalculateSurvivor,
 } from "./survivor.js";
 
+import {
+  getTierFromHunter,
+  getSubTierFromHunter,
+  getStarsFromHunter,
+  getTierToHunter,
+  getSubTierToHunter,
+  getStarsToHunter,
+  buttonCalculateHunter,
+} from "./hunter.js";
+
 const openNoteBtn = window.document.querySelector(".note-btn");
 const closeNoteBtn = window.document.querySelector(".close-btn");
 const note = window.document.querySelector(".note");
@@ -30,6 +40,13 @@ const inputs = [
   getSubTierToSurvivor,
   getStarsToSurvivor,
   buttonCalculateSurvivor,
+  getTierFromHunter,
+  getSubTierFromHunter,
+  getStarsFromHunter,
+  getTierToHunter,
+  getSubTierToHunter,
+  getStarsToHunter,
+  buttonCalculateHunter,
 ];
 
 let isOpen = false;
