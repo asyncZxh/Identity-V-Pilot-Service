@@ -6,7 +6,8 @@ import {
   getSubTierToSurvivor,
   getStarsToSurvivor,
   buttonCalculateSurvivor,
-  currencySelectionSurvivor,
+  currencySelectionSurvivorSelect,
+  currencySelectionSurvivorIcon,
 } from "./survivor.js";
 
 import {
@@ -17,7 +18,8 @@ import {
   getSubTierToHunter,
   getStarsToHunter,
   buttonCalculateHunter,
-  currencySelectionHunter,
+  currencySelectionHunterSelect,
+  currencySelectionHunterIcon,
 } from "./hunter.js";
 
 const openNoteBtnContainer = window.document.querySelector(
@@ -47,7 +49,8 @@ const inputs = [
   getSubTierToSurvivor,
   getStarsToSurvivor,
   buttonCalculateSurvivor,
-  currencySelectionSurvivor,
+  currencySelectionSurvivorSelect,
+  currencySelectionSurvivorIcon,
   getTierFromHunter,
   getSubTierFromHunter,
   getStarsFromHunter,
@@ -55,7 +58,8 @@ const inputs = [
   getSubTierToHunter,
   getStarsToHunter,
   buttonCalculateHunter,
-  currencySelectionHunter,
+  currencySelectionHunterSelect,
+  currencySelectionHunterIcon,
 ];
 
 noteList.innerHTML = noteContent;
@@ -68,11 +72,13 @@ openNoteBtn.addEventListener("click", () => {
     openNoteBtnContainer.style.zIndex = 0;
     note.style.zIndex = 1;
     inputs.forEach((e, i) => {
+      if (i === inputs.length / 2 - 1 || i === inputs.length - 1) {
+        e.style.color = "#acacacff";
+        return;
+      }
       e.tabindex = "-1";
       e.style.pointerEvents = "none";
       e.setAttribute("disabled", "true");
-      if (i === inputs.length / 2 - 1 || i === inputs.length - 1)
-        e.style.color = "#808080";
     });
     setTimeout(() => (isOpen = false), 300);
   }
@@ -82,7 +88,11 @@ closeNoteBtn.addEventListener("click", () => {
   if (!isOpen) {
     isOpen = true;
     note.classList.remove("open-note");
-    inputs.forEach((e) => {
+    inputs.forEach((e, i) => {
+      if (i === inputs.length / 2 - 1 || i === inputs.length - 1) {
+        e.style.color = "#000";
+        return;
+      }
       e.tabindex = "0";
       e.style.pointerEvents = "auto";
       e.removeAttribute("disabled");
