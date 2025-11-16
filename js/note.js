@@ -71,8 +71,8 @@ openNoteBtn.addEventListener("click", () => {
       e.tabindex = "-1";
       e.style.pointerEvents = "none";
       e.setAttribute("disabled", "true");
-      if (i === inputs.length - 1 / 2 + 0.5 || i === inputs.length - 1)
-        e.style.color = "red";
+      if (i === inputs.length / 2 - 1 || i === inputs.length - 1)
+        e.style.color = "#808080";
     });
     setTimeout(() => (isOpen = false), 300);
   }
