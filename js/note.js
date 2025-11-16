@@ -74,7 +74,7 @@ openNoteBtn.addEventListener("click", () => {
       if (i === inputs.length - 1 / 2 + 0.5 || i === inputs.length - 1)
         e.style.color = "red";
     });
-    setTimeout(() => (isOpen = false), 500);
+    setTimeout(() => (isOpen = false), 300);
   }
 });
 
@@ -91,6 +91,6 @@ closeNoteBtn.addEventListener("click", () => {
       openNoteBtnContainer.style.zIndex = 2;
       note.style.zIndex = -1;
       isOpen = false;
-    }, 500);
+    }, 300);
   }
 });
