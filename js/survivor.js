@@ -26,8 +26,12 @@ export const buttonCalculateSurvivor = window.document.querySelector(
   ".select-survivor .calculate-currency-container .total-button"
 );
 
-export const currencySelection = window.document.querySelector(
+export const currencySelectionSurvivorSelect = window.document.querySelector(
   ".select-survivor .currency-container .currency.convert"
+);
+
+export const currencySelectionSurvivorIcon = window.document.querySelector(
+  ".select-survivor .currency-container .chevron-down"
 );
 
 const ranks = [

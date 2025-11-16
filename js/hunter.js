@@ -26,8 +26,12 @@ export const buttonCalculateHunter = window.document.querySelector(
   ".select-hunter .calculate-currency-container .total-button"
 );
 
-export const currencySelection = window.document.querySelector(
+export const currencySelectionHunterSelect = window.document.querySelector(
   ".select-hunter .currency-container .currency.convert"
+);
+
+export const currencySelectionHunterIcon = window.document.querySelector(
+  ".select-hunter .currency-container .chevron-down"
 );
 
 const prices = [

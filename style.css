@@ -252,7 +252,7 @@ td {
   border: 1px solid #000000b7;
   border-radius: 3px;
   padding: 0.4rem 0.7rem;
-  overflow: scroll;
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
@@ -388,7 +388,7 @@ option {
   width: 1.4rem;
   height: 0.9rem;
   color: #000;
-  background-color: white;
+  background-color: #ffffff;
   border: 1px solid #808080;
   border-radius: 5px;
   padding: 0.1rem 0.3em;
