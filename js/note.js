@@ -22,6 +22,26 @@ import {
   currencySelectionHunterIcon,
 } from "./hunter.js";
 
+const inputs = [
+  getTierFromSurvivor,
+  getSubTierFromSurvivor,
+  getStarsFromSurvivor,
+  getTierToSurvivor,
+  getSubTierToSurvivor,
+  getStarsToSurvivor,
+  buttonCalculateSurvivor,
+  currencySelectionSurvivorSelect,
+  currencySelectionSurvivorIcon,
+  getTierFromHunter,
+  getSubTierFromHunter,
+  getStarsFromHunter,
+  getTierToHunter,
+  getSubTierToHunter,
+  getStarsToHunter,
+  buttonCalculateHunter,
+  currencySelectionHunterSelect,
+  currencySelectionHunterIcon,
+];
 const openNoteBtnContainer = window.document.querySelector(
   ".note-btn-container"
 );
@@ -82,50 +102,51 @@ const noteContent = `<li>Bee 3 - 3 star = Bee 2 - 0 star</li>
                      <li>Cyclops 3 - 5 star = Cyclops 2 - 0 star</li>
                      <li>Cyclops 2 - 5 star = Cyclops 1 - 0 star</li>
                      <li>Cyclops 1 - 5 star = Evil Dragon - 0 star</li>`;
-
 const noteList = window.document.querySelector(".note-list");
-const inputs = [
-  getTierFromSurvivor,
-  getSubTierFromSurvivor,
-  getStarsFromSurvivor,
-  getTierToSurvivor,
-  getSubTierToSurvivor,
-  getStarsToSurvivor,
-  buttonCalculateSurvivor,
-  currencySelectionSurvivorSelect,
-  currencySelectionSurvivorIcon,
-  getTierFromHunter,
-  getSubTierFromHunter,
-  getStarsFromHunter,
-  getTierToHunter,
-  getSubTierToHunter,
-  getStarsToHunter,
-  buttonCalculateHunter,
-  currencySelectionHunterSelect,
-  currencySelectionHunterIcon,
-];
 
 noteList.innerHTML = noteContent;
 let isOpen = false;
 openNoteBtn.addEventListener("click", () => {
+  inputs[2] = window.document.querySelector(
+    ".select-survivor .star-container .select-from"
+  );
+  inputs[5] = window.document.querySelector(
+    ".select-survivor .star-container .select-to"
+  );
+  inputs[11] = window.document.querySelector(
+    ".select-hunter .star-container .select-from"
+  );
+  inputs[14] = window.document.querySelector(
+    ".select-hunter .star-container .select-to"
+  );
   if (!isOpen) {
+    const reQueryGetStarsFromSurvivor = window.document.querySelector(
+      ".select-survivor .star-container .select-from"
+    );
+    const reQueryGetStarsToSurvivor = window.document.querySelector(
+      ".select-survivor .star-container .select-to"
+    );
+    const reQuerygetStarsFromHunter = window.document.querySelector(
+      ".select-hunter .star-container .select-from"
+    );
+    const reQuerygetStarsToHunter = window.document.querySelector(
+      ".select-hunter .star-container .select-to"
+    );
     isOpen = true;
     note.classList.add("open-note");
     openNoteBtnContainer.style.zIndex = 0;
     note.style.zIndex = 1;
     inputs.forEach((e, i) => {
-      if (i === inputs.length / 2 - 1 || i === inputs.length - 1) {
-        // e.style.color = "#acacacff";
-        // e.tabindex = "-1";
-        // e.style.pointerEvents = "none";
+      if (i !== inputs.length / 2 - 1 && i !== inputs.length - 1) {
+        e.tabindex = "-1";
+        e.style.pointerEvents = "none";
+        e.setAttribute("disabled", "true");
+        if (i === inputs.length / 2 - 3 || i === inputs.length - 3)
+          e.style.backgroundColor = "#acabb0";
+      } else {
+        e.style.color = "#818083ff";
         e.style.backgroundColor = "#acabb0";
-        return;
       }
-      if (i === inputs.length / 2 - 3 || i === inputs.length - 3)
-        e.style.backgroundColor = "#acabb0";
-      e.tabindex = "-1";
-      e.style.pointerEvents = "none";
-      e.setAttribute("disabled", "true");
     });
     setTimeout(() => (isOpen = false), 300);
   }
@@ -136,16 +157,16 @@ closeNoteBtn.addEventListener("click", () => {
     isOpen = true;
     note.classList.remove("open-note");
     inputs.forEach((e, i) => {
-      if (i === inputs.length / 2 - 1 || i === inputs.length - 1) {
+      if (i !== inputs.length / 2 - 1 && i !== inputs.length - 1) {
+        e.tabindex = "0";
+        e.style.pointerEvents = "auto";
+        e.removeAttribute("disabled");
+        if (i === inputs.length / 2 - 3 || i === inputs.length - 3)
+          e.style.backgroundColor = "#fff";
+      } else {
         e.style.color = "#000";
         e.style.backgroundColor = "#fff";
-        return;
       }
-      if (i === inputs.length / 2 - 3 || i === inputs.length - 3)
-        e.style.backgroundColor = "#fff";
-      e.tabindex = "0";
-      e.style.pointerEvents = "auto";
-      e.removeAttribute("disabled");
     });
     setTimeout(() => {
       openNoteBtnContainer.style.zIndex = 2;
