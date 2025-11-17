@@ -135,6 +135,10 @@ td {
   padding-bottom: 16rem;
 }
 
+.select-faction.disabled > *:not(.select-faction .note) {
+  color: #acabb0 !important;
+}
+
 .calculate-price-header {
   font-size: 3.4rem;
   text-transform: uppercase;
@@ -275,6 +279,14 @@ td {
 
 .hunter-header-select {
   color: #ff0000;
+}
+
+.survivor-header-select.disabled {
+  color: #acabb0 !important;
+}
+
+.hunter-header-select.disabled {
+  color: #acabb0 !important;
 }
 
 .select-faction select,
