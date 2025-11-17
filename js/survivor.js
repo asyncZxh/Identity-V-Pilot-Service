@@ -105,7 +105,7 @@ function updateTierOptionsToIfBeforePromote(tier) {
 
 function updateSubTierOptionsFrom(tier) {
   if (tier === 7 || tier === 8) {
-    getSubTierFromSurvivor.setAttribute("disabled", "true");
+    getSubTierFromSurvivor.disabled = true;
     getSubTierFromSurvivor.style.cursor = "not-allowed";
     getSubTierFromSurvivor.value = "";
     clearTo();
@@ -1162,7 +1162,7 @@ function checkSubTierFrom() {
 function updateSubTierOptionsTo(subTier) {
   if (subTier === "champion" || subTier === "peak") {
     getSubTierToSurvivor.style.cursor = "not-allowed";
-    getSubTierToSurvivor.setAttribute("disabled", "true");
+    getSubTierToSurvivor.disabled = true;
     getSubTierToSurvivor.value = "";
   } else {
     getSubTierToSurvivor.innerHTML = "";
