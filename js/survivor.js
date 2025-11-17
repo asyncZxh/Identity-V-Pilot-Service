@@ -1247,6 +1247,7 @@ function checkStarFrom() {
       };
       loop(parseInt(getStarsFromSurvivor.value));
     }
+    if (getStarsFromSurvivor.value === "") updateStarOptionsTo(24);
   } else if (getTierToSurvivor.value === "8") {
     if (getTierFromSurvivor.value === getTierToSurvivor.value) {
       const starToPeak = parseInt(getStarsFromSurvivor.value) + 1;
