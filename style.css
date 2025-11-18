@@ -136,7 +136,7 @@ td {
 }
 
 .select-faction.disabled > *:not(.select-faction .note) {
-  color: #acabb0 !important;
+  color: #949494ff !important;
 }
 
 .calculate-price-header {
@@ -282,11 +282,11 @@ td {
 }
 
 .survivor-header-select.disabled {
-  color: #acabb0 !important;
+  color: #949494ff !important;
 }
 
 .hunter-header-select.disabled {
-  color: #acabb0 !important;
+  color: #949494ff !important;
 }
 
 .select-faction select,
@@ -438,6 +438,14 @@ option {
   height: 3.7rem;
   border-bottom: 2px solid #fff;
   margin-bottom: 2rem;
+}
+
+.total-price-survivor.disabled {
+  border-color: #949494ff !important;
+}
+
+.total-price-hunter.disabled {
+  border-color: #949494ff !important;
 }
 
 .other-services {
