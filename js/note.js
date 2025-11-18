@@ -103,49 +103,74 @@ const noteContent = `<li>Bee 3 - 3 star = Bee 2 - 0 star</li>
                      <li>Cyclops 2 - 5 star = Cyclops 1 - 0 star</li>
                      <li>Cyclops 1 - 5 star = Evil Dragon - 0 star</li>`;
 const noteList = window.document.querySelector(".note-list");
+const selectFaction = window.document.querySelector(".select-faction");
 
 noteList.innerHTML = noteContent;
 let isOpen = false;
+// window.console.log(inputs[2]);
 openNoteBtn.addEventListener("click", () => {
-  inputs[2] = window.document.querySelector(
-    ".select-survivor .star-container .select-from"
-  );
-  inputs[5] = window.document.querySelector(
-    ".select-survivor .star-container .select-to"
-  );
-  inputs[11] = window.document.querySelector(
-    ".select-hunter .star-container .select-from"
-  );
-  inputs[14] = window.document.querySelector(
-    ".select-hunter .star-container .select-to"
-  );
+  // inputs[2] = window.document.querySelector(
+  //   ".select-survivor .star-container .select-from"
+  // );
+  // inputs[5] = window.document.querySelector(
+  //   ".select-survivor .star-container .select-to"
+  // );
+  // inputs[11] = window.document.querySelector(
+  //   ".select-hunter .star-container .select-from"
+  // );
+  // inputs[14] = window.document.querySelector(
+  //   ".select-hunter .star-container .select-to"
+  // );
+  // inputs[2] = getStarsFromSurvivor;
+  // setTimeout(() => window.console.log(getStarsFromSurvivor), 100);
+
   if (!isOpen) {
-    const reQueryGetStarsFromSurvivor = window.document.querySelector(
-      ".select-survivor .star-container .select-from"
-    );
-    const reQueryGetStarsToSurvivor = window.document.querySelector(
-      ".select-survivor .star-container .select-to"
-    );
-    const reQuerygetStarsFromHunter = window.document.querySelector(
-      ".select-hunter .star-container .select-from"
-    );
-    const reQuerygetStarsToHunter = window.document.querySelector(
-      ".select-hunter .star-container .select-to"
+    // const reQueryGetStarsFromSurvivor = window.document.querySelector(
+    //   ".select-survivor .star-container .select-from"
+    // );
+    // const reQueryGetStarsToSurvivor = window.document.querySelector(
+    //   ".select-survivor .star-container .select-to"
+    // );
+    // const reQuerygetStarsFromHunter = window.document.querySelector(
+    //   ".select-hunter .star-container .select-from"
+    // );
+    // const reQuerygetStarsToHunter = window.document.querySelector(
+    //   ".select-hunter .star-container .select-to"
+    // );
+    refreshStarsEl(
+      getStarsFromSurvivor,
+      getStarsToSurvivor,
+      getStarsFromHunter,
+      getStarsToHunter
     );
     isOpen = true;
     note.classList.add("open-note");
     openNoteBtnContainer.style.zIndex = 0;
     note.style.zIndex = 1;
+    selectFaction.classList.add("disabled");
+    window.document
+      .querySelector(".survivor-header-select")
+      .classList.add("disabled");
+    window.document
+      .querySelector(".hunter-header-select")
+      .classList.add("disabled");
+    window.document
+      .querySelector(".total-price-survivor")
+      .classList.add("disabled");
+    window.document
+      .querySelector(".total-price-hunter")
+      .classList.add("disabled");
     inputs.forEach((e, i) => {
       if (i !== inputs.length / 2 - 1 && i !== inputs.length - 1) {
         e.tabindex = "-1";
         e.style.pointerEvents = "none";
-        e.setAttribute("disabled", "true");
+        e.disabled = true;
+        e.style.backgroundColor = "#949494ff";
         if (i === inputs.length / 2 - 3 || i === inputs.length - 3)
-          e.style.backgroundColor = "#acabb0";
+          e.style.backgroundColor = "#949494ff";
       } else {
         e.style.color = "#818083ff";
-        e.style.backgroundColor = "#acabb0";
+        e.style.backgroundColor = "#949494ff";
       }
     });
     setTimeout(() => (isOpen = false), 300);
@@ -154,6 +179,19 @@ openNoteBtn.addEventListener("click", () => {
 
 closeNoteBtn.addEventListener("click", () => {
   if (!isOpen) {
+    selectFaction.classList.remove("disabled");
+    window.document
+      .querySelector(".survivor-header-select")
+      .classList.remove("disabled");
+    window.document
+      .querySelector(".hunter-header-select")
+      .classList.remove("disabled");
+    window.document
+      .querySelector(".total-price-survivor")
+      .classList.remove("disabled");
+    window.document
+      .querySelector(".total-price-hunter")
+      .classList.remove("disabled");
     isOpen = true;
     note.classList.remove("open-note");
     inputs.forEach((e, i) => {
@@ -161,6 +199,7 @@ closeNoteBtn.addEventListener("click", () => {
         e.tabindex = "0";
         e.style.pointerEvents = "auto";
         e.removeAttribute("disabled");
+        e.style.backgroundColor = "#fff";
         if (i === inputs.length / 2 - 3 || i === inputs.length - 3)
           e.style.backgroundColor = "#fff";
       } else {
@@ -175,3 +214,10 @@ closeNoteBtn.addEventListener("click", () => {
     }, 300);
   }
 });
+
+function refreshStarsEl(el1, el2, el3, el4) {
+  inputs[2] = el1;
+  inputs[5] = el2;
+  inputs[11] = el3;
+  inputs[14] = el4;
+}
