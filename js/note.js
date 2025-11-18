@@ -107,36 +107,8 @@ const selectFaction = window.document.querySelector(".select-faction");
 
 noteList.innerHTML = noteContent;
 let isOpen = false;
-// window.console.log(inputs[2]);
 openNoteBtn.addEventListener("click", () => {
-  // inputs[2] = window.document.querySelector(
-  //   ".select-survivor .star-container .select-from"
-  // );
-  // inputs[5] = window.document.querySelector(
-  //   ".select-survivor .star-container .select-to"
-  // );
-  // inputs[11] = window.document.querySelector(
-  //   ".select-hunter .star-container .select-from"
-  // );
-  // inputs[14] = window.document.querySelector(
-  //   ".select-hunter .star-container .select-to"
-  // );
-  // inputs[2] = getStarsFromSurvivor;
-  // setTimeout(() => window.console.log(getStarsFromSurvivor), 100);
-
   if (!isOpen) {
-    // const reQueryGetStarsFromSurvivor = window.document.querySelector(
-    //   ".select-survivor .star-container .select-from"
-    // );
-    // const reQueryGetStarsToSurvivor = window.document.querySelector(
-    //   ".select-survivor .star-container .select-to"
-    // );
-    // const reQuerygetStarsFromHunter = window.document.querySelector(
-    //   ".select-hunter .star-container .select-from"
-    // );
-    // const reQuerygetStarsToHunter = window.document.querySelector(
-    //   ".select-hunter .star-container .select-to"
-    // );
     refreshStarsEl(
       getStarsFromSurvivor,
       getStarsToSurvivor,
@@ -160,6 +132,10 @@ openNoteBtn.addEventListener("click", () => {
     window.document
       .querySelector(".total-price-hunter")
       .classList.add("disabled");
+    window.document.querySelector(".select-survivor .arrow").style.fill =
+      "#949494ff";
+    window.document.querySelector(".select-hunter .arrow").style.fill =
+      "#949494ff";
     inputs.forEach((e, i) => {
       if (i !== inputs.length / 2 - 1 && i !== inputs.length - 1) {
         e.tabindex = "-1";
@@ -192,6 +168,9 @@ closeNoteBtn.addEventListener("click", () => {
     window.document
       .querySelector(".total-price-hunter")
       .classList.remove("disabled");
+    window.document.querySelector(".select-survivor .arrow").style.fill =
+      "#fff";
+    window.document.querySelector(".select-hunter .arrow").style.fill = "#fff";
     isOpen = true;
     note.classList.remove("open-note");
     inputs.forEach((e, i) => {
