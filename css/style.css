@@ -135,10 +135,6 @@ td {
   padding-bottom: 16rem;
 }
 
-.select-faction.disabled > *:not(.select-faction .note) {
-  color: #949494ff !important;
-}
-
 .calculate-price-header {
   font-size: 3.4rem;
   text-transform: uppercase;
@@ -217,11 +213,6 @@ td {
   margin-top: -30px;
 }
 
-.open-note {
-  opacity: 1;
-  margin-top: 30px;
-}
-
 .note-container {
   position: relative;
 }
@@ -279,14 +270,6 @@ td {
 
 .hunter-header-select {
   color: #ff0000;
-}
-
-.survivor-header-select.disabled {
-  color: #949494ff !important;
-}
-
-.hunter-header-select.disabled {
-  color: #949494ff !important;
 }
 
 .select-faction select,

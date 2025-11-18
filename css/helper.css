@@ -1,0 +1,16 @@
+.open-note {
+  opacity: 1;
+  margin-top: 30px;
+}
+
+.select-faction.disabled > *:not(.select-faction .note) {
+  color: #949494ff !important;
+}
+
+.survivor-header-select.disabled {
+  color: #949494ff !important;
+}
+
+.hunter-header-select.disabled {
+  color: #949494ff !important;
+}
