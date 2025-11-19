@@ -89,9 +89,9 @@ body {
 
 .survivor-table,
 .hunter-table {
+  text-align: center;
   width: 100%;
   margin: auto;
-  text-align: center;
   margin-bottom: 3rem;
 }
 
@@ -114,7 +114,7 @@ body {
   font-weight: bolder;
   text-transform: uppercase;
   width: 50%;
-  height: 6rem;
+  height: 8rem;
   letter-spacing: 1.5px;
 }
 
@@ -123,8 +123,27 @@ tr {
 }
 
 td {
+  height: 5rem;
   font-size: 1.9rem;
   font-weight: 600;
+}
+
+.tier-td {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.price-td {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.survivor-tier,
+.hunter-tier {
+  width: 3.4rem;
 }
 
 .survivor {
@@ -205,10 +224,6 @@ td {
   left: 50%;
   transform: translate(-50%, -85%);
   padding: 1rem;
-  /* border-top: 0.18rem solid #2caeff;
-  border-right: 0.18rem solid #ff0000;
-  border-left: 0.18rem solid #2caeff;
-  border-bottom: 0.18rem solid #ff0000; */
   box-shadow: 0 -0.5rem 10px #2caeff70, 0.5rem 0 10px #ff000066,
     0 0.5rem 10px #ff000066, -0.5rem 0 10px #2caeff70;
   border-radius: 0.8rem;
