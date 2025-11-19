@@ -89,14 +89,19 @@ openNoteBtn.addEventListener("click", () => {
     window.document.querySelector(".select-hunter .arrow").style.fill =
       "#949494ff";
     inputs.forEach((e, i) => {
+      if (i === 1) {
+      }
       if (i !== inputs.length / 2 - 1 && i !== inputs.length - 1) {
         e.tabindex = "-1";
         e.style.pointerEvents = "none";
-        e.style.cursor = "pointer";
-        if (e.disabled !== true) e.disabled = true;
+        e.style.cursor = "auto";
         e.style.backgroundColor = "#949494ff";
         if (i === inputs.length / 2 - 3 || i === inputs.length - 3)
           e.style.backgroundColor = "#949494ff";
+        if (i === 1 || i === 4 || i === 10 || i === 13) {
+          if ((e.disabled = true)) return;
+        }
+        e.disabled = true;
       } else {
         e.style.color = "#818083ff";
         e.style.backgroundColor = "#949494ff";

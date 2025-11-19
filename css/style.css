@@ -615,7 +615,7 @@ option {
 .payment-method-text {
   font-size: 1.6rem;
   text-align: center;
-  margin-bottom: 0.6rem;
+  margin-bottom: 1.2rem;
 }
 
 .payment-icon-container {
@@ -632,7 +632,7 @@ option {
 .paypal-icon,
 .paymaya-icon {
   width: 4.9rem;
-  height: 4.5rem;
+  height: 4rem;
 }
 
 .gcash-icon {
@@ -649,7 +649,7 @@ option {
 
 .landbank-icon {
   width: 4.8rem;
-  height: 3.4rem;
+  height: 3.1rem;
   grid-column: 1/4;
   justify-self: end;
   margin-right: 0.7rem;
