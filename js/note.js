@@ -61,12 +61,12 @@ openNoteBtn.addEventListener("click", () => {
       getStarsFromHunter,
       getStarsToHunter
     );
-    refreshSubTierEl(
-      getSubTierFromSurvivor,
-      getSubTierToSurvivor,
-      getSubTierFromHunter,
-      getSubTierToHunter
-    );
+    // refreshSubTierEl(
+    //   getSubTierFromSurvivor,
+    //   getSubTierToSurvivor,
+    //   getSubTierFromHunter,
+    //   getSubTierToHunter
+    // );
     isOpen = true;
     note.classList.add("open-note");
     openNoteBtnContainer.style.zIndex = 0;
@@ -89,17 +89,13 @@ openNoteBtn.addEventListener("click", () => {
     window.document.querySelector(".select-hunter .arrow").style.fill =
       "#949494ff";
     inputs.forEach((e, i) => {
-      if (i === 1) {
-      }
       if (i !== inputs.length / 2 - 1 && i !== inputs.length - 1) {
         e.tabindex = "-1";
         e.style.pointerEvents = "none";
         e.style.cursor = "auto";
         e.style.backgroundColor = "#949494ff";
-        if (i === inputs.length / 2 - 3 || i === inputs.length - 3)
-          e.style.backgroundColor = "#949494ff";
         if (i === 1 || i === 4 || i === 10 || i === 13) {
-          if ((e.disabled = true)) return;
+          if (e.disabled === true) return;
         }
         e.disabled = true;
       } else {
@@ -135,10 +131,38 @@ closeNoteBtn.addEventListener("click", () => {
       if (i !== inputs.length / 2 - 1 && i !== inputs.length - 1) {
         e.tabindex = "0";
         e.style.pointerEvents = "auto";
-        e.removeAttribute("disabled");
         e.style.backgroundColor = "#fff";
-        if (i === inputs.length / 2 - 3 || i === inputs.length - 3)
-          e.style.backgroundColor = "#fff";
+        if (i === 1) {
+          if (
+            getTierFromSurvivor.value === "7" ||
+            getTierFromSurvivor.value === "8"
+          ) {
+            e.style.cursor = "not-allowed";
+            return;
+          }
+        } else if (i === 4) {
+          if (
+            getTierToSurvivor.value === "7" ||
+            getTierToSurvivor.value === "8"
+          ) {
+            e.style.cursor = "not-allowed";
+            return;
+          }
+        } else if (i === 10) {
+          if (
+            getTierFromHunter.value === "7" ||
+            getTierFromHunter.value === "8"
+          ) {
+            e.style.cursor = "not-allowed";
+            return;
+          }
+        } else if (i === 14) {
+          if (getTierToHunter.value === "7" || getTierToHunter.value === "8") {
+            e.style.cursor = "not-allowed";
+            return;
+          }
+        }
+        e.removeAttribute("disabled");
       } else {
         e.style.color = "#000";
         e.style.backgroundColor = "#fff";
@@ -159,12 +183,12 @@ function refreshStarsEl(el1, el2, el3, el4) {
   inputs[14] = el4;
 }
 
-function refreshSubTierEl(el1, el2, el3, el4) {
-  inputs[1] = el1;
-  inputs[4] = el2;
-  inputs[10] = el3;
-  inputs[13] = el4;
-}
+// function refreshSubTierEl(el1, el2, el3, el4) {
+//   inputs[1] = el1;
+//   inputs[4] = el2;
+//   inputs[10] = el3;
+//   inputs[13] = el4;
+// }
 
 function renderNoteList() {
   let noteContent = "";
