@@ -590,12 +590,12 @@ option {
 
 .knight-icon {
   width: 7rem;
-  filter: drop-shadow(0 0 5px #0055ff6a);
+  filter: drop-shadow(0 0 5px #0055ff6a) drop-shadow(0 0 5px #0055ff6a);
 }
 
 .dragon-icon {
   width: 8.8rem;
-  filter: drop-shadow(0 0 5px #ff000050);
+  filter: drop-shadow(0 0 5px #ff000050) drop-shadow(0 0 5px #ff000050);
 }
 
 .recruit-container .icon-container {
