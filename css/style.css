@@ -574,21 +574,22 @@ option {
 }
 
 .knight-icon {
-  width: 5.9rem;
+  width: 7rem;
   filter: drop-shadow(0 0 5px #0055ff6a);
 }
 
 .dragon-icon {
-  width: 7.7rem;
+  width: 8.8rem;
   filter: drop-shadow(0 0 5px #ff000050);
 }
 
 .recruit-container .icon-container {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   gap: 2.1rem;
   margin-bottom: 1rem;
+  padding-left: 1rem;
 }
 
 .recruit-text {
