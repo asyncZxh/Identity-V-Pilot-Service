@@ -88,49 +88,6 @@ const survivorPrice = [
   [75],
   [80],
 ];
-const hunterPrice = [
-  [
-    [10, 10, 10],
-    [10, 10, 10],
-    [10, 10, 10],
-  ],
-  [
-    [20, 20, 20, 20],
-    [20, 20, 20, 20],
-    [20, 20, 20, 20],
-    [20, 20, 20, 20],
-  ],
-  [
-    [30, 30, 30, 30, 30],
-    [30, 30, 30, 30, 30],
-    [30, 30, 30, 30, 30],
-    [30, 30, 30, 30, 30],
-    [30, 30, 30, 30, 30],
-  ],
-  [
-    [35, 35, 35, 35, 35],
-    [35, 35, 35, 35, 35],
-    [35, 35, 35, 35, 35],
-    [35, 35, 35, 35, 35],
-    [35, 35, 35, 35, 35],
-  ],
-  [
-    [45, 45, 45, 45, 45],
-    [45, 45, 45, 45, 45],
-    [45, 45, 45, 45, 45],
-    [45, 45, 45, 45, 45],
-    [45, 45, 45, 45, 45],
-  ],
-  [
-    [60, 60, 60, 60, 60],
-    [60, 60, 60, 60, 60],
-    [60, 60, 60, 60, 60],
-    [60, 60, 60, 60, 60],
-    [60, 60, 60, 60, 60],
-  ],
-  [70],
-  [80],
-];
 // let priceRange = [];
 
 getTierFromSurvivor.addEventListener("change", () => {
@@ -1465,3 +1422,12 @@ function clearTo() {
   getSubTierToSurvivor.value = "";
   getStarsToSurvivor.value = "";
 }
+
+buttonCalculateSurvivor.addEventListener("click", () => {
+  const tierFrom = parseInt(getTierFromSurvivor.value) || undefined;
+  const subTierFrom = parseInt(getSubTierFromSurvivor.value) || undefined;
+  const starFrom = parseInt(getStarsFromSurvivor.value) || undefined;
+  const tierTo = parseInt(getTierToSurvivor.value) || undefined;
+  const subTierTo = parseInt(getSubTierToSurvivor.value) || undefined;
+  const starTo = parseInt(getStarsToSurvivor.value) || undefined;
+});
