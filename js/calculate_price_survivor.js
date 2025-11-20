@@ -55,14 +55,14 @@ const survivorPrice = [
 buttonCalculateSurvivor.addEventListener("click", () => {
   const priceRange = getPrice();
 
-  if (priceRange) {
-    //   for(){
-    //     for(){
-    //         for(){
-    //         }
-    //     }
-    //   }
-  }
+  //   if (priceRange) {
+  //       for(){
+  //         for(){
+  //             for(){
+  //             }
+  //         }
+  //       }
+  //   }
 });
 
 function getPrice() {
@@ -73,16 +73,32 @@ function getPrice() {
   const subTierTo = parseInt(getSubTierToSurvivor.value) - 1 || undefined;
   const starTo = parseInt(getStarsToSurvivor.value) - 1 || undefined;
 
-  if (
-    !tierFrom ||
-    !subTierFrom ||
-    !starFrom ||
-    !tierTo ||
-    !subTierTo ||
-    !starTo
+  if (getTierFromSurvivor.value !== "7" && getTierToSurvivor.value !== "8") {
+    if (
+      !tierFrom ||
+      !subTierFrom ||
+      !starFrom ||
+      !tierTo ||
+      !subTierTo ||
+      !starTo
+    ) {
+      alert("Missing required fields");
+      return undefined;
+    }
+  } else if (
+    getStarsFromSurvivor.value === "7" ||
+    getTierToSurvivor.value === "7"
   ) {
-    alert("MISSING REQUIRED FIELDS");
-    return undefined;
+    if (!tierFrom || !starFrom || !tierTo || !starTo) {
+    }
+  } else if (
+    getTierFromSurvivor.value === "8" &&
+    getTierToSurvivor.value === "8"
+  ) {
+    if (Number(getTierFromSurvivor.value) <= Number(getTierToSurvivor.value)) {
+      alert("FROM must be less than TO");
+      return undefined;
+    }
   }
   return {
     From: {
