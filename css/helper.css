@@ -15,8 +15,12 @@
   color: #949494ff !important;
 }
 
-/* @keyframes loading {
+.loading {
+  animation: loading 3s infinite linear;
+}
+
+@keyframes loading {
   100% {
-    transform: rotate(360deg);
+    transform: rotate(-360deg);
   }
-} */
+}
