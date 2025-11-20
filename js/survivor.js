@@ -88,7 +88,6 @@ const survivorPrice = [
   [75],
   [80],
 ];
-// let priceRange = [];
 
 getTierFromSurvivor.addEventListener("change", () => {
   updateTierOptionsTo(parseInt(getTierFromSurvivor.value));
@@ -1423,11 +1422,27 @@ function clearTo() {
   getStarsToSurvivor.value = "";
 }
 
-buttonCalculateSurvivor.addEventListener("click", () => {
+let priceRange = {};
+buttonCalculateSurvivor.addEventListener("click", () => {});
+
+function getPrice() {
   const tierFrom = parseInt(getTierFromSurvivor.value) || undefined;
   const subTierFrom = parseInt(getSubTierFromSurvivor.value) || undefined;
   const starFrom = parseInt(getStarsFromSurvivor.value) || undefined;
   const tierTo = parseInt(getTierToSurvivor.value) || undefined;
   const subTierTo = parseInt(getSubTierToSurvivor.value) || undefined;
   const starTo = parseInt(getStarsToSurvivor.value) || undefined;
-});
+
+  return {
+    From: {
+      Tier: tierFrom,
+      "Sub-tier": subTierFrom,
+      Star: starFrom,
+    },
+    To: {
+      Tier: tierTo,
+      "Sub-tier": subTierTo,
+      Star: starTo,
+    },
+  };
+}
