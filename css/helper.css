@@ -14,3 +14,9 @@
 .hunter-header-select.disabled {
   color: #949494ff !important;
 }
+
+/* @keyframes loading {
+  100% {
+    transform: rotate(360deg);
+  }
+} */

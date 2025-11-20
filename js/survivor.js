@@ -1377,7 +1377,3 @@ function clearTo() {
   getSubTierToSurvivor.value = "";
   getStarsToSurvivor.value = "";
 }
-
-buttonCalculateSurvivor.addEventListener("click", () => {
-  const priceRange = getPrice();
-});
