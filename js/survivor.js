@@ -1381,25 +1381,3 @@ function clearTo() {
 buttonCalculateSurvivor.addEventListener("click", () => {
   const priceRange = getPrice();
 });
-
-function getPrice() {
-  const tierFrom = parseInt(getTierFromSurvivor.value) - 1 || undefined;
-  const subTierFrom = parseInt(getSubTierFromSurvivor.value) - 1 || undefined;
-  const starFrom = parseInt(getStarsFromSurvivor.value) - 1 || undefined;
-  const tierTo = parseInt(getTierToSurvivor.value) - 1 || undefined;
-  const subTierTo = parseInt(getSubTierToSurvivor.value) - 1 || undefined;
-  const starTo = parseInt(getStarsToSurvivor.value) - 1 || undefined;
-
-  return {
-    From: {
-      Tier: tierFrom,
-      "Sub-tier": subTierFrom,
-      Star: starFrom,
-    },
-    To: {
-      Tier: tierTo,
-      "Sub-tier": subTierTo,
-      Star: starTo,
-    },
-  };
-}
