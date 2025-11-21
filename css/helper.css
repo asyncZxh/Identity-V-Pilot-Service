@@ -15,7 +15,13 @@
   color: #949494ff !important;
 }
 
+.price {
+  font-size: 3rem;
+}
+
 .loading {
+  width: 3.5rem;
+  height: 3.5rem;
   animation: loading 3s infinite linear;
 }
 
