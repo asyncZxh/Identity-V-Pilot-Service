@@ -373,10 +373,10 @@ option {
   font-size: 1.8rem;
   font-weight: bolder;
   width: fit-content;
-  cursor: pointer;
   padding: 0.3rem 1rem;
   border: 1px solid #808080;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .currency.convert {
@@ -451,14 +451,6 @@ option {
   border-right: 2px solid transparent;
   border-left: 2px solid transparent;
   margin-bottom: 2rem;
-}
-
-.total-price-survivor.disabled {
-  border-color: #949494ff !important;
-}
-
-.total-price-hunter.disabled {
-  border-color: #949494ff !important;
 }
 
 .other-services {

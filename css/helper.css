@@ -30,3 +30,15 @@
     transform: rotate(-360deg);
   }
 }
+
+.total-price-survivor.disabled {
+  border-color: #949494ff !important;
+  border-right: 2px solid transparent !important;
+  border-left: 2px solid transparent !important;
+}
+
+.total-price-hunter.disabled {
+  border-color: #949494ff !important;
+  border-right: 2px solid transparent !important;
+  border-left: 2px solid transparent !important;
+}
