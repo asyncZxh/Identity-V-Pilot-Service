@@ -61,12 +61,6 @@ openNoteBtn.addEventListener("click", () => {
       getStarsFromHunter,
       getStarsToHunter
     );
-    // refreshSubTierEl(
-    //   getSubTierFromSurvivor,
-    //   getSubTierToSurvivor,
-    //   getSubTierFromHunter,
-    //   getSubTierToHunter
-    // );
     isOpen = true;
     note.classList.add("open-note");
     openNoteBtnContainer.style.zIndex = 0;
@@ -163,6 +157,8 @@ closeNoteBtn.addEventListener("click", () => {
           }
         }
         e.removeAttribute("disabled");
+        if (i === inputs.length / 2 - 3 || i === inputs.length - 3)
+          e.style.cursor = "pointer";
       } else {
         e.style.color = "#000";
         e.style.backgroundColor = "#fff";
@@ -182,13 +178,6 @@ function refreshStarsEl(el1, el2, el3, el4) {
   inputs[11] = el3;
   inputs[14] = el4;
 }
-
-// function refreshSubTierEl(el1, el2, el3, el4) {
-//   inputs[1] = el1;
-//   inputs[4] = el2;
-//   inputs[10] = el3;
-//   inputs[13] = el4;
-// }
 
 function renderNoteList() {
   let noteContent = "";
