@@ -48,32 +48,53 @@ const survivorPrice = [
     [65, 65, 65, 65, 65],
     [65, 65, 65, 65, 65],
   ],
-  [75],
+  [
+    75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75,
+    75, 75, 75, 75, 75,
+  ],
   [80],
 ];
 
+let isProcessing = false;
 buttonCalculateSurvivor.addEventListener("click", () => {
-  const priceRange = getPrice();
+  if (!isProcessing) {
+    isProcessing = true;
+    setTimeout(() => {
+      const priceRange = getPrice();
 
-  //   if (priceRange) {
-  //       for(){
-  //         for(){
-  //             for(){
-  //             }
-  //         }
-  //       }
-  //   }
+      //   if (priceRange) {
+      //       for(){
+      //         for(){
+      //             for(){
+      //             }
+      //         }
+      //       }
+      //   }
+      window.console.log(priceRange);
+      isProcessing = false;
+    }, 2000);
+  }
 });
 
 function getPrice() {
-  const tierFrom = parseInt(getTierFromSurvivor.value) - 1 || undefined;
-  const subTierFrom = parseInt(getSubTierFromSurvivor.value) - 1 || undefined;
-  const starFrom = parseInt(getStarsFromSurvivor.value) - 1 || undefined;
-  const tierTo = parseInt(getTierToSurvivor.value) - 1 || undefined;
-  const subTierTo = parseInt(getSubTierToSurvivor.value) - 1 || undefined;
-  const starTo = parseInt(getStarsToSurvivor.value) - 1 || undefined;
+  const tierFrom = parseInt(getTierFromSurvivor.value) || undefined;
+  const subTierFrom = parseInt(getSubTierFromSurvivor.value) || undefined;
+  if (getTierFromSurvivor.value === "8") {
+  }
+  const starFrom = parseInt(getStarsFromSurvivor.value);
+  const tierTo = parseInt(getTierToSurvivor.value) | undefined;
+  const subTierTo = parseInt(getSubTierToSurvivor.value) || undefined;
+  const starTo = parseInt(getStarsToSurvivor.value);
 
-  if (getTierFromSurvivor.value !== "7" && getTierToSurvivor.value !== "8") {
+  if (getTierFromSurvivor.value !== "8" && getTierToSurvivor.value === "8") {
+    if (parseInt(getStarsToSurvivor.value) < 25) {
+      window.alert("Invalid star input");
+      return undefined;
+    }
+  } else if (
+    getTierFromSurvivor.value !== "7" &&
+    getTierFromSurvivor.value !== "8"
+  ) {
     if (
       !tierFrom ||
       !subTierFrom ||
@@ -82,33 +103,59 @@ function getPrice() {
       !subTierTo ||
       !starTo
     ) {
-      alert("Missing required fields");
+      window.alert("Missing required fields");
       return undefined;
     }
   } else if (
-    getStarsFromSurvivor.value === "7" ||
-    getTierToSurvivor.value === "7"
+    getTierFromSurvivor.value !== "7" &&
+    getTierFromSurvivor.value !== "8" &&
+    (getTierToSurvivor.value === "7" || getTierToSurvivor.value === "8")
   ) {
-    if (!tierFrom || !starFrom || !tierTo || !starTo) {
+    if (!tierFrom || !subTierFrom || !starFrom || !tierTo || !starTo) {
+      window.alert("Missing required fields");
+      return undefined;
     }
   } else if (
     getTierFromSurvivor.value === "8" &&
     getTierToSurvivor.value === "8"
   ) {
-    if (Number(getTierFromSurvivor.value) <= Number(getTierToSurvivor.value)) {
-      alert("FROM must be less than TO");
+    if (!tierFrom || !starFrom || !tierTo || !starTo) {
+      window.alert("Missing required fields");
+      return undefined;
+    } else if (parseInt(getStarsFromSurvivor.value) < 25) {
+      window.alert("Invalid star input");
+      return undefined;
+    } else if (
+      parseInt(getStarsToSurvivor.value) < parseInt(getStarsFromSurvivor.value)
+    ) {
+      alert("Tier: TITAN\nFROM must be less than TO");
+      return undefined;
+    } else if (
+      parseInt(getStarsToSurvivor.value) == parseInt(getStarsFromSurvivor.value)
+    ) {
+      alert("Tier: TITAN\nFROM must not be equal to TO");
+      return undefined;
+    }
+    window.console.log("eee");
+  } else if (
+    getTierFromSurvivor.value === "7" ||
+    getTierFromSurvivor.value === "8"
+  ) {
+    if (!tierFrom || !starFrom || !tierTo || !starTo) {
+      window.alert("Missing required fields");
       return undefined;
     }
   }
+
   return {
     From: {
-      Tier: tierFrom,
-      "Sub-tier": subTierFrom,
+      Tier: tierFrom - 1,
+      "Sub-tier": subTierFrom - 1,
       Star: starFrom,
     },
     To: {
-      Tier: tierTo,
-      "Sub-tier": subTierTo,
+      Tier: tierTo - 1,
+      "Sub-tier": subTierTo - 1,
       Star: starTo,
     },
   };
