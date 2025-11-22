@@ -79,10 +79,10 @@ buttonCalculateSurvivor.addEventListener("click", () => {
 function getPrice() {
   let tierFrom = parseInt(getTierFromSurvivor.value) || undefined;
   let subTierFrom = parseInt(getSubTierFromSurvivor.value) || undefined;
-  let starFrom = parseInt(getStarsFromSurvivor.value);
+  let starFrom = getStarsFromSurvivor.value || undefined;
   let tierTo = parseInt(getTierToSurvivor.value) || undefined;
   let subTierTo = parseInt(getSubTierToSurvivor.value) || undefined;
-  let starTo = parseInt(getStarsToSurvivor.value);
+  let starTo = getStarsToSurvivor.value || undefined;
 
   if (getTierFromSurvivor.value !== "8" && getTierToSurvivor.value === "8") {
     if (parseInt(getStarsToSurvivor.value) < 25) {
@@ -246,6 +246,8 @@ function getPrice() {
   modifySubTier();
   tierFrom--;
   tierTo--;
+  starFrom = parseInt(starFrom);
+  starTo = parseInt(starTo);
 
   return {
     From: {
