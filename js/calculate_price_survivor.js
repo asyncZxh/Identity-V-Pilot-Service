@@ -62,15 +62,22 @@ buttonCalculateSurvivor.addEventListener("click", () => {
     setTimeout(() => {
       const priceRange = getPrice();
 
-      //   if (priceRange) {
-      //       for(){
-      //         for(){
-      //             for(){
-      //             }
-      //         }
-      //       }
-      //   }
-      window.console.log(priceRange);
+      if (
+        priceRange &&
+        priceRange.subTierFrom !== undefined &&
+        priceRange.subTierTo !== undefined
+      ) {
+        for (let t = priceRange.tierFrom; t <= priceRange.tierTo; t++) {
+          for (
+            let st = priceRange.subTierFrom;
+            st <= priceRange.subTierTo;
+            st++
+          ) {
+            // for(let str = priceRange.starFrom; str <){
+            // }
+          }
+        }
+      }
       isProcessing = false;
     }, 2000);
   }
@@ -102,7 +109,6 @@ function getPrice() {
       !starTo
     ) {
       window.alert("Missing required fields");
-      console.log("test1");
       return undefined;
     }
   } else if (
@@ -112,7 +118,6 @@ function getPrice() {
   ) {
     if (!tierFrom || !subTierFrom || !starFrom || !tierTo || !starTo) {
       window.alert("Missing required fields");
-      console.log("test2");
       return undefined;
     }
   } else if (
@@ -121,7 +126,6 @@ function getPrice() {
   ) {
     if (!tierFrom || !starFrom || !tierTo || !starTo) {
       window.alert("Missing required fields");
-      console.log("test3");
       return undefined;
     } else if (parseInt(getStarsFromSurvivor.value) < 25) {
       window.alert("Invalid star input");
@@ -143,7 +147,6 @@ function getPrice() {
   ) {
     if (!tierFrom || !starFrom || !tierTo || !starTo) {
       window.alert("Missing required fields");
-      console.log("test4");
       return undefined;
     }
   }
