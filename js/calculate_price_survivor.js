@@ -49,10 +49,10 @@ const survivorPrice = [
     [65, 65, 65, 65, 65],
   ],
   [
-    75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75, 75,
-    75, 75, 75, 75, 75,
+    80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80,
+    80, 80, 80, 80, 80,
   ],
-  [80],
+  [85],
 ];
 const totalPriceContainer = window.document.querySelector(
   ".total-price-survivor"
@@ -62,6 +62,7 @@ let isProcessing = false;
 buttonCalculateSurvivor.addEventListener("click", () => {
   if (!isProcessing) {
     isProcessing = true;
+    totalPriceContainer.innerHTML = "";
     const loading = window.document.createElement("img");
     loading.src = "svgs/idv_loading.svg";
     loading.alt = "loading";
@@ -69,28 +70,32 @@ buttonCalculateSurvivor.addEventListener("click", () => {
     totalPriceContainer.appendChild(loading);
     setTimeout(() => {
       const priceRange = getPrice();
+      window.console.log(priceRange);
 
       if (
         priceRange &&
-        priceRange.subTierFrom !== undefined &&
-        priceRange.subTierTo !== undefined
+        priceRange.From["Sub-tier"] !== undefined &&
+        priceRange.To["Sub-tier"] !== undefined
       ) {
-        for (let t = priceRange.tierFrom; t <= priceRange.tierTo; t++) {
+        for (let t = priceRange.From.Tier; t <= priceRange.To.Tier; t++) {
           for (
-            let st = priceRange.subTierFrom;
-            st <= priceRange.subTierTo;
+            let st = priceRange.From["Sub-tier"];
+            st <= priceRange.To["Sub-tier"];
             st++
           ) {
             // for(let str = priceRange.starFrom; str <){
             // }
           }
         }
-      }
-
-      if (
+      } else if (
         priceRange &&
-        priceRange.subTierFrom !== undefined &&
-        priceRange.subTierTo !== undefined
+        priceRange.From["Sub-tier"] !== undefined &&
+        priceRange.To["Sub-tier"] === undefined
+      ) {
+      } else if (
+        priceRange &&
+        priceRange.From["Sub-tier"] === undefined &&
+        priceRange.To["Sub-tier"] === undefined
       ) {
       }
       isProcessing = false;
@@ -114,7 +119,9 @@ function getPrice() {
     }
   } else if (
     getTierFromSurvivor.value !== "7" &&
-    getTierFromSurvivor.value !== "8"
+    getTierFromSurvivor.value !== "8" &&
+    getTierToSurvivor.value !== "7" &&
+    getTierToSurvivor.value !== "8"
   ) {
     if (
       !tierFrom ||
