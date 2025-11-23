@@ -34,10 +34,6 @@ export const currencySelectionSurvivorIcon = window.document.querySelector(
   ".select-survivor .currency-container .chevron-down"
 );
 
-const totalPriceContainer = window.document.querySelector(
-  ".total-price-survivor"
-);
-
 const ranks = [
   "Bee",
   "Hound",
@@ -1379,4 +1375,11 @@ function clearTo() {
   getTierToSurvivor.value = "";
   getSubTierToSurvivor.value = "";
   getStarsToSurvivor.value = "";
+}
+
+function clearPrice() {
+  const totalPriceContainer = window.document.querySelector(
+    ".total-price-survivor"
+  );
+  totalPriceContainer.innerHTML = "";
 }
