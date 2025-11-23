@@ -51,3 +51,8 @@ const hunterPrice = [
   [70],
   [80],
 ];
+const totalPriceContainer = window.document.querySelector(
+  ".total-price-hunter"
+);
+
+let isProcessing = false;
