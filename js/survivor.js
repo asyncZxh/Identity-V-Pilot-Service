@@ -527,7 +527,6 @@ function updateStarOptionsFrom(tier) {
       createInputElement.setAttribute("id", "survivor-from-star");
       createInputElement.setAttribute("type", "number");
       createInputElement.setAttribute("min", "25");
-      createInputElement.setAttribute("max", "99");
       createInputElement.value = "25";
       createInputElement.placeholder = "enter star";
       createInputElement.classList.add("select-from");
