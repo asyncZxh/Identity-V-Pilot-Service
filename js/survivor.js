@@ -49,6 +49,7 @@ getTierFromSurvivor.addEventListener("change", () => {
   updateTierOptionsTo(parseInt(getTierFromSurvivor.value));
   updateSubTierOptionsFrom(parseInt(getTierFromSurvivor.value));
   updateStarOptionsFrom(parseInt(getTierFromSurvivor.value));
+  clearPrice();
   window.console.log("configure tier(from)");
 });
 
@@ -163,6 +164,7 @@ function updateSubTierOptionsFrom(tier) {
 getSubTierFromSurvivor.addEventListener("change", () => {
   getStarsFromSurvivor.value = "";
   clearTo();
+  clearPrice();
 });
 
 function updateStarOptionsFrom(tier) {
@@ -228,6 +230,7 @@ function updateStarOptionsFrom(tier) {
         )
           updateTierOptionsToIfBeforePromote(8);
         clearTo();
+        clearPrice();
       }
     );
     getStarsFromSurvivor.replaceWith(createSelectElement);
@@ -280,9 +283,11 @@ function updateStarOptionsFrom(tier) {
         )
           updateTierOptionsToIfBeforePromote(8);
         clearTo();
+        clearPrice();
       }
     );
     clearTo();
+    clearPrice();
   } else if (tier === 2) {
     let elements = "";
     const hiddenValue =
@@ -345,6 +350,7 @@ function updateStarOptionsFrom(tier) {
         )
           updateTierOptionsToIfBeforePromote(8);
         clearTo();
+        clearPrice();
       }
     );
     getStarsFromSurvivor.replaceWith(createSelectElement);
@@ -397,9 +403,11 @@ function updateStarOptionsFrom(tier) {
         )
           updateTierOptionsToIfBeforePromote(8);
         clearTo();
+        clearPrice();
       }
     );
     clearTo();
+    clearPrice();
   } else if (tier === 7) {
     let elements = "";
     const hiddenValue =
@@ -462,6 +470,7 @@ function updateStarOptionsFrom(tier) {
         )
           updateTierOptionsToIfBeforePromote(8);
         clearTo();
+        clearPrice();
       }
     );
     getStarsFromSurvivor.replaceWith(createSelectElement);
@@ -514,9 +523,11 @@ function updateStarOptionsFrom(tier) {
         )
           updateTierOptionsToIfBeforePromote(8);
         clearTo();
+        clearPrice();
       }
     );
     clearTo();
+    clearPrice();
   } else if (tier === 8) {
     {
       const createInputElement = window.document.createElement("input");
@@ -558,6 +569,7 @@ function updateStarOptionsFrom(tier) {
             checkStarFrom();
           }
           clearTo();
+          clearPrice();
         }
       );
       getStarsFromSurvivor.replaceWith(createInputElement);
@@ -596,9 +608,11 @@ function updateStarOptionsFrom(tier) {
             checkStarFrom();
           }
           clearTo();
+          clearPrice();
         }
       );
       clearTo();
+      clearPrice();
     }
   } else {
     let elements = "";
@@ -662,6 +676,7 @@ function updateStarOptionsFrom(tier) {
         )
           updateTierOptionsToIfBeforePromote(8);
         clearTo();
+        clearPrice();
       }
     );
     getStarsFromSurvivor.replaceWith(createSelectElement);
@@ -713,9 +728,11 @@ function updateStarOptionsFrom(tier) {
         )
           updateTierOptionsToIfBeforePromote(8);
         clearTo();
+        clearPrice();
       }
     );
     clearTo();
+    clearPrice();
   }
 }
 
@@ -762,11 +779,13 @@ getStarsFromSurvivor.addEventListener("change", function clearAndCheckStar() {
   )
     updateTierOptionsToIfBeforePromote(8);
   clearTo();
+  clearPrice();
 });
 
 getTierToSurvivor.addEventListener("change", () => {
   updateTierTo();
   checkSubTierFrom();
+  clearPrice();
   if (
     getTierToSurvivor.value === "1" &&
     (getSubTierFromSurvivor.value !== "1" || getStarsFromSurvivor.value !== "2")
@@ -957,6 +976,7 @@ getTierToSurvivor.addEventListener("change", () => {
 getSubTierToSurvivor.addEventListener("change", () => {
   checkStarFrom();
   getStarsToSurvivor.value = "";
+  clearPrice();
 });
 
 function updateTierTo() {
@@ -1325,10 +1345,18 @@ function updateStarOptionsTo(star) {
     createSelectElement.classList.add("select-to");
     createSelectElement.innerHTML = elements;
     createSelectElement.value = "";
+    getStarsToSurvivor.removeEventListener("change", function extraListener() {
+      clearPrice();
+    });
     getStarsToSurvivor.replaceWith(createSelectElement);
     getStarsToSurvivor = window.document.querySelector(
       ".select-survivor .star-container .select-to"
     );
+    getStarsToSurvivor.addEventListener("change", function extraListener() {
+      clearPrice();
+      console.log("test in");
+    });
+    console.log("test out");
   } else {
     const createInputElement = window.document.createElement("input");
     createInputElement.setAttribute("id", "survivor-to-star");
@@ -1342,10 +1370,16 @@ function updateStarOptionsTo(star) {
     }
     createInputElement.placeholder = "enter star";
     createInputElement.classList.add("select-to");
+    getStarsToSurvivor.removeEventListener("change", function extraListener() {
+      clearPrice();
+    });
     getStarsToSurvivor.replaceWith(createInputElement);
     getStarsToSurvivor = window.document.querySelector(
       ".select-survivor .star-container .select-to"
     );
+    getStarsToSurvivor.addEventListener("change", function extraListener() {
+      clearPrice();
+    });
   }
 }
 
