@@ -34,6 +34,9 @@ export const currencySelectionHunterIcon = window.document.querySelector(
   ".select-hunter .currency-container .chevron-down"
 );
 
-const totalPriceContainer = window.document.querySelector(
-  ".total-price-hunter"
-);
+// function clearPrice(){
+//   const totalPriceContainer = window.document.querySelector(
+//   ".total-price-hunter"
+// );
+// totalPriceContainer.innerHTML = "";
+// }
