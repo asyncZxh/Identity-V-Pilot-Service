@@ -54,11 +54,19 @@ const survivorPrice = [
   ],
   [80],
 ];
+const totalPriceContainer = window.document.querySelector(
+  ".total-price-survivor"
+);
 
 let isProcessing = false;
 buttonCalculateSurvivor.addEventListener("click", () => {
   if (!isProcessing) {
     isProcessing = true;
+    const loading = window.document.createElement("img");
+    loading.src = "svgs/idv_loading.svg";
+    loading.alt = "loading";
+    loading.classList.add("loading");
+    totalPriceContainer.appendChild(loading);
     setTimeout(() => {
       const priceRange = getPrice();
 
@@ -78,8 +86,15 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           }
         }
       }
+
+      if (
+        priceRange &&
+        priceRange.subTierFrom !== undefined &&
+        priceRange.subTierTo !== undefined
+      ) {
+      }
       isProcessing = false;
-    }, 2000);
+    }, 2500);
   }
 });
 
@@ -93,7 +108,8 @@ function getPrice() {
 
   if (getTierFromSurvivor.value !== "8" && getTierToSurvivor.value === "8") {
     if (parseInt(getStarsToSurvivor.value) < 25) {
-      window.alert("Invalid star input");
+      totalPriceContainer.innerHTML = "";
+      setTimeout(() => window.alert("Invalid star input"), 50);
       return undefined;
     }
   } else if (
@@ -108,7 +124,8 @@ function getPrice() {
       !subTierTo ||
       !starTo
     ) {
-      window.alert("Missing required fields");
+      totalPriceContainer.innerHTML = "";
+      setTimeout(() => window.alert("Missing required fields"), 50);
       return undefined;
     }
   } else if (
@@ -117,7 +134,8 @@ function getPrice() {
     (getTierToSurvivor.value === "7" || getTierToSurvivor.value === "8")
   ) {
     if (!tierFrom || !subTierFrom || !starFrom || !tierTo || !starTo) {
-      window.alert("Missing required fields");
+      totalPriceContainer.innerHTML = "";
+      setTimeout(() => window.alert("Missing required fields"), 50);
       return undefined;
     }
   } else if (
@@ -125,20 +143,30 @@ function getPrice() {
     getTierToSurvivor.value === "8"
   ) {
     if (!tierFrom || !starFrom || !tierTo || !starTo) {
-      window.alert("Missing required fields");
+      totalPriceContainer.innerHTML = "";
+      setTimeout(() => window.alert("Missing required fields"), 50);
       return undefined;
     } else if (parseInt(getStarsFromSurvivor.value) < 25) {
-      window.alert("Invalid star input");
+      totalPriceContainer.innerHTML = "";
+      setTimeout(() => window.alert("Invalid star input"), 50);
       return undefined;
     } else if (
       parseInt(getStarsToSurvivor.value) < parseInt(getStarsFromSurvivor.value)
     ) {
-      alert("Tier: TITAN\nFROM must be less than TO");
+      totalPriceContainer.innerHTML = "";
+      setTimeout(
+        () => window.alert("Tier: TITAN\nFROM must be less than TO"),
+        50
+      );
       return undefined;
     } else if (
       parseInt(getStarsToSurvivor.value) == parseInt(getStarsFromSurvivor.value)
     ) {
-      alert("Tier: TITAN\nFROM must not be equal to TO");
+      totalPriceContainer.innerHTML = "";
+      setTimeout(
+        () => window.alert("Tier: TITAN\nFROM must not be equal to TO"),
+        50
+      );
       return undefined;
     }
   } else if (
@@ -146,7 +174,8 @@ function getPrice() {
     getTierFromSurvivor.value === "8"
   ) {
     if (!tierFrom || !starFrom || !tierTo || !starTo) {
-      window.alert("Missing required fields");
+      totalPriceContainer.innerHTML = "";
+      setTimeout(() => window.alert("Missing required fields"), 50);
       return undefined;
     }
   }
