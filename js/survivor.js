@@ -184,55 +184,6 @@ function updateStarOptionsFrom(tier) {
     createSelectElement.classList.add("select-from");
     createSelectElement.innerHTML = elements;
     createSelectElement.value = "";
-
-    getStarsFromSurvivor.removeEventListener(
-      "change",
-      function clearAndCheckStar() {
-        if (
-          getTierFromSurvivor.value === "1" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "2"
-        )
-          updateTierOptionsToIfBeforePromote(2);
-        else if (
-          getTierFromSurvivor.value === "2" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "3"
-        )
-          updateTierOptionsToIfBeforePromote(3);
-        else if (
-          getTierFromSurvivor.value === "3" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "4"
-        )
-          updateTierOptionsToIfBeforePromote(4);
-        else if (
-          getTierFromSurvivor.value === "4" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "4"
-        )
-          updateTierOptionsToIfBeforePromote(5);
-        else if (
-          getTierFromSurvivor.value === "5" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "4"
-        )
-          updateTierOptionsToIfBeforePromote(6);
-        else if (
-          getTierFromSurvivor.value === "6" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "4"
-        )
-          updateTierOptionsToIfBeforePromote(7);
-        else if (
-          getTierFromSurvivor.value === "7" &&
-          getStarsFromSurvivor.value === "24"
-        )
-          updateTierOptionsToIfBeforePromote(8);
-        clearTo();
-        clearPrice();
-      }
-    );
     getStarsFromSurvivor.replaceWith(createSelectElement);
     getStarsFromSurvivor = window.document.querySelector(
       ".select-survivor .star-container .select-from"
@@ -304,55 +255,6 @@ function updateStarOptionsFrom(tier) {
     createSelectElement.classList.add("select-from");
     createSelectElement.innerHTML = elements;
     createSelectElement.value = "";
-
-    getStarsFromSurvivor.removeEventListener(
-      "change",
-      function clearAndCheckStar() {
-        if (
-          getTierFromSurvivor.value === "1" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "2"
-        )
-          updateTierOptionsToIfBeforePromote(2);
-        else if (
-          getTierFromSurvivor.value === "2" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "3"
-        )
-          updateTierOptionsToIfBeforePromote(3);
-        else if (
-          getTierFromSurvivor.value === "3" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "4"
-        )
-          updateTierOptionsToIfBeforePromote(4);
-        else if (
-          getTierFromSurvivor.value === "4" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "4"
-        )
-          updateTierOptionsToIfBeforePromote(5);
-        else if (
-          getTierFromSurvivor.value === "5" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "4"
-        )
-          updateTierOptionsToIfBeforePromote(6);
-        else if (
-          getTierFromSurvivor.value === "6" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "4"
-        )
-          updateTierOptionsToIfBeforePromote(7);
-        else if (
-          getTierFromSurvivor.value === "7" &&
-          getStarsFromSurvivor.value === "24"
-        )
-          updateTierOptionsToIfBeforePromote(8);
-        clearTo();
-        clearPrice();
-      }
-    );
     getStarsFromSurvivor.replaceWith(createSelectElement);
     getStarsFromSurvivor = window.document.querySelector(
       ".select-survivor .star-container .select-from"
@@ -424,55 +326,6 @@ function updateStarOptionsFrom(tier) {
     createSelectElement.classList.add("select-from");
     createSelectElement.innerHTML = elements;
     createSelectElement.value = "";
-
-    getStarsFromSurvivor.removeEventListener(
-      "change",
-      function clearAndCheckStar() {
-        if (
-          getTierFromSurvivor.value === "1" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "2"
-        )
-          updateTierOptionsToIfBeforePromote(2);
-        else if (
-          getTierFromSurvivor.value === "2" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "3"
-        )
-          updateTierOptionsToIfBeforePromote(3);
-        else if (
-          getTierFromSurvivor.value === "3" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "4"
-        )
-          updateTierOptionsToIfBeforePromote(4);
-        else if (
-          getTierFromSurvivor.value === "4" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "4"
-        )
-          updateTierOptionsToIfBeforePromote(5);
-        else if (
-          getTierFromSurvivor.value === "5" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "4"
-        )
-          updateTierOptionsToIfBeforePromote(6);
-        else if (
-          getTierFromSurvivor.value === "6" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "4"
-        )
-          updateTierOptionsToIfBeforePromote(7);
-        else if (
-          getTierFromSurvivor.value === "7" &&
-          getStarsFromSurvivor.value === "24"
-        )
-          updateTierOptionsToIfBeforePromote(8);
-        clearTo();
-        clearPrice();
-      }
-    );
     getStarsFromSurvivor.replaceWith(createSelectElement);
     getStarsFromSurvivor = window.document.querySelector(
       ".select-survivor .star-container .select-from"
@@ -537,46 +390,10 @@ function updateStarOptionsFrom(tier) {
       createInputElement.value = "25";
       createInputElement.placeholder = "enter star";
       createInputElement.classList.add("select-from");
-
-      getStarsFromSurvivor.removeEventListener(
-        "change",
-        function clearAndCheckStar() {
-          if (
-            getTierFromSurvivor.value === "1" &&
-            getSubTierFromSurvivor.value === "1" &&
-            getStarsFromSurvivor.value === "2"
-          ) {
-            checkStarFrom();
-          } else if (
-            getTierFromSurvivor.value === "2" &&
-            getSubTierFromSurvivor.value === "1" &&
-            getStarsFromSurvivor.value === "3"
-          ) {
-            checkStarFrom();
-          } else if (
-            (getTierFromSurvivor.value === "3" ||
-              getTierFromSurvivor.value === "4" ||
-              getTierFromSurvivor.value === "5" ||
-              getTierFromSurvivor.value === "6") &&
-            getSubTierFromSurvivor.value === "1" &&
-            getStarsFromSurvivor.value === "4"
-          ) {
-            checkStarFrom();
-          } else if (
-            getTierFromSurvivor.value === "7" &&
-            getStarsFromSurvivor.value === "24"
-          ) {
-            checkStarFrom();
-          }
-          clearTo();
-          clearPrice();
-        }
-      );
       getStarsFromSurvivor.replaceWith(createInputElement);
       getStarsFromSurvivor = window.document.querySelector(
         ".select-survivor .star-container .select-from"
       );
-
       getStarsFromSurvivor.addEventListener(
         "change",
         function clearAndCheckStar() {
@@ -630,55 +447,6 @@ function updateStarOptionsFrom(tier) {
     createSelectElement.classList.add("select-from");
     createSelectElement.innerHTML = elements;
     createSelectElement.value = "";
-
-    getStarsFromSurvivor.removeEventListener(
-      "change",
-      function clearAndCheckStar() {
-        if (
-          getTierFromSurvivor.value === "1" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "2"
-        )
-          updateTierOptionsToIfBeforePromote(2);
-        else if (
-          getTierFromSurvivor.value === "2" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "3"
-        )
-          updateTierOptionsToIfBeforePromote(3);
-        else if (
-          getTierFromSurvivor.value === "3" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "4"
-        )
-          updateTierOptionsToIfBeforePromote(4);
-        else if (
-          getTierFromSurvivor.value === "4" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "4"
-        )
-          updateTierOptionsToIfBeforePromote(5);
-        else if (
-          getTierFromSurvivor.value === "5" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "4"
-        )
-          updateTierOptionsToIfBeforePromote(6);
-        else if (
-          getTierFromSurvivor.value === "6" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "4"
-        )
-          updateTierOptionsToIfBeforePromote(7);
-        else if (
-          getTierFromSurvivor.value === "7" &&
-          getStarsFromSurvivor.value === "24"
-        )
-          updateTierOptionsToIfBeforePromote(8);
-        clearTo();
-        clearPrice();
-      }
-    );
     getStarsFromSurvivor.replaceWith(createSelectElement);
     getStarsFromSurvivor = window.document.querySelector(
       ".select-survivor .star-container .select-from"
@@ -1345,18 +1113,13 @@ function updateStarOptionsTo(star) {
     createSelectElement.classList.add("select-to");
     createSelectElement.innerHTML = elements;
     createSelectElement.value = "";
-    getStarsToSurvivor.removeEventListener("change", function extraListener() {
-      clearPrice();
-    });
     getStarsToSurvivor.replaceWith(createSelectElement);
     getStarsToSurvivor = window.document.querySelector(
       ".select-survivor .star-container .select-to"
     );
     getStarsToSurvivor.addEventListener("change", function extraListener() {
       clearPrice();
-      console.log("test in");
     });
-    console.log("test out");
   } else {
     const createInputElement = window.document.createElement("input");
     createInputElement.setAttribute("id", "survivor-to-star");
@@ -1370,9 +1133,6 @@ function updateStarOptionsTo(star) {
     }
     createInputElement.placeholder = "enter star";
     createInputElement.classList.add("select-to");
-    getStarsToSurvivor.removeEventListener("change", function extraListener() {
-      clearPrice();
-    });
     getStarsToSurvivor.replaceWith(createInputElement);
     getStarsToSurvivor = window.document.querySelector(
       ".select-survivor .star-container .select-to"
