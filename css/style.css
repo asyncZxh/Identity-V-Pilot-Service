@@ -368,6 +368,7 @@ option {
 
 .total-button {
   font-family: "Amatic SC";
+  text-transform: uppercase;
   background-color: #fff;
   display: block;
   font-size: 1.8rem;
