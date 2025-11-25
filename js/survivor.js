@@ -1094,6 +1094,9 @@ function updateStarFromCheck(start, end) {
   getStarsToSurvivor = window.document.querySelector(
     ".select-survivor .star-container .select-to"
   );
+  getStarsToSurvivor.addEventListener("change", function extraListener() {
+    clearPrice();
+  });
 }
 
 function updateStarOptionsTo(star) {
@@ -1117,9 +1120,6 @@ function updateStarOptionsTo(star) {
     getStarsToSurvivor = window.document.querySelector(
       ".select-survivor .star-container .select-to"
     );
-    getStarsToSurvivor.addEventListener("change", function extraListener() {
-      clearPrice();
-    });
   } else {
     const createInputElement = window.document.createElement("input");
     createInputElement.setAttribute("id", "survivor-to-star");
