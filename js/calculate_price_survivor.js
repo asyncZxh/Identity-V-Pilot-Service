@@ -70,21 +70,30 @@ buttonCalculateSurvivor.addEventListener("click", () => {
     totalPriceContainer.appendChild(loading);
     setTimeout(() => {
       const priceRange = getPrice();
+      console.log(priceRange);
       if (
         priceRange &&
         priceRange.From["Sub-tier"] !== undefined &&
         priceRange.To["Sub-tier"] !== undefined
       ) {
         let price = 0;
+        if (
+          priceRange.From.Tier === priceRange.To.Tier &&
+          priceRange.From["Sub-tier"] === priceRange.To["Sub-tier"]
+        ) {
+          const start = survivorPrice[priceRange.From.Tier][
+            priceRange.From["Sub-tier"]
+          ].slice(priceRange.From.Star + 1, priceRange.To.Star + 1);
+          window.console.log(start);
+        }
+        // const mid = survivorPrice.slice();
+        // const end = survivorPrice.slice();
         for (let t = priceRange.From.Tier; t <= priceRange.To.Tier; t++) {
           for (
             let st = priceRange.From["Sub-tier"];
             st <= priceRange.To["Sub-tier"];
             st++
-          ) {
-            // for(let str = priceRange.starFrom; str <){
-            // }
-          }
+          ) {}
         }
       } else if (
         priceRange &&
