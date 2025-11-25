@@ -70,13 +70,12 @@ buttonCalculateSurvivor.addEventListener("click", () => {
     totalPriceContainer.appendChild(loading);
     setTimeout(() => {
       const priceRange = getPrice();
-      window.console.log(priceRange);
-
       if (
         priceRange &&
         priceRange.From["Sub-tier"] !== undefined &&
         priceRange.To["Sub-tier"] !== undefined
       ) {
+        let price = 0;
         for (let t = priceRange.From.Tier; t <= priceRange.To.Tier; t++) {
           for (
             let st = priceRange.From["Sub-tier"];
@@ -99,7 +98,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
       ) {
       }
       isProcessing = false;
-    }, 2500);
+    }, 2300);
   }
 });
 
@@ -114,8 +113,10 @@ function getPrice() {
   if (getTierFromSurvivor.value !== "8" && getTierToSurvivor.value === "8") {
     if (parseInt(getStarsToSurvivor.value) < 25) {
       totalPriceContainer.innerHTML = "";
-      setTimeout(() => window.alert("Invalid star input"), 50);
-      return undefined;
+      setTimeout(() => {
+        window.alert("Invalid star input");
+        return undefined;
+      }, 50);
     }
   } else if (
     getTierFromSurvivor.value !== "7" &&
@@ -132,8 +133,10 @@ function getPrice() {
       !starTo
     ) {
       totalPriceContainer.innerHTML = "";
-      setTimeout(() => window.alert("Missing required fields"), 50);
-      return undefined;
+      setTimeout(() => {
+        window.alert("Missing required fields");
+        return undefined;
+      }, 50);
     }
   } else if (
     getTierFromSurvivor.value !== "7" &&
@@ -142,8 +145,10 @@ function getPrice() {
   ) {
     if (!tierFrom || !subTierFrom || !starFrom || !tierTo || !starTo) {
       totalPriceContainer.innerHTML = "";
-      setTimeout(() => window.alert("Missing required fields"), 50);
-      return undefined;
+      setTimeout(() => {
+        window.alert("Missing required fields");
+        return undefined;
+      }, 50);
     }
   } else if (
     getTierFromSurvivor.value === "8" &&
@@ -151,30 +156,32 @@ function getPrice() {
   ) {
     if (!tierFrom || !starFrom || !tierTo || !starTo) {
       totalPriceContainer.innerHTML = "";
-      setTimeout(() => window.alert("Missing required fields"), 50);
-      return undefined;
+      setTimeout(() => {
+        window.alert("Missing required fields");
+        return undefined;
+      }, 50);
     } else if (parseInt(getStarsFromSurvivor.value) < 25) {
       totalPriceContainer.innerHTML = "";
-      setTimeout(() => window.alert("Invalid star input"), 50);
-      return undefined;
+      setTimeout(() => {
+        window.alert("Invalid star input");
+        return undefined;
+      }, 50);
     } else if (
       parseInt(getStarsToSurvivor.value) < parseInt(getStarsFromSurvivor.value)
     ) {
       totalPriceContainer.innerHTML = "";
-      setTimeout(
-        () => window.alert("Tier: TITAN\nFROM must be less than TO"),
-        50
-      );
-      return undefined;
+      setTimeout(() => {
+        window.alert("Tier: TITAN\nFROM must be less than TO");
+        return undefined;
+      }, 50);
     } else if (
       parseInt(getStarsToSurvivor.value) == parseInt(getStarsFromSurvivor.value)
     ) {
       totalPriceContainer.innerHTML = "";
-      setTimeout(
-        () => window.alert("Tier: TITAN\nFROM must not be equal to TO"),
-        50
-      );
-      return undefined;
+      setTimeout(() => {
+        window.alert("Tier: TITAN\nFROM must not be equal to TO");
+        return undefined;
+      }, 50);
     }
   } else if (
     getTierFromSurvivor.value === "7" ||
@@ -182,8 +189,10 @@ function getPrice() {
   ) {
     if (!tierFrom || !starFrom || !tierTo || !starTo) {
       totalPriceContainer.innerHTML = "";
-      setTimeout(() => window.alert("Missing required fields"), 50);
-      return undefined;
+      setTimeout(() => {
+        window.alert("Missing required fields");
+        return undefined;
+      }, 50);
     }
   }
 
