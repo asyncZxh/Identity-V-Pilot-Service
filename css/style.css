@@ -608,6 +608,26 @@ option {
   line-height: 2.1rem;
 }
 
+.device-type-section {
+  padding-bottom: 18rem;
+}
+
+.android-logo {
+  width: 7rem;
+  height: 7rem;
+  margin: auto;
+  display: block;
+}
+
+.android-logo-container {
+  margin-bottom: 1rem;
+}
+
+.device-type-text {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
 .payment-method-text {
   font-size: 1.6rem;
   text-align: center;
