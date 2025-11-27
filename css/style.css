@@ -612,11 +612,17 @@ option {
   padding-bottom: 18rem;
 }
 
+.device-type-container {
+  width: 50%;
+  margin: auto;
+}
+
 .android-logo {
   width: 7rem;
   height: 7rem;
   margin: auto;
   display: block;
+  filter: drop-shadow(0 0 1.8px #3ddc84);
 }
 
 .android-logo-container {
