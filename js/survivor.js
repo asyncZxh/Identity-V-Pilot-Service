@@ -973,7 +973,8 @@ function checkStarFrom() {
       case "0":
         if (
           getSubTierFromSurvivor.value === getSubTierToSurvivor.value &&
-          getStarsFromSurvivor.value !== "3"
+          getTierFromSurvivor.value === getTierToSurvivor.value &&
+          getStarsFromSurvivor.value !== "2"
         )
           updateStarFromCheck(1, 2);
         else updateStarFromCheck(0, 2);
@@ -981,7 +982,8 @@ function checkStarFrom() {
       case "1":
         if (
           getSubTierFromSurvivor.value === getSubTierToSurvivor.value &&
-          getStarsFromSurvivor.value !== "3"
+          getTierFromSurvivor.value === getTierToSurvivor.value &&
+          getStarsFromSurvivor.value !== "2"
         )
           updateStarFromCheck(2, 2);
         else updateStarFromCheck(0, 2);
@@ -992,7 +994,8 @@ function checkStarFrom() {
       case "0":
         if (
           getSubTierFromSurvivor.value === getSubTierToSurvivor.value &&
-          getStarsToSurvivor.value !== "4"
+          getTierFromSurvivor.value === getTierToSurvivor.value &&
+          getStarsToSurvivor.value !== "3"
         )
           updateStarFromCheck(1, 3);
         else updateStarFromCheck(0, 3);
@@ -1000,7 +1003,8 @@ function checkStarFrom() {
       case "1":
         if (
           getSubTierFromSurvivor.value === getSubTierToSurvivor.value &&
-          getStarsToSurvivor.value !== "4"
+          getTierFromSurvivor.value === getTierToSurvivor.value &&
+          getStarsToSurvivor.value !== "3"
         )
           updateStarFromCheck(2, 3);
         else updateStarFromCheck(0, 3);
@@ -1008,7 +1012,8 @@ function checkStarFrom() {
       case "2":
         if (
           getSubTierFromSurvivor.value === getSubTierToSurvivor.value &&
-          getStarsToSurvivor.value !== "4"
+          getTierFromSurvivor.value === getTierToSurvivor.value &&
+          getStarsToSurvivor.value !== "3"
         )
           updateStarFromCheck(3, 3);
         else updateStarFromCheck(0, 3);
@@ -1042,6 +1047,7 @@ function checkStarFrom() {
       case "0":
         if (
           getSubTierFromSurvivor.value === getSubTierToSurvivor.value &&
+          getTierFromSurvivor.value === getTierToSurvivor.value &&
           getStarsToSurvivor.value !== "4"
         )
           updateStarFromCheck(1, 4);
@@ -1050,6 +1056,7 @@ function checkStarFrom() {
       case "1":
         if (
           getSubTierFromSurvivor.value === getSubTierToSurvivor.value &&
+          getTierFromSurvivor.value === getTierToSurvivor.value &&
           getStarsToSurvivor.value !== "4"
         )
           updateStarFromCheck(2, 4);
@@ -1058,6 +1065,7 @@ function checkStarFrom() {
       case "2":
         if (
           getSubTierFromSurvivor.value === getSubTierToSurvivor.value &&
+          getTierFromSurvivor.value === getTierToSurvivor.value &&
           getStarsToSurvivor.value !== "4"
         )
           updateStarFromCheck(3, 4);
@@ -1066,6 +1074,7 @@ function checkStarFrom() {
       case "3":
         if (
           getSubTierFromSurvivor.value === getSubTierToSurvivor.value &&
+          getTierFromSurvivor.value === getTierToSurvivor.value &&
           getStarsToSurvivor.value !== "4"
         )
           updateStarFromCheck(4, 4);
