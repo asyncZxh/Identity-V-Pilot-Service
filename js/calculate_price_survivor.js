@@ -122,15 +122,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
             priceRange.To["Sub-tier"]
           ].slice(0, priceRange.To.Star + 1);
           end.forEach((e) => (price += e));
-
-          console.log(price);
-        }
-        for (let t = priceRange.From.Tier; t <= priceRange.To.Tier; t++) {
-          for (
-            let st = priceRange.From["Sub-tier"];
-            st <= priceRange.To["Sub-tier"];
-            st++
-          ) {}
+        } else {
         }
       } else if (
         priceRange &&
@@ -354,9 +346,12 @@ function getPrice() {
       "Sub-tier": subTierTo,
       Star: starTo,
     },
+    isOneTierAhead: () => {
+      return this.From.Tier + 1 === this.To.Tier ? true : false;
+    },
     isOneSubtierAhead: () => {
       if (getTierFromSurvivor.value === getTierToSurvivor.value)
-        return subTierFrom + 1 === subTierTo ? true : false;
+        return this.From["Sub-tier"] + 1 === this.To["Sub-tier"] ? true : false;
       return 0;
     },
   };
