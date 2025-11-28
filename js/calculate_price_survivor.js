@@ -85,7 +85,6 @@ buttonCalculateSurvivor.addEventListener("click", () => {
             priceRange.From["Sub-tier"]
           ].slice(priceRange.From.Star + 1, priceRange.To.Star + 1);
           start.forEach((e) => (price += e));
-          console.log("bee1");
         } else if (
           priceRange.From.Tier === priceRange.To.Tier &&
           priceRange.isOneSubtierAhead()
@@ -98,29 +97,33 @@ buttonCalculateSurvivor.addEventListener("click", () => {
             priceRange.To["Sub-tier"]
           ].slice(0, priceRange.To.Star + 1);
           end.forEach((e) => (price += e));
-          console.log("bee2");
         } else if (
           priceRange.From.Tier === priceRange.To.Tier &&
           (priceRange.isOneSubtierAhead() === false || 0)
         ) {
-          console.log("bee3");
           const start = survivorPrice[priceRange.From.Tier][
             priceRange.From["Sub-tier"]
           ].slice(priceRange.From.Star + 1);
-          // start.forEach((e) => (price += e));
-          // const getMid = () => {
-          //   for (
-          //     let st = priceRange.From["Sub-tier"] + 1;
-          //     st <= priceRange.To["Sub-tier"] - 1;
-          //     st++
-          //   ) {}
-          // };
-          // getMid();
-          // const mid = getMid();
+          start.forEach((e) => (price += e));
+          const getMid = () => {
+            const array = [];
+            for (
+              let st = priceRange.From["Sub-tier"] + 1;
+              st <= priceRange.To["Sub-tier"] - 1;
+              st++
+            ) {
+              array.push(survivorPrice[priceRange.From.Tier][st].slice());
+            }
+            return array;
+          };
+          const mid = getMid();
+          mid.forEach((e) => e.forEach((c) => (price += c)));
           const end = survivorPrice[priceRange.To.Tier][
             priceRange.To["Sub-tier"]
           ].slice(0, priceRange.To.Star + 1);
           end.forEach((e) => (price += e));
+
+          console.log(price);
         }
         for (let t = priceRange.From.Tier; t <= priceRange.To.Tier; t++) {
           for (
