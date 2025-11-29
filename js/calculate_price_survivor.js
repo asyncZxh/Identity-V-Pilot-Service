@@ -93,18 +93,20 @@ buttonCalculateSurvivor.addEventListener("click", () => {
             priceRange.From["Sub-tier"]
           ].slice(priceRange.From.Star + 1);
           start.forEach((e) => (price += e));
+
           const end = survivorPrice[priceRange.To.Tier][
             priceRange.To["Sub-tier"]
           ].slice(0, priceRange.To.Star + 1);
           end.forEach((e) => (price += e));
         } else if (
           priceRange.From.Tier === priceRange.To.Tier &&
-          (priceRange.isOneSubtierAhead() === false || 0)
+          !priceRange.isOneSubtierAhead()
         ) {
           const start = survivorPrice[priceRange.From.Tier][
             priceRange.From["Sub-tier"]
           ].slice(priceRange.From.Star + 1);
           start.forEach((e) => (price += e));
+
           const getMid = () => {
             const array = [];
             for (
@@ -118,6 +120,28 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           };
           const mid = getMid();
           mid.forEach((e) => e.forEach((c) => (price += c)));
+
+          const end = survivorPrice[priceRange.To.Tier][
+            priceRange.To["Sub-tier"]
+          ].slice(0, priceRange.To.Star + 1);
+          end.forEach((e) => (price += e));
+        } else if (
+          priceRange.From.Tier !== priceRange.To.Tier &&
+          priceRange.isOneTierAhead()
+        ) {
+          const start = survivorPrice[priceRange.From.Tier][
+            priceRange.From["Sub-tier"]
+          ].slice(priceRange.From.Star + 1);
+          start.forEach((e) => (price += e));
+
+          // const getMid = () => {
+          //   const array = [];
+          //   for (let t = priceRange.From.Tier; t <= priceRange.To.Tier; t++) {}
+          // };
+
+          const firstMid = survivorPrice[priceRange.From.Tier].slice();
+          const secondMid = survivorPrice[priceRange.To.Tier].slice();
+
           const end = survivorPrice[priceRange.To.Tier][
             priceRange.To["Sub-tier"]
           ].slice(0, priceRange.To.Star + 1);
