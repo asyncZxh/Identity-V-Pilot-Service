@@ -23,6 +23,9 @@
 }
 
 @media (min-width: 64em) {
+  :root {
+    font-size: 87.5%;
+  }
 }
 
 @media (min-width: 90em) {
