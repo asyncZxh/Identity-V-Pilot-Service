@@ -1,4 +1,7 @@
 @media (max-width: 20em) {
+  :root {
+    font-size: 56.25%;
+  }
 }
 
 @media (min-width: 23.44em) {
