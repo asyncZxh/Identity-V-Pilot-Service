@@ -29,7 +29,13 @@
 }
 
 @media (min-width: 90em) {
+  :root {
+    font-size: 93.75%;
+  }
 }
 
 @media (min-width: 160em) {
+  :root {
+    font-size: 100%;
+  }
 }
