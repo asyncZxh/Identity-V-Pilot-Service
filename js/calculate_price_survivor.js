@@ -134,7 +134,6 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           ].slice(priceRange.From.Star + 1);
           start.forEach((e) => (price += e));
           console.log(start);
-
           if (
             isOneSubtierAhead_t1_t2() ||
             isOneSubtierAhead_t2_t3() ||
@@ -171,7 +170,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
               priceRange.From.Tier === 0 &&
               priceRange.From["Sub-tier"] !== 2 &&
               priceRange.To.Tier === 1 &&
-              priceRange.From["Sub-tier"] !== 0
+              priceRange.To["Sub-tier"] !== 0
             );
           }
           function isOneSubtierAhead_t2_t3() {
@@ -179,7 +178,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
               priceRange.From.Tier === 1 &&
               priceRange.From["Sub-tier"] !== 3 &&
               priceRange.To.Tier === 2 &&
-              priceRange.From["Sub-tier"] !== 0
+              priceRange.To["Sub-tier"] !== 0
             );
           }
           function isOneSubtierAhead_t3_t4() {
@@ -187,7 +186,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
               priceRange.From.Tier === 2 &&
               priceRange.From["Sub-tier"] !== 4 &&
               priceRange.To.Tier === 3 &&
-              priceRange.From["Sub-tier"] !== 0
+              priceRange.To["Sub-tier"] !== 0
             );
           }
           function isOneSubtierAhead_t4_t5() {
@@ -195,7 +194,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
               priceRange.From.Tier === 3 &&
               priceRange.From["Sub-tier"] !== 4 &&
               priceRange.To.Tier === 4 &&
-              priceRange.From["Sub-tier"] !== 0
+              priceRange.To["Sub-tier"] !== 0
             );
           }
           function isOneSubtierAhead_t5_t6() {
@@ -203,7 +202,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
               priceRange.From.Tier === 4 &&
               priceRange.From["Sub-tier"] !== 4 &&
               priceRange.To.Tier === 5 &&
-              priceRange.From["Sub-tier"] !== 0
+              priceRange.To["Sub-tier"] !== 0
             );
           }
           // console.log(price);
