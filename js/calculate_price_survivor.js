@@ -134,19 +134,29 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           ].slice(priceRange.From.Star + 1);
           start.forEach((e) => (price += e));
 
-          // const getMid = () => {
-          //   const array = [];
-          //   for (let t = priceRange.From.Tier; t <= priceRange.To.Tier; t++) {}
-          // };
-
-          const firstMid = survivorPrice[priceRange.From.Tier].slice();
-          const secondMid = survivorPrice[priceRange.To.Tier].slice();
+          const firstMid = survivorPrice[priceRange.From.Tier].slice(
+            priceRange.From["Sub-tier"] + 1
+          );
+          firstMid.forEach((e) => {
+            e.forEach((c) => (price += c));
+          });
+          const secondMid = survivorPrice[priceRange.To.Tier].slice(
+            priceRange.From["Sub-tier"] - 1
+          );
+          secondMid.forEach((e) => {
+            e.forEach((c) => (price += c));
+          });
 
           const end = survivorPrice[priceRange.To.Tier][
             priceRange.To["Sub-tier"]
           ].slice(0, priceRange.To.Star + 1);
           end.forEach((e) => (price += e));
-        } else {
+
+          console.log(price);
+        } else if (
+          priceRange.From.Tier !== priceRange.To.Tier &&
+          !priceRange.isOneTierAhead()
+        ) {
         }
       } else if (
         priceRange &&
@@ -370,13 +380,12 @@ function getPrice() {
       "Sub-tier": subTierTo,
       Star: starTo,
     },
-    isOneTierAhead: () => {
-      return this.From.Tier + 1 === this.To.Tier ? true : false;
+    isOneTierAhead() {
+      return this.From.Tier + 1 === this.To.Tier;
     },
-    isOneSubtierAhead: () => {
+    isOneSubtierAhead() {
       if (getTierFromSurvivor.value === getTierToSurvivor.value)
-        return this.From["Sub-tier"] + 1 === this.To["Sub-tier"] ? true : false;
-      return 0;
+        return this.From["Sub-tier"] + 1 === this.To["Sub-tier"];
     },
   };
 }
