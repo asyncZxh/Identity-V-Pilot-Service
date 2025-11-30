@@ -225,8 +225,8 @@ td {
   left: 50%;
   transform: translate(-50%, -85%);
   padding: 1rem;
-  box-shadow: 0 -0.5rem 10px #2caeff70, 0.5rem 0 10px #ff000066,
-    0 0.5rem 10px #ff000066, -0.5rem 0 10px #2caeff70;
+  box-shadow: 0 -0.3rem 10px #2caeff70, 0.3rem 0 10px #ff000066,
+    0 0.3rem 10px #ff000066, -0.3rem 0 10px #2caeff70;
   border-radius: 0.8rem;
   width: 100%;
   z-index: -1;
