@@ -164,45 +164,26 @@ buttonCalculateSurvivor.addEventListener("click", () => {
             price += e;
           });
 
-          if (
-            (priceRange.From.Tier === 0 && priceRange.From["Sub-tier"] !== 2) ||
-            (priceRange.From.Tier === 1 && priceRange.From["Sub-tier"] !== 3) ||
-            ((priceRange.From.Tier === 2 ||
-              priceRange.From.Tier === 3 ||
-              priceRange.From.Tier === 4 ||
-              priceRange.From.Tier === 5) &&
-              priceRange.From["Sub-tier"] !== 4)
-          ) {
-            const firstMid = survivorPrice[priceRange.From.Tier].slice(
-              priceRange.From["Sub-tier"] + 1
-            );
-            firstMid.forEach((e) => {
-              e.forEach((c) => {
-                stars++;
-                price += c;
-              });
+          const firstMid = survivorPrice[priceRange.From.Tier].slice(
+            priceRange.From["Sub-tier"] + 1
+          );
+          firstMid.forEach((e) => {
+            e.forEach((c) => {
+              stars++;
+              price += c;
             });
-          }
+          });
 
-          if (
-            (priceRange.To.Tier === 1 && priceRange.To["Sub-tier"] !== 0) ||
-            ((priceRange.To.Tier === 2 ||
-              priceRange.To.Tier === 3 ||
-              priceRange.To.Tier === 4 ||
-              priceRange.To.Tier === 5) &&
-              priceRange.To["Sub-tier"] !== 0)
-          ) {
-            const secondMid = survivorPrice[priceRange.To.Tier].slice(
-              0,
-              priceRange.To["Sub-tier"]
-            );
-            secondMid.forEach((e) => {
-              e.forEach((c) => {
-                stars++;
-                price += c;
-              });
+          const secondMid = survivorPrice[priceRange.To.Tier].slice(
+            0,
+            priceRange.To["Sub-tier"]
+          );
+          secondMid.forEach((e) => {
+            e.forEach((c) => {
+              stars++;
+              price += c;
             });
-          }
+          });
 
           const end = survivorPrice[priceRange.To.Tier][
             priceRange.To["Sub-tier"]
@@ -297,6 +278,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           const firstMid = survivorPrice[priceRange.From.Tier].slice(
             priceRange.From["Sub-tier"] + 1
           );
+
           firstMid.forEach((e) => {
             e.forEach((c) => {
               stars++;
@@ -305,27 +287,34 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           });
           console.log(firstMid);
 
-          const getMid = () => {
-            const array = [];
-            for (
-              let t = priceRange.From.Tier + 1;
-              t < priceRange.To.Tier;
-              t++
-            ) {
-              for (let st = 0; st < survivorPrice[t].length; st++) {
-                array.push(survivorPrice[t][st].slice());
+          if (
+            priceRange.From.Tier !== 5 &&
+            priceRange.From["Sub-tier"] !== 4 &&
+            priceRange.From.Star !== 3
+          ) {
+            const getLastMid = () => {
+              const array = [];
+              for (
+                let t = priceRange.From.Tier + 1;
+                t < priceRange.To.Tier;
+                t++
+              ) {
+                for (let st = 0; st < survivorPrice[t].length; st++) {
+                  array.push(survivorPrice[t][st].slice());
+                }
               }
-            }
-            return array;
-          };
-          const mid = getMid();
-          mid.forEach((e) =>
-            e.forEach((j) => {
-              stars++;
-              price += j;
-            })
-          );
-
+              return array;
+            };
+            const lastMid = getLastMid();
+            lastMid.forEach((e) =>
+              e.forEach((j) => {
+                stars++;
+                price += j;
+              })
+            );
+            console.log(lastMid);
+            console.log("heyhey");
+          }
           // const lastMid = survivorPrice[priceRange.To.Tier].slice(
           //   0,
           //   priceRange.To["Sub-tier"]
