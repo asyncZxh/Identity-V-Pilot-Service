@@ -71,14 +71,13 @@ buttonCalculateSurvivor.addEventListener("click", () => {
     setTimeout(() => {
       const priceRange = getPrice();
       window.console.log(priceRange);
-      console.log(priceRange.isOneSubtierAhead());
-      console.log(priceRange.isOneTierAhead());
       if (
         priceRange &&
         priceRange.From["Sub-tier"] !== undefined &&
         priceRange.To["Sub-tier"] !== undefined
       ) {
         let price = 0;
+        let stars = 0;
         if (
           priceRange.From.Tier === priceRange.To.Tier &&
           priceRange.From["Sub-tier"] === priceRange.To["Sub-tier"]
@@ -87,8 +86,6 @@ buttonCalculateSurvivor.addEventListener("click", () => {
             priceRange.From["Sub-tier"]
           ].slice(priceRange.From.Star + 1, priceRange.To.Star + 1);
           start.forEach((e) => (price += e));
-          console.log(start);
-          console.log("Total: " + price);
         } else if (
           priceRange.From.Tier === priceRange.To.Tier &&
           priceRange.isOneSubtierAhead()
@@ -97,14 +94,11 @@ buttonCalculateSurvivor.addEventListener("click", () => {
             priceRange.From["Sub-tier"]
           ].slice(priceRange.From.Star + 1);
           start.forEach((e) => (price += e));
-          console.log(start);
 
           const end = survivorPrice[priceRange.To.Tier][
             priceRange.To["Sub-tier"]
           ].slice(0, priceRange.To.Star + 1);
           end.forEach((e) => (price += e));
-          console.log(end);
-          console.log("Total: " + price);
         } else if (
           priceRange.From.Tier === priceRange.To.Tier &&
           !priceRange.isOneSubtierAhead()
@@ -113,7 +107,6 @@ buttonCalculateSurvivor.addEventListener("click", () => {
             priceRange.From["Sub-tier"]
           ].slice(priceRange.From.Star + 1);
           start.forEach((e) => (price += e));
-          console.log(start);
 
           const getMid = () => {
             const array = [];
@@ -128,14 +121,11 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           };
           const mid = getMid();
           mid.forEach((e) => e.forEach((c) => (price += c)));
-          console.log(mid);
 
           const end = survivorPrice[priceRange.To.Tier][
             priceRange.To["Sub-tier"]
           ].slice(0, priceRange.To.Star + 1);
           end.forEach((e) => (price += e));
-          console.log(end);
-          console.log("Total: " + price);
         } else if (
           priceRange.From.Tier !== priceRange.To.Tier &&
           priceRange.isOneTierAhead()
@@ -144,7 +134,6 @@ buttonCalculateSurvivor.addEventListener("click", () => {
             priceRange.From["Sub-tier"]
           ].slice(priceRange.From.Star + 1);
           start.forEach((e) => (price += e));
-          console.log(start);
 
           if (
             (priceRange.From.Tier === 0 && priceRange.From["Sub-tier"] !== 2) ||
@@ -161,8 +150,6 @@ buttonCalculateSurvivor.addEventListener("click", () => {
             firstMid.forEach((e) => {
               e.forEach((c) => (price += c));
             });
-            console.log("worked");
-            console.log(firstMid);
           }
 
           if (
@@ -180,16 +167,12 @@ buttonCalculateSurvivor.addEventListener("click", () => {
             secondMid.forEach((e) => {
               e.forEach((c) => (price += c));
             });
-            console.log("workedd");
-            console.log(secondMid);
           }
 
           const end = survivorPrice[priceRange.To.Tier][
             priceRange.To["Sub-tier"]
           ].slice(0, priceRange.To.Star + 1);
           end.forEach((e) => (price += e));
-          console.log(end);
-          console.log(price);
         } else if (
           priceRange.From.Tier !== priceRange.To.Tier &&
           !priceRange.isOneTierAhead()
@@ -198,7 +181,6 @@ buttonCalculateSurvivor.addEventListener("click", () => {
             priceRange.From["Sub-tier"]
           ].slice(priceRange.From.Star + 1);
           start.forEach((e) => (price += e));
-          console.log(start);
 
           const firstMid = survivorPrice[priceRange.From.Tier].slice(
             priceRange.From["Sub-tier"] + 1
@@ -206,7 +188,6 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           firstMid.forEach((e) => {
             e.forEach((c) => (price += c));
           });
-          console.log(firstMid);
 
           const getMid = () => {
             const array = [];
@@ -223,9 +204,6 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           };
           const mid = getMid();
           mid.forEach((e) => e.forEach((j) => (price += j)));
-          console.log(price);
-          console.log("HERE");
-          console.log(mid);
 
           const lastMid = survivorPrice[priceRange.To.Tier].slice(
             0,
@@ -234,14 +212,11 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           lastMid.forEach((e) => {
             e.forEach((c) => (price += c));
           });
-          console.log(lastMid);
 
           const end = survivorPrice[priceRange.To.Tier][
             priceRange.To["Sub-tier"]
           ].slice(0, priceRange.To.Star + 1);
           end.forEach((e) => (price += e));
-          console.log(end);
-          console.log(price);
         }
       } else if (
         priceRange &&
