@@ -71,6 +71,8 @@ buttonCalculateSurvivor.addEventListener("click", () => {
     setTimeout(() => {
       const priceRange = getPrice();
       window.console.log(priceRange);
+      console.log(priceRange.isOneSubtierAhead());
+      console.log(priceRange.isOneTierAhead());
       if (
         priceRange &&
         priceRange.From["Sub-tier"] !== undefined &&
@@ -85,6 +87,8 @@ buttonCalculateSurvivor.addEventListener("click", () => {
             priceRange.From["Sub-tier"]
           ].slice(priceRange.From.Star + 1, priceRange.To.Star + 1);
           start.forEach((e) => (price += e));
+          console.log(start);
+          console.log("Total: " + price);
         } else if (
           priceRange.From.Tier === priceRange.To.Tier &&
           priceRange.isOneSubtierAhead()
@@ -93,11 +97,14 @@ buttonCalculateSurvivor.addEventListener("click", () => {
             priceRange.From["Sub-tier"]
           ].slice(priceRange.From.Star + 1);
           start.forEach((e) => (price += e));
+          console.log(start);
 
           const end = survivorPrice[priceRange.To.Tier][
             priceRange.To["Sub-tier"]
           ].slice(0, priceRange.To.Star + 1);
           end.forEach((e) => (price += e));
+          console.log(end);
+          console.log("Total: " + price);
         } else if (
           priceRange.From.Tier === priceRange.To.Tier &&
           !priceRange.isOneSubtierAhead()
@@ -106,6 +113,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
             priceRange.From["Sub-tier"]
           ].slice(priceRange.From.Star + 1);
           start.forEach((e) => (price += e));
+          console.log(start);
 
           const getMid = () => {
             const array = [];
@@ -120,11 +128,14 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           };
           const mid = getMid();
           mid.forEach((e) => e.forEach((c) => (price += c)));
+          console.log(mid);
 
           const end = survivorPrice[priceRange.To.Tier][
             priceRange.To["Sub-tier"]
           ].slice(0, priceRange.To.Star + 1);
           end.forEach((e) => (price += e));
+          console.log(end);
+          console.log("Total: " + price);
         } else if (
           priceRange.From.Tier !== priceRange.To.Tier &&
           priceRange.isOneTierAhead()
@@ -421,6 +432,53 @@ function getPrice() {
           break;
         case 1:
           subTierFrom = 4;
+          break;
+      }
+    }
+
+    if (tierTo === 1) {
+      switch (subTierTo) {
+        case 3:
+          subTierTo = 0;
+          break;
+        case 2:
+          subTierTo = 1;
+          break;
+        case 1:
+          subTierTo = 2;
+          break;
+      }
+    } else if (tierTo === 2) {
+      switch (subTierTo) {
+        case 4:
+          subTierTo = 0;
+          break;
+        case 3:
+          subTierTo = 1;
+          break;
+        case 2:
+          subTierTo = 2;
+          break;
+        case 1:
+          subTierTo = 3;
+          break;
+      }
+    } else if (tierTo !== 7 && tierTo !== 8) {
+      switch (subTierTo) {
+        case 5:
+          subTierTo = 0;
+          break;
+        case 4:
+          subTierTo = 1;
+          break;
+        case 3:
+          subTierTo = 2;
+          break;
+        case 2:
+          subTierTo = 3;
+          break;
+        case 1:
+          subTierTo = 4;
           break;
       }
     }
