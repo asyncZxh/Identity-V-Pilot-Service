@@ -282,6 +282,73 @@ buttonCalculateSurvivor.addEventListener("click", () => {
         priceRange.From["Sub-tier"] !== undefined &&
         priceRange.To["Sub-tier"] === undefined
       ) {
+        let price = 0;
+        let stars = 0;
+        if (priceRange.To.Tier === 6) {
+          const start = survivorPrice[priceRange.From.Tier][
+            priceRange.From["Sub-tier"]
+          ].slice(priceRange.From.Star + 1);
+          start.forEach((e) => {
+            stars++;
+            price += e;
+          });
+          console.log(start);
+
+          const firstMid = survivorPrice[priceRange.From.Tier].slice(
+            priceRange.From["Sub-tier"] + 1
+          );
+          firstMid.forEach((e) => {
+            e.forEach((c) => {
+              stars++;
+              price += c;
+            });
+          });
+          console.log(firstMid);
+
+          const getMid = () => {
+            const array = [];
+            for (
+              let t = priceRange.From.Tier + 1;
+              t < priceRange.To.Tier;
+              t++
+            ) {
+              for (let st = 0; st < survivorPrice[t].length; st++) {
+                array.push(survivorPrice[t][st].slice());
+              }
+            }
+            return array;
+          };
+          const mid = getMid();
+          mid.forEach((e) =>
+            e.forEach((j) => {
+              stars++;
+              price += j;
+            })
+          );
+
+          // const lastMid = survivorPrice[priceRange.To.Tier].slice(
+          //   0,
+          //   priceRange.To["Sub-tier"]
+          // );
+          // lastMid.forEach((e) => {
+          //   e.forEach((c) => {
+          //     stars++;
+          //     price += c;
+          //   });
+          // });
+
+          // const end = survivorPrice[priceRange.To.Tier][
+          //   priceRange.To["Sub-tier"]
+          // ].slice(0, priceRange.To.Star + 1);
+          // end.forEach((e) => {
+          //   stars++;
+          //   price += e;
+          // });
+
+          window.console.log(`Stars: ${stars}`);
+          window.console.log(`Price: ${price}`);
+        } else if (priceRange.To.Tier === 7) {
+        }
       } else if (
         priceRange &&
         priceRange.From["Sub-tier"] === undefined &&
