@@ -147,12 +147,12 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           console.log(start);
 
           if (
-            (priceRange.From === 0 && priceRange.From["Sub-tier"] !== 2) ||
-            (priceRange.From === 1 && priceRange.From["Sub-tier"] !== 3) ||
-            ((priceRange.From === 2 ||
-              priceRange.From === 3 ||
-              priceRange.From === 4 ||
-              priceRange.From === 5) &&
+            (priceRange.From.Tier === 0 && priceRange.From["Sub-tier"] !== 2) ||
+            (priceRange.From.Tier === 1 && priceRange.From["Sub-tier"] !== 3) ||
+            ((priceRange.From.Tier === 2 ||
+              priceRange.From.Tier === 3 ||
+              priceRange.From.Tier === 4 ||
+              priceRange.From.Tier === 5) &&
               priceRange.From["Sub-tier"] !== 4)
           ) {
             const firstMid = survivorPrice[priceRange.From.Tier].slice(
@@ -161,15 +161,16 @@ buttonCalculateSurvivor.addEventListener("click", () => {
             firstMid.forEach((e) => {
               e.forEach((c) => (price += c));
             });
+            console.log("worked");
             console.log(firstMid);
           }
 
           if (
-            (priceRange.To === 1 && priceRange.To["Sub-tier"] !== 0) ||
-            ((priceRange.To === 2 ||
-              priceRange.To === 3 ||
-              priceRange.To === 4 ||
-              priceRange.To === 5) &&
+            (priceRange.To.Tier === 1 && priceRange.To["Sub-tier"] !== 0) ||
+            ((priceRange.To.Tier === 2 ||
+              priceRange.To.Tier === 3 ||
+              priceRange.To.Tier === 4 ||
+              priceRange.To.Tier === 5) &&
               priceRange.To["Sub-tier"] !== 0)
           ) {
             const secondMid = survivorPrice[priceRange.To.Tier].slice(
@@ -179,6 +180,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
             secondMid.forEach((e) => {
               e.forEach((c) => (price += c));
             });
+            console.log("workedd");
             console.log(secondMid);
           }
 
@@ -506,6 +508,7 @@ function getPrice() {
     isOneSubtierAhead() {
       if (getTierFromSurvivor.value === getTierToSurvivor.value)
         return this.From["Sub-tier"] + 1 === this.To["Sub-tier"];
+      return 0;
     },
   };
 }
