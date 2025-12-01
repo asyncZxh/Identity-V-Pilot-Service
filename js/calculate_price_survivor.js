@@ -308,17 +308,6 @@ buttonCalculateSurvivor.addEventListener("click", () => {
             })
           );
 
-          // const lastMid = survivorPrice[priceRange.To.Tier].slice(
-          //   0,
-          //   priceRange.To["Sub-tier"]
-          // );
-          // lastMid.forEach((e) => {
-          //   e.forEach((c) => {
-          //     stars++;
-          //     price += c;
-          //   });
-          // });
-
           const end = survivorPrice[priceRange.To.Tier].slice(
             0,
             priceRange.To.Star + 1
@@ -331,6 +320,62 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
         } else if (priceRange.To.Tier === 7) {
+          const start = survivorPrice[priceRange.From.Tier][
+            priceRange.From["Sub-tier"]
+          ].slice(priceRange.From.Star + 1);
+          start.forEach((e) => {
+            stars++;
+            price += e;
+          });
+          console.log(start);
+
+          const firstMid = survivorPrice[priceRange.From.Tier].slice(
+            priceRange.From["Sub-tier"] + 1
+          );
+
+          firstMid.forEach((e) => {
+            e.forEach((c) => {
+              stars++;
+              price += c;
+            });
+          });
+          console.log(firstMid);
+
+          const getMid = () => {
+            const array = [];
+            for (
+              let t = priceRange.From.Tier + 1;
+              t < priceRange.To.Tier - 1;
+              t++
+            ) {
+              for (let st = 0; st < survivorPrice[t].length; st++) {
+                array.push(survivorPrice[t][st].slice());
+              }
+            }
+            return array;
+          };
+          const mid = getMid();
+          mid.forEach((e) =>
+            e.forEach((j) => {
+              stars++;
+              price += j;
+            })
+          );
+
+          const lastMid = survivorPrice[priceRange.To.Tier - 1].slice();
+          lastMid.forEach((e) => {
+            stars++;
+            price += e;
+          });
+
+          const end =
+            (priceRange.To.Star - 24) * survivorPrice[priceRange.To.Tier];
+          stars += priceRange.To.Star - 24;
+          price += end;
+          console.log(end);
+
+          window.console.log(`Stars: ${stars}`);
+          window.console.log(`Price: ${price}`);
         }
       } else if (
         priceRange &&
