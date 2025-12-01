@@ -714,7 +714,7 @@ option {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1.4rem;
+  gap: 1.7rem;
 }
 
 .social-icon {
@@ -728,6 +728,6 @@ option {
 }
 
 .instagram-icon {
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 2.5rem;
+  height: 2.5rem;
 }
