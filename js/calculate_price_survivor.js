@@ -382,6 +382,24 @@ buttonCalculateSurvivor.addEventListener("click", () => {
         priceRange.From["Sub-tier"] === undefined &&
         priceRange.To["Sub-tier"] === undefined
       ) {
+        let price = 0;
+        let stars = 0;
+        if (priceRange.From.Tier === 6 && priceRange.To.Tier === 6) {
+          const array = survivorPrice[priceRange.From.Tier].slice(
+            priceRange.From.Star + 1,
+            priceRange.To.Star + 1
+          );
+
+          array.forEach((e) => {
+            stars++;
+            price += e;
+          });
+          console.log(array);
+          console.log(stars);
+          console.log(price);
+        } else if (priceRange.From.Tier === 6 && priceRange.To.Tier === 7) {
+        } else if (priceRange.From.Tier === 7 && priceRange.To.Tier === 7) {
+        }
       }
       isProcessing = false;
     }, 2300);
