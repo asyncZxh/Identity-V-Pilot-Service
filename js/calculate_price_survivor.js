@@ -397,16 +397,22 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
         } else if (priceRange.From.Tier === 6 && priceRange.To.Tier === 7) {
-          // const array = survivorPrice[priceRange.From.Tier].slice(
-          //   priceRange.From.Star + 1
-          // );
-          // array.forEach((e) => {
-          //   stars++;
-          //   price += e;
-          // });
-          // console.log(array);
-          // console.log(stars);
-          // console.log(price);
+          const array = survivorPrice[priceRange.From.Tier].slice(
+            priceRange.From.Star + 1
+          );
+          array.forEach((e) => {
+            stars++;
+            price += e;
+          });
+
+          const end =
+            (priceRange.To.Star - 24) * survivorPrice[priceRange.To.Tier];
+          stars += priceRange.To.Star - 24;
+          price += end;
+          console.log(end);
+
+          console.log(stars);
+          console.log(price);
         } else if (priceRange.From.Tier === 7 && priceRange.To.Tier === 7) {
         }
       }
