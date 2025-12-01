@@ -102,8 +102,6 @@ buttonCalculateSurvivor.addEventListener("click", () => {
             stars++;
             price += e;
           });
-          window.console.log(`Stars: ${stars}`);
-          window.console.log(`Price: ${price}`);
 
           const end = survivorPrice[priceRange.To.Tier][
             priceRange.To["Sub-tier"]
