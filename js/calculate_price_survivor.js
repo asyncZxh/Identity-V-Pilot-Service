@@ -134,12 +134,15 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           ].slice(priceRange.From.Star + 1);
           start.forEach((e) => (price += e));
           console.log(start);
+
           if (
-            isOneSubtierAhead_t1_t2() ||
-            isOneSubtierAhead_t2_t3() ||
-            isOneSubtierAhead_t3_t4() ||
-            isOneSubtierAhead_t4_t5() ||
-            isOneSubtierAhead_t5_t6()
+            (priceRange.From === 0 && priceRange.From["Sub-tier"] !== 2) ||
+            (priceRange.From === 1 && priceRange.From["Sub-tier"] !== 3) ||
+            ((priceRange.From === 2 ||
+              priceRange.From === 3 ||
+              priceRange.From === 4 ||
+              priceRange.From === 5) &&
+              priceRange.From["Sub-tier"] !== 4)
           ) {
             const firstMid = survivorPrice[priceRange.From.Tier].slice(
               priceRange.From["Sub-tier"] + 1
@@ -148,7 +151,16 @@ buttonCalculateSurvivor.addEventListener("click", () => {
               e.forEach((c) => (price += c));
             });
             console.log(firstMid);
+          }
 
+          if (
+            (priceRange.To === 1 && priceRange.To["Sub-tier"] !== 0) ||
+            ((priceRange.To === 2 ||
+              priceRange.To === 3 ||
+              priceRange.To === 4 ||
+              priceRange.To === 5) &&
+              priceRange.To["Sub-tier"] !== 0)
+          ) {
             const secondMid = survivorPrice[priceRange.To.Tier].slice(
               0,
               priceRange.To["Sub-tier"]
@@ -165,46 +177,46 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           end.forEach((e) => (price += e));
           console.log(end);
 
-          function isOneSubtierAhead_t1_t2() {
-            return (
-              priceRange.From.Tier === 0 &&
-              priceRange.From["Sub-tier"] !== 2 &&
-              priceRange.To.Tier === 1 &&
-              priceRange.To["Sub-tier"] !== 0
-            );
-          }
-          function isOneSubtierAhead_t2_t3() {
-            return (
-              priceRange.From.Tier === 1 &&
-              priceRange.From["Sub-tier"] !== 3 &&
-              priceRange.To.Tier === 2 &&
-              priceRange.To["Sub-tier"] !== 0
-            );
-          }
-          function isOneSubtierAhead_t3_t4() {
-            return (
-              priceRange.From.Tier === 2 &&
-              priceRange.From["Sub-tier"] !== 4 &&
-              priceRange.To.Tier === 3 &&
-              priceRange.To["Sub-tier"] !== 0
-            );
-          }
-          function isOneSubtierAhead_t4_t5() {
-            return (
-              priceRange.From.Tier === 3 &&
-              priceRange.From["Sub-tier"] !== 4 &&
-              priceRange.To.Tier === 4 &&
-              priceRange.To["Sub-tier"] !== 0
-            );
-          }
-          function isOneSubtierAhead_t5_t6() {
-            return (
-              priceRange.From.Tier === 4 &&
-              priceRange.From["Sub-tier"] !== 4 &&
-              priceRange.To.Tier === 5 &&
-              priceRange.To["Sub-tier"] !== 0
-            );
-          }
+          // function isOneSubtierAhead_t1_t2() {
+          //   return (
+          //     priceRange.From.Tier === 0 &&
+          //     priceRange.From["Sub-tier"] !== 2 &&
+          //     priceRange.To.Tier === 1 &&
+          //     priceRange.To["Sub-tier"] !== 0
+          //   );
+          // }
+          // function isOneSubtierAhead_t2_t3() {
+          //   return (
+          //     priceRange.From.Tier === 1 &&
+          //     priceRange.From["Sub-tier"] !== 3 &&
+          //     priceRange.To.Tier === 2 &&
+          //     priceRange.To["Sub-tier"] !== 0
+          //   );
+          // }
+          // function isOneSubtierAhead_t3_t4() {
+          //   return (
+          //     priceRange.From.Tier === 2 &&
+          //     priceRange.From["Sub-tier"] !== 4 &&
+          //     priceRange.To.Tier === 3 &&
+          //     priceRange.To["Sub-tier"] !== 0
+          //   );
+          // }
+          // function isOneSubtierAhead_t4_t5() {
+          //   return (
+          //     priceRange.From.Tier === 3 &&
+          //     priceRange.From["Sub-tier"] !== 4 &&
+          //     priceRange.To.Tier === 4 &&
+          //     priceRange.To["Sub-tier"] !== 0
+          //   );
+          // }
+          // function isOneSubtierAhead_t5_t6() {
+          //   return (
+          //     priceRange.From.Tier === 4 &&
+          //     priceRange.From["Sub-tier"] !== 4 &&
+          //     priceRange.To.Tier === 5 &&
+          //     priceRange.To["Sub-tier"] !== 0
+          //   );
+          // }
           console.log(price);
         } else if (
           priceRange.From.Tier !== priceRange.To.Tier &&
@@ -409,53 +421,6 @@ function getPrice() {
           break;
         case 1:
           subTierFrom = 4;
-          break;
-      }
-    }
-
-    if (tierTo === 1) {
-      switch (subTierTo) {
-        case 3:
-          subTierTo = 0;
-          break;
-        case 2:
-          subTierTo = 1;
-          break;
-        case 1:
-          subTierTo = 2;
-          break;
-      }
-    } else if (tierTo === 2) {
-      switch (subTierTo) {
-        case 4:
-          subTierTo = 0;
-          break;
-        case 3:
-          subTierTo = 1;
-          break;
-        case 2:
-          subTierTo = 2;
-          break;
-        case 1:
-          subTierTo = 3;
-          break;
-      }
-    } else if (tierTo !== 7 && tierTo !== 8) {
-      switch (subTierTo) {
-        case 5:
-          subTierTo = 0;
-          break;
-        case 4:
-          subTierTo = 1;
-          break;
-        case 3:
-          subTierTo = 2;
-          break;
-        case 2:
-          subTierTo = 3;
-          break;
-        case 1:
-          subTierTo = 4;
           break;
       }
     }
