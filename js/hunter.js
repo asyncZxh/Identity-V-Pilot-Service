@@ -259,39 +259,39 @@ function updateStarOptionsFrom(tier) {
 
     getStarsFromHunter.addEventListener("change", function clearAndCheckStar() {
       if (
-        getTierFroHunter.value === "1" &&
-        getSubTierFroHunter.value === "1" &&
-        getStarsFroHunter.value === "2"
+        getTierFromHunter.value === "1" &&
+        getSubTierFromHunter.value === "1" &&
+        getStarsFromHunter.value === "2"
       )
         updateTierOptionsToIfBeforePromote(2);
       else if (
-        getTierFroHunter.value === "2" &&
-        getSubTierFroHunter.value === "1" &&
-        getStarsFroHunter.value === "3"
+        getTierFromHunter.value === "2" &&
+        getSubTierFromHunter.value === "1" &&
+        getStarsFromHunter.value === "3"
       )
         updateTierOptionsToIfBeforePromote(3);
       else if (
-        getTierFroHunter.value === "3" &&
-        getSubTierFroHunter.value === "1" &&
-        getStarsFroHunter.value === "4"
+        getTierFromHunter.value === "3" &&
+        getSubTierFromHunter.value === "1" &&
+        getStarsFromHunter.value === "4"
       )
         updateTierOptionsToIfBeforePromote(4);
       else if (
-        getTierFroHunter.value === "4" &&
-        getSubTierFroHunter.value === "1" &&
-        getStarsFroHunter.value === "4"
+        getTierFromHunter.value === "4" &&
+        getSubTierFromHunter.value === "1" &&
+        getStarsFromHunter.value === "4"
       )
         updateTierOptionsToIfBeforePromote(5);
       else if (
-        getTierFroHunter.value === "5" &&
-        getSubTierFroHunter.value === "1" &&
-        getStarsFroHunter.value === "4"
+        getTierFromHunter.value === "5" &&
+        getSubTierFromHunter.value === "1" &&
+        getStarsFromHunter.value === "4"
       )
         updateTierOptionsToIfBeforePromote(6);
       else if (
-        getTierFroHunter.value === "6" &&
-        getSubTierFroHunter.value === "1" &&
-        getStarsFroHunter.value === "4"
+        getTierFromHunter.value === "6" &&
+        getSubTierFromHunter.value === "1" &&
+        getStarsFromHunter.value === "4"
       )
         updateTierOptionsToIfBeforePromote(7);
       else if (
@@ -445,26 +445,26 @@ function updateStarOptionsFrom(tier) {
     );
     getStarsFromHunter.addEventListener("change", function clearAndCheckStar() {
       if (
-        getTierFroHunter.value === "1" &&
-        getSubTierFroHunter.value === "1" &&
-        getStarsFroHunter.value === "2"
+        getTierFromHunter.value === "1" &&
+        getSubTierFromHunter.value === "1" &&
+        getStarsFromHunter.value === "2"
       )
         updateTierOptionsToIfBeforePromote(2);
       else if (
-        getTierFroHunter.value === "2" &&
-        getSubTierFroHunter.value === "1" &&
-        getStarsFroHunter.value === "3"
+        getTierFromHunter.value === "2" &&
+        getSubTierFromHunter.value === "1" &&
+        getStarsFromHunter.value === "3"
       )
         updateTierOptionsToIfBeforePromote(3);
       else if (
-        getTierFroHunter.value === "3" &&
-        getSubTierFroHunter.value === "1" &&
-        getStarsFroHunter.value === "4"
+        getTierFromHunter.value === "3" &&
+        getSubTierFromHunter.value === "1" &&
+        getStarsFromHunter.value === "4"
       )
         updateTierOptionsToIfBeforePromote(4);
       else if (
-        getTierFroHunter.value === "4" &&
-        getSubTierFroHunter.value === "1" &&
+        getTierFromHunter.value === "4" &&
+        getSubTierFromHunter.value === "1" &&
         getStarsFromHunter.value === "4"
       )
         updateTierOptionsToIfBeforePromote(5);
