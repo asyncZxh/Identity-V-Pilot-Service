@@ -70,7 +70,8 @@ buttonCalculateHunter.addEventListener("click", () => {
     totalPriceContainer.appendChild(loading);
     buttonCalculateHunter.disabled = true;
     buttonCalculateHunter.style.pointerEvents = "none";
-
+    currencySelectionHunter.disabled = true;
+    currencySelectionHunter.style.pointerEvents = "none";
     setTimeout(() => {
       const priceRange = getPrice();
       window.console.log(priceRange);
@@ -521,6 +522,8 @@ buttonCalculateHunter.addEventListener("click", () => {
         isProcessing = false;
         buttonCalculateHunter.disabled = false;
         buttonCalculateHunter.style.pointerEvents = "auto";
+        currencySelectionHunter.disabled = false;
+        currencySelectionHunter.style.pointerEvents = "auto";
       }, 50);
     }, 2300);
   }

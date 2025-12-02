@@ -73,6 +73,8 @@ buttonCalculateSurvivor.addEventListener("click", () => {
     totalPriceContainer.appendChild(loading);
     buttonCalculateSurvivor.disabled = true;
     buttonCalculateSurvivor.style.pointerEvents = "none";
+    currencySelectionSurvivor.disabled = true;
+    currencySelectionSurvivor.style.pointerEvents = "none";
     setTimeout(() => {
       const priceRange = getPrice();
       window.console.log(priceRange);
@@ -523,6 +525,8 @@ buttonCalculateSurvivor.addEventListener("click", () => {
         isProcessing = false;
         buttonCalculateSurvivor.disabled = false;
         buttonCalculateSurvivor.style.pointerEvents = "auto";
+        currencySelectionSurvivor.disabled = false;
+        currencySelectionSurvivor.style.pointerEvents = "auto";
       }, 50);
     }, 2300);
   }
