@@ -954,59 +954,59 @@ function updateSubTierOptionsTo(subTier) {
 }
 
 function checkStarFrom() {
-  if (getTierToSurvivor.value === "1") {
-    switch (getStarsFromSurvivor.value) {
+  if (getTierToHunter.value === "1") {
+    switch (getStarsFromHunter.value) {
       case "0":
         if (
-          getSubTierFromSurvivor.value === getSubTierToSurvivor.value &&
-          getTierFromSurvivor.value === getTierToSurvivor.value &&
-          getStarsFromSurvivor.value !== "2"
+          getSubTierFromHunter.value === getSubTierToHunter.value &&
+          getTierFromHunter.value === getTierToHunter.value &&
+          getStarsFromHunter.value !== "2"
         )
           updateStarFromCheck(1, 2);
         else updateStarFromCheck(0, 2);
         break;
       case "1":
         if (
-          getSubTierFromSurvivor.value === getSubTierToSurvivor.value &&
-          getTierFromSurvivor.value === getTierToSurvivor.value &&
-          getStarsFromSurvivor.value !== "2"
+          getSubTierFromHunter.value === getSubTierToHunter.value &&
+          getTierFromHunter.value === getTierToHunter.value &&
+          getStarsFromHunter.value !== "2"
         )
           updateStarFromCheck(2, 2);
         else updateStarFromCheck(0, 2);
         break;
     }
-  } else if (getTierToSurvivor.value === "2") {
-    switch (getStarsFromSurvivor.value) {
+  } else if (getTierToHunter.value === "2") {
+    switch (getStarsFromHunter.value) {
       case "0":
         if (
-          getSubTierFromSurvivor.value === getSubTierToSurvivor.value &&
-          getTierFromSurvivor.value === getTierToSurvivor.value &&
-          getStarsToSurvivor.value !== "3"
+          getSubTierFromHunter.value === getSubTierToHunter.value &&
+          getTierFromHunter.value === getTierToHunter.value &&
+          getStarsToHunter.value !== "3"
         )
           updateStarFromCheck(1, 3);
         else updateStarFromCheck(0, 3);
         break;
       case "1":
         if (
-          getSubTierFromSurvivor.value === getSubTierToSurvivor.value &&
-          getTierFromSurvivor.value === getTierToSurvivor.value &&
-          getStarsToSurvivor.value !== "3"
+          getSubTierFromHunter.value === getSubTierToHunter.value &&
+          getTierFromHunter.value === getTierToHunter.value &&
+          getStarsToHunter.value !== "3"
         )
           updateStarFromCheck(2, 3);
         else updateStarFromCheck(0, 3);
         break;
       case "2":
         if (
-          getSubTierFromSurvivor.value === getSubTierToSurvivor.value &&
-          getTierFromSurvivor.value === getTierToSurvivor.value &&
-          getStarsToSurvivor.value !== "3"
+          getSubTierFromHunter.value === getSubTierToHunter.value &&
+          getTierFromHunter.value === getTierToHunter.value &&
+          getStarsToHunter.value !== "3"
         )
           updateStarFromCheck(3, 3);
         else updateStarFromCheck(0, 3);
         break;
     }
-  } else if (getTierToSurvivor.value === "7") {
-    if (getTierFromSurvivor.value === getTierToSurvivor.value) {
+  } else if (getTierToHunter.value === "7") {
+    if (getTierFromHunter.value === getTierToHunter.value) {
       const loop = (star) => {
         let elements = "";
         const hiddenValue =
@@ -1018,50 +1018,50 @@ function checkStarFrom() {
           elements += createOptionElement;
         }
 
-        getStarsToSurvivor.innerHTML = elements;
+        getStarsToHunter.innerHTML = elements;
       };
-      loop(parseInt(getStarsFromSurvivor.value));
+      loop(parseInt(getStarsFromHunter.value));
     }
-    if (getStarsFromSurvivor.value === "") updateStarOptionsTo(24);
-  } else if (getTierToSurvivor.value === "8") {
-    if (getTierFromSurvivor.value === getTierToSurvivor.value) {
-      const starToPeak = parseInt(getStarsFromSurvivor.value) + 1;
-      getStarsToSurvivor.value = starToPeak;
+    if (getStarsFromHunter.value === "") updateStarOptionsTo(24);
+  } else if (getTierToHunter.value === "8") {
+    if (getTierFromHunter.value === getTierToHunter.value) {
+      const starToPeak = parseInt(getStarsFromHunter.value) + 1;
+      getStarsToHunter.value = starToPeak;
     }
   } else {
-    switch (getStarsFromSurvivor.value) {
+    switch (getStarsFromHunter.value) {
       case "0":
         if (
-          getSubTierFromSurvivor.value === getSubTierToSurvivor.value &&
-          getTierFromSurvivor.value === getTierToSurvivor.value &&
-          getStarsToSurvivor.value !== "4"
+          getSubTierFromHunter.value === getSubTierToHunter.value &&
+          getTierFromHunter.value === getTierToHunter.value &&
+          getStarsToHunter.value !== "4"
         )
           updateStarFromCheck(1, 4);
         else updateStarFromCheck(0, 4);
         break;
       case "1":
         if (
-          getSubTierFromSurvivor.value === getSubTierToSurvivor.value &&
-          getTierFromSurvivor.value === getTierToSurvivor.value &&
-          getStarsToSurvivor.value !== "4"
+          getSubTierFromHunter.value === getSubTierToHunter.value &&
+          getTierFromHunter.value === getTierToHunter.value &&
+          getStarsToHunter.value !== "4"
         )
           updateStarFromCheck(2, 4);
         else updateStarFromCheck(0, 4);
         break;
       case "2":
         if (
-          getSubTierFromSurvivor.value === getSubTierToSurvivor.value &&
-          getTierFromSurvivor.value === getTierToSurvivor.value &&
-          getStarsToSurvivor.value !== "4"
+          getSubTierFromHunter.value === getSubTierToHunter.value &&
+          getTierFromHunter.value === getTierToHunter.value &&
+          getStarsToHunter.value !== "4"
         )
           updateStarFromCheck(3, 4);
         else updateStarFromCheck(0, 4);
         break;
       case "3":
         if (
-          getSubTierFromSurvivor.value === getSubTierToSurvivor.value &&
-          getTierFromSurvivor.value === getTierToSurvivor.value &&
-          getStarsToSurvivor.value !== "4"
+          getSubTierFromHunter.value === getSubTierToHunter.value &&
+          getTierFromHunter.value === getTierToHunter.value &&
+          getStarsToHunter.value !== "4"
         )
           updateStarFromCheck(4, 4);
         else updateStarFromCheck(0, 4);
