@@ -54,5 +54,8 @@ const hunterPrice = [
 const totalPriceContainer = window.document.querySelector(
   ".total-price-hunter"
 );
+const currencySelectionHunterSelect = window.document.querySelector(
+  ".select-hunter .currency-container .currency.convert"
+);
 
 let isProcessing = false;

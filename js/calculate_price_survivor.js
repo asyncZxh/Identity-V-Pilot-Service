@@ -57,6 +57,9 @@ const survivorPrice = [
 const totalPriceContainer = window.document.querySelector(
   ".total-price-survivor"
 );
+const currencySelectionSurvivorSelect = window.document.querySelector(
+  ".select-survivor .currency-container .currency.convert"
+);
 
 let isProcessing = false;
 buttonCalculateSurvivor.addEventListener("click", () => {
@@ -93,7 +96,8 @@ buttonCalculateSurvivor.addEventListener("click", () => {
 
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
-          totalPriceContainer.innerHTML = price.toLocaleString();
+
+          totalPriceContainer.innerHTML = ` &#8369;${price.toLocaleString()}`;
         } else if (
           priceRange.From.Tier === priceRange.To.Tier &&
           priceRange.isOneSubtierAhead()
