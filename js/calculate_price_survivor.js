@@ -453,7 +453,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           window.console.log(`Price: ${price}`);
         }
       }
-      isProcessing = false;
+      setTimeout(() => (isProcessing = false), 50);
     }, 2300);
   }
 });
