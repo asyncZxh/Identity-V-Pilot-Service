@@ -1168,7 +1168,7 @@ function clearTo() {
 
 function clearPrice() {
   const totalPriceContainer = window.document.querySelector(
-    ".total-price-survivor"
+    ".total-price-hunter"
   );
   totalPriceContainer.innerHTML = "";
 }
