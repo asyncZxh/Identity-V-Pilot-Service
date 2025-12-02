@@ -93,7 +93,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
 
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
-          totalPriceContainer.innerHTML = price;
+          totalPriceContainer.innerHTML = price.toLocaleString();
         } else if (
           priceRange.From.Tier === priceRange.To.Tier &&
           priceRange.isOneSubtierAhead()
@@ -118,7 +118,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
 
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
-          totalPriceContainer.innerHTML = price;
+          totalPriceContainer.innerHTML = price.toLocaleString();
         } else if (
           priceRange.From.Tier === priceRange.To.Tier &&
           !priceRange.isOneSubtierAhead()
@@ -163,7 +163,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
 
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
-          totalPriceContainer.innerHTML = price;
+          totalPriceContainer.innerHTML = price.toLocaleString();
         } else if (
           priceRange.From.Tier !== priceRange.To.Tier &&
           priceRange.isOneTierAhead()
@@ -211,7 +211,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
 
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
-          totalPriceContainer.innerHTML = price;
+          totalPriceContainer.innerHTML = price.toLocaleString();
         } else if (
           priceRange.From.Tier !== priceRange.To.Tier &&
           !priceRange.isOneTierAhead()
@@ -280,7 +280,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           });
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
-          totalPriceContainer.innerHTML = price;
+          totalPriceContainer.innerHTML = price.toLocaleString();
         }
       } else if (
         priceRange &&
@@ -344,7 +344,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
 
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
-          totalPriceContainer.innerHTML = price;
+          totalPriceContainer.innerHTML = price.toLocaleString();
         } else if (priceRange.To.Tier === 7) {
           const start = survivorPrice[priceRange.From.Tier][
             priceRange.From["Sub-tier"]
@@ -403,7 +403,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
 
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
-          totalPriceContainer.innerHTML = price;
+          totalPriceContainer.innerHTML = price.toLocaleString();
         }
       } else if (
         priceRange &&
@@ -425,6 +425,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
 
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
+          totalPriceContainer.innerHTML = price.toLocaleString();
         } else if (priceRange.From.Tier === 6 && priceRange.To.Tier === 7) {
           const start = survivorPrice[priceRange.From.Tier].slice(
             priceRange.From.Star + 1
@@ -443,7 +444,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
 
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
-          totalPriceContainer.innerHTML = price;
+          totalPriceContainer.innerHTML = price.toLocaleString();
         } else if (priceRange.From.Tier === 7 && priceRange.To.Tier === 7) {
           const start =
             (priceRange.From.Star -
@@ -459,7 +460,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
 
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
-          totalPriceContainer.innerHTML = price;
+          totalPriceContainer.innerHTML = price.toLocaleString();
         }
       }
       setTimeout(() => (isProcessing = false), 50);
