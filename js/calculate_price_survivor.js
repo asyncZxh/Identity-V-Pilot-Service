@@ -93,6 +93,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
 
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
+          totalPriceContainer.innerHTML = price;
         } else if (
           priceRange.From.Tier === priceRange.To.Tier &&
           priceRange.isOneSubtierAhead()
@@ -117,6 +118,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
 
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
+          totalPriceContainer.innerHTML = price;
         } else if (
           priceRange.From.Tier === priceRange.To.Tier &&
           !priceRange.isOneSubtierAhead()
@@ -161,6 +163,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
 
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
+          totalPriceContainer.innerHTML = price;
         } else if (
           priceRange.From.Tier !== priceRange.To.Tier &&
           priceRange.isOneTierAhead()
@@ -208,6 +211,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
 
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
+          totalPriceContainer.innerHTML = price;
         } else if (
           priceRange.From.Tier !== priceRange.To.Tier &&
           !priceRange.isOneTierAhead()
@@ -276,6 +280,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           });
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
+          totalPriceContainer.innerHTML = price;
         }
       } else if (
         priceRange &&
@@ -339,6 +344,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
 
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
+          totalPriceContainer.innerHTML = price;
         } else if (priceRange.To.Tier === 7) {
           const start = survivorPrice[priceRange.From.Tier][
             priceRange.From["Sub-tier"]
@@ -397,6 +403,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
 
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
+          totalPriceContainer.innerHTML = price;
         }
       } else if (
         priceRange &&
@@ -436,6 +443,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
 
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
+          totalPriceContainer.innerHTML = price;
         } else if (priceRange.From.Tier === 7 && priceRange.To.Tier === 7) {
           const start =
             (priceRange.From.Star -
@@ -451,6 +459,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
 
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
+          totalPriceContainer.innerHTML = price;
         }
       }
       setTimeout(() => (isProcessing = false), 50);
