@@ -124,9 +124,9 @@ closeNoteBtn.addEventListener("click", () => {
       "#fff";
     window.document.querySelector(".select-hunter .arrow").style.fill = "#fff";
     if (window.document.getElementById("price-php"))
-      window.document.getElementById("price-php").style.color = "#fff131";
+      window.document.getElementById("price-php").style.color = "#fff";
     if (window.document.getElementById("price-usd"))
-      window.document.getElementById("price-usd").style.color = "#fff131";
+      window.document.getElementById("price-usd").style.color = "#fff";
     isOpen = true;
     note.classList.remove("open-note");
     inputs.forEach((e, i) => {

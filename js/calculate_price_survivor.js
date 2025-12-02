@@ -98,9 +98,9 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           window.console.log(`Price: ${price}`);
 
           if (currencySelectionSurvivor.value === "PHP")
-            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-php">&#8369; ${price.toLocaleString()}</p>`;
+            totalPriceContainer.innerHTML = `<p style="color: #fff" id="price-php">&#8369; ${price.toLocaleString()}</p>`;
           else if (currencySelectionSurvivor.value === "USD")
-            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-usd">&#36; ${(
+            totalPriceContainer.innerHTML = `<p style="color: #fff" id="price-usd">&#36; ${(
               price * 0.017
             ).toLocaleString("en-US", { maximumFractionDigits: 2 })}</p>`;
         } else if (
@@ -128,9 +128,9 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
           if (currencySelectionSurvivor.value === "PHP")
-            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-php">&#8369; ${price.toLocaleString()}</p>`;
+            totalPriceContainer.innerHTML = `<p style="color: #fff" id="price-php">&#8369; ${price.toLocaleString()}</p>`;
           else if (currencySelectionSurvivor.value === "USD")
-            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-usd">&#36; ${(
+            totalPriceContainer.innerHTML = `<p style="color: #fff" id="price-usd">&#36; ${(
               price * 0.017
             ).toLocaleString("en-US", { maximumFractionDigits: 2 })}</p>`;
         } else if (
@@ -178,9 +178,9 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
           if (currencySelectionSurvivor.value === "PHP")
-            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-php">&#8369; ${price.toLocaleString()}</p>`;
+            totalPriceContainer.innerHTML = `<p style="color: #fff" id="price-php">&#8369; ${price.toLocaleString()}</p>`;
           else if (currencySelectionSurvivor.value === "USD")
-            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-usd">&#36; ${(
+            totalPriceContainer.innerHTML = `<p style="color: #fff" id="price-usd">&#36; ${(
               price * 0.017
             ).toLocaleString("en-US", { maximumFractionDigits: 2 })}</p>`;
         } else if (
@@ -231,9 +231,9 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
           if (currencySelectionSurvivor.value === "PHP")
-            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-php">&#8369; ${price.toLocaleString()}</p>`;
+            totalPriceContainer.innerHTML = `<p style="color: #fff" id="price-php">&#8369; ${price.toLocaleString()}</p>`;
           else if (currencySelectionSurvivor.value === "USD")
-            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-usd">&#36; ${(
+            totalPriceContainer.innerHTML = `<p style="color: #fff" id="price-usd">&#36; ${(
               price * 0.017
             ).toLocaleString("en-US", { maximumFractionDigits: 2 })}</p>`;
         } else if (
@@ -305,9 +305,9 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
           if (currencySelectionSurvivor.value === "PHP")
-            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-php">&#8369; ${price.toLocaleString()}</p>`;
+            totalPriceContainer.innerHTML = `<p style="color: #fff" id="price-php">&#8369; ${price.toLocaleString()}</p>`;
           else if (currencySelectionSurvivor.value === "USD")
-            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-usd">&#36; ${(
+            totalPriceContainer.innerHTML = `<p style="color: #fff" id="price-usd">&#36; ${(
               price * 0.017
             ).toLocaleString("en-US", { maximumFractionDigits: 2 })}</p>`;
         }
@@ -374,9 +374,9 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
           if (currencySelectionSurvivor.value === "PHP")
-            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-php">&#8369; ${price.toLocaleString()}</p>`;
+            totalPriceContainer.innerHTML = `<p style="color: #fff" id="price-php">&#8369; ${price.toLocaleString()}</p>`;
           else if (currencySelectionSurvivor.value === "USD")
-            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-usd">&#36; ${(
+            totalPriceContainer.innerHTML = `<p style="color: #fff" id="price-usd">&#36; ${(
               price * 0.017
             ).toLocaleString("en-US", { maximumFractionDigits: 2 })}</p>`;
         } else if (priceRange.To.Tier === 7) {
@@ -438,9 +438,9 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
           if (currencySelectionSurvivor.value === "PHP")
-            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-php">&#8369; ${price.toLocaleString()}</p>`;
+            totalPriceContainer.innerHTML = `<p style="color: #fff" id="price-php">&#8369; ${price.toLocaleString()}</p>`;
           else if (currencySelectionSurvivor.value === "USD")
-            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-usd">&#36; ${(
+            totalPriceContainer.innerHTML = `<p style="color: #fff" id="price-usd">&#36; ${(
               price * 0.017
             ).toLocaleString("en-US", { maximumFractionDigits: 2 })}</p>`;
         }
@@ -465,9 +465,9 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
           if (currencySelectionSurvivor.value === "PHP")
-            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-php">&#8369; ${price.toLocaleString()}</p>`;
+            totalPriceContainer.innerHTML = `<p style="color: #fff" id="price-php">&#8369; ${price.toLocaleString()}</p>`;
           else if (currencySelectionSurvivor.value === "USD")
-            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-usd">&#36; ${(
+            totalPriceContainer.innerHTML = `<p style="color: #fff" id="price-usd">&#36; ${(
               price * 0.017
             ).toLocaleString("en-US", { maximumFractionDigits: 2 })}</p>`;
         } else if (priceRange.From.Tier === 6 && priceRange.To.Tier === 7) {
@@ -489,9 +489,9 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
           if (currencySelectionSurvivor.value === "PHP")
-            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-php">&#8369; ${price.toLocaleString()}</p>`;
+            totalPriceContainer.innerHTML = `<p style="color: #fff" id="price-php">&#8369; ${price.toLocaleString()}</p>`;
           else if (currencySelectionSurvivor.value === "USD")
-            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-usd">&#36; ${(
+            totalPriceContainer.innerHTML = `<p style="color: #fff" id="price-usd">&#36; ${(
               price * 0.017
             ).toLocaleString("en-US", { maximumFractionDigits: 2 })}</p>`;
         } else if (priceRange.From.Tier === 7 && priceRange.To.Tier === 7) {
@@ -510,9 +510,9 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
           if (currencySelectionSurvivor.value === "PHP")
-            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-php">&#8369; ${price.toLocaleString()}</p>`;
+            totalPriceContainer.innerHTML = `<p style="color: #fff" id="price-php">&#8369; ${price.toLocaleString()}</p>`;
           else if (currencySelectionSurvivor.value === "USD")
-            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-usd">&#36; ${(
+            totalPriceContainer.innerHTML = `<p style="color: #fff" id="price-usd">&#36; ${(
               price * 0.017
             ).toLocaleString("en-US", { maximumFractionDigits: 2 })}</p>`;
         }
