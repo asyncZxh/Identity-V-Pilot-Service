@@ -930,12 +930,12 @@ function checkSubTierFrom() {
 }
 
 function updateSubTierOptionsTo(subTier) {
-  if (subTier === "champion" || subTier === "peak") {
-    getSubTierToSurvivor.style.cursor = "not-allowed";
-    getSubTierToSurvivor.disabled = true;
-    getSubTierToSurvivor.value = "";
+  if (subTier === "dragon" || subTier === "peak") {
+    getSubTierToHunter.style.cursor = "not-allowed";
+    getSubTierToHunter.disabled = true;
+    getSubTierToHunter.value = "";
   } else {
-    getSubTierToSurvivor.innerHTML = "";
+    getSubTierToHunter.innerHTML = "";
     let elements = "";
     const hiddenValue =
       "<option hidden disabled selected value>&mdash;</option>";
@@ -946,10 +946,10 @@ function updateSubTierOptionsTo(subTier) {
       elements += createOptionElement;
     }
 
-    getSubTierToSurvivor.innerHTML = elements;
-    getSubTierToSurvivor.removeAttribute("disabled");
-    getSubTierToSurvivor.style.cursor = "auto";
-    getSubTierToSurvivor.value = "";
+    getSubTierToHunter.innerHTML = elements;
+    getSubTierToHunter.removeAttribute("disabled");
+    getSubTierToHunter.style.cursor = "auto";
+    getSubTierToHunter.value = "";
   }
 }
 
