@@ -536,38 +536,38 @@ getStarsFromHunter.addEventListener("change", function clearAndCheckStar() {
   clearPrice();
 });
 
-getTierToSurvivor.addEventListener("change", () => {
+getTierToHunter.addEventListener("change", () => {
   updateTierTo();
   checkSubTierFrom();
   clearPrice();
   if (
-    getTierToSurvivor.value === "1" &&
-    (getSubTierFromSurvivor.value !== "1" || getStarsFromSurvivor.value !== "2")
+    getTierToHunter.value === "1" &&
+    (getSubTierFromHunter.value !== "1" || getStarsFromHunter.value !== "2")
   )
     checkStarFrom();
   else if (
-    getTierToSurvivor.value === "2" &&
-    (getSubTierFromSurvivor.value !== "1" || getStarsFromSurvivor.value !== "2")
+    getTierToHunter.value === "2" &&
+    (getSubTierFromHunter.value !== "1" || getStarsFromHunter.value !== "2")
   )
     checkStarFrom();
   else if (
-    (getTierToSurvivor.value === "3" ||
-      getTierToSurvivor.value === "4" ||
-      getTierToSurvivor.value === "5" ||
-      getTierToSurvivor.value === "6") &&
-    (getSubTierFromSurvivor.value !== "1" || getStarsFromSurvivor.value !== "2")
+    (getTierToHunter.value === "3" ||
+      getTierToHunter.value === "4" ||
+      getTierToHunter.value === "5" ||
+      getTierToHunter.value === "6") &&
+    (getSubTierFromHunter.value !== "1" || getStarsFromHunter.value !== "2")
   )
     checkStarFrom();
-  else if (getTierToSurvivor.value === "7") checkStarFrom();
-  else if (getTierToSurvivor.value === "8") checkStarFrom();
+  else if (getTierToHunter.value === "7") checkStarFrom();
+  else if (getTierToHunter.value === "8") checkStarFrom();
 
   window.console.log("configure tier(to)");
 
-  if (getTierToSurvivor.value === "1") {
-    if (getStarsFromSurvivor.value === "2") {
+  if (getTierToHunter.value === "1") {
+    if (getStarsFromHunter.value === "2") {
       if (
-        getTierFromSurvivor.value === getTierToSurvivor.value &&
-        getSubTierFromSurvivor.value === "3"
+        getTierFromHunter.value === getTierToHunter.value &&
+        getSubTierFromHunter.value === "3"
       ) {
         let elements = "";
         const hiddenValue =
@@ -579,11 +579,11 @@ getTierToSurvivor.addEventListener("change", () => {
           elements += createOptionElement;
         }
 
-        getSubTierToSurvivor.innerHTML = elements;
+        getSubTierToHunter.innerHTML = elements;
         updateStarFromCheck(0, 2);
       } else if (
-        getTierFromSurvivor.value === getTierToSurvivor.value &&
-        getSubTierFromSurvivor.value === "2"
+        getTierFromHunter.value === getTierToHunter.value &&
+        getSubTierFromHunter.value === "2"
       ) {
         let elements = "";
         const hiddenValue =
@@ -595,15 +595,15 @@ getTierToSurvivor.addEventListener("change", () => {
           elements += createOptionElement;
         }
 
-        getSubTierToSurvivor.innerHTML = elements;
+        getSubTierToHunter.innerHTML = elements;
         updateStarFromCheck(0, 2);
       }
     }
-  } else if (getTierFromSurvivor.value === "2") {
-    if (getStarsFromSurvivor.value === "3") {
+  } else if (getTierFromHunter.value === "2") {
+    if (getStarsFromHunter.value === "3") {
       if (
-        getTierFromSurvivor.value === getTierToSurvivor.value &&
-        getSubTierFromSurvivor.value === "4"
+        getTierFromHunter.value === getTierToHunter.value &&
+        getSubTierFromHunter.value === "4"
       ) {
         let elements = "";
         const hiddenValue =
@@ -615,11 +615,11 @@ getTierToSurvivor.addEventListener("change", () => {
           elements += createOptionElement;
         }
 
-        getSubTierToSurvivor.innerHTML = elements;
+        getSubTierToHunter.innerHTML = elements;
         updateStarFromCheck(0, 3);
       } else if (
-        getTierFromSurvivor.value === getTierToSurvivor.value &&
-        getSubTierFromSurvivor.value === "3"
+        getTierFromHunter.value === getTierToHunter.value &&
+        getSubTierFromHunter.value === "3"
       ) {
         let elements = "";
         const hiddenValue =
@@ -631,11 +631,11 @@ getTierToSurvivor.addEventListener("change", () => {
           elements += createOptionElement;
         }
 
-        getSubTierToSurvivor.innerHTML = elements;
+        getSubTierToHunter.innerHTML = elements;
         updateStarFromCheck(0, 3);
       } else if (
-        getTierFromSurvivor.value === getTierToSurvivor.value &&
-        getSubTierFromSurvivor.value === "2"
+        getTierFromHunter.value === getTierToHunter.value &&
+        getSubTierFromHunter.value === "2"
       ) {
         let elements = "";
         const hiddenValue =
@@ -647,20 +647,20 @@ getTierToSurvivor.addEventListener("change", () => {
           elements += createOptionElement;
         }
 
-        getSubTierToSurvivor.innerHTML = elements;
+        getSubTierToHunter.innerHTML = elements;
         updateStarFromCheck(0, 3);
       }
     }
   } else if (
-    getTierToSurvivor.value === "3" ||
-    getTierToSurvivor.value === "4" ||
-    getTierToSurvivor.value === "5" ||
-    getTierToSurvivor.value === "6"
+    getTierToHunter.value === "3" ||
+    getTierToHunter.value === "4" ||
+    getTierToHunter.value === "5" ||
+    getTierToHunter.value === "6"
   ) {
-    if (getStarsFromSurvivor.value === "4") {
+    if (getStarsFromHunter.value === "4") {
       if (
-        getTierFromSurvivor.value === getTierToSurvivor.value &&
-        getSubTierFromSurvivor.value === "5"
+        getTierFromHunter.value === getTierToHunter.value &&
+        getSubTierFromHunter.value === "5"
       ) {
         let elements = "";
         const hiddenValue =
@@ -672,11 +672,11 @@ getTierToSurvivor.addEventListener("change", () => {
           elements += createOptionElement;
         }
 
-        getSubTierToSurvivor.innerHTML = elements;
+        getSubTierToHunter.innerHTML = elements;
         updateStarFromCheck(0, 4);
       } else if (
-        getTierFromSurvivor.value === getTierToSurvivor.value &&
-        getSubTierFromSurvivor.value === "4"
+        getTierFromHunter.value === getTierToHunter.value &&
+        getSubTierFromHunter.value === "4"
       ) {
         let elements = "";
         const hiddenValue =
@@ -688,11 +688,11 @@ getTierToSurvivor.addEventListener("change", () => {
           elements += createOptionElement;
         }
 
-        getSubTierToSurvivor.innerHTML = elements;
+        getSubTierToHunter.innerHTML = elements;
         updateStarFromCheck(0, 4);
       } else if (
-        getTierFromSurvivor.value === getTierToSurvivor.value &&
-        getSubTierFromSurvivor.value === "3"
+        getTierFromHunter.value === getTierToHunter.value &&
+        getSubTierFromHunter.value === "3"
       ) {
         let elements = "";
         const hiddenValue =
@@ -704,11 +704,11 @@ getTierToSurvivor.addEventListener("change", () => {
           elements += createOptionElement;
         }
 
-        getSubTierToSurvivor.innerHTML = elements;
+        getSubTierToHunter.innerHTML = elements;
         updateStarFromCheck(0, 4);
       } else if (
-        getTierFromSurvivor.value === getTierToSurvivor.value &&
-        getSubTierFromSurvivor.value === "2"
+        getTierFromHunter.value === getTierToHunter.value &&
+        getSubTierFromHunter.value === "2"
       ) {
         let elements = "";
         const hiddenValue =
@@ -720,7 +720,7 @@ getTierToSurvivor.addEventListener("change", () => {
           elements += createOptionElement;
         }
 
-        getSubTierToSurvivor.innerHTML = elements;
+        getSubTierToHunter.innerHTML = elements;
         updateStarFromCheck(0, 4);
       }
     }
