@@ -180,63 +180,60 @@ function updateStarOptionsFrom(tier) {
     }
 
     const createSelectElement = window.document.createElement("select");
-    createSelectElement.setAttribute("id", "survivor-from-star");
+    createSelectElement.setAttribute("id", "hunter-from-star");
     createSelectElement.classList.add("select-from");
     createSelectElement.innerHTML = elements;
     createSelectElement.value = "";
-    getStarsFromSurvivor.replaceWith(createSelectElement);
-    getStarsFromSurvivor = window.document.querySelector(
-      ".select-survivor .star-container .select-from"
+    getStarsFromHunter.replaceWith(createSelectElement);
+    getStarsFromHunter = window.document.querySelector(
+      ".select-hunter .star-container .select-from"
     );
 
-    getStarsFromSurvivor.addEventListener(
-      "change",
-      function clearAndCheckStar() {
-        if (
-          getTierFromSurvivor.value === "1" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "2"
-        )
-          updateTierOptionsToIfBeforePromote(2);
-        else if (
-          getTierFromSurvivor.value === "2" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "3"
-        )
-          updateTierOptionsToIfBeforePromote(3);
-        else if (
-          getTierFromSurvivor.value === "3" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "4"
-        )
-          updateTierOptionsToIfBeforePromote(4);
-        else if (
-          getTierFromSurvivor.value === "4" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "4"
-        )
-          updateTierOptionsToIfBeforePromote(5);
-        else if (
-          getTierFromSurvivor.value === "5" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "4"
-        )
-          updateTierOptionsToIfBeforePromote(6);
-        else if (
-          getTierFromSurvivor.value === "6" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "4"
-        )
-          updateTierOptionsToIfBeforePromote(7);
-        else if (
-          getTierFromSurvivor.value === "7" &&
-          getStarsFromSurvivor.value === "24"
-        )
-          updateTierOptionsToIfBeforePromote(8);
-        clearTo();
-        clearPrice();
-      }
-    );
+    getStarsFromHunter.addEventListener("change", function clearAndCheckStar() {
+      if (
+        getTierFromHunter.value === "1" &&
+        getSubTierFromHunter.value === "1" &&
+        getStarsFromHunter.value === "2"
+      )
+        updateTierOptionsToIfBeforePromote(2);
+      else if (
+        getTierFromHunter.value === "2" &&
+        getSubTierFromHunter.value === "1" &&
+        getStarsFromHunter.value === "3"
+      )
+        updateTierOptionsToIfBeforePromote(3);
+      else if (
+        getTierFromHunter.value === "3" &&
+        getSubTierFromHunter.value === "1" &&
+        getStarsFromHunter.value === "4"
+      )
+        updateTierOptionsToIfBeforePromote(4);
+      else if (
+        getTierFromHunter.value === "4" &&
+        getSubTierFromHunter.value === "1" &&
+        getStarsFromHunter.value === "4"
+      )
+        updateTierOptionsToIfBeforePromote(5);
+      else if (
+        getTierFromHunter.value === "5" &&
+        getSubTierFromHunter.value === "1" &&
+        getStarsFromHunter.value === "4"
+      )
+        updateTierOptionsToIfBeforePromote(6);
+      else if (
+        getTierFromHunter.value === "6" &&
+        getSubTierFromHunter.value === "1" &&
+        getStarsFromHunter.value === "4"
+      )
+        updateTierOptionsToIfBeforePromote(7);
+      else if (
+        getTierFromHunter.value === "7" &&
+        getStarsFromHunter.value === "24"
+      )
+        updateTierOptionsToIfBeforePromote(8);
+      clearTo();
+      clearPrice();
+    });
     clearTo();
     clearPrice();
   } else if (tier === 2) {
@@ -251,63 +248,60 @@ function updateStarOptionsFrom(tier) {
     }
 
     const createSelectElement = window.document.createElement("select");
-    createSelectElement.setAttribute("id", "survivor-from-star");
+    createSelectElement.setAttribute("id", "hunter-from-star");
     createSelectElement.classList.add("select-from");
     createSelectElement.innerHTML = elements;
     createSelectElement.value = "";
-    getStarsFromSurvivor.replaceWith(createSelectElement);
-    getStarsFromSurvivor = window.document.querySelector(
-      ".select-survivor .star-container .select-from"
+    getStarsFromHunter.replaceWith(createSelectElement);
+    getStarsFromHunter = window.document.querySelector(
+      ".select-hunter .star-container .select-from"
     );
 
-    getStarsFromSurvivor.addEventListener(
-      "change",
-      function clearAndCheckStar() {
-        if (
-          getTierFromSurvivor.value === "1" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "2"
-        )
-          updateTierOptionsToIfBeforePromote(2);
-        else if (
-          getTierFromSurvivor.value === "2" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "3"
-        )
-          updateTierOptionsToIfBeforePromote(3);
-        else if (
-          getTierFromSurvivor.value === "3" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "4"
-        )
-          updateTierOptionsToIfBeforePromote(4);
-        else if (
-          getTierFromSurvivor.value === "4" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "4"
-        )
-          updateTierOptionsToIfBeforePromote(5);
-        else if (
-          getTierFromSurvivor.value === "5" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "4"
-        )
-          updateTierOptionsToIfBeforePromote(6);
-        else if (
-          getTierFromSurvivor.value === "6" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "4"
-        )
-          updateTierOptionsToIfBeforePromote(7);
-        else if (
-          getTierFromSurvivor.value === "7" &&
-          getStarsFromSurvivor.value === "24"
-        )
-          updateTierOptionsToIfBeforePromote(8);
-        clearTo();
-        clearPrice();
-      }
-    );
+    getStarsFromHunter.addEventListener("change", function clearAndCheckStar() {
+      if (
+        getTierFroHunter.value === "1" &&
+        getSubTierFroHunter.value === "1" &&
+        getStarsFroHunter.value === "2"
+      )
+        updateTierOptionsToIfBeforePromote(2);
+      else if (
+        getTierFroHunter.value === "2" &&
+        getSubTierFroHunter.value === "1" &&
+        getStarsFroHunter.value === "3"
+      )
+        updateTierOptionsToIfBeforePromote(3);
+      else if (
+        getTierFroHunter.value === "3" &&
+        getSubTierFroHunter.value === "1" &&
+        getStarsFroHunter.value === "4"
+      )
+        updateTierOptionsToIfBeforePromote(4);
+      else if (
+        getTierFroHunter.value === "4" &&
+        getSubTierFroHunter.value === "1" &&
+        getStarsFroHunter.value === "4"
+      )
+        updateTierOptionsToIfBeforePromote(5);
+      else if (
+        getTierFroHunter.value === "5" &&
+        getSubTierFroHunter.value === "1" &&
+        getStarsFroHunter.value === "4"
+      )
+        updateTierOptionsToIfBeforePromote(6);
+      else if (
+        getTierFroHunter.value === "6" &&
+        getSubTierFroHunter.value === "1" &&
+        getStarsFroHunter.value === "4"
+      )
+        updateTierOptionsToIfBeforePromote(7);
+      else if (
+        getTierFromHunter.value === "7" &&
+        getStarsFromHunter.value === "24"
+      )
+        updateTierOptionsToIfBeforePromote(8);
+      clearTo();
+      clearPrice();
+    });
     clearTo();
     clearPrice();
   } else if (tier === 7) {
@@ -322,105 +316,103 @@ function updateStarOptionsFrom(tier) {
     }
 
     const createSelectElement = window.document.createElement("select");
-    createSelectElement.setAttribute("id", "survivor-from-star");
+    createSelectElement.setAttribute("id", "hunter-from-star");
     createSelectElement.classList.add("select-from");
     createSelectElement.innerHTML = elements;
     createSelectElement.value = "";
-    getStarsFromSurvivor.replaceWith(createSelectElement);
-    getStarsFromSurvivor = window.document.querySelector(
-      ".select-survivor .star-container .select-from"
+    getStarsFromHunter.replaceWith(createSelectElement);
+    getStarsFromHunter = window.document.querySelector(
+      ".select-hunter .star-container .select-from"
     );
 
-    getStarsFromSurvivor.addEventListener(
-      "change",
-      function clearAndCheckStar() {
-        if (
-          getTierFromSurvivor.value === "1" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "2"
-        )
-          updateTierOptionsToIfBeforePromote(2);
-        else if (
-          getTierFromSurvivor.value === "2" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "3"
-        )
-          updateTierOptionsToIfBeforePromote(3);
-        else if (
-          getTierFromSurvivor.value === "3" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "4"
-        )
-          updateTierOptionsToIfBeforePromote(4);
-        else if (
-          getTierFromSurvivor.value === "4" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "4"
-        )
-          updateTierOptionsToIfBeforePromote(5);
-        else if (
-          getTierFromSurvivor.value === "5" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "4"
-        )
-          updateTierOptionsToIfBeforePromote(6);
-        else if (
-          getTierFromSurvivor.value === "6" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "4"
-        )
-          updateTierOptionsToIfBeforePromote(7);
-        else if (
-          getTierFromSurvivor.value === "7" &&
-          getStarsFromSurvivor.value === "24"
-        )
-          updateTierOptionsToIfBeforePromote(8);
-        clearTo();
-        clearPrice();
-      }
-    );
+    getStarsFromHunter.addEventListener("change", function clearAndCheckStar() {
+      if (
+        getTierFromHunter.value === "1" &&
+        getSubTierFromHunter.value === "1" &&
+        getStarsFromHunter.value === "2"
+      )
+        updateTierOptionsToIfBeforePromote(2);
+      else if (
+        getTierFromHunter.value === "2" &&
+        getSubTierFromHunter.value === "1" &&
+        getStarsFromHunter.value === "3"
+      )
+        updateTierOptionsToIfBeforePromote(3);
+      else if (
+        getTierFromHunter.value === "3" &&
+        getSubTierFromHunter.value === "1" &&
+        getStarsFromHunter.value === "4"
+      )
+        updateTierOptionsToIfBeforePromote(4);
+      else if (
+        getTierFromHunter.value === "4" &&
+        getSubTierFromHunter.value === "1" &&
+        getStarsFromHunter.value === "4"
+      )
+        updateTierOptionsToIfBeforePromote(5);
+      else if (
+        getTierFromHunter.value === "5" &&
+        getSubTierFromHunter.value === "1" &&
+        getStarsFromHunter.value === "4"
+      )
+        updateTierOptionsToIfBeforePromote(6);
+      else if (
+        getTierFromHunter.value === "6" &&
+        getSubTierFromHunter.value === "1" &&
+        getStarsFromHunter.value === "4"
+      )
+        updateTierOptionsToIfBeforePromote(7);
+      else if (
+        getTierFromHunter.value === "7" &&
+        getStarsFromHunter.value === "24"
+      )
+        updateTierOptionsToIfBeforePromote(8);
+      clearTo();
+      clearPrice();
+    });
     clearTo();
     clearPrice();
   } else if (tier === 8) {
     {
       const createInputElement = window.document.createElement("input");
-      createInputElement.setAttribute("id", "survivor-from-star");
+      createInputElement.setAttribute("id", "hunter-from-star");
       createInputElement.setAttribute("type", "number");
       createInputElement.setAttribute("min", "25");
       createInputElement.value = "25";
       createInputElement.placeholder = "enter star";
       createInputElement.classList.add("select-from");
-      getStarsFromSurvivor.replaceWith(createInputElement);
-      getStarsFromSurvivor = window.document.querySelector(
-        ".select-survivor .star-container .select-from"
+      getStarsFromHunter.replaceWith(createInputElement);
+      getStarsFromHunter = window.document.querySelector(
+        ".select-hunter .star-container .select-from"
       );
-      getStarsFromSurvivor.addEventListener(
+
+      getStarsFromHunter.addEventListener(
         "change",
         function clearAndCheckStar() {
           if (
-            getTierFromSurvivor.value === "1" &&
-            getSubTierFromSurvivor.value === "1" &&
-            getStarsFromSurvivor.value === "2"
+            getTierFromHunter.value === "1" &&
+            getSubTierFromHunter.value === "1" &&
+            getStarsFromHunter.value === "2"
           ) {
             checkStarFrom();
           } else if (
-            getTierFromSurvivor.value === "2" &&
-            getSubTierFromSurvivor.value === "1" &&
-            getStarsFromSurvivor.value === "3"
+            getTierFromHunter.value === "2" &&
+            getSubTierFromHunter.value === "1" &&
+            getStarsFromHunter.value === "3"
           ) {
             checkStarFrom();
           } else if (
-            (getTierFromSurvivor.value === "3" ||
-              getTierFromSurvivor.value === "4" ||
-              getTierFromSurvivor.value === "5" ||
-              getTierFromSurvivor.value === "6") &&
-            getSubTierFromSurvivor.value === "1" &&
-            getStarsFromSurvivor.value === "4"
+            (getTierFromHunter.value === "3" ||
+              getTierFromHunter.value === "4" ||
+              getTierFromHunter.value === "5" ||
+              getTierFromHunter.value === "6") &&
+            getSubTierFromHunter.value === "1" &&
+            getStarsFromHunter.value === "4"
           ) {
             checkStarFrom();
           } else if (
-            getTierFromSurvivor.value === "7" &&
-            getStarsFromSurvivor.value === "24"
+            getTierFromHunter.value === "7" &&
+            getStarsFromHunter.value === "24"
           ) {
             checkStarFrom();
           }
@@ -443,108 +435,102 @@ function updateStarOptionsFrom(tier) {
     }
 
     const createSelectElement = window.document.createElement("select");
-    createSelectElement.setAttribute("id", "survivor-from-star");
+    createSelectElement.setAttribute("id", "hunter-from-star");
     createSelectElement.classList.add("select-from");
     createSelectElement.innerHTML = elements;
     createSelectElement.value = "";
-    getStarsFromSurvivor.replaceWith(createSelectElement);
-    getStarsFromSurvivor = window.document.querySelector(
-      ".select-survivor .star-container .select-from"
+    getStarsFromHunter.replaceWith(createSelectElement);
+    getStarsFromHunter = window.document.querySelector(
+      ".select-hunter .star-container .select-from"
     );
-    getStarsFromSurvivor.addEventListener(
-      "change",
-      function clearAndCheckStar() {
-        if (
-          getTierFromSurvivor.value === "1" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "2"
-        )
-          updateTierOptionsToIfBeforePromote(2);
-        else if (
-          getTierFromSurvivor.value === "2" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "3"
-        )
-          updateTierOptionsToIfBeforePromote(3);
-        else if (
-          getTierFromSurvivor.value === "3" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "4"
-        )
-          updateTierOptionsToIfBeforePromote(4);
-        else if (
-          getTierFromSurvivor.value === "4" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "4"
-        )
-          updateTierOptionsToIfBeforePromote(5);
-        else if (
-          getTierFromSurvivor.value === "5" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "4"
-        )
-          updateTierOptionsToIfBeforePromote(6);
-        else if (
-          getTierFromSurvivor.value === "6" &&
-          getSubTierFromSurvivor.value === "1" &&
-          getStarsFromSurvivor.value === "4"
-        )
-          updateTierOptionsToIfBeforePromote(7);
-        else if (
-          getTierFromSurvivor.value === "7" &&
-          getStarsFromSurvivor.value === "24"
-        )
-          updateTierOptionsToIfBeforePromote(8);
-        clearTo();
-        clearPrice();
-      }
-    );
+    getStarsFromHunter.addEventListener("change", function clearAndCheckStar() {
+      if (
+        getTierFroHunter.value === "1" &&
+        getSubTierFroHunter.value === "1" &&
+        getStarsFroHunter.value === "2"
+      )
+        updateTierOptionsToIfBeforePromote(2);
+      else if (
+        getTierFroHunter.value === "2" &&
+        getSubTierFroHunter.value === "1" &&
+        getStarsFroHunter.value === "3"
+      )
+        updateTierOptionsToIfBeforePromote(3);
+      else if (
+        getTierFroHunter.value === "3" &&
+        getSubTierFroHunter.value === "1" &&
+        getStarsFroHunter.value === "4"
+      )
+        updateTierOptionsToIfBeforePromote(4);
+      else if (
+        getTierFroHunter.value === "4" &&
+        getSubTierFroHunter.value === "1" &&
+        getStarsFromHunter.value === "4"
+      )
+        updateTierOptionsToIfBeforePromote(5);
+      else if (
+        getTierFromHunter.value === "5" &&
+        getSubTierFromHunter.value === "1" &&
+        getStarsFromHunter.value === "4"
+      )
+        updateTierOptionsToIfBeforePromote(6);
+      else if (
+        getTierFromHunter.value === "6" &&
+        getSubTierFromHunter.value === "1" &&
+        getStarsFromHunter.value === "4"
+      )
+        updateTierOptionsToIfBeforePromote(7);
+      else if (
+        getTierFromHunter.value === "7" &&
+        getStarsFromHunter.value === "24"
+      )
+        updateTierOptionsToIfBeforePromote(8);
+      clearTo();
+      clearPrice();
+    });
     clearTo();
     clearPrice();
   }
 }
 
-getStarsFromSurvivor.addEventListener("change", function clearAndCheckStar() {
+getStarsFromHunter.addEventListener("change", function clearAndCheckStar() {
   if (
-    getTierFromSurvivor.value === "1" &&
-    getSubTierFromSurvivor.value === "1" &&
-    getStarsFromSurvivor.value === "2"
+    getTierFromHunter.value === "1" &&
+    getSubTierFromHunter.value === "1" &&
+    getStarsFromHunter.value === "2"
   )
     updateTierOptionsToIfBeforePromote(2);
   else if (
-    getTierFromSurvivor.value === "2" &&
-    getSubTierFromSurvivor.value === "1" &&
-    getStarsFromSurvivor.value === "3"
+    getTierFromHunter.value === "2" &&
+    getSubTierFromHunter.value === "1" &&
+    getStarsFromHunter.value === "3"
   )
     updateTierOptionsToIfBeforePromote(3);
   else if (
-    getTierFromSurvivor.value === "3" &&
-    getSubTierFromSurvivor.value === "1" &&
-    getStarsFromSurvivor.value === "4"
+    getTierFromHunter.value === "3" &&
+    getSubTierFromHunter.value === "1" &&
+    getStarsFromHunter.value === "4"
   )
     updateTierOptionsToIfBeforePromote(4);
   else if (
-    getTierFromSurvivor.value === "4" &&
-    getSubTierFromSurvivor.value === "1" &&
-    getStarsFromSurvivor.value === "4"
+    getTierFromHunter.value === "4" &&
+    getSubTierFromHunter.value === "1" &&
+    getStarsFromHunter.value === "4"
   )
     updateTierOptionsToIfBeforePromote(5);
   else if (
-    getTierFromSurvivor.value === "5" &&
-    getSubTierFromSurvivor.value === "1" &&
-    getStarsFromSurvivor.value === "4"
+    getTierFromHunter.value === "5" &&
+    getSubTierFromHunter.value === "1" &&
+    getStarsFromHunter.value === "4"
   )
     updateTierOptionsToIfBeforePromote(6);
   else if (
-    getTierFromSurvivor.value === "6" &&
-    getSubTierFromSurvivor.value === "1" &&
-    getStarsFromSurvivor.value === "4"
+    getTierFromHunter.value === "6" &&
+    getSubTierFromHunter.value === "1" &&
+    getStarsFromHunter.value === "4"
   )
     updateTierOptionsToIfBeforePromote(7);
-  else if (
-    getTierFromSurvivor.value === "7" &&
-    getStarsFromSurvivor.value === "24"
-  )
+  else if (getTierFromHunter.value === "7" && getStarsFromHunter.value === "24")
     updateTierOptionsToIfBeforePromote(8);
   clearTo();
   clearPrice();
