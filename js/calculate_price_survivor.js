@@ -71,6 +71,8 @@ buttonCalculateSurvivor.addEventListener("click", () => {
     loading.alt = "loading";
     loading.classList.add("loading");
     totalPriceContainer.appendChild(loading);
+    buttonCalculateSurvivor.disabled = true;
+    buttonCalculateSurvivor.style.pointerEvents = "none";
     setTimeout(() => {
       const priceRange = getPrice();
       window.console.log(priceRange);
@@ -517,7 +519,11 @@ buttonCalculateSurvivor.addEventListener("click", () => {
             ).toLocaleString("en-US", { maximumFractionDigits: 2 })}</p>`;
         }
       }
-      setTimeout(() => (isProcessing = false), 50);
+      setTimeout(() => {
+        isProcessing = false;
+        buttonCalculateSurvivor.disabled = false;
+        buttonCalculateSurvivor.style.pointerEvents = "auto";
+      }, 50);
     }, 2300);
   }
 });
