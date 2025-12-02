@@ -727,9 +727,9 @@ getTierToHunter.addEventListener("change", () => {
   }
 });
 
-getSubTierToSurvivor.addEventListener("change", () => {
+getSubTierToHunter.addEventListener("change", () => {
   checkStarFrom();
-  getStarsToSurvivor.value = "";
+  getStarsToHunter.value = "";
   clearPrice();
 });
 
