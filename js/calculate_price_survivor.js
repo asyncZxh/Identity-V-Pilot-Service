@@ -81,6 +81,11 @@ buttonCalculateSurvivor.addEventListener("click", () => {
     currencySelectionSurvivorSelect.disabled = true;
     currencySelectionSurvivorSelect.style.pointerEvents = "none";
     currencySelectionSurvivorIcon.style.color = "#a8a8a8ff";
+    buttonCalculateHunter.disabled = true;
+    buttonCalculateHunter.style.pointerEvents = "none";
+    currencySelectionHunterSelect.disabled = true;
+    currencySelectionHunterSelect.style.pointerEvents = "none";
+    currencySelectionHunterIcon.style.color = "#a8a8a8ff";
     setTimeout(() => {
       const priceRange = getPrice();
       window.console.log(priceRange);
@@ -534,6 +539,11 @@ buttonCalculateSurvivor.addEventListener("click", () => {
         currencySelectionSurvivorSelect.disabled = false;
         currencySelectionSurvivorSelect.style.pointerEvents = "auto";
         currencySelectionSurvivorIcon.style.color = "#000";
+        buttonCalculateHunter.disabled = false;
+        buttonCalculateHunter.style.pointerEvents = "auto";
+        currencySelectionHunterSelect.disabled = false;
+        currencySelectionHunterSelect.style.pointerEvents = "auto";
+        currencySelectionHunterIcon.style.color = "#000";
       }, 50);
     }, 2300);
   }
