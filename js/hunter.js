@@ -45,10 +45,10 @@ const ranks = [
   "Hydra",
 ];
 
-getTierFromSurvivor.addEventListener("change", () => {
-  updateTierOptionsTo(parseInt(getTierFromSurvivor.value));
-  updateSubTierOptionsFrom(parseInt(getTierFromSurvivor.value));
-  updateStarOptionsFrom(parseInt(getTierFromSurvivor.value));
+getTierFromHunter.addEventListener("change", () => {
+  updateTierOptionsTo(parseInt(getTierFromHunter.value));
+  updateSubTierOptionsFrom(parseInt(getTierFromHunter.value));
+  updateStarOptionsFrom(parseInt(getTierFromHunter.value));
   clearPrice();
   window.console.log("configure tier(from)");
 });
