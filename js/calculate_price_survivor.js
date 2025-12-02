@@ -90,6 +90,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
             stars++;
             price += e;
           });
+
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
         } else if (
@@ -113,6 +114,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
             stars++;
             price += e;
           });
+
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
         } else if (
@@ -156,6 +158,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
             stars++;
             price += e;
           });
+
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
         } else if (
@@ -202,6 +205,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
             stars++;
             price += e;
           });
+
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
         } else if (
