@@ -433,6 +433,20 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
         } else if (priceRange.From.Tier === 7 && priceRange.To.Tier === 7) {
+          const start =
+            (priceRange.From.Star -
+              priceRange.From.Star +
+              (priceRange.To.Star - priceRange.From.Star)) *
+            survivorPrice[priceRange.To.Tier];
+          window.console.log(start);
+          stars +=
+            priceRange.From.Star -
+            priceRange.From.Star +
+            (priceRange.To.Star - priceRange.From.Star);
+          price += start;
+
+          window.console.log(`Stars: ${stars}`);
+          window.console.log(`Price: ${price}`);
         }
       }
       isProcessing = false;
