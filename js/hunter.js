@@ -103,12 +103,12 @@ function updateTierOptionsToIfBeforePromote(tier) {
 
 function updateSubTierOptionsFrom(tier) {
   if (tier === 7 || tier === 8) {
-    getSubTierFromSurvivor.disabled = true;
-    getSubTierFromSurvivor.style.cursor = "not-allowed";
-    getSubTierFromSurvivor.value = "";
+    getSubTierFromHunter.disabled = true;
+    getSubTierFromHunter.style.cursor = "not-allowed";
+    getSubTierFromHunter.value = "";
     clearTo();
   } else if (tier === 1) {
-    getSubTierFromSurvivor.innerHTML = "";
+    getSubTierFromHunter.innerHTML = "";
     let elements = "";
     const hiddenValue =
       "<option hidden disabled selected value>&mdash;</option>";
@@ -119,13 +119,13 @@ function updateSubTierOptionsFrom(tier) {
       elements += createOptionElement;
     }
 
-    getSubTierFromSurvivor.innerHTML = elements;
-    getSubTierFromSurvivor.removeAttribute("disabled");
-    getSubTierFromSurvivor.style.cursor = "auto";
-    getSubTierFromSurvivor.value = "";
+    getSubTierFromHunter.innerHTML = elements;
+    getSubTierFromHunter.removeAttribute("disabled");
+    getSubTierFromHunter.style.cursor = "auto";
+    getSubTierFromHunter.value = "";
     clearTo();
   } else if (tier === 2) {
-    getSubTierFromSurvivor.innerHTML = "";
+    getSubTierFromHunter.innerHTML = "";
     let elements = "";
     const hiddenValue =
       "<option hidden disabled selected value>&mdash;</option>";
@@ -136,13 +136,13 @@ function updateSubTierOptionsFrom(tier) {
       elements += createOptionElement;
     }
 
-    getSubTierFromSurvivor.innerHTML = elements;
-    getSubTierFromSurvivor.removeAttribute("disabled");
-    getSubTierFromSurvivor.style.cursor = "auto";
-    getSubTierFromSurvivor.value = "";
+    getSubTierFromHunter.innerHTML = elements;
+    getSubTierFromHunter.removeAttribute("disabled");
+    getSubTierFromHunter.style.cursor = "auto";
+    getSubTierFromHunter.value = "";
     clearTo();
   } else {
-    getSubTierFromSurvivor.innerHTML = "";
+    getSubTierFromHunter.innerHTML = "";
     let elements = "";
     const hiddenValue =
       "<option hidden disabled selected value>&mdash;</option>";
@@ -153,10 +153,10 @@ function updateSubTierOptionsFrom(tier) {
       elements += createOptionElement;
     }
 
-    getSubTierFromSurvivor.innerHTML = elements;
-    getSubTierFromSurvivor.removeAttribute("disabled");
-    getSubTierFromSurvivor.style.cursor = "auto";
-    getSubTierFromSurvivor.value = "";
+    getSubTierFromHunter.innerHTML = elements;
+    getSubTierFromHunter.removeAttribute("disabled");
+    getSubTierFromHunter.style.cursor = "auto";
+    getSubTierFromHunter.value = "";
     clearTo();
   }
 }
