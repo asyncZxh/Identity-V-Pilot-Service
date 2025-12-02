@@ -54,7 +54,7 @@ getTierFromHunter.addEventListener("change", () => {
 });
 
 function updateTierOptionsTo(tier) {
-  getTierToSurvivor.innerHTML = "";
+  getTierToHunter.innerHTML = "";
   let elements = "";
   const hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
   elements += hiddenValue;
@@ -73,7 +73,7 @@ function updateTierOptionsTo(tier) {
     }
   }
 
-  getTierToSurvivor.innerHTML = elements;
+  getTierToHunter.innerHTML = elements;
   clearTo();
 }
 
