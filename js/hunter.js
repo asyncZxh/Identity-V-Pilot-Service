@@ -161,8 +161,8 @@ function updateSubTierOptionsFrom(tier) {
   }
 }
 
-getSubTierFromSurvivor.addEventListener("change", () => {
-  getStarsFromSurvivor.value = "";
+getSubTierFromHunter.addEventListener("change", () => {
+  getStarsFromHunter.value = "";
   clearTo();
   clearPrice();
 });
