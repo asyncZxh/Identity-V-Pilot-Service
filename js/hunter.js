@@ -35,14 +35,14 @@ export const currencySelectionHunterIcon = window.document.querySelector(
 );
 
 const ranks = [
-  "Bee",
-  "Hound",
-  "Elk",
-  "Mammoth",
-  "Griffin",
-  "Alicorn",
-  "Champion",
-  "Titan",
+  "Spider",
+  "Cobra",
+  "Crocodile",
+  "Sabertooth",
+  "Manticore",
+  "Cyclops",
+  "Evil Dragon",
+  "Hydra",
 ];
 
 getTierFromSurvivor.addEventListener("change", () => {
