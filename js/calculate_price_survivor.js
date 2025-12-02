@@ -10,6 +10,12 @@ import {
   currencySelectionSurvivorIcon,
 } from "./survivor.js";
 
+import {
+  buttonCalculateHunter,
+  currencySelectionHunterSelect,
+  currencySelectionHunterIcon,
+} from "./hunter.js";
+
 const survivorPrice = [
   [
     [0, 14, 14],
