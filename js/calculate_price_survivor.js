@@ -85,6 +85,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           const start = survivorPrice[priceRange.From.Tier][
             priceRange.From["Sub-tier"]
           ].slice(priceRange.From.Star + 1, priceRange.To.Star + 1);
+          window.console.log(start);
           start.forEach((e) => {
             stars++;
             price += e;
@@ -98,6 +99,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           const start = survivorPrice[priceRange.From.Tier][
             priceRange.From["Sub-tier"]
           ].slice(priceRange.From.Star + 1);
+          window.console.log(start);
           start.forEach((e) => {
             stars++;
             price += e;
@@ -106,6 +108,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           const end = survivorPrice[priceRange.To.Tier][
             priceRange.To["Sub-tier"]
           ].slice(0, priceRange.To.Star + 1);
+          window.console.log(end);
           end.forEach((e) => {
             stars++;
             price += e;
@@ -119,6 +122,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           const start = survivorPrice[priceRange.From.Tier][
             priceRange.From["Sub-tier"]
           ].slice(priceRange.From.Star + 1);
+          window.console.log(start);
           start.forEach((e) => {
             stars++;
             price += e;
@@ -136,6 +140,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
             return array;
           };
           const mid = getMid();
+          window.console.log(mid);
           mid.forEach((e) =>
             e.forEach((c) => {
               stars++;
@@ -146,6 +151,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           const end = survivorPrice[priceRange.To.Tier][
             priceRange.To["Sub-tier"]
           ].slice(0, priceRange.To.Star + 1);
+          window.console.log(end);
           end.forEach((e) => {
             stars++;
             price += e;
@@ -159,6 +165,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           const start = survivorPrice[priceRange.From.Tier][
             priceRange.From["Sub-tier"]
           ].slice(priceRange.From.Star + 1);
+          window.console.log(start);
           start.forEach((e) => {
             stars++;
             price += e;
@@ -167,6 +174,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           const firstMid = survivorPrice[priceRange.From.Tier].slice(
             priceRange.From["Sub-tier"] + 1
           );
+          window.console.log(firstMid);
           firstMid.forEach((e) => {
             e.forEach((c) => {
               stars++;
@@ -178,6 +186,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
             0,
             priceRange.To["Sub-tier"]
           );
+          window.console.log(secondMid);
           secondMid.forEach((e) => {
             e.forEach((c) => {
               stars++;
@@ -188,6 +197,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           const end = survivorPrice[priceRange.To.Tier][
             priceRange.To["Sub-tier"]
           ].slice(0, priceRange.To.Star + 1);
+          window.console.log(end);
           end.forEach((e) => {
             stars++;
             price += e;
@@ -201,6 +211,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           const start = survivorPrice[priceRange.From.Tier][
             priceRange.From["Sub-tier"]
           ].slice(priceRange.From.Star + 1);
+          window.console.log(start);
           start.forEach((e) => {
             stars++;
             price += e;
@@ -209,6 +220,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           const firstMid = survivorPrice[priceRange.From.Tier].slice(
             priceRange.From["Sub-tier"] + 1
           );
+          window.console.log(firstMid);
           firstMid.forEach((e) => {
             e.forEach((c) => {
               stars++;
@@ -230,6 +242,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
             return array;
           };
           const mid = getMid();
+          window.console.log(mid);
           mid.forEach((e) =>
             e.forEach((j) => {
               stars++;
@@ -241,6 +254,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
             0,
             priceRange.To["Sub-tier"]
           );
+          window.console.log(lastMid);
           lastMid.forEach((e) => {
             e.forEach((c) => {
               stars++;
@@ -251,6 +265,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           const end = survivorPrice[priceRange.To.Tier][
             priceRange.To["Sub-tier"]
           ].slice(0, priceRange.To.Star + 1);
+          window.console.log(end);
           end.forEach((e) => {
             stars++;
             price += e;
@@ -269,23 +284,22 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           const start = survivorPrice[priceRange.From.Tier][
             priceRange.From["Sub-tier"]
           ].slice(priceRange.From.Star + 1);
+          window.console.log(start);
           start.forEach((e) => {
             stars++;
             price += e;
           });
-          console.log(start);
 
           const firstMid = survivorPrice[priceRange.From.Tier].slice(
             priceRange.From["Sub-tier"] + 1
           );
-
+          window.console.log(firstMid);
           firstMid.forEach((e) => {
             e.forEach((c) => {
               stars++;
               price += c;
             });
           });
-          console.log(firstMid);
 
           const getLastMid = () => {
             const array = [];
@@ -301,6 +315,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
             return array;
           };
           const lastMid = getLastMid();
+          window.console.log(lastMid);
           lastMid.forEach((e) =>
             e.forEach((j) => {
               stars++;
@@ -312,6 +327,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
             0,
             priceRange.To.Star + 1
           );
+          window.console.log(end);
           end.forEach((e) => {
             stars++;
             price += e;
@@ -323,23 +339,22 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           const start = survivorPrice[priceRange.From.Tier][
             priceRange.From["Sub-tier"]
           ].slice(priceRange.From.Star + 1);
+          window.console.log(start);
           start.forEach((e) => {
             stars++;
             price += e;
           });
-          console.log(start);
 
           const firstMid = survivorPrice[priceRange.From.Tier].slice(
             priceRange.From["Sub-tier"] + 1
           );
-
+          window.console.log(firstMid);
           firstMid.forEach((e) => {
             e.forEach((c) => {
               stars++;
               price += c;
             });
           });
-          console.log(firstMid);
 
           const getMid = () => {
             const array = [];
@@ -355,6 +370,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
             return array;
           };
           const mid = getMid();
+          window.console.log(mid);
           mid.forEach((e) =>
             e.forEach((j) => {
               stars++;
@@ -363,6 +379,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           );
 
           const lastMid = survivorPrice[priceRange.To.Tier - 1].slice();
+          window.console.log(lastMid);
           lastMid.forEach((e) => {
             stars++;
             price += e;
@@ -370,9 +387,9 @@ buttonCalculateSurvivor.addEventListener("click", () => {
 
           const end =
             (priceRange.To.Star - 24) * survivorPrice[priceRange.To.Tier];
+          window.console.log(end);
           stars += priceRange.To.Star - 24;
           price += end;
-          console.log(end);
 
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
@@ -385,11 +402,12 @@ buttonCalculateSurvivor.addEventListener("click", () => {
         let price = 0;
         let stars = 0;
         if (priceRange.From.Tier === 6 && priceRange.To.Tier === 6) {
-          const array = survivorPrice[priceRange.From.Tier].slice(
+          const start = survivorPrice[priceRange.From.Tier].slice(
             priceRange.From.Star + 1,
             priceRange.To.Star + 1
           );
-          array.forEach((e) => {
+          window.console.log(array);
+          start.forEach((e) => {
             stars++;
             price += e;
           });
@@ -397,22 +415,23 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
         } else if (priceRange.From.Tier === 6 && priceRange.To.Tier === 7) {
-          const array = survivorPrice[priceRange.From.Tier].slice(
+          const start = survivorPrice[priceRange.From.Tier].slice(
             priceRange.From.Star + 1
           );
-          array.forEach((e) => {
+          window.console.log(array);
+          start.forEach((e) => {
             stars++;
             price += e;
           });
 
           const end =
             (priceRange.To.Star - 24) * survivorPrice[priceRange.To.Tier];
+          window.console.log(end);
           stars += priceRange.To.Star - 24;
           price += end;
-          console.log(end);
 
-          console.log(stars);
-          console.log(price);
+          window.console.log(`Stars: ${stars}`);
+          window.console.log(`Price: ${price}`);
         } else if (priceRange.From.Tier === 7 && priceRange.To.Tier === 7) {
         }
       }
@@ -434,8 +453,8 @@ function getPrice() {
       totalPriceContainer.innerHTML = "";
       setTimeout(() => {
         window.alert("Invalid star input");
-        return undefined;
       }, 50);
+      return undefined;
     }
   } else if (
     getTierFromSurvivor.value !== "7" &&
@@ -454,8 +473,8 @@ function getPrice() {
       totalPriceContainer.innerHTML = "";
       setTimeout(() => {
         window.alert("Missing required fields");
-        return undefined;
       }, 50);
+      return undefined;
     }
   } else if (
     getTierFromSurvivor.value !== "7" &&
@@ -466,8 +485,8 @@ function getPrice() {
       totalPriceContainer.innerHTML = "";
       setTimeout(() => {
         window.alert("Missing required fields");
-        return undefined;
       }, 50);
+      return undefined;
     }
   } else if (
     getTierFromSurvivor.value === "8" &&
@@ -477,30 +496,30 @@ function getPrice() {
       totalPriceContainer.innerHTML = "";
       setTimeout(() => {
         window.alert("Missing required fields");
-        return undefined;
       }, 50);
+      return undefined;
     } else if (parseInt(getStarsFromSurvivor.value) < 25) {
       totalPriceContainer.innerHTML = "";
       setTimeout(() => {
         window.alert("Invalid star input");
-        return undefined;
       }, 50);
+      return undefined;
     } else if (
       parseInt(getStarsToSurvivor.value) < parseInt(getStarsFromSurvivor.value)
     ) {
       totalPriceContainer.innerHTML = "";
       setTimeout(() => {
         window.alert("Tier: TITAN\nFROM must be less than TO");
-        return undefined;
       }, 50);
+      return undefined;
     } else if (
       parseInt(getStarsToSurvivor.value) == parseInt(getStarsFromSurvivor.value)
     ) {
       totalPriceContainer.innerHTML = "";
       setTimeout(() => {
         window.alert("Tier: TITAN\nFROM must not be equal to TO");
-        return undefined;
       }, 50);
+      return undefined;
     }
   } else if (
     getTierFromSurvivor.value === "7" ||
@@ -510,8 +529,8 @@ function getPrice() {
       totalPriceContainer.innerHTML = "";
       setTimeout(() => {
         window.alert("Missing required fields");
-        return undefined;
       }, 50);
+      return undefined;
     }
   }
 
