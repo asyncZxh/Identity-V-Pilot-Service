@@ -1,6 +1,23 @@
-const currencySelectionSurvivorSelect = window.document.querySelector(
+const currencySelectionSurvivor = window.document.querySelector(
   ".select-survivor .currency-container .currency.convert"
 );
-const currencySelectionHunterSelect = window.document.querySelector(
+const currencySelectionHunter = window.document.querySelector(
   ".select-hunter .currency-container .currency.convert"
+);
+
+const currencyTextSurvivor = window.document.querySelector(
+  ".select-survivor .currency-container .currency-text"
+);
+
+const currencyTextHunter = window.document.querySelector(
+  ".select-hunter .currency-container .currency-text"
+);
+
+currencySelectionSurvivor.addEventListener(
+  "change",
+  () => (currencyTextSurvivor.textContent = currencySelectionSurvivor.value)
+);
+currencySelectionHunter.addEventListener(
+  "change",
+  () => (currencyTextHunter.textContent = currencySelectionHunter.value)
 );
