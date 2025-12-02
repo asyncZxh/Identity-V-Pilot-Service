@@ -78,7 +78,7 @@ function updateTierOptionsTo(tier) {
 }
 
 function updateTierOptionsToIfBeforePromote(tier) {
-  getTierToSurvivor.innerHTML = "";
+  getTierToHunter.innerHTML = "";
   let elements = "";
   const hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
   elements += hiddenValue;
@@ -97,7 +97,7 @@ function updateTierOptionsToIfBeforePromote(tier) {
     }
   }
 
-  getTierToSurvivor.innerHTML = elements;
+  getTierToHunter.innerHTML = elements;
   clearTo();
 }
 
