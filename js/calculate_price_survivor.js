@@ -60,6 +60,9 @@ const totalPriceContainer = window.document.querySelector(
 const currencySelectionSurvivor = window.document.querySelector(
   ".select-survivor .currency-container .currency.convert"
 );
+const currencySelectionSurvivorIcon = window.document.querySelector(
+  ".select-survivor .currency-container .chevron-down"
+);
 
 let isProcessing = false;
 buttonCalculateSurvivor.addEventListener("click", () => {
@@ -75,6 +78,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
     buttonCalculateSurvivor.style.pointerEvents = "none";
     currencySelectionSurvivor.disabled = true;
     currencySelectionSurvivor.style.pointerEvents = "none";
+    currencySelectionSurvivorIcon.style.color = "#a8a8a8ff";
     setTimeout(() => {
       const priceRange = getPrice();
       window.console.log(priceRange);
@@ -527,6 +531,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
         buttonCalculateSurvivor.style.pointerEvents = "auto";
         currencySelectionSurvivor.disabled = false;
         currencySelectionSurvivor.style.pointerEvents = "auto";
+        currencySelectionSurvivorIcon.style.color = "#000";
       }, 50);
     }, 2300);
   }
