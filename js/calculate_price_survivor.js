@@ -97,7 +97,10 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
 
-          totalPriceContainer.innerHTML = ` &#8369;${price.toLocaleString()}`;
+          if (currencySelectionSurvivor.value === "PHP")
+            totalPriceContainer.innerHTML = ` &#8369;${price.toLocaleString()}`;
+          else if (currencySelectionSurvivor === "USD")
+            totalPriceContainer.innerHTML = ` &#36;${price.toLocaleString()}`;
         } else if (
           priceRange.From.Tier === priceRange.To.Tier &&
           priceRange.isOneSubtierAhead()
