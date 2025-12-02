@@ -778,11 +778,11 @@ function updateTierTo() {
 }
 
 function checkSubTierFrom() {
-  if (getTierToSurvivor.value !== "7" && getTierToSurvivor.value !== "8") {
-    if (getTierFromSurvivor.value === "1" && getTierToSurvivor.value === "2") {
-      switch (getSubTierFromSurvivor.value) {
+  if (getTierToHunter.value !== "7" && getTierToHunter.value !== "8") {
+    if (getTierFromHunter.value === "1" && getTierToHunter.value === "2") {
+      switch (getSubTierFromHunter.value) {
         case "3":
-          if (getTierFromSurvivor.value === getTierToSurvivor.value) {
+          if (getTierFromHunter.value === getTierToHunter.value) {
             updateSubTierOptionsTo(
               parseInt(
                 window.document.querySelector(
@@ -794,7 +794,7 @@ function checkSubTierFrom() {
           break;
 
         case "2":
-          if (getTierFromSurvivor.value === getTierToSurvivor.value) {
+          if (getTierFromHunter.value === getTierToHunter.value) {
             updateSubTierOptionsTo(
               parseInt(
                 window.document.querySelector(
@@ -806,7 +806,7 @@ function checkSubTierFrom() {
           break;
 
         case "1":
-          if (getTierFromSurvivor.value === getTierToSurvivor.value) {
+          if (getTierFromHunter.value === getTierToHunter.value) {
             updateSubTierOptionsTo(
               parseInt(
                 window.document.querySelector(
@@ -818,13 +818,13 @@ function checkSubTierFrom() {
           break;
       }
     } else if (
-      getTierToSurvivor.value !== "1" &&
-      getTierToSurvivor.value !== "7" &&
-      getTierToSurvivor.value !== "8"
+      getTierToHunter.value !== "1" &&
+      getTierToHunter.value !== "7" &&
+      getTierToHunter.value !== "8"
     ) {
-      switch (getSubTierFromSurvivor.value) {
+      switch (getSubTierFromHunter.value) {
         case "5":
-          if (getTierFromSurvivor.value === getTierToSurvivor.value) {
+          if (getTierFromHunter.value === getTierToHunter.value) {
             updateSubTierOptionsTo(
               parseInt(
                 window.document.querySelector(
@@ -836,7 +836,7 @@ function checkSubTierFrom() {
           break;
 
         case "4":
-          if (getTierFromSurvivor.value === getTierToSurvivor.value) {
+          if (getTierFromHunter.value === getTierToHunter.value) {
             updateSubTierOptionsTo(
               parseInt(
                 window.document.querySelector(
@@ -848,7 +848,7 @@ function checkSubTierFrom() {
           break;
 
         case "3":
-          if (getTierFromSurvivor.value === getTierToSurvivor.value) {
+          if (getTierFromHunter.value === getTierToHunter.value) {
             updateSubTierOptionsTo(
               parseInt(
                 window.document.querySelector(
@@ -860,7 +860,7 @@ function checkSubTierFrom() {
           break;
 
         case "2":
-          if (getTierFromSurvivor.value === getTierToSurvivor.value) {
+          if (getTierFromHunter.value === getTierToHunter.value) {
             updateSubTierOptionsTo(
               parseInt(
                 window.document.querySelector(
@@ -872,7 +872,7 @@ function checkSubTierFrom() {
           break;
 
         case "1":
-          if (getTierFromSurvivor.value === getTierToSurvivor.value) {
+          if (getTierFromHunter.value === getTierToHunter.value) {
             updateSubTierOptionsTo(
               parseInt(
                 window.document.querySelector(
@@ -883,10 +883,10 @@ function checkSubTierFrom() {
           } else updateSubTierOptionsTo(5);
           break;
       }
-    } else if (getTierFromSurvivor.value === "1") {
-      switch (getSubTierFromSurvivor.value) {
+    } else if (getTierFromHunter.value === "1") {
+      switch (getSubTierFromHunter.value) {
         case "3":
-          if (getTierFromSurvivor.value === getTierToSurvivor.value) {
+          if (getTierFromHunter.value === getTierToHunter.value) {
             updateSubTierOptionsTo(
               parseInt(
                 window.document.querySelector(
@@ -898,7 +898,7 @@ function checkSubTierFrom() {
           break;
 
         case "2":
-          if (getTierFromSurvivor.value === getTierToSurvivor.value) {
+          if (getTierFromHunter.value === getTierToHunter.value) {
             updateSubTierOptionsTo(
               parseInt(
                 window.document.querySelector(
@@ -910,7 +910,7 @@ function checkSubTierFrom() {
           break;
 
         case "1":
-          if (getTierFromSurvivor.value === getTierToSurvivor.value) {
+          if (getTierFromHunter.value === getTierToHunter.value) {
             updateSubTierOptionsTo(
               parseInt(
                 window.document.querySelector(
@@ -922,9 +922,9 @@ function checkSubTierFrom() {
           break;
       }
     }
-  } else if (getTierToSurvivor.value === "7") {
-    updateSubTierOptionsTo("champion");
-  } else if (getTierToSurvivor.value === "8") {
+  } else if (getTierToHunter.value === "7") {
+    updateSubTierOptionsTo("dragon");
+  } else if (getTierToHunter.value === "8") {
     updateSubTierOptionsTo("peak");
   }
 }
