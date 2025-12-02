@@ -1107,19 +1107,19 @@ function updateStarOptionsTo(star) {
     }
 
     const createSelectElement = window.document.createElement("select");
-    createSelectElement.setAttribute("id", "survivor-to-star");
+    createSelectElement.setAttribute("id", "hunter-to-star");
     createSelectElement.classList.add("select-to");
     createSelectElement.innerHTML = elements;
     createSelectElement.value = "";
-    getStarsToSurvivor.replaceWith(createSelectElement);
-    getStarsToSurvivor = window.document.querySelector(
-      ".select-survivor .star-container .select-to"
+    getStarsToHunter.replaceWith(createSelectElement);
+    getStarsToHunter = window.document.querySelector(
+      ".select-hunter .star-container .select-to"
     );
   } else {
     const createInputElement = window.document.createElement("input");
-    createInputElement.setAttribute("id", "survivor-to-star");
+    createInputElement.setAttribute("id", "hunter-to-star");
     createInputElement.setAttribute("type", "number");
-    if (getTierFromSurvivor.value === getTierToSurvivor.value) {
+    if (getTierFromHunter.value === getTierToHunter.value) {
       createInputElement.setAttribute("min", "26");
       createInputElement.value = "26";
     } else {
@@ -1128,11 +1128,11 @@ function updateStarOptionsTo(star) {
     }
     createInputElement.placeholder = "enter star";
     createInputElement.classList.add("select-to");
-    getStarsToSurvivor.replaceWith(createInputElement);
-    getStarsToSurvivor = window.document.querySelector(
-      ".select-survivor .star-container .select-to"
+    getStarsToHunter.replaceWith(createInputElement);
+    getStarsToHunter = window.document.querySelector(
+      ".select-hunter .star-container .select-to"
     );
-    getStarsToSurvivor.addEventListener("change", function extraListener() {
+    getStarsToHunter.addEventListener("change", function extraListener() {
       clearPrice();
     });
   }
