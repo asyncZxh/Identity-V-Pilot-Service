@@ -10,6 +10,11 @@ import {
   currencySelectionHunterIcon,
 } from "./hunter.js";
 
+import {
+  currencySelectionSurvivorSelect,
+  currencySelectionSurvivorIcon,
+} from "./survivor.js";
+
 const hunterPrice = [
   [
     [10, 10, 10],
