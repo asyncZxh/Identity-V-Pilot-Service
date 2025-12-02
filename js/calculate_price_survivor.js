@@ -50,7 +50,7 @@ const survivorPrice = [
   ],
   [
     65, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80,
-    80, 80, 80, 80, 80,
+    80, 80, 80, 80, 80, 80,
   ],
   [85],
 ];
@@ -418,7 +418,7 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           const start = survivorPrice[priceRange.From.Tier].slice(
             priceRange.From.Star + 1
           );
-          window.console.log(array);
+          window.console.log(start);
           start.forEach((e) => {
             stars++;
             price += e;
