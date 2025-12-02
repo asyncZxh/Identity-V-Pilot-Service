@@ -1139,9 +1139,9 @@ function updateStarOptionsTo(star) {
 }
 
 function clearTo() {
-  getSubTierToSurvivor.removeAttribute("disabled");
-  getSubTierToSurvivor.style.cursor = "auto";
-  getSubTierToSurvivor.value = "";
+  getSubTierToHunter.removeAttribute("disabled");
+  getSubTierToHunter.style.cursor = "auto";
+  getSubTierToHunter.value = "";
 
   let elements = "";
   const hiddenValue = "<option hidden disabled selected value>&mdash;</option>";
@@ -1153,17 +1153,17 @@ function clearTo() {
   }
 
   const createSelectElement = window.document.createElement("select");
-  createSelectElement.setAttribute("id", "survivor-to-star");
+  createSelectElement.setAttribute("id", "hunter-to-star");
   createSelectElement.classList.add("select-to");
   createSelectElement.innerHTML = elements;
   createSelectElement.value = "";
-  getStarsToSurvivor.replaceWith(createSelectElement);
-  getStarsToSurvivor = window.document.querySelector(
-    ".select-survivor .star-container .select-to"
+  getStarsToHunter.replaceWith(createSelectElement);
+  getStarsToHunter = window.document.querySelector(
+    ".select-hunter .star-container .select-to"
   );
-  getTierToSurvivor.value = "";
-  getSubTierToSurvivor.value = "";
-  getStarsToSurvivor.value = "";
+  getTierToHunter.value = "";
+  getSubTierToHunter.value = "";
+  getStarsToHunter.value = "";
 }
 
 function clearPrice() {
