@@ -520,15 +520,15 @@ buttonCalculateHunter.addEventListener("click", () => {
 });
 
 function getPrice() {
-  let tierFrom = parseInt(getTierFromSurvivor.value) || undefined;
-  let subTierFrom = parseInt(getSubTierFromSurvivor.value) || undefined;
-  let starFrom = getStarsFromSurvivor.value || undefined;
-  let tierTo = parseInt(getTierToSurvivor.value) || undefined;
-  let subTierTo = parseInt(getSubTierToSurvivor.value) || undefined;
-  let starTo = getStarsToSurvivor.value || undefined;
+  let tierFrom = parseInt(getTierFromHunter.value) || undefined;
+  let subTierFrom = parseInt(getSubTierFromHunter.value) || undefined;
+  let starFrom = getStarsFromHunter.value || undefined;
+  let tierTo = parseInt(getTierToHunter.value) || undefined;
+  let subTierTo = parseInt(getSubTierToHunter.value) || undefined;
+  let starTo = getStarsToHunter.value || undefined;
 
-  if (getTierFromSurvivor.value !== "8" && getTierToSurvivor.value === "8") {
-    if (parseInt(getStarsToSurvivor.value) < 25) {
+  if (getTierFromHunter.value !== "8" && getTierToHunter.value === "8") {
+    if (parseInt(getStarsToHunter.value) < 25) {
       totalPriceContainer.innerHTML = "";
       setTimeout(() => {
         window.alert("Invalid star input");
@@ -536,10 +536,10 @@ function getPrice() {
       return undefined;
     }
   } else if (
-    getTierFromSurvivor.value !== "7" &&
-    getTierFromSurvivor.value !== "8" &&
-    getTierToSurvivor.value !== "7" &&
-    getTierToSurvivor.value !== "8"
+    getTierFromHunter.value !== "7" &&
+    getTierFromHunter.value !== "8" &&
+    getTierToHunter.value !== "7" &&
+    getTierToHunter.value !== "8"
   ) {
     if (
       !tierFrom ||
@@ -556,9 +556,9 @@ function getPrice() {
       return undefined;
     }
   } else if (
-    getTierFromSurvivor.value !== "7" &&
-    getTierFromSurvivor.value !== "8" &&
-    (getTierToSurvivor.value === "7" || getTierToSurvivor.value === "8")
+    getTierFromHunter.value !== "7" &&
+    getTierFromHunter.value !== "8" &&
+    (getTierToHunter.value === "7" || getTierToHunter.value === "8")
   ) {
     if (!tierFrom || !subTierFrom || !starFrom || !tierTo || !starTo) {
       totalPriceContainer.innerHTML = "";
@@ -567,24 +567,21 @@ function getPrice() {
       }, 50);
       return undefined;
     }
-  } else if (
-    getTierFromSurvivor.value === "8" &&
-    getTierToSurvivor.value === "8"
-  ) {
+  } else if (getTierFromHunter.value === "8" && getTierToHunter.value === "8") {
     if (!tierFrom || !starFrom || !tierTo || !starTo) {
       totalPriceContainer.innerHTML = "";
       setTimeout(() => {
         window.alert("Missing required fields");
       }, 50);
       return undefined;
-    } else if (parseInt(getStarsFromSurvivor.value) < 25) {
+    } else if (parseInt(getStarsFromHunter.value) < 25) {
       totalPriceContainer.innerHTML = "";
       setTimeout(() => {
         window.alert("Invalid star input");
       }, 50);
       return undefined;
     } else if (
-      parseInt(getStarsToSurvivor.value) < parseInt(getStarsFromSurvivor.value)
+      parseInt(getStarsToHunter.value) < parseInt(getStarsFromHunter.value)
     ) {
       totalPriceContainer.innerHTML = "";
       setTimeout(() => {
@@ -592,7 +589,7 @@ function getPrice() {
       }, 50);
       return undefined;
     } else if (
-      parseInt(getStarsToSurvivor.value) == parseInt(getStarsFromSurvivor.value)
+      parseInt(getStarsToHunter.value) == parseInt(getStarsFromHunter.value)
     ) {
       totalPriceContainer.innerHTML = "";
       setTimeout(() => {
@@ -601,8 +598,8 @@ function getPrice() {
       return undefined;
     }
   } else if (
-    getTierFromSurvivor.value === "7" ||
-    getTierFromSurvivor.value === "8"
+    getTierFromHunter.value === "7" ||
+    getTierFromHunter.value === "8"
   ) {
     if (!tierFrom || !starFrom || !tierTo || !starTo) {
       totalPriceContainer.innerHTML = "";
@@ -729,7 +726,7 @@ function getPrice() {
       return this.From.Tier + 1 === this.To.Tier;
     },
     isOneSubtierAhead() {
-      if (getTierFromSurvivor.value === getTierToSurvivor.value)
+      if (getTierFromHunter.value === getTierToHunter.value)
         return this.From["Sub-tier"] + 1 === this.To["Sub-tier"];
       return 0;
     },
