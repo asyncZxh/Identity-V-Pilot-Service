@@ -734,7 +734,7 @@ getSubTierToHunter.addEventListener("change", () => {
 });
 
 function updateTierTo() {
-  switch (getTierToSurvivor.value) {
+  switch (getTierToHunter.value) {
     case "1":
       updateSubTierOptionsTo(3);
       updateStarOptionsTo(2);
@@ -766,7 +766,7 @@ function updateTierTo() {
       break;
 
     case "7":
-      updateSubTierOptionsTo("champion");
+      updateSubTierOptionsTo("dragon");
       updateStarOptionsTo(24);
       break;
 
