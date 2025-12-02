@@ -57,7 +57,7 @@ const survivorPrice = [
 const totalPriceContainer = window.document.querySelector(
   ".total-price-survivor"
 );
-const currencySelectionSurvivorSelect = window.document.querySelector(
+const currencySelectionSurvivor = window.document.querySelector(
   ".select-survivor .currency-container .currency.convert"
 );
 
