@@ -98,11 +98,11 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           window.console.log(`Price: ${price}`);
 
           if (currencySelectionSurvivor.value === "PHP")
-            totalPriceContainer.innerHTML = `<p><span style="color: #fff131">&#8369;</span>${price.toLocaleString()}</p>`;
+            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-php">&#8369; ${price.toLocaleString()}</p>`;
           else if (currencySelectionSurvivor.value === "USD")
-            totalPriceContainer.innerHTML = `<p><span style="color: #fff131">&#36;</span>${(
+            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-usd">&#36; ${(
               price * 0.017
-            ).toLocaleString()}</p>`;
+            ).toLocaleString("en-US", { maximumFractionDigits: 2 })}</p>`;
         } else if (
           priceRange.From.Tier === priceRange.To.Tier &&
           priceRange.isOneSubtierAhead()
@@ -127,7 +127,12 @@ buttonCalculateSurvivor.addEventListener("click", () => {
 
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
-          totalPriceContainer.innerHTML = price.toLocaleString();
+          if (currencySelectionSurvivor.value === "PHP")
+            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-php">&#8369; ${price.toLocaleString()}</p>`;
+          else if (currencySelectionSurvivor.value === "USD")
+            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-usd">&#36; ${(
+              price * 0.017
+            ).toLocaleString("en-US", { maximumFractionDigits: 2 })}</p>`;
         } else if (
           priceRange.From.Tier === priceRange.To.Tier &&
           !priceRange.isOneSubtierAhead()
@@ -172,7 +177,12 @@ buttonCalculateSurvivor.addEventListener("click", () => {
 
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
-          totalPriceContainer.innerHTML = price.toLocaleString();
+          if (currencySelectionSurvivor.value === "PHP")
+            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-php">&#8369; ${price.toLocaleString()}</p>`;
+          else if (currencySelectionSurvivor.value === "USD")
+            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-usd">&#36; ${(
+              price * 0.017
+            ).toLocaleString("en-US", { maximumFractionDigits: 2 })}</p>`;
         } else if (
           priceRange.From.Tier !== priceRange.To.Tier &&
           priceRange.isOneTierAhead()
@@ -220,7 +230,12 @@ buttonCalculateSurvivor.addEventListener("click", () => {
 
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
-          totalPriceContainer.innerHTML = price.toLocaleString();
+          if (currencySelectionSurvivor.value === "PHP")
+            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-php">&#8369; ${price.toLocaleString()}</p>`;
+          else if (currencySelectionSurvivor.value === "USD")
+            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-usd">&#36; ${(
+              price * 0.017
+            ).toLocaleString("en-US", { maximumFractionDigits: 2 })}</p>`;
         } else if (
           priceRange.From.Tier !== priceRange.To.Tier &&
           !priceRange.isOneTierAhead()
@@ -289,7 +304,12 @@ buttonCalculateSurvivor.addEventListener("click", () => {
           });
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
-          totalPriceContainer.innerHTML = price.toLocaleString();
+          if (currencySelectionSurvivor.value === "PHP")
+            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-php">&#8369; ${price.toLocaleString()}</p>`;
+          else if (currencySelectionSurvivor.value === "USD")
+            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-usd">&#36; ${(
+              price * 0.017
+            ).toLocaleString("en-US", { maximumFractionDigits: 2 })}</p>`;
         }
       } else if (
         priceRange &&
@@ -353,7 +373,12 @@ buttonCalculateSurvivor.addEventListener("click", () => {
 
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
-          totalPriceContainer.innerHTML = price.toLocaleString();
+          if (currencySelectionSurvivor.value === "PHP")
+            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-php">&#8369; ${price.toLocaleString()}</p>`;
+          else if (currencySelectionSurvivor.value === "USD")
+            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-usd">&#36; ${(
+              price * 0.017
+            ).toLocaleString("en-US", { maximumFractionDigits: 2 })}</p>`;
         } else if (priceRange.To.Tier === 7) {
           const start = survivorPrice[priceRange.From.Tier][
             priceRange.From["Sub-tier"]
@@ -412,7 +437,12 @@ buttonCalculateSurvivor.addEventListener("click", () => {
 
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
-          totalPriceContainer.innerHTML = price.toLocaleString();
+          if (currencySelectionSurvivor.value === "PHP")
+            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-php">&#8369; ${price.toLocaleString()}</p>`;
+          else if (currencySelectionSurvivor.value === "USD")
+            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-usd">&#36; ${(
+              price * 0.017
+            ).toLocaleString("en-US", { maximumFractionDigits: 2 })}</p>`;
         }
       } else if (
         priceRange &&
@@ -434,7 +464,12 @@ buttonCalculateSurvivor.addEventListener("click", () => {
 
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
-          totalPriceContainer.innerHTML = price.toLocaleString();
+          if (currencySelectionSurvivor.value === "PHP")
+            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-php">&#8369; ${price.toLocaleString()}</p>`;
+          else if (currencySelectionSurvivor.value === "USD")
+            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-usd">&#36; ${(
+              price * 0.017
+            ).toLocaleString("en-US", { maximumFractionDigits: 2 })}</p>`;
         } else if (priceRange.From.Tier === 6 && priceRange.To.Tier === 7) {
           const start = survivorPrice[priceRange.From.Tier].slice(
             priceRange.From.Star + 1
@@ -453,7 +488,12 @@ buttonCalculateSurvivor.addEventListener("click", () => {
 
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
-          totalPriceContainer.innerHTML = price.toLocaleString();
+          if (currencySelectionSurvivor.value === "PHP")
+            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-php">&#8369; ${price.toLocaleString()}</p>`;
+          else if (currencySelectionSurvivor.value === "USD")
+            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-usd">&#36; ${(
+              price * 0.017
+            ).toLocaleString("en-US", { maximumFractionDigits: 2 })}</p>`;
         } else if (priceRange.From.Tier === 7 && priceRange.To.Tier === 7) {
           const start =
             (priceRange.From.Star -
@@ -469,7 +509,12 @@ buttonCalculateSurvivor.addEventListener("click", () => {
 
           window.console.log(`Stars: ${stars}`);
           window.console.log(`Price: ${price}`);
-          totalPriceContainer.innerHTML = price.toLocaleString();
+          if (currencySelectionSurvivor.value === "PHP")
+            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-php">&#8369; ${price.toLocaleString()}</p>`;
+          else if (currencySelectionSurvivor.value === "USD")
+            totalPriceContainer.innerHTML = `<p style="color: #fff131" id="price-usd">&#36; ${(
+              price * 0.017
+            ).toLocaleString("en-US", { maximumFractionDigits: 2 })}</p>`;
         }
       }
       setTimeout(() => (isProcessing = false), 50);
