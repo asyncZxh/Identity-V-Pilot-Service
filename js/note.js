@@ -82,6 +82,10 @@ openNoteBtn.addEventListener("click", () => {
       "#949494ff";
     window.document.querySelector(".select-hunter .arrow").style.fill =
       "#949494ff";
+    if (window.document.getElementById("price-php"))
+      window.document.getElementById("price-php").style.color = "#949494ff";
+    if (window.document.getElementById("price-usd"))
+      window.document.getElementById("price-usd").style.color = "#949494ff";
     inputs.forEach((e, i) => {
       if (i !== inputs.length / 2 - 1 && i !== inputs.length - 1) {
         e.tabindex = "-1";
@@ -119,6 +123,10 @@ closeNoteBtn.addEventListener("click", () => {
     window.document.querySelector(".select-survivor .arrow").style.fill =
       "#fff";
     window.document.querySelector(".select-hunter .arrow").style.fill = "#fff";
+    if (window.document.getElementById("price-php"))
+      window.document.getElementById("price-php").style.color = "#fff131";
+    if (window.document.getElementById("price-usd"))
+      window.document.getElementById("price-usd").style.color = "#fff131";
     isOpen = true;
     note.classList.remove("open-note");
     inputs.forEach((e, i) => {
