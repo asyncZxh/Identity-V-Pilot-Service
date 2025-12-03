@@ -566,6 +566,12 @@ function getPrice() {
         window.alert("Invalid star input");
       }, 50);
       return undefined;
+    } else if (parseInt(getStarsToSurvivor.value) > 100) {
+      totalPriceContainer.innerHTML = "";
+      setTimeout(() => {
+        window.alert("cannot input more than 100 stars on TO");
+      }, 50);
+      return undefined;
     }
   } else if (
     getTierFromSurvivor.value !== "7" &&
@@ -613,6 +619,12 @@ function getPrice() {
       totalPriceContainer.innerHTML = "";
       setTimeout(() => {
         window.alert("Invalid star input");
+      }, 50);
+      return undefined;
+    } else if (parseInt(getStarsFromSurvivor.value) > 99) {
+      totalPriceContainer.innerHTML = "";
+      setTimeout(() => {
+        window.alert("cannot input more than 99 stars on FROM");
       }, 50);
       return undefined;
     } else if (
