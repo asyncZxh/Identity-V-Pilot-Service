@@ -453,6 +453,7 @@ option {
   border-right: 2px solid transparent;
   border-left: 2px solid transparent;
   margin-bottom: 2rem;
+  overflow: hidden;
 }
 
 .other-services {
