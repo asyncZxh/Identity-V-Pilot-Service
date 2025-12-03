@@ -56,7 +56,10 @@ const hunterPrice = [
     [60, 60, 60, 60, 60],
     [60, 60, 60, 60, 60],
   ],
-  [70],
+  [
+    60, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70,
+    70, 70, 70, 70, 70, 70,
+  ],
   [80],
 ];
 const totalPriceContainer = window.document.querySelector(
@@ -468,7 +471,7 @@ buttonCalculateHunter.addEventListener("click", () => {
             priceRange.From.Star + 1,
             priceRange.To.Star + 1
           );
-          window.console.log(array);
+          window.console.log(start);
           start.forEach((e) => {
             stars++;
             price += e;
