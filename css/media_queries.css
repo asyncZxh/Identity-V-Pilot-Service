@@ -20,17 +20,206 @@
   :root {
     font-size: 81.25%;
   }
+
+  .select-faction {
+    gap: 12rem;
+  }
+
+  .services {
+    width: 90%;
+    column-gap: 0;
+    margin: auto;
+  }
+
+  .recruit-container .icon-container {
+    gap: 3.3rem;
+  }
+
+  .recruit-text {
+    width: 70%;
+    margin: auto;
+  }
+
+  .android-logo {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .device-type-text {
+    width: 60%;
+    margin: auto;
+  }
 }
 
 @media (min-width: 64em) {
   :root {
     font-size: 87.5%;
   }
+
+  .introduction,
+  .introduction-invi {
+    width: 50%;
+    margin: auto;
+  }
+
+  .faction-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .survivor,
+  .hunter {
+    width: 50%;
+  }
+
+  .select-faction {
+    gap: 14rem;
+  }
+
+  .other-services-header {
+    margin-bottom: 3.6rem;
+  }
+
+  .services {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .services * {
+    flex: 1;
+  }
+
+  .recruit-container .icon-container {
+    gap: 4.4rem;
+  }
+
+  .recruit-text {
+    width: 70%;
+    margin: auto;
+  }
+
+  .android-logo {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .device-type-text {
+    width: 55%;
+    margin: auto;
+  }
+
+  .payment-icon-container {
+    display: flex;
+    justify-content: center;
+    gap: 3.2rem;
+  }
+
+  .gcash-icon,
+  .paypal-icon,
+  .paymaya-icon {
+    width: 5.9rem;
+    height: 5rem;
+  }
+
+  .landbank-icon {
+    width: 5.3rem;
+    height: 4.7rem;
+  }
+
+  .bdo-icon {
+    width: 4.2rem;
+    height: 1.7rem;
+  }
 }
 
 @media (min-width: 90em) {
   :root {
     font-size: 93.75%;
+  }
+
+  .introduction,
+  .introduction-invi {
+    width: 40%;
+    margin: auto;
+  }
+
+  .faction-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .survivor,
+  .hunter {
+    width: 50%;
+  }
+
+  .select-faction {
+    gap: 16rem;
+  }
+
+  .other-services-header {
+    margin-bottom: 3.6rem;
+  }
+
+  .services {
+    display: flex;
+    width: 95%;
+    justify-content: center;
+  }
+
+  .services * {
+    flex: 1;
+  }
+
+  .recruit-container .icon-container {
+    gap: 5.4rem;
+  }
+
+  .knight-icon {
+    width: 9rem;
+  }
+
+  .dragon-icon {
+    width: 10.8rem;
+  }
+
+  .recruit-text {
+    width: 70%;
+    margin: auto;
+  }
+
+  .android-logo {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .device-type-text {
+    width: 30%;
+    margin: auto;
+  }
+
+  .payment-icon-container {
+    display: flex;
+    justify-content: center;
+    gap: 3.2rem;
+  }
+
+  .gcash-icon,
+  .paypal-icon,
+  .paymaya-icon {
+    width: 5.9rem;
+    height: 5rem;
+  }
+
+  .landbank-icon {
+    width: 5.3rem;
+    height: 4.7rem;
+  }
+
+  .bdo-icon {
+    width: 4.2rem;
+    height: 1.7rem;
   }
 }
 
