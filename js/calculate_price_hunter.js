@@ -621,7 +621,7 @@ function getPrice() {
     ) {
       totalPriceContainer.innerHTML = "";
       setTimeout(() => {
-        window.alert("Tier: TITAN\nFROM must be less than TO");
+        window.alert("Tier: HYDRA\nFROM must be less than TO");
       }, 50);
       return undefined;
     } else if (parseInt(getStarsFromHunter.value) > 99) {
@@ -630,12 +630,18 @@ function getPrice() {
         window.alert("cannot input more than 99 stars on FROM");
       }, 50);
       return undefined;
+    } else if (parseInt(getStarsToHunter.value) > 100) {
+      totalPriceContainer.innerHTML = "";
+      setTimeout(() => {
+        window.alert("cannot input more than 100 stars on TO");
+      }, 50);
+      return undefined;
     } else if (
       parseInt(getStarsToHunter.value) == parseInt(getStarsFromHunter.value)
     ) {
       totalPriceContainer.innerHTML = "";
       setTimeout(() => {
-        window.alert("Tier: TITAN\nFROM must not be equal to TO");
+        window.alert("Tier: HYDRA\nFROM must not be equal to TO");
       }, 50);
       return undefined;
     }
