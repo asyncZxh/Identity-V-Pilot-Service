@@ -49,6 +49,10 @@
     width: 60%;
     margin: auto;
   }
+
+  .note {
+    width: 60%;
+  }
 }
 
 @media (min-width: 64em) {
@@ -131,6 +135,10 @@
     width: 4.2rem;
     height: 1.7rem;
   }
+
+  .note {
+    width: 50%;
+  }
 }
 
 @media (min-width: 90em) {
@@ -151,7 +159,7 @@
 
   .survivor,
   .hunter {
-    width: 50%;
+    width: 45%;
   }
 
   .select-faction {
@@ -221,10 +229,18 @@
     width: 4.2rem;
     height: 1.7rem;
   }
+
+  .note {
+    width: 35%;
+  }
 }
 
 @media (min-width: 160em) {
   :root {
     font-size: 100%;
+  }
+
+  .note {
+    width: 30%;
   }
 }
