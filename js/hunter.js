@@ -378,6 +378,7 @@ function updateStarOptionsFrom(tier) {
       createInputElement.setAttribute("id", "hunter-from-star");
       createInputElement.setAttribute("type", "number");
       createInputElement.setAttribute("min", "25");
+      createInputElement.setAttribute("max", "99");
       createInputElement.value = "25";
       createInputElement.placeholder = "enter star";
       createInputElement.classList.add("select-from");
@@ -1126,6 +1127,7 @@ function updateStarOptionsTo(star) {
       createInputElement.value = "25";
       createInputElement.setAttribute("min", "25");
     }
+    createInputElement.setAttribute("max", "100");
     createInputElement.placeholder = "enter star";
     createInputElement.classList.add("select-to");
     getStarsToHunter.replaceWith(createInputElement);
