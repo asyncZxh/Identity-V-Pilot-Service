@@ -471,8 +471,6 @@ buttonCalculateSurvivor.addEventListener("click", () => {
             priceRange.From.Star + 1,
             priceRange.To.Star + 1
           );
-
-          array;
           window.console.log(start);
           start.forEach((e) => {
             stars++;
