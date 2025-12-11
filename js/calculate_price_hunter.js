@@ -621,7 +621,7 @@ function getPrice() {
     ) {
       totalPriceContainer.innerHTML = "";
       setTimeout(() => {
-        window.alert("Tier: HYDRA\nFROM must be less than TO");
+        window.alert("FROM must be less than TO");
       }, 50);
       return undefined;
     } else if (parseInt(getStarsFromHunter.value) > 99) {
@@ -641,7 +641,7 @@ function getPrice() {
     ) {
       totalPriceContainer.innerHTML = "";
       setTimeout(() => {
-        window.alert("Tier: HYDRA\nFROM must not be equal to TO");
+        window.alert("FROM must not be equal to TO");
       }, 50);
       return undefined;
     }

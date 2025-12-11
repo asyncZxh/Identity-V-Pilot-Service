@@ -630,7 +630,7 @@ function getPrice() {
     ) {
       totalPriceContainer.innerHTML = "";
       setTimeout(() => {
-        window.alert("Tier: TITAN\nFROM must be less than TO");
+        window.alert("FROM must be less than TO");
       }, 50);
       return undefined;
     } else if (parseInt(getStarsToSurvivor.value) > 100) {
@@ -644,7 +644,7 @@ function getPrice() {
     ) {
       totalPriceContainer.innerHTML = "";
       setTimeout(() => {
-        window.alert("Tier: TITAN\nFROM must not be equal to TO");
+        window.alert("FROM must not be equal to TO");
       }, 50);
       return undefined;
     }
