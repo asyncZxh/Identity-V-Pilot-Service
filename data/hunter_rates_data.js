@@ -1,4 +1,4 @@
-export const hunterRates = [
+export const rates = [
   {
     tier: "Tier 1",
     img_src: "images/tiers/new/hunter/Tarantula.webp",
