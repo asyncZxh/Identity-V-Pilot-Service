@@ -1,4 +1,4 @@
-const survivorRates = [
+export const survivorRates = [
   {
     tier: "Tier 1",
     img_src: "images/tiers/new/survivor/WorkerBee.webp",
