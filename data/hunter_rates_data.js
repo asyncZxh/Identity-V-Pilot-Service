@@ -45,6 +45,6 @@ export const rates = [
     tier: "Peak Tier",
     img_src: "images/tiers/new/hunter/Hydra.webp",
     alt: "Hydra - Peak Tier",
-    price: 80,
+    price: 90,
   },
 ];
