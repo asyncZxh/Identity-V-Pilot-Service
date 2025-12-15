@@ -546,6 +546,11 @@ option {
   margin-left: -3.6rem;
 }
 
+.c-badge-survivor.c-badge-disabled,
+.c-badge-hunter.c-badge-disabled {
+  filter: grayscale(1);
+}
+
 .logic-point {
   width: 5.4rem;
 }
